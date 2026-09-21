@@ -1,0 +1,26 @@
+site_name: Desarrollo Web en Entorno Servidor 2026/27
+nav:
+  - Inicio: index.md
+  - UT 00: ut00.md
+  - UT 01: ut01.md
+theme:
+  name: readthedocs
+  locale: es
+
+markdown_extensions:
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.arithmatex
+  - pymdownx.blocks.admonition
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - admonition
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
