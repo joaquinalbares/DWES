@@ -1,33 +1,38 @@
 .highlight .copy-code-btn {
     position: absolute;
-    top: 8px; /* Ajustado un poco más abajo por si hljs estira el bloque */
+    top: 8px;
     right: 8px;
-    padding: 4px 8px;
-    font-size: 11px;
-    font-family: sans-serif;
-    color: #2980B9; 
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555555; /* Gris neutro y discreto */
     background-color: #FFFFFF;
     border: 1px solid #E1E4E6;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out;
-    z-index: 99; /* Forzamos que se posicione por encima del código coloreado */
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: all 0.15s ease-in-out;
+    z-index: 99;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* El botón aparece al pasar el cursor sobre el bloque */
+/* El botón aparece de forma sutil al pasar el cursor sobre el código */
 .highlight:hover .copy-code-btn {
     opacity: 1;
 }
 
+/* Hover sobre el propio botón (cambia levemente al azul de ReadTheDocs) */
 .highlight .copy-code-btn:hover {
     background-color: #F3F6F6;
-    color: #236B9B;
+    color: #2980B9;
+    border-color: #D1D4D6;
 }
 
+/* Estilo cuando ya se ha copiado con éxito */
 .highlight .copy-code-btn.copied {
-    background-color: #2ECC71;
-    color: #FFFFFF;
-    border-color: #27AE60;
+    background-color: #E8F8F5; /* Fondo verde muy tenue y elegante */
+    color: #2ECC71; /* Icono verde */
+    border-color: #A3E4D7;
 }

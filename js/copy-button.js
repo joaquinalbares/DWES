@@ -1,37 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Selecciona todos los contenedores .highlight de pymdownx
     const blocks = document.querySelectorAll(".highlight");
 
     blocks.forEach(function(block) {
-        // Asegurar posicionamiento relativo para alinear el botón correctamente
         block.style.position = "relative";
 
-        // Crear el botón de copiar
         const button = document.createElement("button");
         button.className = "copy-code-btn";
-        button.innerText = "Copiar";
+        button.setAttribute("aria-label", "Copiar código");
+        
+        // Icono SVG minimalista de doble página (Copiar)
+        const copyIcon = `
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+        `;
+        
+        // Icono SVG de check (Éxito)
+        const checkIcon = `
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        `;
 
-        // Lógica de copiado adaptada para resaltar con HLJS
+        // Estado inicial
+        button.innerHTML = copyIcon;
+
         button.addEventListener("click", function() {
-            // Buscamos la etiqueta code que tiene la clase de highlight.js
             const codeElement = block.querySelector("code");
             if (!codeElement) return;
 
-            // Extraemos el texto plano (sin las etiquetas HTML de los colores)
-            const codeText = codeElement.innerText;
-
-            navigator.clipboard.writeText(codeText).then(function() {
-                button.innerText = "¡Copiado!";
+            navigator.clipboard.writeText(codeElement.innerText).then(function() {
+                button.innerHTML = checkIcon;
                 button.classList.add("copied");
                 
                 setTimeout(function() {
-                    button.innerText = "Copiar";
+                    button.innerHTML = copyIcon;
                     button.classList.remove("copied");
                 }, 2000);
             });
         });
 
-        // Insertar el botón en el contenedor
         block.appendChild(button);
     });
 });
