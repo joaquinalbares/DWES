@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UT 01 - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT 01";
+        var properdocs_page_input_path = "ut01.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT 00</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">UT 01</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-ra-y-contenidos">1. RA Y CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#criterios-de-evaluacion">CRITERIOS DE EVALUACIÓN</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contenidos-minimos">CONTENIDOS MÍNIMOS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#calificacion">CALIFICACIÓN:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-contenidos">2. CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-modelo-clienteservidor">1. MODELO CLIENTE/SERVIDOR</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#componentes-principales">Componentes Principales</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#como-funciona">¿Cómo Funciona?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ventajas-y-desventajas">Ventajas y Desventajas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-respuestas-http">2. Respuestas HTTP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-estructura-de-una-respuesta-http">1. Estructura de una Respuesta HTTP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-clasificacion-de-los-codigos-de-estado-status-codes">2. Clasificación de los Códigos de Estado (Status Codes)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#codigos-de-estado-imprescindibles-i">Códigos de Estado Imprescindibles (I)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#codigos-de-estado-imprescindibles-ii">Códigos de Estado Imprescindibles (II)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3-lenguajes-de-guiones-script">3. Lenguajes de guiones (SCRIPT)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-como-funcionan-estas-sentencias">1. ¿Cómo funcionan estas sentencias?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-sentencias-de-guiones-en-el-entorno-servidor-backend">A. Sentencias de guiones en el entorno servidor (Backend)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-sentencias-de-guiones-en-el-entorno-cliente-frontend">B. Sentencias de guiones en el entorno cliente (Frontend)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-elementos-clave-de-las-sentencias-de-guiones">2. Elementos clave de las sentencias de guiones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-buenas-practicas-modernas-separacion-de-capas">3. Buenas prácticas modernas (Separación de capas)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT 01</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut-01-arquitecturas-y-tecnologias">UT 01 - ARQUITECTURAS Y TECNOLOGÍAS</h1>
+<h2 id="1-ra-y-contenidos">1. RA Y CONTENIDOS</h2>
+<h3 id="resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</h3>
+<p>Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<h3 id="criterios-de-evaluacion">CRITERIOS DE EVALUACIÓN</h3>
+<p>a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.</p>
+<p>b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.</p>
+<p>c) Se han identificado los mecanismos de ejecución de código en los servidores Web.</p>
+<p>d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.</p>
+<p>e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados con la programación Web en entorno servidor.</p>
+<p>f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.</p>
+<p>g) Se han reconocido y evaluado las herramientas de programación en entorno servidor.</p>
+<h3 id="contenidos-minimos">CONTENIDOS MÍNIMOS</h3>
+<p>− Modelos de programación en entornos cliente / servidor.</p>
+<p>− Generación dinámica de páginas web.</p>
+<p>− Lenguajes de programación en entorno servidor.</p>
+<p>− Integración con los lenguajes de marcas.</p>
+<p>− Integración con los servidores web.</p>
+<p>− Herramientas de programación.</p>
+<h4 id="calificacion">CALIFICACIÓN:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CUADERNO DE CLASE</th>
+<th style="text-align: center;">CUESTIONARIO</th>
+<th style="text-align: center;">EJERCICIOS DE CLASE</th>
+<th style="text-align: center;">PRÁCTICAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10%</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">30%</td>
+<td style="text-align: center;">60%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-contenidos">2. CONTENIDOS</h2>
+<h3 id="1-modelo-clienteservidor">1. MODELO CLIENTE/SERVIDOR</h3>
+<p>El modelo cliente-servidor es una arquitectura de red donde un dispositivo o programa (el cliente) solicita recursos o servicios a otro programa centralizado (el servidor), el cual procesa la petición y devuelve una respuesta.</p>
+<h4 id="componentes-principales">Componentes Principales</h4>
+<ul>
+<li><strong>Cliente</strong>: Dispositivo o aplicación (como un navegador web o app móvil) que inicia la comunicación y muestra los datos al usuario.</li>
+<li><strong>Servidor</strong>: Computadora o software potente que almacena datos, gestiona recursos y procesa las peticiones de los clientes.</li>
+<li><strong>Red</strong>: El medio físico o inalámbrico que conecta al cliente y al servidor para la transmisión de datos.</li>
+</ul>
+<h4 id="como-funciona">¿Cómo Funciona?</h4>
+<ol>
+<li><strong>Solicitud (Request)</strong>: El cliente pide un servicio o información a través de la red.</li>
+<li><strong>Procesamiento</strong>: El servidor recibe la petición y realiza el trabajo pesado (buscar en bases de datos, ejecutar programas).</li>
+<li><strong>Respuesta (Response)</strong>: El servidor envía el resultado de vuelta al cliente para que este lo visualice.</li>
+</ol>
+<h4 id="ventajas-y-desventajas">Ventajas y Desventajas</h4>
+<ul>
+<li><strong>Ventajas</strong>: Control centralizado de la información, seguridad mejorada y facilidad para realizar copias de seguridad o escalar recursos. Puedes revisar el análisis completo de pros y contras en IONOS España.</li>
+<li><strong>Desventajas</strong>: Si el servidor principal falla, todos los clientes pierden el servicio (punto único de falla). Además, puede saturarse si hay demasiadas peticiones simultáneas.</li>
+</ul>
+<p><img alt="https://upload.wikimedia.org/wikipedia/commons/0/09/Cliente_servidor.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Cliente_servidor.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original" /></p>
+<p>Fuente: <a href="https://commons.wikimedia.org/wiki/File:Cliente_servidor.png">https://commons.wikimedia.org/wiki/File:Cliente_servidor.png</a></p>
+<h3 id="2-respuestas-http">2. Respuestas HTTP</h3>
+<p>HTTP (HyperText Transfer Protocol) es el protocolo de transferencia de hipertexto utilizado en la web. </p>
+<p>Una <strong>respuesta HTTP</strong> es el mensaje que un servidor web envía al cliente (navegador o aplicación) tras procesar una petición (<em>request</em>). Su función principal es entregar los recursos solicitados (HTML, JSON, imágenes) o informar sobre el estado de la operación.</p>
+<h4 id="1-estructura-de-una-respuesta-http"><strong>1. Estructura de una Respuesta HTTP</strong></h4>
+<p>Toda respuesta del servidor se compone de tres partes principales:</p>
+<ol>
+<li><strong>Línea de estado (<em>Status Line</em>):</strong> Contiene la versión del protocolo (ej. <code>HTTP/1.1</code> o <code>HTTP/2</code>), el <strong>código de estado numérico</strong> (ej. <code>200</code>) y su texto descriptivo (<em>Reason Phrase</em>, ej. <code>OK</code>).</li>
+<li><strong>Encabezados de respuesta (<em>Response Headers</em>):</strong> Metadatos que el servidor envía para dar información sobre la respuesta y el entorno. 
+    Destacan:<ul>
+<li><code>Content-Type</code>: Indica el formato del contenido devuelto (ej. <code>text/html</code>, <code>application/json</code>, <code>image/png</code>).</li>
+<li><code>Content-Length</code>: Tamaño del cuerpo en bytes.</li>
+<li><code>Set-Cookie</code>: Envía cookies de sesión al navegador.</li>
+<li><code>Access-Control-Allow-Origin</code>: Configuración de permisos CORS para peticiones entre dominios.</li>
+</ul>
+</li>
+<li><strong>Cuerpo (<em>Body</em>):</strong> El contenido real de la respuesta. Puede ser el código HTML de una página, los datos JSON de un API REST, o datos binarios (imágenes PNG, archivos CSS/JS).</li>
+</ol>
+<hr />
+<h4 id="2-clasificacion-de-los-codigos-de-estado-status-codes"><strong>2. Clasificación de los Códigos de Estado (<em>Status Codes</em>)</strong></h4>
+<p>Los códigos numéricos de tres dígitos indican el resultado de la petición y se dividen en 5 familias:</p>
+<ul>
+<li><strong>1xx (Informativos):</strong> La petición fue recibida y el proceso continúa (ej. <code>100 Continue</code>).</li>
+<li><strong>2xx (Éxito):</strong> La acción se solicitó, entendió y aceptó con éxito. Ejemplos: <code>200 OK</code> (procesado correctamente) y <code>201 Created</code> (recurso creado).</li>
+<li><strong>3xx (Redirección):</strong> El cliente debe realizar acciones adicionales para completar la solicitud (ej. <code>301 Moved Permanently</code>, <code>304 Not Modified</code>).</li>
+<li><strong>4xx (Errores del Cliente):</strong> La petición contiene sintaxis incorrecta o el recurso no existe. Ejemplos: <code>400 Bad Request</code>, <code>401 Unauthorized</code>, <code>403 Forbidden</code> y <code>404 Not Found</code>.</li>
+<li><strong>5xx (Errores del Servidor):</strong> El servidor falló al intentar procesar una petición válida. Ejemplos: <code>500 Internal Server Error</code> y <code>503 Service Unavailable</code>.</li>
+</ul>
+<hr />
+<h2 id="codigos-de-estado-imprescindibles-i">Códigos de Estado Imprescindibles (I)</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Significado</th>
+<th>Uso Típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200 OK</strong></td>
+<td>Éxito genérico</td>
+<td>Lecturas (GET) o actualizaciones exitosas.</td>
+</tr>
+<tr>
+<td><strong>201 Created</strong></td>
+<td>Creado</td>
+<td>Recurso creado exitosamente (POST).</td>
+</tr>
+<tr>
+<td><strong>204 No Content</strong></td>
+<td>Sin Contenido</td>
+<td>Eliminación exitosa (DELETE).</td>
+</tr>
+<tr>
+<td><strong>400 Bad Request</strong></td>
+<td>Datos Inválidos</td>
+<td>Error de validación en los datos enviados.</td>
+</tr>
+<tr>
+<td><strong>401 Unauthorized</strong></td>
+<td>No Autenticado</td>
+<td>Falta token o sesión inválida.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="codigos-de-estado-imprescindibles-ii">Códigos de Estado Imprescindibles (II)</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Significado</th>
+<th>Uso Típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>403 Forbidden</strong></td>
+<td>No Autorizado</td>
+<td>Autenticado pero sin permisos para este recurso.</td>
+</tr>
+<tr>
+<td><strong>404 Not Found</strong></td>
+<td>No Encontrado</td>
+<td>El recurso o la URL no existe.</td>
+</tr>
+<tr>
+<td><strong>422 Unprocessable Entity</strong></td>
+<td>Datos Inválidos</td>
+<td>Sintaxis correcta pero fallo lógico de validación.</td>
+</tr>
+<tr>
+<td><strong>500 Internal Error</strong></td>
+<td>Error del Servidor</td>
+<td>Excepción no capturada en el Backend.</td>
+</tr>
+<tr>
+<td><strong>503 Service Unavailable</strong></td>
+<td>No Disponible</td>
+<td>Servidor caído o en mantenimiento.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-lenguajes-de-guiones-script">3. Lenguajes de guiones (SCRIPT)</h3>
+<p>En el ámbito del desarrollo web, el término <strong>«sentencias de guiones en el interior de las páginas web»</strong> (o <em>embedded script statements</em> en inglés) hace referencia al <strong>código ejecutable de programación que se incluye o incrusta (<em>embedded</em>) directamente dentro de la estructura o lenguaje de marcas (HTML) de un documento web</strong>.</p>
+<p>Esta denominación proviene directamente de la traducción técnica del concepto de <em>scripting languages</em> (lenguajes de guiones o de comandos) recogido en el currículo de Formación Profesional de Informática.</p>
+<hr />
+<h3 id="1-como-funcionan-estas-sentencias">1. ¿Cómo funcionan estas sentencias?</h3>
+<p>Las páginas web estáticas tradicionales solo contienen etiquetas HTML para definir la estructura de la página. Sin embargo, para que una página sea dinámica (pueda calcular datos, consultar bases de datos o reaccionar a la interacción del usuario), es necesario <strong>intercalar o embeber bloques de código ejecutable</strong> entre las etiquetas del lenguaje de marcas.</p>
+<p>Existen dos tipos principales de «guiones» embebidos según dónde se ejecuten:</p>
+<h4 id="a-sentencias-de-guiones-en-el-entorno-servidor-backend">A. Sentencias de guiones en el entorno servidor (Backend)</h4>
+<p>Se ejecutan en el servidor web <strong>antes de que la página sea enviada al navegador del usuario</strong>. El servidor lee las sentencias de código, las procesa (por ejemplo, realizando una consulta a una base de datos) e inyecta el resultado en formato HTML puro en el documento final que recibe el cliente.</p>
+<div class="admonition note">
+<p class="admonition-title">Nuestra elección</p>
+<p>El Lenguaje principal que vamos a aprender en este módulo es <strong>PHP</strong>.</p>
+</div>
+<p><strong>Ejemplo de sentencias embebidas en PHP:</strong></p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Ejemplo Servidor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Bloque o sentencia de guión embebido en PHP --&gt;
+    &lt;h1&gt;
+        &lt;?php 
+            $usuario = &quot;Carlos&quot;;
+            echo &quot;Bienvenido a la web, &quot; . $usuario; 
+        ?&gt;
+    &lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>Las etiquetas <code>&lt;?php ... ?&gt;</code> delimitan la apertura y cierre del guión ejecutable por el servidor.</p>
+<hr />
+<h4 id="b-sentencias-de-guiones-en-el-entorno-cliente-frontend">B. Sentencias de guiones en el entorno cliente (Frontend)</h4>
+<p>Se ejecutan directamente en el navegador del usuario <strong>después de que la página ha sido descargada</strong>. Se utilizan para modificar la interfaz, validar formularios en vivo o responder a eventos (como clics de ratón).</p>
+<ul>
+<li><strong>Lenguaje principal:</strong> <strong>JavaScript</strong>.</li>
+<li><strong>Ejemplo de sentencias embebidas en JavaScript:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Ejemplo Cliente&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Bloque de guión embebido en el cliente --&gt;
+    &lt;script&gt;
+        let horaActual = new Date().getHours();
+        console.log(&quot;Hora detectada en cliente: &quot; + horaActual);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>Las etiquetas <code>&lt;script&gt; ... &lt;/script&gt;</code> delimitan el código de guión interpretable por el navegador web.</p>
+<hr />
+<h3 id="2-elementos-clave-de-las-sentencias-de-guiones">2. Elementos clave de las sentencias de guiones</h3>
+<p>Cuando escribes sentencias de guiones embebidas, utilizas elementos fundamentales de programación como:</p>
+<ol>
+<li>
+<p><strong>Variables y Operadores:</strong> Para almacenar valores temporales y realizar cálculos sintácticos.</p>
+</li>
+<li>
+<p><strong>Estructuras de Control:</strong> Condicionales (<code>if / else</code>) para decidir qué partes de la página HTML se van a mostrar u omitir, y bucles (<code>for / foreach</code>) para repetir elementos (por ejemplo, generar una lista de productos a partir de una matriz/array).</p>
+</li>
+<li>
+<p><strong>Funciones:</strong> Bloques reutilizables para modularizar las instrucciones del código.</p>
+</li>
+<li>
+<p><strong>Comentarios de código:</strong> Para documentar qué hace cada bloque ejecutable dentro del HTML.</p>
+</li>
+</ol>
+<hr />
+<h3 id="3-buenas-practicas-modernas-separacion-de-capas">3. Buenas prácticas modernas (Separación de capas)</h3>
+<p>Aunque es perfectamente válido escribir guiones embebidos dentro del HTML para páginas sencillas o en motores de plantillas (como Blade en Laravel o Twig en Symfony), las mejores prácticas de desarrollo web recomiendan <strong>separar la lógica de negocio de la presentación</strong> (mediante patrones como el <strong>MVC</strong> - Modelo Vista Controlador).</p>
+<p>De este modo, se evita mezclar código excesivo de programación en medio de las etiquetas de maquetación HTML, haciendo que el proyecto sea mucho más fácil de mantener y escalar.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut00/" class="btn btn-neutral float-left" title="UT 00"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ut00/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

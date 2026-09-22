@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UT 00 - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT 00";
+        var properdocs_page_input_path = "ut00.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">UT 00</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#nombrado-de-archivos-estructura-de-proyectos-web">Nombrado de archivos, Estructura de proyectos Web</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-estandares-de-nombrado-de-archivos">1. Estándares de Nombrado de Archivos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#convenciones-principales-casing">Convenciones Principales (Casing)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT 01</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT 00</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut00-buenas-practicas-en-desarrollo-web">UT00: Buenas Prácticas en Desarrollo Web</h1>
+<h3 id="nombrado-de-archivos-estructura-de-proyectos-web">Nombrado de archivos, Estructura de proyectos Web</h3>
+<hr />
+<h2 id="1-estandares-de-nombrado-de-archivos">1. Estándares de Nombrado de Archivos</h2>
+<blockquote>
+<p>La consistencia en el nombrado evita errores de compilación, fallos en servidores y facilita el trabajo en equipo.</p>
+</blockquote>
+<hr />
+<h3 id="convenciones-principales-casing">Convenciones Principales (Casing)</h3>
+<ul>
+<li><strong>kebab-case:</strong> <code>mi-archivo-de-estilo.css</code><ul>
+<li><strong>Uso:</strong> URLs, archivos HTML/CSS, imágenes, assets.</li>
+</ul>
+</li>
+<li><strong>camelCase:</strong> <code>miFuncionUtil.js</code><ul>
+<li><strong>Uso:</strong> Variables, funciones, métodos en JS/TS.</li>
+</ul>
+</li>
+<li><strong>PascalCase:</strong> <code>UserProfile.jsx</code> / <code>MiComponente.vue</code><ul>
+<li><strong>Uso:</strong> Componentes de UI, clases, interfaces.</li>
+</ul>
+</li>
+<li><strong>snake_case / SCREAMING_SNAKE_CASE:</strong> <code>DB_PASSWORD</code><ul>
+<li><strong>Uso:</strong> Variables de entorno (<code>.env</code>), configuraciones globales.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Reglas de Oro para Archivos</p>
+<ol>
+<li><strong>Solo minúsculas y guiones</strong> (<code>kebab-case</code>) para URLs y HTML/CSS.<ul>
+<li><em>Los servidores Linux distinguen entre mayúsculas y minúsculas (Case-sensitive).</em></li>
+</ul>
+</li>
+<li><strong>Evita caracteres especiales y espacios:</strong><ul>
+<li>❌ <code>Foto de perfil (1).png</code></li>
+<li>✅ <code>foto-perfil-01.png</code></li>
+</ul>
+</li>
+<li><strong>Nombres explícitos:</strong> Usar <code>user-card.component.js</code> en lugar de <code>uc.js</code>.</li>
+</ol>
+</div>
+<hr />
+<h1 id="2-estructura-de-proyectos-web">2. Estructura de Proyectos Web</h1>
+<blockquote>
+<p>Una buena arquitectura escala sin dolor y reduce la deuda técnica.</p>
+</blockquote>
+<hr />
+<h2 id="arquitectura-estandar-frontend-moderno">Arquitectura Estándar (Frontend moderno)</h2>
+<div class="highlight"><pre><span></span><code>mi-proyecto/
+├── public/                 # Assets estáticos (favicon, robots.txt)
+├── src/
+│   ├── assets/             # Imágenes, fuentes, estilos globales
+│   ├── components/         # Reutilizables (Button, Navbar)
+│   ├── views/ / pages/     # Vistas completas o rutas
+│   ├── services/ / api/    # Llamadas HTTP y lógica de API
+│   ├── utils/ / helpers/   # Funciones puras de soporte
+│   ├── App.jsx
+│   └── main.jsx
+├── .gitignore
+├── package.json
+└── README.md
+</code></pre></div>
+<hr />
+<h2 id="patrones-de-organizacion-interna">Patrones de Organización Interna</h2>
+<ul>
+<li>
+<p><strong>Por Tipo de Archivo (Proyectos pequeños):</strong>
+    <code>components/</code>, <code>styles/</code>, <code>tests/</code></p>
+</li>
+<li>
+<p><strong>Por Feature/Módulo (Proyectos medianos/grandes):</strong>
+    <code>modules/auth/</code> (contiene sus componentes, servicios y tests)
+    <code>modules/checkout/</code></p>
+</li>
+<li><strong>Patrón MVC Tradicional (Model-View-Controller)</strong> 
+Es el estándar de arquitectura clásica en frameworks orientados a servidor. Separa de forma estricta la lógica de negocio (Model), la interfaz de usuario (View) y el orquestador de flujo (Controller).Uno de los frameworks mas famosos es <strong><a href="https://laravel.com/">Laravel (PHP)</a></strong> que se organiza en base a la siguiente estructura:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mi-proyecto-laravel/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── AuthController.php
+│   │   │   └── ProductController.php
+│   │   └── Middleware/
+│   │       └── Authenticate.php
+│   └── Models/
+│       ├── User.php
+│       └── Product.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       └── products/
+│           ├── index.blade.php
+│           └── show.blade.php
+└── routes/
+    ├── api.php
+    └── web.php
+</code></pre></div>
+<ul>
+<li><strong>Patrón MVT (Model-View-Template)</strong>
+Utilizado por <strong><a href="https://www.djangoproject.com/">Django</a></strong>, es una variación de MVC donde el framework gestiona el rol del controlador tradicional (el enrutador HTTP de Django), las Views actúan como la lógica de presentación/controlador, y las Templates representan la capa visual.
+Django promueve el uso de Apps modulares dentro del propio proyecto:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mi_proyecto_django/
+├── manage.py
+├── config/                     # Configuración global del proyecto
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── productos/                  # Aplicación modular
+    ├── admin.py
+    ├── apps.py
+    ├── models.py               # Capa Model
+    ├── views.py                # Capa View (Lógica de negocio)
+    ├── urls.py                 # Enrutamiento local de la app
+    └── templates/              # Capa Template
+        └── productos/
+            ├── lista.html
+            └── detalle.html
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href=".." class="btn btn-neutral float-left" title="Inicio"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../ut01/" class="btn btn-neutral float-right" title="UT 01">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../ut01/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
