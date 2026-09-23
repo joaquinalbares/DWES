@@ -1,0 +1,38 @@
+.highlight .copy-code-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555555; /* Gris neutro y discreto */
+    background-color: #FFFFFF;
+    border: 1px solid #E1E4E6;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+    z-index: 99;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* El botón aparece de forma sutil al pasar el cursor sobre el código */
+.highlight:hover .copy-code-btn {
+    opacity: 1;
+}
+
+/* Hover sobre el propio botón (cambia levemente al azul de ReadTheDocs) */
+.highlight .copy-code-btn:hover {
+    background-color: #F3F6F6;
+    color: #2980B9;
+    border-color: #D1D4D6;
+}
+
+/* Estilo cuando ya se ha copiado con éxito */
+.highlight .copy-code-btn.copied {
+    background-color: #E8F8F5; /* Fondo verde muy tenue y elegante */
+    color: #2ECC71; /* Icono verde */
+    border-color: #A3E4D7;
+}
