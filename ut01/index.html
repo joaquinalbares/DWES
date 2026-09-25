@@ -88,22 +88,22 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3-lenguajes-de-guiones-script">3. Lenguajes de guiones (SCRIPT)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#1-como-funcionan-estas-sentencias">1. ¿Cómo funcionan estas sentencias?</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#a-sentencias-de-guiones-en-el-entorno-servidor-backend">A. Sentencias de guiones en el entorno servidor (Backend)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#b-sentencias-de-guiones-en-el-entorno-cliente-frontend">B. Sentencias de guiones en el entorno cliente (Frontend)</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#c-elementos-clave-de-las-sentencias-de-guiones">C. Elementos clave de las sentencias de guiones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#d-buenas-practicas-modernas-separacion-de-capas">D. Buenas prácticas modernas (Separación de capas)</a>
+    </li>
         </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-elementos-clave-de-las-sentencias-de-guiones">2. Elementos clave de las sentencias de guiones</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-buenas-practicas-modernas-separacion-de-capas">3. Buenas prácticas modernas (Separación de capas)</a>
     </li>
         </ul>
     </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">PRÁCTICA GUIADA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
                   </li>
               </ul>
       </div>
@@ -297,14 +297,16 @@
 <p>En el ámbito del desarrollo web, el término <strong>«sentencias de guiones en el interior de las páginas web»</strong> (o <em>embedded script statements</em> en inglés) hace referencia al <strong>código ejecutable de programación que se incluye o incrusta (<em>embedded</em>) directamente dentro de la estructura o lenguaje de marcas (HTML) de un documento web</strong>.</p>
 <p>Esta denominación proviene directamente de la traducción técnica del concepto de <em>scripting languages</em> (lenguajes de guiones o de comandos) recogido en el currículo de Formación Profesional de Informática.</p>
 <hr />
-<h3 id="1-como-funcionan-estas-sentencias">1. ¿Cómo funcionan estas sentencias?</h3>
-<p>Las páginas web estáticas tradicionales solo contienen etiquetas HTML para definir la estructura de la página. Sin embargo, para que una página sea dinámica (pueda calcular datos, consultar bases de datos o reaccionar a la interacción del usuario), es necesario <strong>intercalar o embeber bloques de código ejecutable</strong> entre las etiquetas del lenguaje de marcas.</p>
+<dl>
+<dt>¿Cómo funcionan estas sentencias?</dt>
+<dd>Las páginas web estáticas tradicionales solo contienen etiquetas HTML para definir la estructura de la página. Sin embargo, para que una página sea dinámica (pueda calcular datos, consultar bases de datos o reaccionar a la interacción del usuario), es necesario <strong>intercalar o embeber bloques de código ejecutable</strong> entre las etiquetas del lenguaje de marcas.</dd>
+</dl>
 <p>Existen dos tipos principales de «guiones» embebidos según dónde se ejecuten:</p>
 <h4 id="a-sentencias-de-guiones-en-el-entorno-servidor-backend">A. Sentencias de guiones en el entorno servidor (Backend)</h4>
 <p>Se ejecutan en el servidor web <strong>antes de que la página sea enviada al navegador del usuario</strong>. El servidor lee las sentencias de código, las procesa (por ejemplo, realizando una consulta a una base de datos) e inyecta el resultado en formato HTML puro en el documento final que recibe el cliente.</p>
 <div class="admonition note">
 <p class="admonition-title">Nuestra elección</p>
-<p>El Lenguaje principal que vamos a aprender en este módulo es <strong>PHP</strong>.</p>
+<p>El Lenguaje principal que vamos a aprender en este módulo es <strong>PHP</strong>, aunque existen otros como <strong>ASP</strong>, o incluso <strong>java</strong>.</p>
 </div>
 <p><strong>Ejemplo de sentencias embebidas en PHP:</strong></p>
 <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
@@ -347,7 +349,7 @@
 </code></pre></div>
 <p>Las etiquetas <code>&lt;script&gt; ... &lt;/script&gt;</code> delimitan el código de guión interpretable por el navegador web.</p>
 <hr />
-<h3 id="2-elementos-clave-de-las-sentencias-de-guiones">2. Elementos clave de las sentencias de guiones</h3>
+<h4 id="c-elementos-clave-de-las-sentencias-de-guiones">C. Elementos clave de las sentencias de guiones</h4>
 <p>Cuando escribes sentencias de guiones embebidas, utilizas elementos fundamentales de programación como:</p>
 <ol>
 <li>
@@ -364,7 +366,7 @@
 </li>
 </ol>
 <hr />
-<h3 id="3-buenas-practicas-modernas-separacion-de-capas">3. Buenas prácticas modernas (Separación de capas)</h3>
+<h4 id="d-buenas-practicas-modernas-separacion-de-capas">D. Buenas prácticas modernas (Separación de capas)</h4>
 <p>Aunque es perfectamente válido escribir guiones embebidos dentro del HTML para páginas sencillas o en motores de plantillas (como Blade en Laravel o Twig en Symfony), las mejores prácticas de desarrollo web recomiendan <strong>separar la lógica de negocio de la presentación</strong> (mediante patrones como el <strong>MVC</strong> - Modelo Vista Controlador).</p>
 <p>De este modo, se evita mezclar código excesivo de programación en medio de las etiquetas de maquetación HTML, haciendo que el proyecto sea mucho más fácil de mantener y escalar.</p>
               
@@ -372,6 +374,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
         <a href="../ut00/" class="btn btn-neutral float-left" title="Estandares de renombrado de archivos"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../practica01/" class="btn btn-neutral float-right" title="PRÁCTICA GUIADA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -396,6 +399,8 @@
     
       <span><a href="../ut00/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
+    
+      <span><a href="../practica01/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
   </span>
 </div>

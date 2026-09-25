@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST) - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "PR\u00c1CTICA DE AULA 02: INICIACI\u00d3N A POSTMAN Y PETICIONES HTTP (GET / POST)";
+        var properdocs_page_input_path = "practica02.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">Estandares de renombrado de archivos</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - Lenguajes de guiones (script) cliente/serviror</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">PRÁCTICA GUIADA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-de-aula-02-iniciacion-a-postman-y-peticiones-http-get-post">PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</h1>
+<h2 id="paso-1-creacion-de-archivo-php">PASO 1: CREACIÓN DE ARCHIVO PHP</h2>
+<p>Abre la carpeta en VS Code y creao modifica el archivo <code>index.php</code> con el siguiente código:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Indicamos al cliente que la respuesta siempre será en formato JSON</span>
+<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/json; charset=UTF-8&quot;</span><span class="p">);</span>
+
+<span class="nv">$metodo</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">&#39;GET&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Lectura de parámetros enviados por la URL (Query Params)</span>
+    <span class="nv">$categoria</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;todas&#39;</span><span class="p">;</span>
+
+    <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
+        <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metodo&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Consulta realizada correctamente&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;categoria_filtrada&quot;</span> <span class="o">=&gt;</span> <span class="nv">$categoria</span>
+    <span class="p">]);</span>
+
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Lectura del cuerpo de la petición enviado en JSON</span>
+    <span class="nv">$input</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;php://input&#39;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+
+    <span class="c1">// Validación básica de campos obligatorios</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">&#39;usuario&#39;</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span> <span class="c1">// Bad Request</span>
+        <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
+            <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Faltan datos obligatorios: &#39;usuario&#39; y &#39;email&#39;&quot;</span>
+        <span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span> <span class="c1">// Created</span>
+        <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
+            <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;metodo&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Usuario registrado con éxito&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datos_recibidos&quot;</span> <span class="o">=&gt;</span> <span class="nv">$input</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">405</span><span class="p">);</span> <span class="c1">// Method Not Allowed</span>
+    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span><span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Método no soportado&quot;</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="paso-2-pruebas-en-postman-35-min">PASO 2: PRUEBAS EN POSTMAN (35 MIN)</h2>
+<p>Abre Postman y crea una nueva <strong>Collection</strong> llamada <strong>"DWES - PRACTICA 01"</strong>.</p>
+<hr />
+<h3 id="request-1-peticion-get-con-query-parameters-15-min">Request 1: Petición <code>GET</code> con Query Parameters (15 min)</h3>
+<ol>
+<li>Haz clic en <strong>New Request</strong> y ponle de nombre <code>01 - Obtener Categoria</code>.</li>
+<li>Selecciona el método <strong><code>GET</code></strong>.</li>
+<li>En la barra de URL introduce: <code>[http://misitio.test](http://misitio.test)</code></li>
+<li>Selecciona la pestaña <strong>Params</strong> debajo de la URL y añade la siguiente fila:</li>
+<li><strong>Key:</strong> <code>categoria</code></li>
+<li>
+<p><strong>Value:</strong> <code>portatiles</code></p>
+</li>
+<li>
+<p>Observa cómo la URL cambia automáticamente a <code>[http://misitio.test?categoria=portatiles](http://misitio.test?categoria=portatiles)</code>.</p>
+</li>
+<li>Haz clic en <strong>Send</strong>.</li>
+</ol>
+<h4 id="verificacion">🔍 Verificación:</h4>
+<ul>
+<li>Código de respuesta: <strong><code>200 OK</code></strong>.</li>
+<li>En el panel de respuesta (<em>Body</em>), verás un JSON donde <code>"categoria_filtrada"</code> vale <code>"portatiles"</code>.</li>
+</ul>
+<hr />
+<h4 id="request-2-peticion-post-enviando-un-json-20-min">Request 2: Petición <code>POST</code> enviando un JSON (20 min)</h4>
+<ol>
+<li>Crea una nueva petición en la colección llamada <code>02 - Crear Usuario</code>.</li>
+<li>Selecciona el método <strong><code>POST</code></strong>.</li>
+<li>En la URL escribe: <code>[http://misitio.test](http://misitio.test)</code></li>
+<li>Ve a la pestaña <strong>Body</strong>, selecciona la opción <strong>raw</strong> y cambia el desplegable lateral a <strong>JSON</strong>.</li>
+<li>
+<p>Pega la siguiente estructura en el área de texto:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;carlos@ieslosalbares.es&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Haz clic en <strong>Send</strong>.</p>
+</li>
+</ol>
+<h4 id="verificacion-y-pruebas-de-fallo">🔍 Verificación y Pruebas de Fallo:</h4>
+<ul>
+<li><strong>Prueba Correcta:</strong> Devuelve un código <strong><code>201 Created</code></strong> confirmando que el servidor ha leído el usuario y el email.</li>
+<li><strong>Prueba de Error (Bad Request):</strong> Borra la línea del <code>"email"</code> en tu JSON y reenvía la petición. Comprueba que el servidor responde con un código <strong><code>400 Bad Request</code></strong> y un mensaje de error.</li>
+</ul>
+<hr />
+<h3 id="5-trabajo-y-registro-en-libreta-de-clase-libreta">5. TRABAJO Y REGISTRO EN LIBRETA DE CLASE <code>[LIBRETA]</code></h3>
+<p>Copia y responde en tu cuaderno personal las siguientes preguntas al finalizar la práctica:</p>
+<ol>
+<li><strong>[LIBRETA]</strong> ¿Cuál es la diferencia visual y técnica entre enviar el parámetro <code>categoria</code> mediante el método <code>GET</code> frente a enviar <code>usuario</code> y <code>email</code> en la petición <code>POST</code>?</li>
+<li><strong>[LIBRETA]</strong> ¿Por qué en PHP no se puede usar la variable <code>$_POST</code> para leer datos cuando los enviamos desde Postman en formato <code>JSON</code> (raw), y qué función usamos en su lugar?</li>
+<li><strong>[LIBRETA]</strong> Completa la tabla en tu cuaderno:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Pestaña usada en Postman</th>
+<th style="text-align: left;">Código HTTP Correcto</th>
+<th style="text-align: left;">Código HTTP cuando faltan datos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>GET</strong></td>
+<td style="text-align: left;"><em>Params</em> (Query)</td>
+<td style="text-align: left;"><code>200 OK</code></td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>POST</strong></td>
+<td style="text-align: left;"><em>Body</em> (raw JSON)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
