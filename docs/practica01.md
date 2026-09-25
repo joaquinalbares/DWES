@@ -30,19 +30,17 @@ La ruta habitual en nuestro caso, ya que usamos Lerd/Herd con la versión 8.4 de
 
 Abre la pestaña de extensiones en VS Code (`Ctrl + Shift + X` o `Cmd + Shift + X`) e instala las siguientes extensiones:
 
-1. **PHP Intelephense** *(por Ben Mewburn)*:
-* *Función:* El motor de Inteligencia de Código más potente para PHP. Proporciona autocompletado, navegación a definiciones (`F12`), verificación de tipos y detección de errores sintácticos en tiempo real.
-
+1. **PHP Intelephense** *(por Ben Mewburn)*: 
+  *Función:* El motor de Inteligencia de Código más potente para PHP. Proporciona autocompletado, navegación a definiciones (`F12`), verificación de tipos y detección de errores sintácticos en tiempo real.
 
 2. **PHP Debug** *(por Xdebug)*:
-* *Función:* Permite pausar la ejecución del código con puntos de interrupción (*breakpoints*) para inspeccionar variables.
-
+  *Función:* Permite pausar la ejecución del código con puntos de interrupción (*breakpoints*) para inspeccionar variables.
 
 3. **PHP CS Fixer** *(por junstyle)*:
-* *Función:* Formatea el código PHP automáticamente según los estándares internacionales de codificación (**PSR-12**).
+  *Función:* Formatea el código PHP automáticamente según los estándares internacionales de codificación (**PSR-12**).
 
 4. **PHP** *(por devsense)*:
-* *Función:* Proporciona una serie de herramientas para PHP.
+  *Función:* Proporciona una serie de herramientas para PHP.
 
 Una vez instaladas, verifica que aparecen en la lista de extensiones:
 

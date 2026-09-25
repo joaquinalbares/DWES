@@ -5,12 +5,13 @@ nav:
       - Estandares de renombrado de archivos: ut00.md
   - BLOQUE 1:
       - UT01 - Lenguajes de guiones (script) cliente/serviror: ut01.md
-      - practica01.md
+      - PRACTICA 01: practica01.md
+      - PRACTICA 02: practica02.md
 theme:
   name: readthedocs
   locale: es
   features:
-    - content.code.copy 
+    - content.code.copy
 
 markdown_extensions:
   - pymdownx.superfences
