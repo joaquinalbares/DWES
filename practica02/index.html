@@ -59,9 +59,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#paso-1-creacion-de-archivo-php">PASO 1: CREACIÓN DE ARCHIVO PHP</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#paso-2-pruebas-en-postman-35-min">PASO 2: PRUEBAS EN POSTMAN (35 MIN)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#paso-2-pruebas-en-postman">PASO 2: PRUEBAS EN POSTMAN</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#request-1-peticion-get-con-query-parameters-15-min">Request 1: Petición GET con Query Parameters (15 min)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#request-1-peticion-get-con-query-parameters">Request 1: Petición GET con "Query Parameters"</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#verificacion">🔍 Verificación:</a>
     </li>
@@ -104,11 +104,12 @@
               
                 <h1 id="practica-de-aula-02-iniciacion-a-postman-y-peticiones-http-get-post">PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</h1>
 <h2 id="paso-1-creacion-de-archivo-php">PASO 1: CREACIÓN DE ARCHIVO PHP</h2>
-<p>Abre la carpeta en VS Code y creao modifica el archivo <code>index.php</code> con el siguiente código:</p>
+<p>Abre la carpeta <code>misitio</code>en VS Code y crea o modifica el archivo <code>index.php</code> con el siguiente código:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Indicamos al cliente que la respuesta siempre será en formato JSON</span>
 <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/json; charset=UTF-8&quot;</span><span class="p">);</span>
 
+<span class="c1">//Obtenemos el método de envío de datos del cliente</span>
 <span class="nv">$metodo</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">&#39;GET&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -150,10 +151,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="paso-2-pruebas-en-postman-35-min">PASO 2: PRUEBAS EN POSTMAN (35 MIN)</h2>
+<h2 id="paso-2-pruebas-en-postman">PASO 2: PRUEBAS EN POSTMAN</h2>
 <p>Abre Postman y crea una nueva <strong>Collection</strong> llamada <strong>"DWES - PRACTICA 01"</strong>.</p>
 <hr />
-<h3 id="request-1-peticion-get-con-query-parameters-15-min">Request 1: Petición <code>GET</code> con Query Parameters (15 min)</h3>
+<h3 id="request-1-peticion-get-con-query-parameters">Request 1: Petición <code>GET</code> con "Query Parameters"</h3>
 <ol>
 <li>Haz clic en <strong>New Request</strong> y ponle de nombre <code>01 - Obtener Categoria</code>.</li>
 <li>Selecciona el método <strong><code>GET</code></strong>.</li>
