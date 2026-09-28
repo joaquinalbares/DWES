@@ -78,9 +78,3 @@ Añade las siguientes claves de configuración en tu archivo `settings.json`:
 }
 
 ```
-
-/// admonition | **Atención:**
-    type: attention
-    
-Reemplaza la ruta de la primera línea por la ruta real anotada en el Paso 1.
-///
