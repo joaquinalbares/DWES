@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Ut03 - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Ut03";
+        var properdocs_page_input_path = "ut03.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÄSCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">Ut03</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <ol>
+<li>Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>RA</th>
+<th>Criterios de evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han utilizado bucles y se ha verificado su funcionamiento.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han creado y utilizado funciones.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han utilizado formularios web para interactuar con el usuario del navegador web.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han empleado métodos para recuperar la información introducida en el formulario.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Se han añadido comentarios al código.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-estructuras-de-control-embebidas">7. ESTRUCTURAS DE CONTROL EMBEBIDAS</h3>
+<p>Para controlar la generación dinámica del lenguaje de marcas, se utilizan sintaxis alternativas en las estructuras de control dentro del HTML.</p>
+<h4 id="a-condicional-embebido-if-else">A. Condicional Embebido (<code>if / else</code>)</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php $usuarioAutenticado = true; ?&gt;</span>
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Panel de Control<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php if ($usuarioAutenticado): ?&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Bienvenido, Administrador<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Tienes acceso al panel privado.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php else: ?&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Acceso Denegado<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Por favor, inicia sesión.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php endif; ?&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="b-bucles-embebidos-foreach">B. Bucles Embebidos (<code>foreach</code>)</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php </span>
+<span class="cp">$productos = [&quot;Teclado Mecánico&quot;, &quot;Ratón Óptico&quot;, &quot;Monitor 27&#39;&#39;&quot;];</span>
+<span class="cp">?&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Catálogo de Productos<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php foreach ($productos as $producto): ?&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?= $producto ?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php endforeach; ?&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT02 - INTEGRACI\u00d3N DEL C\u00d3DIGO EN LENGUAJES DE MARCAS";
+        var properdocs_page_input_path = "ut02.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÄSCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-ra-y-contenidos">1. RA Y CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#criterios-de-evaluacion">CRITERIOS DE EVALUACIÓN</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contenidos-minimos">CONTENIDOS MÍNIMOS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#calificacion">CALIFICACIÓN:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-contenidos">2. CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-insercion-de-codigo-y-tecnologias-asociadas">1. INSERCIÓN DE CÓDIGO Y TECNOLOGÍAS ASOCIADAS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-flujo-de-obtencion-del-lenguaje-de-marcas">A. Flujo de Obtención del Lenguaje de Marcas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-principales-tecnologias-asociadas">B. Principales Tecnologías Asociadas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-sintaxis-basica-y-etiquetas-de-insercion-en-php">2. SINTAXIS BÁSICA Y ETIQUETAS DE INSERCIÓN EN PHP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-etiquetas-de-apertura-y-cierre">A. Etiquetas de Apertura y Cierre</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-directivas-de-configuracion">B. Directivas de Configuración</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#c-comentarios">C. Comentarios</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-tipos-de-datos-y-conversiones">3. TIPOS DE DATOS Y CONVERSIONES</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-tipos-escalares-principales">A. Tipos Escalares Principales</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-conversion-entre-tipos-de-datos-type-casting">B. Conversión entre Tipos de Datos (Type Casting)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-variables-constantes-y-ambitos">4. VARIABLES, CONSTANTES Y ÁMBITOS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-variables-y-asignaciones">A. Variables y Asignaciones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-constantes">B. Constantes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#c-ambitos-de-las-variables-scope">C. Ámbitos de las Variables (Scope)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-variables-del-sistema-superglobals">5. VARIABLES DEL SISTEMA (SUPERGLOBALS)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-operadores-en-php">6. OPERADORES EN PHP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-operadores-aritmeticos-y-de-asignacion">A. Operadores Aritméticos y de Asignación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-operadores-de-comparacion-e-identidad">B. Operadores de Comparación e Identidad</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">BLOQUE 1</li>
+      <li class="breadcrumb-item active">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut-02-integracion-del-codigo-en-lenguajes-de-marcas">UT 02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</h1>
+<h2 id="1-ra-y-contenidos">1. RA Y CONTENIDOS</h2>
+<h3 id="resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</h3>
+<p>Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</p>
+<h3 id="criterios-de-evaluacion">CRITERIOS DE EVALUACIÓN</h3>
+<table>
+<thead>
+<tr>
+<th>Criterios de evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.</td>
+</tr>
+<tr>
+<td>Se han identificado las principales tecnologías asociadas.</td>
+</tr>
+<tr>
+<td>Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.</td>
+</tr>
+<tr>
+<td>Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.</td>
+</tr>
+<tr>
+<td>Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.</td>
+</tr>
+<tr>
+<td>Se han utilizado directivas para modificar el comportamiento predeterminado.</td>
+</tr>
+<tr>
+<td>Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.</td>
+</tr>
+<tr>
+<td>Se han identificado los ámbitos de utilización de las variables.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contenidos-minimos">CONTENIDOS MÍNIMOS</h3>
+<p>− Inserción de código en páginas web:</p>
+<ul>
+<li>Lenguajes embebidos en HTML.</li>
+<li>Tecnologías asociadas: PHP, ASP, JSP, Python Servlets, entre otras.</li>
+<li>Obtención del lenguaje de marcas a mostrar en el cliente.</li>
+<li>Etiquetas para inserción de código.</li>
+<li>Tipos de datos. Conversiones entre tipos de datos.</li>
+<li>Variables. Constantes.</li>
+<li>Asignaciones.</li>
+<li>Operadores.</li>
+<li>Variables del sistema.</li>
+</ul>
+<p>− Selección y utilización de estructuras de programación embebidas en lenguajes de marcas.</p>
+<h4 id="calificacion">CALIFICACIÓN:</h4>
+<table>
+<thead>
+<tr>
+<th>CUADERNO DE CLASE</th>
+<th>CUESTIONARIO</th>
+<th>EJERCICIOS DE CLASE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20%</td>
+<td>20%</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-contenidos">2. CONTENIDOS</h2>
+<h3 id="1-insercion-de-codigo-y-tecnologias-asociadas">1. INSERCIÓN DE CÓDIGO Y TECNOLOGÍAS ASOCIADAS</h3>
+<p>El mecanismo de generación de páginas web dinámicas en el servidor consiste en <strong>embeber o incrustar bloques de código fuente ejecutable dentro de un documento de lenguaje de marcas (HTML)</strong>.</p>
+<div class="highlight"><pre><span></span><code>┌────────────────────────────────────────────────────────┐
+│ Servidor Web                                           │
+│ ┌──────────────────────┐      ┌──────────────────────┐ │
+│ │ Documento HTML       │ ──&gt;  │ Intérprete (ej. PHP) │ │
+│ │  + Código Embebido   │      │ Procesa el código    │ │
+│ └──────────────────────┘      └──────────┬───────────┘ │
+└──────────────────────────────────────────┼─────────────┘
+                                           │ Genera HTML puro
+                                           ▼
+┌────────────────────────────────────────────────────────┐
+│ Navegador Cliente (Recibe sólo el resultado final)     │
+│ &lt;h1&gt;Hola Carlos&lt;/h1&gt;                                   │
+└────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h4 id="a-flujo-de-obtencion-del-lenguaje-de-marcas">A. Flujo de Obtención del Lenguaje de Marcas</h4>
+<ol>
+<li>El cliente solicita un archivo con extensión ejecutable (ej. <code>.php</code>).</li>
+<li>El servidor web analiza el documento e identifica los bloques delimitados por etiquetas especiales.</li>
+<li>El intérprete ejecuta las sentencias, procesa variables, operaciones o accesos a bases de datos.</li>
+<li>Las sentencias de salida (como <code>echo</code> o <code>print</code>) sustituyen al bloque de código original, transformándolo en HTML puro.</li>
+<li>El cliente recibe únicamente el resultado final en lenguaje de marcas sin ver el código fuente servidor.</li>
+</ol>
+<h4 id="b-principales-tecnologias-asociadas">B. Principales Tecnologías Asociadas</h4>
+<p>A continuación se listan las principales tecnologías asociadas con el lenguaje de marcas con código embebido PHP:</p>
+<table>
+<thead>
+<tr>
+<th>Tecnología</th>
+<th>Desarrollador</th>
+<th>Descripción / Entorno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PHP</strong></td>
+<td>The PHP Group / Open Source</td>
+<td>Lenguaje interpreted multipropósito, ampliamente extendido y nativamente embebible en HTML.</td>
+</tr>
+<tr>
+<td><strong>ASP.NET</strong></td>
+<td>Microsoft</td>
+<td>Framework para ejecución de código servidor (.NET) en páginas C# o VB.</td>
+</tr>
+<tr>
+<td><strong>JSP / Servlets</strong></td>
+<td>Oracle / Jakarta EE</td>
+<td>JavaServer Pages; compilan a Servlets de Java para ejecutar lógica en servidores como Tomcat.</td>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td>Python Software Foundation</td>
+<td>Utilizado mediante frameworks web (WSGI/ASGI) o motores de plantillas como Jinja2.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-sintaxis-basica-y-etiquetas-de-insercion-en-php">2. SINTAXIS BÁSICA Y ETIQUETAS DE INSERCIÓN EN PHP</h3>
+<h4 id="a-etiquetas-de-apertura-y-cierre">A. Etiquetas de Apertura y Cierre</h4>
+<p>Para delimitar dónde empieza y termina el código en servidor, se utilizan las siguientes etiquetas:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Etiqueta estándar completa --&gt;</span>
+<span class="cp">&lt;?php </span>
+<span class="cp">    echo &quot;Código ejecutado en el servidor&quot;; </span>
+<span class="cp">?&gt;</span>
+
+<span class="cm">&lt;!-- Etiqueta corta de impresión (Short Echo Tag) --&gt;</span>
+<span class="cp">&lt;?= &quot;Impresión directa equivalente a &lt;?php echo ...&quot; ?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> La instrucción o sentencia simple siempre finaliza obligatoriamente con punto y coma (<code>;</code>).</p>
+</blockquote>
+<h4 id="b-directivas-de-configuracion">B. Directivas de Configuración</h4>
+<p>Mediante la directiva <code>ini_set()</code> o modificando el archivo <code>php.ini</code>, podemos alterar el comportamiento predeterminado de la ejecución (por ejemplo, la visualización de errores o el uso de <em>short tags</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Modificar la directiva para mostrar errores en entorno de desarrollo</span>
+<span class="nb">ini_set</span><span class="p">(</span><span class="s1">&#39;display_errors&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="c-comentarios">C. Comentarios</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Comentario de una sola línea</span>
+
+<span class="c1"># Comentario de una sola línea tipo consola</span>
+
+<span class="cm">/*</span>
+<span class="cm">  Comentario multilínea</span>
+<span class="cm">  útil para bloques extensos</span>
+<span class="cm">*/</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="3-tipos-de-datos-y-conversiones">3. TIPOS DE DATOS Y CONVERSIONES</h3>
+<p>PHP es un lenguaje de <strong>tipado débil y dinámico</strong>. La variable adopta el tipo de dato según el valor asignado.</p>
+<h4 id="a-tipos-escalares-principales">A. Tipos Escalares Principales</h4>
+<ul>
+<li><strong>Booleano (<code>bool</code>):</strong> <code>true</code> o <code>false</code>.</li>
+<li><strong>Entero (<code>int</code>):</strong> Números enteros (ej. <code>42</code>, <code>-10</code>).</li>
+<li><strong>Coma flotante (<code>float</code>):</strong> Números con decimales (ej. <code>19.99</code>).</li>
+<li><strong>Cadena de texto (<code>string</code>):</strong> Secuencia de caracteres delimitada por comillas simples (<code>' '</code>) o dobles (<code>" "</code>).</li>
+</ul>
+<h4 id="b-conversion-entre-tipos-de-datos-type-casting">B. Conversión entre Tipos de Datos (<em>Type Casting</em>)</h4>
+<p>Podemos forzar la conversión de un tipo de dato a otro usando operadores de fundición (<em>casting</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;105.5 productos&quot;</span><span class="p">;</span>
+
+<span class="c1">// Conversión explícita</span>
+<span class="nv">$entero</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$cadena</span><span class="p">;</span>      <span class="c1">// Resultado: 105</span>
+<span class="nv">$flotante</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span><span class="nv">$cadena</span><span class="p">;</span>  <span class="c1">// Resultado: 105.5</span>
+<span class="nv">$booleano</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span><span class="nv">$entero</span><span class="p">;</span>   <span class="c1">// Resultado: true</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="4-variables-constantes-y-ambitos">4. VARIABLES, CONSTANTES Y ÁMBITOS</h3>
+<h4 id="a-variables-y-asignaciones">A. Variables y Asignaciones</h4>
+<p>Las variables se identifican siempre con el símbolo <code>$</code> y siguen la regla de nombrado <em>kebab-case</em> o <em>camelCase</em> (deben comenzar con una letra o guion bajo).</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$nombreUsuario</span> <span class="o">=</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">;</span> <span class="c1">// Asignación de cadena</span>
+<span class="nv">$edad</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>               <span class="c1">// Asignación de entero</span>
+<span class="nv">$precio</span> <span class="o">=</span> <span class="mf">49.95</span><span class="p">;</span>         <span class="c1">// Asignación de flotante</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="b-constantes">B. Constantes</h4>
+<p>Representan valores fijos que no cambian durante la ejecución del script.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Definición tradicional</span>
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;IMPUESTO_IVA&quot;</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">);</span>
+
+<span class="c1">// Definición moderna (palabra clave const)</span>
+<span class="k">const</span> <span class="no">NOMBRE_SITIO</span> <span class="o">=</span> <span class="s2">&quot;IES Los Albares&quot;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nx">IMPUESTO_IVA</span><span class="p">;</span> <span class="c1">// Muestra: 0.21</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="c-ambitos-de-las-variables-scope">C. Ámbitos de las Variables (<em>Scope</em>)</h4>
+<p>El ámbito determina la visibilidad o alcance de una variable en el programa:</p>
+<ol>
+<li><strong>Ámbito Local:</strong> Variables declaradas dentro de una función; solo son accesibles desde el interior de la misma.</li>
+<li><strong>Ámbito Global:</strong> Variables declaradas fuera de las funciones. Para acceder a ellas dentro de una función se requiere la palabra clave <code>global</code> o la matriz <code>$GLOBALS</code>.</li>
+<li><strong>Ámbito Estático (<code>static</code>):</strong> Mantiene su valor entre sucesivas llamadas a una función.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$variableGlobal</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">probarAmbito</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">global</span> <span class="nv">$variableGlobal</span><span class="p">;</span> <span class="c1">// Importar variable global</span>
+    <span class="k">static</span> <span class="nv">$contador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// Se conserva entre llamadas</span>
+
+    <span class="nv">$contador</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Contador: &quot;</span> <span class="o">.</span> <span class="nv">$contador</span> <span class="o">.</span> <span class="s2">&quot; | Global: &quot;</span> <span class="o">.</span> <span class="nv">$variableGlobal</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="5-variables-del-sistema-superglobals">5. VARIABLES DEL SISTEMA (SUPERGLOBALS)</h3>
+<p>PHP proporciona un conjunto de variables asociativas predefinidas accesibles desde cualquier punto del código:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$_GET</code></td>
+<td>Captura los parámetros pasados en la URL (Query String).</td>
+</tr>
+<tr>
+<td><code>$_POST</code></td>
+<td>Recoge los datos enviados mediante un formulario HTML por el método POST.</td>
+</tr>
+<tr>
+<td><code>$_SERVER</code></td>
+<td>Contiene metadatos de las cabeceras, rutas y entorno de ejecución del servidor.</td>
+</tr>
+<tr>
+<td><code>$_COOKIE</code></td>
+<td>Guarda los valores transmitidos por las cookies del cliente.</td>
+</tr>
+<tr>
+<td><code>$_SESSION</code></td>
+<td>Gestiona variables persistentes entre distintas peticiones de un usuario.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-operadores-en-php">6. OPERADORES EN PHP</h3>
+<h4 id="a-operadores-aritmeticos-y-de-asignacion">A. Operadores Aritméticos y de Asignación</h4>
+<p>Estos operadores se encargar de realizar operaciones matemáticas básicas y asignaciones de variables.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nv">$suma</span> <span class="o">=</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>       <span class="c1">// 13</span>
+<span class="nv">$modulo</span> <span class="o">=</span> <span class="nv">$a</span> <span class="o">%</span> <span class="nv">$b</span><span class="p">;</span>     <span class="c1">// 1 (resto de la división)</span>
+<span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>               <span class="c1">// Equivalente a $a = $a + 5;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="b-operadores-de-comparacion-e-identidad">B. Operadores de Comparación e Identidad</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$num</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">;</span>
+
+<span class="c1">// Comparación débil (Igualdad en valor)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$num</span> <span class="o">==</span> <span class="mi">10</span><span class="p">);</span>  <span class="c1">// true</span>
+
+<span class="c1">// Comparación estricta (Igualdad en valor y tipo)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$num</span> <span class="o">===</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="c1">// Operador de fusión de nulos (Null Coalescing)</span>
+<span class="nv">$usuario</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;Invitado&#39;</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut01/" class="btn btn-neutral float-left" title="UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ut01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
