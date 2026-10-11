@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST) - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <title>UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST) - Desarrollo Web en Entorno Servidor 2026/27</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var properdocs_page_name = "PR\u00c1CTICA DE AULA 02: INICIACI\u00d3N A POSTMAN Y PETICIONES HTTP (GET / POST)";
-        var properdocs_page_input_path = "practica02.md";
+        var properdocs_page_name = "UT01P01 - INICIACI\u00d3N A POSTMAN Y PETICIONES HTTP (GET / POST)";
+        var properdocs_page_input_path = "ut01p01.md";
         var properdocs_page_url = null;
       </script>
     
@@ -55,6 +55,35 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#paso-1-creacion-de-archivo-php">PASO 1: CREACIÓN DE ARCHIVO PHP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#paso-2-pruebas-en-postman">PASO 2: PRUEBAS EN POSTMAN</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#request-1-peticion-get-con-query-parameters">Request 1: Petición GET con "Query Parameters"</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#verificacion">🔍 Verificación:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#request-2-peticion-post-enviando-un-json-20-min">Request 2: Petición POST enviando un JSON (20 min)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verificacion-y-pruebas-de-fallo">🔍 Verificación y Pruebas de Fallo:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-trabajo-y-registro-en-libreta-de-clase-libreta">5. TRABAJO Y REGISTRO EN LIBRETA DE CLASE [LIBRETA]</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -70,7 +99,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
-      <li class="breadcrumb-item active">PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</li>
+          <li class="breadcrumb-item">PRÁCTICAS</li>
+      <li class="breadcrumb-item active">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -79,52 +109,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="practica-de-aula-02-iniciacion-a-postman-y-peticiones-http-get-post">PRÁCTICA DE AULA 02: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</h1>
+                <h1 id="ut01-practica-01-iniciacion-a-postman-y-peticiones-http-get-post">UT01 PRACTICA 01: INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</h1>
 <h2 id="paso-1-creacion-de-archivo-php">PASO 1: CREACIÓN DE ARCHIVO PHP</h2>
 <p>Abre la carpeta <code>misitio</code>en VS Code y crea o modifica el archivo <code>index.php</code> con el siguiente código:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Indicamos al cliente que la respuesta siempre será en formato JSON</span>
-<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/json; charset=UTF-8&quot;</span><span class="p">);</span>
+<span class="nb">header</span><span class="p">(</span><span class="s2">"Content-Type: application/json; charset=UTF-8"</span><span class="p">);</span>
 
 <span class="c1">//Obtenemos el método de envío de datos del cliente</span>
-<span class="nv">$metodo</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
+<span class="nv">$metodo</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">];</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">&#39;GET&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">'GET'</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Lectura de parámetros enviados por la URL (Query Params)</span>
-    <span class="nv">$categoria</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;todas&#39;</span><span class="p">;</span>
+    <span class="nv">$categoria</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'categoria'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'todas'</span><span class="p">;</span>
 
     <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
     <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
-        <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;metodo&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Consulta realizada correctamente&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;categoria_filtrada&quot;</span> <span class="o">=&gt;</span> <span class="nv">$categoria</span>
+        <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span><span class="p">,</span>
+        <span class="s2">"metodo"</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+        <span class="s2">"mensaje"</span> <span class="o">=&gt;</span> <span class="s2">"Consulta realizada correctamente"</span><span class="p">,</span>
+        <span class="s2">"categoria_filtrada"</span> <span class="o">=&gt;</span> <span class="nv">$categoria</span>
     <span class="p">]);</span>
 
-<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$metodo</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Lectura del cuerpo de la petición enviado en JSON</span>
-    <span class="nv">$input</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;php://input&#39;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+    <span class="nv">$input</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'php://input'</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
 
     <span class="c1">// Validación básica de campos obligatorios</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">&#39;usuario&#39;</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">'usuario'</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]))</span> <span class="p">{</span>
         <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span> <span class="c1">// Bad Request</span>
         <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
-            <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Faltan datos obligatorios: &#39;usuario&#39; y &#39;email&#39;&quot;</span>
+            <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"error"</span><span class="p">,</span>
+            <span class="s2">"mensaje"</span> <span class="o">=&gt;</span> <span class="s2">"Faltan datos obligatorios: 'usuario' y 'email'"</span>
         <span class="p">]);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span> <span class="c1">// Created</span>
         <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span>
-            <span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;metodo&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Usuario registrado con éxito&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;datos_recibidos&quot;</span> <span class="o">=&gt;</span> <span class="nv">$input</span>
+            <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span><span class="p">,</span>
+            <span class="s2">"metodo"</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+            <span class="s2">"mensaje"</span> <span class="o">=&gt;</span> <span class="s2">"Usuario registrado con éxito"</span><span class="p">,</span>
+            <span class="s2">"datos_recibidos"</span> <span class="o">=&gt;</span> <span class="nv">$input</span>
         <span class="p">]);</span>
     <span class="p">}</span>
 
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">405</span><span class="p">);</span> <span class="c1">// Method Not Allowed</span>
-    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span><span class="s2">&quot;status&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;mensaje&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Método no soportado&quot;</span><span class="p">]);</span>
+    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">([</span><span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"error"</span><span class="p">,</span> <span class="s2">"mensaje"</span> <span class="o">=&gt;</span> <span class="s2">"Método no soportado"</span><span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
@@ -161,8 +191,8 @@
 <li>
 <p>Pega la siguiente estructura en el área de texto:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;carlos@ieslosalbares.es&quot;</span>
+<span class="w">  </span><span class="nt">"usuario"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carlos"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carlos@ieslosalbares.es"</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -210,6 +240,9 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut00p01/" class="btn btn-neutral float-left" title="UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
 
   <hr/>
 
@@ -230,6 +263,8 @@
   <div class="rst-versions" role="note" aria-label="Versiones">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../ut00p01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
   </span>

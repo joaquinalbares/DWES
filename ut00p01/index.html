@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>PRÁCTICA GUIADA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <title>UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP - Desarrollo Web en Entorno Servidor 2026/27</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var properdocs_page_name = "PR\u00c1CTICA GUIADA 01: CONFIGURACI\u00d3N DE VS CODE PARA DESARROLLO EN PHP";
-        var properdocs_page_input_path = "practica01.md";
+        var properdocs_page_name = "UT00P01 - CONFIGURACI\u00d3N DE VS CODE PARA DESARROLLO EN PHP";
+        var properdocs_page_input_path = "ut00p01.md";
         var properdocs_page_url = null;
       </script>
     
@@ -55,6 +55,23 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#paso-1-localizacion-del-binario-de-php-10-min">PASO 1: LOCALIZACIÓN DEL BINARIO DE PHP (10 MIN)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-paso-2-extensiones-imprescindibles-20-min">4. PASO 2: EXTENSIONES IMPRESCINDIBLES (20 MIN)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-paso-3-configuracion-de-settingsjson-15-min">5. PASO 3: CONFIGURACIÓN DE settings.json (15 MIN)</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -70,7 +87,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
-      <li class="breadcrumb-item active">PRÁCTICA GUIADA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</li>
+          <li class="breadcrumb-item">PRÁCTICAS</li>
+      <li class="breadcrumb-item active">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -79,7 +97,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="practica-guiada-01-configuracion-de-vs-code-para-desarrollo-en-php">PRÁCTICA GUIADA 01:  CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</h1>
+                <h1 id="ut00-practica-01-configuracion-de-vs-code-para-desarrollo-en-php">UT00 PRACTICA 01: CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</h1>
 <h2 id="paso-1-localizacion-del-binario-de-php-10-min">PASO 1: LOCALIZACIÓN DEL BINARIO DE PHP (10 MIN)</h2>
 <p>Antes de configurar el editor, debes conocer la ruta exacta donde está instalado el ejecutable de PHP en tu sistema operativo.</p>
 <ol>
@@ -127,29 +145,33 @@
 <p>Añade las siguientes claves de configuración en tu archivo <code>settings.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="c1">// 1. Ruta al ejecutable de PHP para validación de errores</span>
-<span class="w">  </span><span class="nt">&quot;php.validate.executablePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Users/usuario/.config/herd/bin/php84/php.exe&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"php.validate.executablePath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users/usuario/.config/herd/bin/php84/php.exe"</span><span class="p">,</span>
 
 <span class="w">  </span><span class="c1">// 2. Desactivar el autocompletado nativo básico para evitar duplicados con Intelephense</span>
-<span class="w">  </span><span class="nt">&quot;php.suggest.basic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"php.suggest.basic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 
 <span class="w">  </span><span class="c1">// 3. Configuración específica para archivos PHP</span>
-<span class="w">  </span><span class="nt">&quot;[php]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bmewburn.vscode-intelephense-client&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;editor.formatOnSave&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;editor.tabSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;editor.insertSpaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="nt">"[php]"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"editor.defaultFormatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bmewburn.vscode-intelephense-client"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"editor.formatOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"editor.tabSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"editor.insertSpaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">  </span><span class="p">},</span>
 
 <span class="w">  </span><span class="c1">// 4. Versión objetivo de PHP para Intelephense</span>
-<span class="w">  </span><span class="nt">&quot;intelephense.environment.phpVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8.4&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"intelephense.environment.phpVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.4"</span><span class="p">,</span>
 
 <span class="w">  </span><span class="c1">// 5. Configuración de formateo PSR-12</span>
-<span class="w">  </span><span class="nt">&quot;php-cs-fixer.rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@PSR12&quot;</span>
+<span class="w">  </span><span class="nt">"php-cs-fixer.rules"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@PSR12"</span>
 <span class="p">}</span>
 </code></pre></div>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut03/" class="btn btn-neutral float-left" title="UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../ut01p01/" class="btn btn-neutral float-right" title="UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -171,6 +193,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../ut03/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../ut01p01/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
   </span>
 </div>

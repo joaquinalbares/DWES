@@ -103,6 +103,15 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -317,10 +326,12 @@
 <p>En el ámbito del desarrollo web, el término <strong>«sentencias de guiones en el interior de las páginas web»</strong> (o <em>embedded script statements</em> en inglés) hace referencia al <strong>código ejecutable de programación que se incluye o incrusta (<em>embedded</em>) directamente dentro de la estructura o lenguaje de marcas (HTML) de un documento web</strong>.</p>
 <p>Esta denominación proviene directamente de la traducción técnica del concepto de <em>scripting languages</em> (lenguajes de guiones o de comandos) recogido en el currículo de Formación Profesional de Informática.</p>
 <hr />
-<dl>
-<dt>¿Cómo funcionan estas sentencias?</dt>
-<dd>Las páginas web estáticas tradicionales solo contienen etiquetas HTML para definir la estructura de la página. Sin embargo, para que una página sea dinámica (pueda calcular datos, consultar bases de datos o reaccionar a la interacción del usuario), es necesario <strong>intercalar o embeber bloques de código ejecutable</strong> entre las etiquetas del lenguaje de marcas.</dd>
-</dl>
+<p>/// define
+¿Cómo funcionan estas sentencias?</p>
+<ul>
+<li>Las páginas web estáticas tradicionales solo contienen etiquetas HTML para definir la estructura de la página. Sin embargo, para que una página sea dinámica (pueda calcular datos, consultar bases de datos o reaccionar a la interacción del usuario), es necesario <strong>intercalar o embeber bloques de código ejecutable</strong> entre las etiquetas del lenguaje de marcas.</li>
+</ul>
+<p>///</p>
 <p>Existen dos tipos principales de «guiones» embebidos según dónde se ejecuten:</p>
 <h4 id="a-sentencias-de-guiones-en-el-entorno-servidor-backend">A. Sentencias de guiones en el entorno servidor (Backend)</h4>
 <p>Se ejecutan en el servidor web <strong>antes de que la página sea enviada al navegador del usuario</strong>. El servidor lee las sentencias de código, las procesa (por ejemplo, realizando una consulta a una base de datos) e inyecta el resultado en formato HTML puro en el documento final que recibe el cliente.</p>
@@ -330,7 +341,7 @@
 </div>
 <p><strong>Ejemplo de sentencias embebidas en PHP:</strong></p>
 <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;es&quot;&gt;
+&lt;html lang="es"&gt;
 &lt;head&gt;
     &lt;title&gt;Ejemplo Servidor&lt;/title&gt;
 &lt;/head&gt;
@@ -338,8 +349,8 @@
     &lt;!-- Bloque o sentencia de guión embebido en PHP --&gt;
     &lt;h1&gt;
         &lt;?php 
-            $usuario = &quot;Carlos&quot;;
-            echo &quot;Bienvenido a la web, &quot; . $usuario; 
+            $usuario = "Carlos";
+            echo "Bienvenido a la web, " . $usuario; 
         ?&gt;
     &lt;/h1&gt;
 &lt;/body&gt;
@@ -354,7 +365,7 @@
 <li><strong>Ejemplo de sentencias embebidas en JavaScript:</strong></li>
 </ul>
 <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;es&quot;&gt;
+&lt;html lang="es"&gt;
 &lt;head&gt;
     &lt;title&gt;Ejemplo Cliente&lt;/title&gt;
 &lt;/head&gt;
@@ -362,7 +373,7 @@
     &lt;!-- Bloque de guión embebido en el cliente --&gt;
     &lt;script&gt;
         let horaActual = new Date().getHours();
-        console.log(&quot;Hora detectada en cliente: &quot; + horaActual);
+        console.log("Hora detectada en cliente: " + horaActual);
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;

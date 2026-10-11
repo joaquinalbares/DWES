@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Ut03 - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <title>UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML - Desarrollo Web en Entorno Servidor 2026/27</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var properdocs_page_name = "Ut03";
+        var properdocs_page_name = "UT03 - PROGRAMACI\u00d3N EN PHP INTEGRADO EN HTML";
         var properdocs_page_input_path = "ut03.md";
         var properdocs_page_url = null;
       </script>
@@ -50,10 +50,81 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ra-y-contenidos">RA Y CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resultado-de-aprendizaje">RESULTADO DE APRENDIZAJE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contenidos">CONTENIDOS</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-estructuras-de-control-embebidas">1. ESTRUCTURAS DE CONTROL EMBEBIDAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#12-estructuras-condicionales">1.2. Estructuras Condicionales</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#13-estructuras-de-repeticion-bucles">1.3. Estructuras de Repetición (Bucles)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#14-otras-estructuras-de-control-e-inclusion-de-ficheros">1.4. Otras Estructuras de Control e Inclusión de Ficheros</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-arrays">2. ARRAYS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#funciones-principales-para-la-manipulacion-de-arrays">Funciones Principales para la Manipulación de Arrays</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#b-bucles-embebidos-foreach">B. Bucles Embebidos (foreach)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-funciones">4. FUNCIONES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-declaracion-de-funciones">4.1. Declaración de Funciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-callbacks-funciones-anonimas-y-arrow-functions">4.2. Callbacks, Funciones Anónimas y Arrow Functions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-formularios">5. FORMULARIOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-recogida-y-tipos-de-datos-en-formularios">5.1. Recogida y Tipos de Datos en Formularios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-sanitizacion-y-validacion-de-datos-de-entrada">5.2. Sanitización y Validación de Datos de Entrada</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#521-ejemplos-con-filter_input-y-filter_var">5.2.1. Ejemplos con filter_input() y filter_var()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#522-prevencion-de-xss-con-htmlspecialchars">5.2.2. Prevención de XSS con htmlspecialchars()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#53-subida-de-archivos-al-servidor">5.3. Subida de Archivos al Servidor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#531-la-superglobal-_files">5.3.1. La Superglobal $_FILES</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#532-script-completo-de-subida-segura">5.3.2. Script Completo de Subida Segura</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-comentarios">6. COMENTARIOS</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
                   </li>
               </ul>
       </div>
@@ -70,7 +141,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
-      <li class="breadcrumb-item active">Ut03</li>
+          <li class="breadcrumb-item">BLOQUE 1</li>
+      <li class="breadcrumb-item active">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -79,71 +151,257 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <ol>
-<li>Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
-</ol>
+                <h1 id="ut-03-programacion-en-php-integrado-en-html">UT 03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</h1>
+<h2 id="ra-y-contenidos">RA Y CONTENIDOS</h2>
+<h3 id="resultado-de-aprendizaje">RESULTADO DE APRENDIZAJE</h3>
+<p><strong>Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</strong></p>
 <table>
 <thead>
 <tr>
-<th>RA</th>
 <th>Criterios de evaluación</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>3</td>
 <td>Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han utilizado bucles y se ha verificado su funcionamiento.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han creado y utilizado funciones.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han utilizado formularios web para interactuar con el usuario del navegador web.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han empleado métodos para recuperar la información introducida en el formulario.</td>
 </tr>
 <tr>
-<td>3</td>
 <td>Se han añadido comentarios al código.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="7-estructuras-de-control-embebidas">7. ESTRUCTURAS DE CONTROL EMBEBIDAS</h3>
+<h3 id="contenidos">CONTENIDOS</h3>
+<ul>
+<li>Tomas de decisión.</li>
+<li>Bucles.</li>
+<li>Tipos de datos compuestos.</li>
+<li>Arrays.</li>
+<li>Funciones.</li>
+<li>Recuperación y utilización de información proveniente del cliente web.</li>
+<li>Formularios y validación</li>
+<li>Procesamiento de la información introducida en un formulario.</li>
+<li>Comentarios de cliente y de servidor.</li>
+</ul>
+<h2 id="1-estructuras-de-control-embebidas">1. ESTRUCTURAS DE CONTROL EMBEBIDAS</h2>
 <p>Para controlar la generación dinámica del lenguaje de marcas, se utilizan sintaxis alternativas en las estructuras de control dentro del HTML.</p>
-<h4 id="a-condicional-embebido-if-else">A. Condicional Embebido (<code>if / else</code>)</h4>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php $usuarioAutenticado = true; ?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Panel de Control<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="cp">&lt;?php if ($usuarioAutenticado): ?&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Bienvenido, Administrador<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Tienes acceso al panel privado.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="cp">&lt;?php else: ?&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Acceso Denegado<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Por favor, inicia sesión.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="cp">&lt;?php endif; ?&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<h3 id="12-estructuras-condicionales">1.2. Estructuras Condicionales</h3>
+<p>Permiten bifurcar la ejecución en función de expresiones booleanas.  </p>
+<p>Las estructuras condicionales de PHP son <code>if</code>, <code>if-else</code>, <code>if-elseif</code> y <code>switch</code>.</p>
+<p>La sentencia condicional más sencilla es la estructura <code>if</code>. La sintaxis general es:</p>
+<div class="highlight"><pre><span></span><code><span class="x">if (condición)</span>
+<span class="x">    instrucción;</span>
 </code></pre></div>
+<p>Cuando se utiliza un <code>if</code> se puede añadir un <code>else</code>. Las instrucciones dentro del <code>else</code> solo se ejecutan cuando la condición del <code>if</code> no se cumple.</p>
+<p>Si se anidan varias sentencias condicionales, se puede usar <code>elseif</code>, que es equivalente a <code>else if</code>.</p>
+<p>El siguiente ejemplo muestra una serie de condiciones anidadas:</p>
+<div class="highlight"><pre><span></span><code><span class="x">$nota = 7.5;</span>
+
+<span class="x">if ($nota &lt; 5) {</span>
+<span class="x">    echo "Suspenso";</span>
+<span class="x">} elseif ($nota &lt; 7) {</span>
+<span class="x">    echo "Aprobado";</span>
+<span class="x">} elseif ($nota &lt; 9) {</span>
+<span class="x">    echo "Notable";</span>
+<span class="x">} else {</span>
+<span class="x">    echo "Sobresaliente";</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>Se ejecuta la primera condición que se cumpla, y el resto son ignoradas. Si no se cumple ninguna, se ejecuta, en caso de existir, el <code>else</code> final.</p>
+<p>Para agrupar varios <code>if</code> puede ser útil la estructura <code>switch</code>, también habitual en otros lenguajes. Según el valor de <code>$var</code>, se ejecutará un <code>case</code> u otro. La sección <code>default</code> se ejecuta cuando no se da ninguno de los <code>case</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">switch ($var) {</span>
+<span class="x">    case 1:</span>
+<span class="x">        // OPERACIONES</span>
+<span class="x">        ...</span>
+<span class="x">        break;</span>
+<span class="x">    case 2:</span>
+<span class="x">        // OPERACIONES</span>
+<span class="x">        ...</span>
+<span class="x">        break;</span>
+<span class="x">    default:</span>
+<span class="x">        echo "Opción no válida";</span>
+<span class="x">}</span>
+</code></pre></div>
+<div class="admonition">
+<p class="admonition-title"><strong>RECUERDA</strong></p>
+<p>Si no hay un <code>break</code> al final de un <code>case</code>, la ejecución continúa con el siguiente.</p>
+</div>
+<p>El ejemplo siguiente es equivalente al anterior, pero más fácil de leer.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$nota = 7.5;</span>
+
+<span class="x">switch ($nota) {</span>
+<span class="x">    case 1,2,3,4:</span>
+<span class="x">      echo "Suspenso";</span>
+<span class="x">      break;</span>
+<span class="x">    case &lt;7:</span>
+<span class="x">      echo "Aprobado";</span>
+<span class="x">      break;</span>
+<span class="x">    case &lt;9:</span>
+<span class="x">      echo "Notable";</span>
+<span class="x">      break;</span>
+<span class="x">    case 10:</span>
+<span class="x">      echo "Sobresaliente";</span>
+<span class="x">      break;</span>
+<span class="x">    default:</span>
+<span class="x">     echo "Nota no válida";</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>La expresión <code>match</code> es una característica introducida en PHP 8.0 que actúa como una alternativa más segura y expresiva a la instrucción switch.  Se diferencia en que es una expresión (devuelve un valor directamente), utiliza comparación estricta (===) para evitar coerción de tipos, y no requiere sentencias break </p>
+<div class="highlight"><pre><span></span><code><span class="x">$resultado = match ($opcion) {</span>
+<span class="x">    1 =&gt; "Opción 1 seleccionada",</span>
+<span class="x">    2 =&gt; "Opción 2 seleccionada",</span>
+<span class="x">    default =&gt; "Opción no válida",</span>
+<span class="x">};</span>
+<span class="x">echo $resultado;</span>
+</code></pre></div>
+<p>La versión usando <code>match</code>quedaría así:</p>
+<p>El ejemplo siguiente es equivalente al anterior, pero más fácil de leer.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$resultado = match ($nota) {</span>
+<span class="x">    1,2,3,4 =&gt; "Suspenso",</span>
+<span class="x">    5,6 =&gt; "Aprobado";</span>
+<span class="x">    7,8 =&gt; "Notable";</span>
+<span class="x">    9,10 =&gt; "Sobresaliente";</span>
+<span class="x">    default =&gt; "Nota no válida";</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="13-estructuras-de-repeticion-bucles">1.3. Estructuras de Repetición (Bucles)</h3>
+<p>Permiten ejecutar repetidamente un bloque de código mientras se cumpla una condición.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Bucle while</span>
+<span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"While: </span><span class="si">$i</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+    <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bucle do-while (se ejecuta al menos una vez)</span>
+<span class="nv">$j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Do-While: </span><span class="si">$j</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+    <span class="nv">$j</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="c1">// Bucle for</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$k</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="nv">$k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"For: </span><span class="si">$k</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bucle foreach (específico para recorrer arrays)</span>
+<span class="nv">$colores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Rojo"</span><span class="p">,</span> <span class="s2">"Verde"</span><span class="p">,</span> <span class="s2">"Azul"</span><span class="p">];</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$colores</span> <span class="k">as</span> <span class="nv">$clave</span> <span class="o">=&gt;</span> <span class="nv">$valor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Índice </span><span class="si">$clave</span><span class="s2">: </span><span class="si">$valor</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="14-otras-estructuras-de-control-e-inclusion-de-ficheros">1.4. Otras Estructuras de Control e Inclusión de Ficheros</h3>
+<ul>
+<li><code>break</code>: Interrumpe la ejecución del bucle o <code>switch</code> actual.</li>
+<li><code>continue</code>: Salta la iteración actual del bucle y pasa a la evaluación de la siguiente.</li>
+<li><strong>Inclusión de ficheros externos:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instrucción</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>include 'fichero.php'</code></td>
+<td style="text-align: left;">Incluye y evalúa el fichero. Si falla, emite un <code>Warning</code> y el script continúa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>require 'fichero.php'</code></td>
+<td style="text-align: left;">Incluye y evalúa el fichero. Si falla, emite un <code>Fatal Error</code> y detiene el script.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>include_once 'fichero.php'</code></td>
+<td style="text-align: left;">Igual que <code>include</code>, pero evita inclusiones duplicadas si ya fue incluido.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>require_once 'fichero.php'</code></td>
+<td style="text-align: left;">Igual que <code>require</code>, garantizando una única inclusión del fichero.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-arrays">2. ARRAYS</h2>
+<p>Los arrays en PHP son estructuras de datos ordenados que asocian <strong>claves</strong> con <strong>valores</strong>. Las claves pueden ser enteros o cadenas.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$frutas = ["Manzana", "Plátano", "Naranja"];</span>
+<span class="x">echo $frutas[0]; // Manzana</span>
+<span class="x">$frutas[] = "Uva"; // Añade al final</span>
+</code></pre></div>
+<p>=== "Array Asociativo"
+    <div class="highlight"><pre><span></span><code><span class="x">$persona = [</span>
+<span class="x">    "nombre" =&gt; "Juan",</span>
+<span class="x">    "edad" =&gt; 25,</span>
+<span class="x">    "email" =&gt; "juan@example.com"</span>
+<span class="x">];</span>
+<span class="x">echo $persona["nombre"]; // Juan</span>
+</code></pre></div></p>
+<p>=== "Array Multidimensional"
+    <div class="highlight"><pre><span></span><code><span class="x">$matriz = [</span>
+<span class="x">    ["A", "B"],</span>
+<span class="x">    ["C", "D"]</span>
+<span class="x">];</span>
+<span class="x">echo $matriz[1][0]; // C</span>
+</code></pre></div></p>
+<h3 id="funciones-principales-para-la-manipulacion-de-arrays">Funciones Principales para la Manipulación de Arrays</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Función</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>count($array)</code></td>
+<td style="text-align: left;">Devuelve el número total de elementos del array.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>in_array($valor, $array)</code></td>
+<td style="text-align: left;">Comprueba si un valor existe en el array.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>array_key_exists($clave, $array)</code></td>
+<td style="text-align: left;">Verifica si una clave o índice existe en el array.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>array_push($array, $elem)</code></td>
+<td style="text-align: left;">Añade uno o más elementos al final.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>array_pop($array)</code></td>
+<td style="text-align: left;">Extrae y elimina el último elemento.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort($array)</code> / <code>rsort($array)</code></td>
+<td style="text-align: left;">Ordena el array por valor de forma ascendente / descendente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ksort($array)</code> / <code>krsort($array)</code></td>
+<td style="text-align: left;">Ordena un array asociativo por sus claves.</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h4 id="b-bucles-embebidos-foreach">B. Bucles Embebidos (<code>foreach</code>)</h4>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php </span>
-<span class="cp">$productos = [&quot;Teclado Mecánico&quot;, &quot;Ratón Óptico&quot;, &quot;Monitor 27&#39;&#39;&quot;];</span>
+<span class="cp">$productos = ["Teclado Mecánico", "Ratón Óptico", "Monitor 27''"];</span>
 <span class="cp">?&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Catálogo de Productos<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
@@ -153,9 +411,217 @@
     <span class="cp">&lt;?php endforeach; ?&gt;</span>
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </code></pre></div>
+<h2 id="4-funciones">4. FUNCIONES</h2>
+<h3 id="41-declaracion-de-funciones">4.1. Declaración de Funciones</h3>
+<p>Una función es un bloque de código estructurado reutilizable, que puede ser invicado dentro de nuestro script.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Función con tipos declarados y valor por defecto (PHP 7+)</span>
+<span class="k">function</span> <span class="nf">calcularIVA</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$precio</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$iva</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">)</span><span class="o">:</span> <span class="nx">float</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$precio</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nv">$iva</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">calcularIVA</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>      <span class="c1">// 121</span>
+<span class="k">echo</span> <span class="nx">calcularIVA</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">);</span> <span class="c1">// 110</span>
+</code></pre></div>
+<h3 id="42-callbacks-funciones-anonimas-y-arrow-functions">4.2.  Callbacks, Funciones Anónimas y Arrow Functions</h3>
+<div class="highlight"><pre><span></span><code><span class="x">// Función anónima (Closure)</span>
+<span class="x">$multiplicar = function($a, $b) {</span>
+<span class="x">    return $a * $b;</span>
+<span class="x">};</span>
+
+<span class="x">// Arrow Function (PHP 7.4+)</span>
+<span class="x">$cuadrado = fn($x) =&gt; $x * $x;</span>
+
+<span class="x">echo $cuadrado(4); // 16</span>
+</code></pre></div>
+<hr />
+<h2 id="5-formularios">5. FORMULARIOS</h2>
+<p>El protocolo HTTP es <strong>sin estado</strong> (<em>stateless</em>). Para interactuar con los usuarios, las aplicaciones web emplean formularios HTML que envían información al servidor mediante peticiones HTTP.</p>
+<p>PHP captura automáticamente los parámetros enviados mediante arrays superglobales:</p>
+<ul>
+<li><code>$_GET</code>: Almacena los parámetros pasados en la URL (<em>Query String</em>). Adecuado para búsquedas, paginación y datos no sensibles.</li>
+<li><code>$_POST</code>: Almacena los parámetros enviados en el cuerpo (<em>body</em>) de la petición HTTP. Adecuado para modificación de datos, contraseñas y operaciones sensibles.</li>
+<li><code>$_REQUEST</code>: Unión de <code>$_GET</code>, <code>$_POST</code> y <code>$_COOKIE</code>. Se recomienda evitar su uso por motivos de seguridad y claridad.</li>
+</ul>
+<p>Contenido del archivo <code>"formulario.html"</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"procesar.php"</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"nombre"</span><span class="p">&gt;</span>Nombre:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"nombre"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nombre"</span> <span class="na">required</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">required</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Contenido del archivo <code>"procesar.php"</code>:
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'nombre'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nv">$email</span>  <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="s2">"Datos recibidos correctamente:&lt;br&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Nombre: "</span> <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$nombre</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Email: "</span> <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: contacto.html"</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">IDENTIFICA EL MÉTODO HTTP</p>
+<p>Es una buena práctica comprobar el verbo HTTP utilizado en la petición mediante <code>$_SERVER['REQUEST_METHOD'] === 'POST'</code> antes de intentar procesar los datos de un formulario.</p>
+</div>
+<h3 id="51-recogida-y-tipos-de-datos-en-formularios">5.1. Recogida y Tipos de Datos en Formularios</h3>
+<p>Los formularios pueden enviar desde valores de texto simples hasta colecciones de datos mediante checkboxes o menús de selección múltiple.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Recogida de Checkboxes como Array</span>
+<span class="nv">$intereses</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'intereses'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span> <span class="c1">// Ejemplo: &lt;input type="checkbox" name="intereses[]" value="php"&gt;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$intereses</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$intereses</span> <span class="k">as</span> <span class="nv">$interes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"Interés seleccionado: "</span> <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$interes</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="52-sanitizacion-y-validacion-de-datos-de-entrada">5.2. Sanitización y Validación de Datos de Entrada</h3>
+<p>Nunca se debe confiar en la información suministrada por el usuario. La <strong>sanitización</strong> limpia los datos para prevenir inyecciones (como XSS), mientras que la <strong>validación</strong> comprueba que los datos cumplan con el formato y rango esperados.</p>
+<p>PHP ofrece la extensión <code>filter</code> con funciones integradas como <code>filter_input()</code> y <code>filter_var()</code>.</p>
+<h4 id="521-ejemplos-con-filter_input-y-filter_var">5.2.1. Ejemplos con <code>filter_input()</code> y <code>filter_var()</code></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$errores</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 1. Sanitización de texto</span>
+    <span class="nv">$nombre</span> <span class="o">=</span> <span class="nb">filter_input</span><span class="p">(</span><span class="nx">INPUT_POST</span><span class="p">,</span> <span class="s1">'nombre'</span><span class="p">,</span> <span class="nx">FILTER_SANITIZE_SPECIAL_CHARS</span><span class="p">);</span>
+
+    <span class="c1">// 2. Validación de Email</span>
+    <span class="nv">$email</span> <span class="o">=</span> <span class="nb">filter_input</span><span class="p">(</span><span class="nx">INPUT_POST</span><span class="p">,</span> <span class="s1">'email'</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$errores</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"El correo electrónico introducido no es válido."</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 3. Validación de Entero con Rango</span>
+    <span class="nv">$edad</span> <span class="o">=</span> <span class="nb">filter_input</span><span class="p">(</span>
+        <span class="nx">INPUT_POST</span><span class="p">,</span> 
+        <span class="s1">'edad'</span><span class="p">,</span> 
+        <span class="nx">FILTER_VALIDATE_INT</span><span class="p">,</span> 
+        <span class="p">[</span>
+            <span class="s2">"options"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s2">"min_range"</span> <span class="o">=&gt;</span> <span class="mi">18</span><span class="p">,</span> 
+                <span class="s2">"max_range"</span> <span class="o">=&gt;</span> <span class="mi">99</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$edad</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$errores</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"La edad debe ser un número entero entre 18 y 99."</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$errores</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"Procesamiento exitoso para </span><span class="si">$nombre</span><span class="s2"> (</span><span class="si">$email</span><span class="s2">), Edad: </span><span class="si">$edad</span><span class="s2">"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="522-prevencion-de-xss-con-htmlspecialchars">5.2.2. Prevención de XSS con <code>htmlspecialchars()</code></h4>
+<p>Cuando mostremos en pantalla datos introducidos por el usuario, debemos escapar caracteres especiales HTML (<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>"</code>, <code>'</code>) para evitar ejecuciones maliciosas de scripts en el navegador del usuario:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Convierte caracteres como '&lt;script&gt;' en '&amp;lt;script&amp;gt;'</span>
+<span class="x">$comentarioSeguro = htmlspecialchars($_POST['comentario'], ENT_QUOTES, 'UTF-8');</span>
+</code></pre></div>
+<hr />
+<h3 id="53-subida-de-archivos-al-servidor">5.3. Subida de Archivos al Servidor</h3>
+<p>Para permitir el envío de archivos desde un formulario HTML, es imprescindible utilizar el método <code>POST</code> y añadir el atributo <code>enctype="multipart/form-data"</code>.</p>
+<h4 id="531-la-superglobal-_files">5.3.1. La Superglobal <code>$_FILES</code></h4>
+<p>Cuando se sube un archivo, PHP puebla el array bidimensional <code>$_FILES</code> con los siguientes campos:</p>
+<ul>
+<li><code>$_FILES['archivo']['name']</code>: Nombre original del fichero en la máquina cliente.</li>
+<li><code>$_FILES['archivo']['type']</code>: Tipo MIME proporcionado por el navegador (no fiable).</li>
+<li><code>$_FILES['archivo']['size']</code>: Tamaño del fichero en bytes.</li>
+<li><code>$_FILES['archivo']['tmp_name']</code>: Ruta temporal donde se almacenó el fichero en el servidor.</li>
+<li><code>$_FILES['archivo']['error']</code>: Código de error asociado a la subida (<code>UPLOAD_ERR_OK</code>, <code>UPLOAD_ERR_INI_SIZE</code>, etc.).</li>
+</ul>
+<h4 id="532-script-completo-de-subida-segura">5.3.2. Script Completo de Subida Segura</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$directorioSubida</span> <span class="o">=</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/uploads/'</span><span class="p">;</span>
+<span class="nv">$tamanoMaximo</span>     <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span> <span class="c1">// 2 Megabytes</span>
+<span class="nv">$tiposPermitidos</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">'image/jpeg'</span><span class="p">,</span> <span class="s1">'image/png'</span><span class="p">,</span> <span class="s1">'application/pdf'</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'documento'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$archivo</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'documento'</span><span class="p">];</span>
+
+    <span class="c1">// 1. Verificar si ocurrió un error en la subida</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$archivo</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">UPLOAD_ERR_OK</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">die</span><span class="p">(</span><span class="s2">"Error en la subida del archivo. Código: "</span> <span class="o">.</span> <span class="nv">$archivo</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 2. Validar tamaño</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$archivo</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nv">$tamanoMaximo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">die</span><span class="p">(</span><span class="s2">"El archivo excede el tamaño máximo permitido (2 MB)."</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 3. Validar tipo MIME real utilizando finfo</span>
+    <span class="nv">$finfo</span> <span class="o">=</span> <span class="nb">finfo_open</span><span class="p">(</span><span class="nx">FILEINFO_MIME_TYPE</span><span class="p">);</span>
+    <span class="nv">$mimeTipoReal</span> <span class="o">=</span> <span class="nb">finfo_file</span><span class="p">(</span><span class="nv">$finfo</span><span class="p">,</span> <span class="nv">$archivo</span><span class="p">[</span><span class="s1">'tmp_name'</span><span class="p">]);</span>
+    <span class="nb">finfo_close</span><span class="p">(</span><span class="nv">$finfo</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$mimeTipoReal</span><span class="p">,</span> <span class="nv">$tiposPermitidos</span><span class="p">,</span> <span class="k">true</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">die</span><span class="p">(</span><span class="s2">"Formato de archivo no permitido: </span><span class="si">$mimeTipoReal</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 4. Generar un nombre único e impredecible para evitar sobrescrituras y ataques</span>
+    <span class="nv">$extension</span> <span class="o">=</span> <span class="nb">pathinfo</span><span class="p">(</span><span class="nv">$archivo</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="nx">PATHINFO_EXTENSION</span><span class="p">);</span>
+    <span class="nv">$nombreNuevo</span> <span class="o">=</span> <span class="nb">bin2hex</span><span class="p">(</span><span class="nb">random_bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span> <span class="o">.</span> <span class="s1">'.'</span> <span class="o">.</span> <span class="nv">$extension</span><span class="p">;</span>
+    <span class="nv">$rutaDestino</span> <span class="o">=</span> <span class="nv">$directorioSubida</span> <span class="o">.</span> <span class="nv">$nombreNuevo</span><span class="p">;</span>
+
+    <span class="c1">// 5. Mover el archivo desde la carpeta temporal al destino definitivo</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$archivo</span><span class="p">[</span><span class="s1">'tmp_name'</span><span class="p">],</span> <span class="nv">$rutaDestino</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"Archivo subido con éxito: "</span> <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$nombreNuevo</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"Ocurrió un error al guardar el archivo."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="6-comentarios">6. COMENTARIOS</h2>
+<p>En PHP se pueden escribir dos tipos de comentarios:</p>
+<ul>
+<li>De bloque, encerrados entre <code>/*</code> y <code>*/</code>.</li>
+<li>De línea, comenzando por <code>//</code> o por <code>#</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// comentario de línea</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// comentario de línea</span>
+
+<span class="cm">/* comentario</span>
+<span class="cm">   de bloque</span>
+<span class="cm">*/</span>
+
+<span class="c1"># comentario de una sola línea</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition">
+<p>Alguos IDEs regsitran los comentarios que comienzan con TODO como tareas pendientes en una zona específica. Facilitando el trabajo de los desarrolladores.</p>
+</div>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut02/" class="btn btn-neutral float-left" title="UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../ut00p01/" class="btn btn-neutral float-right" title="UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -177,6 +643,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../ut02/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../ut00p01/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
   </span>
 </div>
