@@ -6,6 +6,10 @@ nav:
   - BLOQUE 1:
       - UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR: ut01.md
       - UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS: ut02.md
+      - UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML: ut03.md
+  - PRÁCTICAS:
+      - UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP: ut00p01.md
+      - UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST): ut01p01.md
 theme:
   name: readthedocs
   locale: es
@@ -16,18 +20,18 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.betterem
   - pymdownx.caret
-  - pymdownx.details
   - pymdownx.emoji
   - pymdownx.mark
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
   - pymdownx.arithmatex
+  - pymdownx.blocks.details
   - pymdownx.blocks.admonition
   - pymdownx.magiclink
   - pymdownx.keys
   - pymdownx.highlight
-  - pymdownx.blocks.definition
+  - markdown.extensions.tables
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
