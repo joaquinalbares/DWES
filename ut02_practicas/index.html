@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Relación de Prácticas: UT02 - Introducción al Lenguaje PHP - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Relaci\u00f3n de Pr\u00e1cticas: UT02 - Introducci\u00f3n al Lenguaje PHP";
+        var properdocs_page_input_path = "ut02_practicas.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÁCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">Relación de Prácticas: UT02 - Introducción al Lenguaje PHP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="relacion-de-practicas-ut02-introduccion-al-lenguaje-php">Relación de Prácticas: UT02 - Introducción al Lenguaje PHP</h1>
+<h2 id="practica-1-embebido-de-php-directivas-y-salida-dinamica">Práctica 1: Embebido de PHP, Directivas y Salida Dinámica</h2>
+<p>Crea una página web dinámica que muestre información del servidor e interactúe con el cliente modificando las directivas por defecto de PHP.</p>
+<h3 id="enunciado-y-requisitos">Enunciado y Requisitos</h3>
+<ol>
+<li>Crea un fichero llamado <code>p1_servidor.php</code>.</li>
+<li>Habilita la visualización de errores y advertencias al inicio del script mediante las directivas <code>ini_set('display_errors', 1)</code> y <code>error_reporting(E_ALL)</code>.</li>
+<li>Integra código PHP dentro de la maquetación HTML5 mediante etiquetas <code>&lt;?php ... ?&gt;</code> y la sintaxis corta de impresión <code>&lt;?= ... ?&gt;</code>.</li>
+<li>Muestra dinámicamente en una tarjeta estilizada:<ul>
+<li>La fecha y hora actual del servidor en formato local español.</li>
+<li>La versión activa de PHP (<code>phpversion()</code>).</li>
+<li>El agente de usuario (<em>User Agent</em>) recuperado de la superglobal <code>$_SERVER</code>.</li>
+</ul>
+</li>
+<li>Abre el navegador web, inspecciona el código fuente recibido (<code>Ctrl + U</code>) y verifica la ausencia de etiquetas PHP en el HTML final.</li>
+</ol>
+<h2 id="practica-2-tipos-de-datos-operadores-constantes-y-ambitos">Práctica 2: Tipos de Datos, Operadores, Constantes y Ámbitos</h2>
+<p>Diseña una calculadora de facturación laboral aplicando constantes, operadores lógicos y aritméticos, paso por referencia y gestión del ámbito global.</p>
+<h3 id="enunciado-y-requisitos_1">Enunciado y Requisitos</h3>
+<ol>
+<li>Crea el fichero <code>p2_facturacion.php</code>.</li>
+<li>Define dos constantes: <code>IVA</code> con valor <code>0.21</code> y <code>RETENCION_IRPF</code> con valor <code>0.15</code>.</li>
+<li>Declara una variable global <code>$tarifaHora = 25.50</code> y otra <code>$horasTrabajadas = 160</code>.</li>
+<li>Crea una función <code>calcularNomina(&amp;$totalBruto)</code> que:<ul>
+<li>Acceda a la variable global <code>$tarifaHora</code> mediante la palabra reservada <code>global</code>.</li>
+<li>Calcule el salario bruto multiplicando las horas trabajadas por la tarifa.</li>
+<li>Asigne el resultado a <code>$totalBruto</code> modificando el valor por <strong>referencia</strong> (<code>&amp;</code>).</li>
+<li>Devuelva el salario neto restando las retenciones y sumando el IVA aplicable.</li>
+</ul>
+</li>
+<li>Imprime en pantalla una comparación estricta (<code>===</code>) entre dos comprobaciones de tipo utilizando <code>var_dump()</code>.</li>
+</ol>
+<hr />
+<h2 id="practica-3-estructuras-condicionales-y-toma-de-decisiones">Práctica 3: Estructuras Condicionales y Toma de Decisiones</h2>
+<p>!!! info "Ficha de la Práctica 3"
+    * <strong>Duración estimada:</strong> 30 minutos
+    * <strong>Objetivo:</strong> Construir un motor de clasificación de envíos y tarifas de transporte utilizando expresiones <code>match</code> y bloques <code>if-elseif-else</code>.
+    * <strong>Criterios de Evaluación:</strong> RA3 (Mecanismos de decisión, sintaxis de control, comentarios en código).</p>
+<h3 id="enunciado-y-requisitos_2">Enunciado y Requisitos</h3>
+<ol>
+<li>Crea el fichero <code>p3_envios.php</code>.</li>
+<li>Define las variables del paquete: <code>$pesoKg = 4.5</code>, <code>$zonaDestino = 'B'</code> y <code>$esSocio = true</code>.</li>
+<li>Implementa una estructura <code>match</code> (introducida en PHP 8) para determinar el precio base según la zona:<ul>
+<li>Zona <code>'A'</code>: 5.00 €</li>
+<li>Zona <code>'B'</code>: 10.00 €</li>
+<li>Zona <code>'C'</code>: 18.00 €</li>
+<li>Otra zona: Lanzar o registrar una opción no válida.</li>
+</ul>
+</li>
+<li>Mediante una estructura <code>if-elseif-else</code>, aplica un recargo por peso:<ul>
+<li>Si el peso es inferior a 2 kg: Sin recargo.</li>
+<li>Si el peso está entre 2 kg y 5 kg: Recargo de 3.50 €.</li>
+<li>Si el peso supera los 5 kg: Recargo de 7.00 €.</li>
+</ul>
+</li>
+<li>Si <code>$esSocio</code> es <code>true</code>, aplica un descuento global del 15% al coste total mediante un operador ternario.</li>
+</ol>
+<h3 id="solucion-propuesta">Solución Propuesta</h3>
+<p>=== "fichero <code>p3_envios.php</code>"
+    ```php title="p3_envios.php" lineno="1"
+    &lt;?php
+    // Práctica 3: Motor de cálculo de gastos de envío mediante estructuras condicionales</p>
+<div class="highlight"><pre><span></span><code>$pesoKg = 4.5;
+$zonaDestino = 'B';
+$esSocio = true;
+
+// 1. Determinación del precio base mediante la expresión match
+$precioBase = match ($zonaDestino) {
+    'A' =&gt; 5.00,
+    'B' =&gt; 10.00,
+    'C' =&gt; 18.00,
+    default =&gt; 0.00,
+};
+
+// 2. Determinación del recargo por peso con if-elseif-else
+$recargo = 0.0;
+if ($pesoKg &lt; 2.0) {
+    $recargo = 0.00;
+} elseif ($pesoKg &gt;= 2.0 &amp;&amp; $pesoKg &lt;= 5.0) {
+    $recargo = 3.50;
+} else {
+    $recargo = 7.00;
+}
+
+// 3. Subtotal antes de descuento
+$subtotal = $precioBase + $recargo;
+
+// 4. Aplicación de descuento a socios con operador ternario
+$descuento = $esSocio ? ($subtotal * 0.15) : 0.0;
+$precioFinal = $subtotal - $descuento;
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Práctica 3 - Cotizador de Envíos&lt;/title&gt;
+    &lt;style&gt;
+        .ticket { font-family: monospace; border: 1px dashed #333; padding: 15px; width: 320px; background: #fffde7; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;Desglose de Envío Logístico&lt;/h2&gt;
+    &lt;div class="ticket"&gt;
+        &lt;p&gt;Zona Destino: &lt;?= $zonaDestino ?&gt;&lt;/p&gt;
+        &lt;p&gt;Peso registrado: &lt;?= $pesoKg ?&gt; kg&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;p&gt;Precio Base: &lt;?= number_format($precioBase, 2) ?&gt; €&lt;/p&gt;
+        &lt;p&gt;Recargo por Peso: &lt;?= number_format($recargo, 2) ?&gt; €&lt;/p&gt;
+        &lt;p&gt;Descuento Socio (15%): -&lt;?= number_format($descuento, 2) ?&gt; €&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;h3&gt;TOTAL: &lt;?= number_format($precioFinal, 2) ?&gt; €&lt;/h3&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre></div>
+<hr />
+<h2 id="practica-4-procesamiento-de-arrays-multidimensionales-y-bucles">Práctica 4: Procesamiento de Arrays Multidimensionales y Bucles</h2>
+<p>!!! info "Ficha de la Práctica 4"
+    * <strong>Duración estimada:</strong> 30 minutos
+    * <strong>Objetivo:</strong> Gestionar un catálogo de productos empleando arrays asociativos multidimensionales e iterando con el bucle <code>foreach</code>.
+    * <strong>Criterios de Evaluación:</strong> RA3 (Arrays, bucles <code>foreach</code>, renderizado de colecciones).</p>
+<h3 id="enunciado-y-requisitos_3">Enunciado y Requisitos</h3>
+<ol>
+<li>Crea el fichero <code>p4_catalogo.php</code>.</li>
+<li>Define un array multidimensional asociativo llamado <code>$inventario</code> con al menos 4 productos. Cada producto debe contener: <code>id</code>, <code>nombre</code>, <code>precio</code>, <code>stock</code> y <code>categoria</code>.</li>
+<li>Recorre el array con un bucle <code>foreach</code> para renderizar los datos en una tabla HTML.</li>
+<li>Aplica lógica condicional dentro de la iteración para:<ul>
+<li>Resaltar en color rojo las filas cuyo <code>stock</code> sea menor que 5 (Aviso de Stock Bajo).</li>
+<li>Calcular el valor total del inventario acumulado (<span class="arithmatex"><span class="MathJax_Preview">\text{precio} \times \text{stock}</span><script type="math/tex">\text{precio} \times \text{stock}</script></span>).</li>
+</ul>
+</li>
+<li>Imprime al final de la tabla el número total de productos en catálogo mediante <code>count()</code> y el valor financiero total.</li>
+</ol>
+<h3 id="solucion-propuesta_1">Solución Propuesta</h3>
+<p>=== "fichero <code>p4_catalogo.php</code>"
+    ```php title="p4_catalogo.php" lineno="1"
+    &lt;?php
+    // Práctica 4: Gestión de catálogo con arrays multidimensionales y foreach</p>
+<div class="highlight"><pre><span></span><code>$inventario = [
+    ["id" =&gt; 101, "nombre" =&gt; "Teclado Mecánico RGB", "precio" =&gt; 59.99, "stock" =&gt; 12, "categoria" =&gt; "Periféricos"],
+    ["id" =&gt; 102, "nombre" =&gt; "Ratón Inalámbrico Ergonomía", "precio" =&gt; 25.50, "stock" =&gt; 3, "categoria" =&gt; "Periféricos"],
+    ["id" =&gt; 103, "nombre" =&gt; "Monitor 27'' UltraWide", "precio" =&gt; 210.00, "stock" =&gt; 2, "categoria" =&gt; "Pantallas"],
+    ["id" =&gt; 104, "nombre" =&gt; "Auriculares Noise Cancelling", "precio" =&gt; 89.00, "stock" =&gt; 15, "categoria" =&gt; "Audio"]
+];
+
+$valorTotalInventario = 0;
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Práctica 4 - Catálogo e Inventario&lt;/title&gt;
+    &lt;style&gt;
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #2c3e50; color: white; }
+        .alerta-stock { background-color: #ffcdd2; color: #b71c1c; font-weight: bold; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;Control de Stock de Inventario&lt;/h2&gt;
+
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;Producto&lt;/th&gt;
+                &lt;th&gt;Categoría&lt;/th&gt;
+                &lt;th&gt;Precio&lt;/th&gt;
+                &lt;th&gt;Stock&lt;/th&gt;
+                &lt;th&gt;Subtotal&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;?php foreach ($inventario as $prod): 
+                $subtotalProd = $prod['precio'] * $prod['stock'];
+                $valorTotalInventario += $subtotalProd;
+                $claseFila = ($prod['stock'] &lt; 5) ? 'alerta-stock' : '';
+            ?&gt;
+                &lt;tr class="&lt;?= $claseFila ?&gt;"&gt;
+                    &lt;td&gt;&lt;?= $prod['id'] ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?= htmlspecialchars($prod['nombre']) ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?= htmlspecialchars($prod['categoria']) ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?= number_format($prod['precio'], 2) ?&gt; €&lt;/td&gt;
+                    &lt;td&gt;&lt;?= $prod['stock'] ?&gt; &lt;?= ($prod['stock'] &lt; 5) ? '(¡Bajo!)' : '' ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?= number_format($subtotalProd, 2) ?&gt; €&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;&lt;strong&gt;Total de referencias únicas:&lt;/strong&gt; &lt;?= count($inventario) ?&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Valoración total del stock:&lt;/strong&gt; &lt;?= number_format($valorTotalInventario, 2) ?&gt; €&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre></div>
+<hr />
+<h2 id="practica-5-funciones-reutilizables-e-interaccion-basica-con-formularios">Práctica 5: Funciones Reutilizables e Interacción Básica con Formularios</h2>
+<p>!!! info "Ficha de la Práctica 5"
+    * <strong>Duración estimada:</strong> 30 minutos
+    * <strong>Objetivo:</strong> Integrar la recogida de datos desde un formulario HTML mediante métodos <code>GET</code>/<code>POST</code> con funciones auxiliares modularizadas.
+    * <strong>Criterios de Evaluación:</strong> RA3 (Creación de funciones, formularios web, captura de parámetros de entrada).</p>
+<h3 id="enunciado-y-requisitos_4">Enunciado y Requisitos</h3>
+<ol>
+<li>Crea el fichero <code>p5_conversor.php</code>.</li>
+<li>Incluye un formulario HTML en el mismo archivo con el método <code>POST</code> que contenga:<ul>
+<li>Un campo numérico para la cantidad.</li>
+<li>Un desplegable <code>&lt;select&gt;</code> con opciones de conversión (EUR a USD, EUR a GBP).</li>
+<li>Un botón de envío.</li>
+</ul>
+</li>
+<li>Escribe dos funciones PHP personalizadas:<ul>
+<li><code>validarCantidad($valor)</code>: Comprueba que sea un dato numérico y positivo. Devuelve un valor booleano.</li>
+<li><code>convertirMoneda(float $cantidad, string $tipo)</code>: Devuelve el cálculo según el tipo seleccionado.</li>
+</ul>
+</li>
+<li>Captura la petición comprobando <code>$_SERVER['REQUEST_METHOD'] === 'POST'</code>, procesa la respuesta e imprime el resultado o el error correspondiente.</li>
+</ol>
+<h3 id="solucion-propuesta_2">Solución Propuesta</h3>
+<p>=== "fichero <code>p5_conversor.php</code>"
+    ```php title="p5_conversor.php" lineno="1"
+    &lt;?php
+    // Práctica 5: Conversor de divisa con funciones y procesamiento de formularios</p>
+<div class="highlight"><pre><span></span><code>// Definición de funciones auxiliares
+function validarCantidad($valor): bool {
+    return is_numeric($valor) &amp;&amp; $valor &gt; 0;
+}
+
+function convertirMoneda(float $cantidad, string $tipo): float {
+    $tasas = [
+        'USD' =&gt; 1.08, // 1 EUR -&gt; 1.08 USD
+        'GBP' =&gt; 0.85  // 1 EUR -&gt; 0.85 GBP
+    ];
+
+    return $cantidad * ($tasas[$tipo] ?? 1.0);
+}
+
+$resultado = null;
+$error = null;
+
+// Recogida y procesamiento de la información introducida
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $monto = $_POST['monto'] ?? '';
+    $divisa = $_POST['divisa'] ?? 'USD';
+
+    if (validarCantidad($monto)) {
+        $conversion = convertirMoneda((float)$monto, $divisa);
+        $resultado = number_format((float)$monto, 2) . " EUR son " . number_format($conversion, 2) . " " . $divisa;
+    } else {
+        $error = "Por favor, introduce un importe numérico válido y mayor que cero.";
+    }
+}
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Práctica 5 - Conversor de Divisas&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: sans-serif; margin: 30px; }
+        .form-box { background: #eef2f5; padding: 20px; border-radius: 6px; width: 300px; }
+        .mensaje { padding: 10px; margin-top: 15px; border-radius: 4px; }
+        .exito { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;Conversor de Divisas Dinámico&lt;/h2&gt;
+
+    &lt;div class="form-box"&gt;
+        &lt;form action="p5_conversor.php" method="POST"&gt;
+            &lt;label for="monto"&gt;Cantidad en Euros (€):&lt;/label&gt;&lt;br&gt;
+            &lt;input type="number" step="0.01" id="monto" name="monto" required&gt;&lt;br&gt;&lt;br&gt;
+
+            &lt;label for="divisa"&gt;Convertir a:&lt;/label&gt;&lt;br&gt;
+            &lt;select id="divisa" name="divisa"&gt;
+                &lt;option value="USD"&gt;Dólar Estadounidense (USD)&lt;/option&gt;
+                &lt;option value="GBP"&gt;Libra Esterlina (GBP)&lt;/option&gt;
+            &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+
+            &lt;button type="submit"&gt;Calcular Conversión&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;?php if ($resultado): ?&gt;
+        &lt;div class="mensaje exito"&gt;&lt;?= htmlspecialchars($resultado) ?&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($error): ?&gt;
+        &lt;div class="mensaje error"&gt;&lt;?= htmlspecialchars($error) ?&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

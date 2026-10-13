@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>BOLETÍN DE PRÁCTICAS: UT 03 - PHP INTEGRADO EN HTML - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "BOLET\u00cdN DE PR\u00c1CTICAS: UT 03 - PHP INTEGRADO EN HTML";
+        var properdocs_page_input_path = "ut03practicas.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÁCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">BOLETÍN DE PRÁCTICAS: UT 03 - PHP INTEGRADO EN HTML</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="boletin-de-practicas-ut-03-php-integrado-en-html">BOLETÍN DE PRÁCTICAS: UT 03 - PHP INTEGRADO EN HTML</h1>
+<p><strong>Asignatura:</strong> Desarrollo Web en Entorno Servidor</p>
+<p><strong>Unidad Temática:</strong> UT 03 - Programación en PHP integrado en HTML</p>
+<p><strong>Duración Total Estimada:</strong> 2.5 Horas (5 prácticas de 30 minutos)</p>
+<hr />
+<h2 id="practica-1-tarjeta-de-perfil-dinamica-con-sintaxis-alternativa">PRÁCTICA 1: Tarjeta de Perfil Dinámica con Sintaxis Alternativa</h2>
+<p><strong>Duración estimada:</strong> 30 minutos</p>
+<p><strong>Objetivos:</strong> Practicar la sintaxis alternativa de estructuras condicionales (<code>if/endif</code>, <code>match</code>) y la etiqueta corta de impresión (<code>&lt;?= ?&gt;</code>) integrada en código HTML.</p>
+<h3 id="enunciado">Enunciado</h3>
+<p>Crea un script PHP denominado <code>perfil.php</code> que simule la visualización de la tarjeta de un usuario en un panel de administración.</p>
+<ol>
+<li>Define al inicio del script las variables <code>$nombre</code> (cadena), <code>$edad</code> (entero) y <code>$rol</code> (cadena con valores posibles: <code>'admin'</code>, <code>'editor'</code>, <code>'autor'</code>, <code>'invitado'</code>).</li>
+<li>Mediante una expresión <code>match</code>, asigna una clase CSS de tipo badge (<code>'bg-danger'</code>, <code>'bg-warning'</code>, <code>'bg-info'</code>, <code>'bg-secondary'</code>) y una etiqueta descriptiva según el rol.</li>
+<li>Genera la estructura HTML de una tarjeta (<em>card</em>) de usuario utilizando la <strong>sintaxis alternativa</strong> (<code>&lt;?php if (...): ?&gt; ... &lt;?php endif; ?&gt;</code>) para:</li>
+<li>Mostrar el nombre del usuario con la etiqueta corta <code>&lt;?= $nombre ?&gt;</code>.</li>
+<li>Mostrar un mensaje especial si el usuario es mayor de edad (<span class="arithmatex"><span class="MathJax_Preview">\ge 18</span><script type="math/tex">\ge 18</script></span>).</li>
+<li>Renderizar el badge con el rol del usuario utilizando la clase CSS obtenida con <code>match</code>.</li>
+</ol>
+<hr />
+<h2 id="practica-2-catalogo-dinamico-con-arrays-y-bucles-embebidos">PRÁCTICA 2: Catálogo Dinámico con Arrays y Bucles Embebidos</h2>
+<p><strong>Duración estimada:</strong> 30 minutos</p>
+<p><strong>Objetivos:</strong> Manipular arrays multidimensionales asociativos y recorrerlos en HTML mediante <code>foreach: ... endforeach;</code>.</p>
+<h3 id="enunciado_1">Enunciado</h3>
+<p>Crea un fichero <code>catalogo.php</code> que muestre una tabla HTML con el inventario de una tienda de informática.</p>
+<ol>
+<li>Define un array multidimensional <code>$productos</code> donde cada elemento sea un array asociativo con las claves: <code>'nombre'</code>, <code>'categoria'</code>, <code>'precio'</code> y <code>'stock'</code>. Añade al menos 4 productos.</li>
+<li>Utiliza funciones de arrays para:</li>
+<li>Obtener el número total de productos con <code>count()</code>.</li>
+<li>
+<p>Ordenar el array por precio de menor a mayor con una función de ordenación o <code>usort()</code>.</p>
+</li>
+<li>
+<p>Construye la tabla HTML embebiendo PHP mediante la sintaxis alternativa <code>foreach</code>:</p>
+</li>
+<li>Muestra las filas alternando un estilo si el producto está <strong>Agotado</strong> (<code>stock == 0</code>).</li>
+<li>Formatea el precio agregando el símbolo de la moneda (<code>€</code>).</li>
+<li>Al final de la tabla, incluye un pie de tabla (<code>&lt;tfoot&gt;</code>) que muestre la cantidad total de artículos listados.</li>
+</ol>
+<hr />
+<h2 id="practica-3-calculadora-de-presupuestos-con-funciones-y-arrow-functions">PRÁCTICA 3: Calculadora de Presupuestos con Funciones y Arrow Functions</h2>
+<p><strong>Duración estimada:</strong> 30 minutos</p>
+<p><strong>Objetivos:</strong> Declarar e invocar funciones con tipado estricto, parámetros por defecto y hacer uso de <em>Arrow Functions</em>.</p>
+<h3 id="enunciado_2">Enunciado</h3>
+<p>Crea el archivo <code>presupuesto.php</code> para calcular el coste final de un servicio web.</p>
+<ol>
+<li>Activa el modo estricto de tipos (<code>declare(strict_types=1);</code>).</li>
+<li>
+<p>Crea una función llamada <code>calcularPresupuesto</code> con la siguiente firma:
+<div class="highlight"><pre><span></span><code><span class="x">function calcularPresupuesto(float $precioBase, float $descuento = 0.0, float $iva = 0.21): float</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>La función debe aplicar el descuento al precio base y, sobre el subtotal resultante, aplicar el IVA.</p>
+</li>
+<li>
+<p>Define una <em>Arrow Function</em> (<code>fn</code>) asignada a una variable <code>$formatearMoneda</code> que reciba un <code>float</code> y devuelva el número formateado con 2 decimales y el sufijo <code>€</code>.</p>
+</li>
+<li>Invoca a la función con tres casos distintos (ej. sin descuento, con 10% de descuento y con IVA reducido al 10%) y muestra los resultados dentro de una lista ordenada HTML (<code>&lt;ol&gt;</code>).</li>
+</ol>
+<hr />
+<h2 id="practica-4-formulario-de-contacto-seguro-y-validacion">PRÁCTICA 4: Formulario de Contacto Seguro y Validación</h2>
+<p><strong>Duración estimada:</strong> 30 minutos</p>
+<p><strong>Objetivos:</strong> Capturar peticiones HTTP POST, aplicar el patrón PRG, sanitizar entradas con <code>filter_input()</code> y prevenir ataques XSS.</p>
+<h3 id="enunciado_3">Enunciado</h3>
+<p>Crea una página de registro/contacto en un único archivo PHP denominado <code>contacto.php</code> (o separado en <code>contacto.html</code> y <code>procesar.php</code>).</p>
+<ol>
+<li>Comprueba si la petición se ha realizado mediante el método <code>POST</code> usando <code>$_SERVER['REQUEST_METHOD']</code>.</li>
+<li>Si es una petición <code>POST</code>:</li>
+<li>Sanitiza el campo <code>'nombre'</code> usando <code>FILTER_SANITIZE_SPECIAL_CHARS</code>.</li>
+<li>Valida el campo <code>'email'</code> con <code>FILTER_VALIDATE_EMAIL</code>.</li>
+<li>Valida el campo <code>'edad'</code> con <code>FILTER_VALIDATE_INT</code> asegurando que esté en el rango de 18 a 99 años.</li>
+<li>Si hay errores de validación, almacénalos en un array <code>$errores</code> y muéstralos en una lista roja HTML sobre el formulario.</li>
+<li>
+<p>Si los datos son válidos, muestra un mensaje de éxito escapando la salida con <code>htmlspecialchars()</code>.</p>
+</li>
+<li>
+<p>Si la petición es <code>GET</code>, muestra el formulario HTML de entrada limpio.</p>
+</li>
+</ol>
+<hr />
+<h2 id="practica-5-subida-segura-de-archivos-al-servidor">PRÁCTICA 5: Subida Segura de Archivos al Servidor</h2>
+<p><strong>Duración estimada:</strong> 30 minutos</p>
+<p><strong>Objetivos:</strong> Procesar envíos <code>multipart/form-data</code>, interactuar con la superglobal <code>$_FILES</code> y verificar tipos MIME reales con <code>finfo</code>.</p>
+<h3 id="enunciado_4">Enunciado</h3>
+<p>Desarrolla un módulo de subida de avatares/documentos en <code>subida.php</code>.</p>
+<ol>
+<li>Crea un formulario HTML con el atributo <code>enctype="multipart/form-data"</code> que contenga un campo de tipo <code>file</code> llamado <code>'documento'</code>.</li>
+<li>Al recibir el formulario en PHP:</li>
+<li>Comprueba que no haya habido errores de transferencia (<code>$_FILES['documento']['error'] === UPLOAD_ERR_OK</code>).</li>
+<li>Limita el tamaño máximo permitido a <strong>2 MB</strong> (<code>2 * 1024 * 1024</code> bytes).</li>
+<li>Verifica el tipo MIME <strong>real</strong> del archivo temporal utilizando la extensión <code>finfo</code> (solo se deben permitir imágenes <code>image/jpeg</code> y <code>image/png</code>).</li>
+<li>Genera un nombre de archivo único e impredecible utilizando <code>bin2hex(random_bytes(16))</code> y conserva su extensión original.</li>
+<li>Mueve el archivo a la carpeta <code>uploads/</code> mediante <code>move_uploaded_file()</code> y confirma la operación al usuario en pantalla.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
