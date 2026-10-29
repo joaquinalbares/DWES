@@ -70,7 +70,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">UT03 - BOLETÍN DE PRÁCTICAS</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#practica-1-ejercicio-basico-de-formulario">Práctica 1: Ejercicio básico de formulario</a>
+    <li class="toctree-l2"><a class="reference internal" href="#practica-1-conversion-de-moneda">Práctica 1: Conversión de Moneda</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</a>
     </li>
     </ul>
                   </li>
@@ -100,7 +102,90 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="relacion-de-practicas-ut03-uso-de-funciones-de-php-y-formularios">Relación de Prácticas: UT03 - Uso de funciones de PHP y Formularios</h1>
-<h2 id="practica-1-ejercicio-basico-de-formulario">Práctica 1: Ejercicio básico de formulario</h2>
+<h2 id="practica-1-conversion-de-moneda">Práctica 1: Conversión de Moneda</h2>
+<p>Dada la siguiente plantilla: </p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?PHP</span>
+
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;UT03 - PRACTICA 01: Conversor de Divisas&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 500px;"&gt;</span>
+<span class="x">            &lt;div class="box"&gt;</span>
+<span class="x">                &lt;h1 class="title has-text-centered"&gt;</span>
+<span class="x">                    &lt;i class="fa fa-money text-primary"&gt;&lt;/i&gt; Conversor de Divisas</span>
+<span class="x">                &lt;/h1&gt;</span>
+
+<span class="x">                &lt;form action="" method="POST"&gt;</span>
+<span class="x">                    &lt;div class="field"&gt;</span>
+<span class="x">                        &lt;label class="label" for="cantidad"&gt;Convertir:&lt;/label&gt;</span>
+<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                            &lt;input class="input" type="text" id="cantidad" name="cantidad" value="250"</span>
+<span class="x">                                placeholder="100.00" required&gt;</span>
+<span class="x">                            &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-calculator"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                    &lt;div class="field"&gt;</span>
+<span class="x">                        &lt;label class="label" for="de"&gt;De:&lt;/label&gt;</span>
+<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                            &lt;div class="select is-fullwidth"&gt;</span>
+<span class="x">                                &lt;select name="de" id="de"&gt;</span>
+<span class="x">                                    &lt;option value="EUR"&gt;Euro (€)&lt;/option&gt;</span>
+<span class="x">                                    &lt;option value="USD" selected&gt;Dólar Americano ($)&lt;/option&gt;</span>
+<span class="x">                                    &lt;option value="JPY"&gt;Yen Japonés (¥)&lt;/option&gt;</span>
+<span class="x">                                &lt;/select&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                            filer var &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-globe"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                    &lt;div class="field"&gt;</span>
+<span class="x">                        &lt;label class="label" for="a"&gt;A:&lt;/label&gt;</span>
+<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                            &lt;div class="select is-fullwidth"&gt;</span>
+<span class="x">                                &lt;select name="a" id="a"&gt;</span>
+<span class="x">                                    &lt;option value="EUR"&gt;Euro (€)&lt;/option&gt;</span>
+<span class="x">                                    &lt;option value="USD"&gt;Dólar Americano ($)&lt;/option&gt;</span>
+<span class="x">                                    &lt;option value="JPY" selected&gt;Yen Japonés (¥)&lt;/option&gt;</span>
+<span class="x">                                &lt;/select&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                            &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-exchange"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                    &lt;div class="field mt-4"&gt;</span>
+<span class="x">                        &lt;button class="button is-link is-fullwidth" type="submit"&gt;</span>
+<span class="x">                            &lt;i class="fa fa-refresh mr-2"&gt;&lt;/i&gt; Convertir</span>
+<span class="x">                        &lt;/button&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+<span class="x">                &lt;/form&gt;</span>
+
+<span class="x">                &lt;div class="notification is-success is-light mt-4 has-text-centered"&gt;</span>
+<span class="x">                    &lt;p class="is-size-5"&gt;</span>
+<span class="x">                        &lt;strong&gt;250 USD = 36.363,636 JPY&lt;/strong&gt;</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<h2 id="practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</h2>
 <p>Dado el siguiente formulario:</p>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
 <span class="x">&lt;html lang="es"&gt;</span>

@@ -285,10 +285,6 @@
 <h2 id="procesado-del-formulario">PROCESADO DEL FORMULARIO</h2>
 <p>El archivo 'ejemplo-res.php' procesa el formulario anterior:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// ============================================================================</span>
-<span class="c1">// PROFESOR DWES: EXPLICACIÓN DEL PROCESAMIENTO MULTINODAL DE DATOS</span>
-<span class="c1">// ============================================================================</span>
-
 <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: ejemplo.php"</span><span class="p">);</span>
     <span class="k">exit</span><span class="p">();</span>
