@@ -2,7 +2,90 @@
 
 ## Práctica 1: Conversión de Moneda
 
+Dada la siguiente plantilla: 
 
+```php
+<?PHP
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT03 - PRACTICA 01: Conversor de Divisas</title>
+    <style>
+        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container" style="max-width: 500px;">
+            <div class="box">
+                <h1 class="title has-text-centered">
+                    <i class="fa fa-money text-primary"></i> Conversor de Divisas
+                </h1>
+
+                <form action="" method="POST">
+                    <div class="field">
+                        <label class="label" for="cantidad">Convertir:</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" id="cantidad" name="cantidad" value="250"
+                                placeholder="100.00" required>
+                            <span class="icon is-small is-left"><i class="fa fa-calculator"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="de">De:</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth">
+                                <select name="de" id="de">
+                                    <option value="EUR">Euro (€)</option>
+                                    <option value="USD" selected>Dólar Americano ($)</option>
+                                    <option value="JPY">Yen Japonés (¥)</option>
+                                </select>
+                            </div>
+                            filer var <span class="icon is-small is-left"><i class="fa fa-globe"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="a">A:</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth">
+                                <select name="a" id="a">
+                                    <option value="EUR">Euro (€)</option>
+                                    <option value="USD">Dólar Americano ($)</option>
+                                    <option value="JPY" selected>Yen Japonés (¥)</option>
+                                </select>
+                            </div>
+                            <span class="icon is-small is-left"><i class="fa fa-exchange"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="field mt-4">
+                        <button class="button is-link is-fullwidth" type="submit">
+                            <i class="fa fa-refresh mr-2"></i> Convertir
+                        </button>
+                    </div>
+                </form>
+
+                <div class="notification is-success is-light mt-4 has-text-centered">
+                    <p class="is-size-5">
+                        <strong>250 USD = 36.363,636 JPY</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+```
 
 ## Práctica 2: Ejercicio básico de formulario
 

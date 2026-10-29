@@ -189,10 +189,6 @@ El archivo 'ejemplo-res.php' procesa el formulario anterior:
 
 ```php
 <?php
-// ============================================================================
-// PROFESOR DWES: EXPLICACIÓN DEL PROCESAMIENTO MULTINODAL DE DATOS
-// ============================================================================
-
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: ejemplo.php");
     exit();
