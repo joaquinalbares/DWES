@@ -10,6 +10,9 @@ nav:
   - PRÁCTICAS:
       - UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP: ut00p01.md
       - UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST): ut01p01.md
+      - UT02 - BOLETÍN DE PRÁCTICAS: ut02_practicas.md
+      - EJEMPLOS DE USO DE FORMULARIOS: ut03-ejemplo01.md
+      - UT03 - BOLETÍN DE PRÁCTICAS: ut03-practicas.md
 theme:
   name: readthedocs
   locale: es
