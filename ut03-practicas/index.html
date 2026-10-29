@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UT03 - BOLETÍN DE PRÁCTICAS - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT03 - BOLET\u00cdN DE PR\u00c1CTICAS";
+        var properdocs_page_input_path = "ut03-practicas.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÁCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02_practicas/">UT02 - BOLETÍN DE PRÁCTICAS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03-ejemplo01/">EJEMPLOS DE USO DE FORMULARIOS</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UT03 - BOLETÍN DE PRÁCTICAS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#practica-1-ejercicio-basico-de-fprmularios">Práctica 1: Ejercicio básico de fprmularios</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">PRÁCTICAS</li>
+      <li class="breadcrumb-item active">UT03 - BOLETÍN DE PRÁCTICAS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="relacion-de-practicas-ut03-uso-de-funciones-de-php-y-formularios">Relación de Prácticas: UT03 - Uso de funciones de PHP y Formularios</h1>
+<h2 id="practica-1-ejercicio-basico-de-fprmularios">Práctica 1: Ejercicio básico de fprmularios</h2>
+<p>Dado el siguiente formulario:</p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;PRÁCTICA 01 - Búsqueda de Canciones&lt;/title&gt;</span>
+<span class="x">    &lt;!-- Importación de Bulma CSS desde CDN --&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;!-- Importación de FontAwesome para la iconografía --&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-link"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-music mr-2"&gt;&lt;/i&gt; Formulario simple - Búsqueda de canciones</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+<span class="x">                    &lt;!-- Formulario con método POST dirigido a la página de resultados --&gt;</span>
+<span class="x">                    &lt;form action="p01-res.php" method="POST"&gt;</span>
+
+<span class="x">                        &lt;!-- Campo: Texto a buscar --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label" for="texto"&gt;Texto a buscar:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                                &lt;input class="input" type="text" id="texto" name="texto" placeholder="Escriba aquí..." required&gt;</span>
+<span class="x">                                &lt;span class="icon is-small is-left"&gt;</span>
+<span class="x">                                    &lt;i class="fa fa-search"&gt;&lt;/i&gt;</span>
+<span class="x">                                &lt;/span&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- Campo: Buscar en (Radio buttons) --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;Buscar en:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;label class="radio"&gt;</span>
+<span class="x">                                    &lt;input type="radio" name="buscar_en" value="cancion"&gt;</span>
+<span class="x">                                    Títulos de canción</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                                &lt;label class="radio"&gt;</span>
+<span class="x">                                    &lt;input type="radio" name="buscar_en" value="album"&gt;</span>
+<span class="x">                                    Nombres de álbum</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                                &lt;label class="radio"&gt;</span>
+<span class="x">                                    &lt;input type="radio" name="buscar_en" value="ambos" checked&gt;</span>
+<span class="x">                                    Ambos campos</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- Campo: Género musical (Select) --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label" for="genero"&gt;Género musical:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                                &lt;div class="select is-fullwidth"&gt;</span>
+<span class="x">                                    &lt;select name="genero" id="genero"&gt;</span>
+<span class="x">                                        &lt;option value="Todos" selected&gt;Todos&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Acústica"&gt;Acústica&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Banda Sonora"&gt;Banda Sonora&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Blues"&gt;Blues&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Electrónica"&gt;Electrónica&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Folk"&gt;Folk&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Jazz"&gt;Jazz&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="New Age"&gt;New Age&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Pop"&gt;Pop&lt;/option&gt;</span>
+<span class="x">                                        &lt;option value="Rock"&gt;Rock&lt;/option&gt;</span>
+<span class="x">                                    &lt;/select&gt;</span>
+<span class="x">                                &lt;/div&gt;</span>
+<span class="x">                                &lt;span class="icon is-small is-left"&gt;</span>
+<span class="x">                                    &lt;i class="fa fa-list"&gt;&lt;/i&gt;</span>
+<span class="x">                                &lt;/span&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- Botón de Envío --&gt;</span>
+<span class="x">                        &lt;div class="field mt-5"&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;button type="submit" class="button is-link is-fullwidth"&gt;</span>
+<span class="x">                                    &lt;i class="fa fa-search mr-2"&gt;&lt;/i&gt; Buscar</span>
+<span class="x">                                &lt;/button&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                    &lt;/form&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Crea una aplicación en PHP que muestre algo similar a lo siguiente:</p>
+<p><img alt="Ejemplo de salida" src="img/ut03-p01-png" /></p>
+<p>Usando la siguiente plantilla como ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="cm">/* TODO Crea una aplicación en PHP en la que se debe mostrar lo que ha introducido el usuario en </span>
+<span class="cm">el formulario y un botón que permita volver a la página de búsqueda. */</span>
+
+<span class="c1">// Comprobamos si la petición ha llegado por el método POST. Si el usuario</span>
+<span class="c1">// intenta acceder directamente introduciendo la URL en el navegador,</span>
+<span class="c1">// debemos redirigirlo al formulario o tratar el error.</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: p01.php"</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">();</span> <span class="c1">// Detenemos la ejecución del script tras la redirección.</span>
+<span class="p">}</span>
+
+<span class="c1">// 1. Recogida y sanitización del campo 'texto'</span>
+
+<span class="c1">// 2. Recogida del campo 'buscar_en' (Radio Button)</span>
+
+<span class="c1">// 3. Recogida del campo 'genero' (Desplegable Select)</span>
+
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;Ejercicio 1 - Resultados&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-success"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-check-circle mr-2"&gt;&lt;/i&gt; Formulario simple. Resultados del formulario</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+<span class="x">                    &lt;p class="subtitle is-5"&gt;Estos son los datos introducidos:&lt;/p&gt;</span>
+
+<span class="x">                    &lt;div class="content"&gt;</span>
+<span class="x">                        &lt;ul&gt;</span>
+<span class="x">                            &lt;li&gt;&lt;strong&gt;Texto de búsqueda:&lt;/strong&gt; Texto&lt;/li&gt;</span>
+<span class="x">                            &lt;li&gt;&lt;strong&gt;Buscar en:&lt;/strong&gt; Etiqueta&lt;/li&gt;</span>
+<span class="x">                            &lt;li&gt;&lt;strong&gt;Género:&lt;/strong&gt;  Genero&lt;/li&gt;</span>
+<span class="x">                        &lt;/ul&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                    &lt;!-- Botón para regresar al formulario inicial --&gt;</span>
+<span class="x">                    &lt;div class="field mt-5"&gt;</span>
+<span class="x">                        &lt;a href="p01.html" class="button is-link is-outlined is-fullwidth"&gt;</span>
+<span class="x">                            &lt;i class="fa fa-arrow-left mr-2"&gt;&lt;/i&gt; Nueva búsqueda</span>
+<span class="x">                        &lt;/a&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../ut03-ejemplo01/" class="btn btn-neutral float-left" title="EJEMPLOS DE USO DE FORMULARIOS"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ut03-ejemplo01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
