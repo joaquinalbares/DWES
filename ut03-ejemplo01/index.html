@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UT 03 - EJEMPLO DE PROCESAMIENTO DE FORMULARIOS - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT 03 - EJEMPLO DE PROCESAMIENTO DE FORMULARIOS";
+        var properdocs_page_input_path = "ut03-ejemplo01.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PREVIO</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00/">UT00 - BUENAS PRÁCTICAS EN DESARROLLO WEB</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">UT01 - LENGUAJES DE GUIONES (SCRITP) CLIENTE/SERVIDOR</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut02/">UT02 - INTEGRACIÓN DEL CÓDIGO EN LENGUAJES DE MARCAS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03/">UT03 - PROGRAMACIÓN EN PHP INTEGRADO EN HTML</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">PRÁCTICAS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut00p01/">UT00P01 - CONFIGURACIÓN DE VS CODE PARA DESARROLLO EN PHP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01p01/">UT01P01 - INICIACIÓN A POSTMAN Y PETICIONES HTTP (GET / POST)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT 03 - EJEMPLO DE PROCESAMIENTO DE FORMULARIOS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut-03-ejemplo-de-procesamiento-de-formularios">UT 03 - EJEMPLO DE PROCESAMIENTO DE FORMULARIOS</h1>
+<h2 id="arhchivo-de-formulario">ARHCHIVO DE FORMULARIO</h2>
+<p>El archivo 'formulario.html' muestra una serie de campos de formulario diferentes y llama a 'ejemplo-res.php' como accción del formulario:</p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;Ejercicio de Ejemplo - Elementos de Entrada&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 700px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-info"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-list-alt mr-2"&gt;&lt;/i&gt; Elementos de Entrada</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+
+<span class="x">                    &lt;!-- ATENCIÓN ALUMNO: enctype es obligatorio cuando enviamos archivos con $_FILES --&gt;</span>
+<span class="x">                    &lt;form action="ejemplo-res.php" method="POST" enctype="multipart/form-data"&gt;</span>
+
+<span class="x">                        &lt;!-- Campo oculto (HIDDEN) --&gt;</span>
+<span class="x">                        &lt;input type="hidden" name="token_sesion" value="XYZ987654321"&gt;</span>
+
+<span class="x">                        &lt;h2 class="title is-5 has-text-info"&gt;Elementos de tipo INPUT&lt;/h2&gt;</span>
+
+<span class="x">                        &lt;!-- INPUT TEXT --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;TEXT&lt;/label&gt;</span>
+<span class="x">                            &lt;label class="subtitle is-6" for="cadena"&gt;Introduzca la cadena a buscar:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                                &lt;input class="input" type="text" id="cadena" name="cadena" value="valor por defecto"&gt;</span>
+<span class="x">                                &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-font"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- INPUT RADIO --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;RADIO&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;span class="mr-3"&gt;Sexo:&lt;/span&gt;</span>
+<span class="x">                                &lt;label class="radio"&gt;</span>
+<span class="x">                                    &lt;input type="radio" name="sexo" value="Mujer" checked&gt; Mujer</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                                &lt;label class="radio"&gt;</span>
+<span class="x">                                    &lt;input type="radio" name="sexo" value="Hombre"&gt; Hombre</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- INPUT CHECKBOX (Array extras[]) --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;CHECKBOX&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;span class="mr-3"&gt;Extras:&lt;/span&gt;</span>
+<span class="x">                                &lt;label class="checkbox mr-2"&gt;</span>
+<span class="x">                                    &lt;input type="checkbox" name="extras[]" value="Garaje"&gt; Garaje</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                                &lt;label class="checkbox mr-2"&gt;</span>
+<span class="x">                                    &lt;input type="checkbox" name="extras[]" value="Piscina"&gt; Piscina</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                                &lt;label class="checkbox"&gt;</span>
+<span class="x">                                    &lt;input type="checkbox" name="extras[]" value="Jardín"&gt; Jardín</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- INPUT FILE --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;FILE&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="file has-name is-fullwidth"&gt;</span>
+<span class="x">                                &lt;label class="file-label"&gt;</span>
+<span class="x">                                    &lt;input class="file-input" type="file" name="fichero"&gt;</span>
+<span class="x">                                    &lt;span class="file-cta"&gt;</span>
+<span class="x">                                        &lt;span class="file-icon"&gt;&lt;i class="fa fa-upload"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                                        &lt;span class="file-label"&gt;Examinar…&lt;/span&gt;</span>
+<span class="x">                                    &lt;/span&gt;</span>
+<span class="x">                                &lt;/label&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- INPUT PASSWORD --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;PASSWORD&lt;/label&gt;</span>
+<span class="x">                            &lt;label class="subtitle is-6" for="password"&gt;Contraseña:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
+<span class="x">                                &lt;input class="input" type="password" id="password" name="password" placeholder="••••••••"&gt;</span>
+<span class="x">                                &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-lock"&gt;&lt;/i&gt;&lt;/span&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;hr&gt;</span>
+<span class="x">                        &lt;h2 class="title is-5 has-text-info"&gt;Elemento SELECT&lt;/h2&gt;</span>
+
+<span class="x">                        &lt;!-- SELECT SIMPLE --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;SELECT SIMPLE&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="field is-horizontal"&gt;</span>
+<span class="x">                                &lt;div class="field-label is-normal"&gt;</span>
+<span class="x">                                    &lt;label class="label" for="color"&gt;Color:&lt;/label&gt;</span>
+<span class="x">                                &lt;/div&gt;</span>
+<span class="x">                                &lt;div class="field-body"&gt;</span>
+<span class="x">                                    &lt;div class="field"&gt;</span>
+<span class="x">                                        &lt;div class="control"&gt;</span>
+<span class="x">                                            &lt;div class="select"&gt;</span>
+<span class="x">                                                &lt;select name="color" id="color"&gt;</span>
+<span class="x">                                                    &lt;option value="Rojo" selected&gt;Rojo&lt;/option&gt;</span>
+<span class="x">                                                    &lt;option value="Verde"&gt;Verde&lt;/option&gt;</span>
+<span class="x">                                                    &lt;option value="Azul"&gt;Azul&lt;/option&gt;</span>
+<span class="x">                                                &lt;/select&gt;</span>
+<span class="x">                                            &lt;/div&gt;</span>
+<span class="x">                                        &lt;/div&gt;</span>
+<span class="x">                                    &lt;/div&gt;</span>
+<span class="x">                                &lt;/div&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- SELECT MÚLTIPLE (Array idiomas[]) --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label"&gt;SELECT MÚLTIPLE&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="field is-horizontal"&gt;</span>
+<span class="x">                                &lt;div class="field-label is-normal"&gt;</span>
+<span class="x">                                    &lt;label class="label" for="idiomas"&gt;Idiomas:&lt;/label&gt;</span>
+<span class="x">                                &lt;/div&gt;</span>
+<span class="x">                                &lt;div class="field-body"&gt;</span>
+<span class="x">                                    &lt;div class="field"&gt;</span>
+<span class="x">                                        &lt;div class="control"&gt;</span>
+<span class="x">                                            &lt;div class="select is-multiple"&gt;</span>
+<span class="x">                                                &lt;select name="idiomas[]" id="idiomas" multiple size="3"&gt;</span>
+<span class="x">                                                    &lt;option value="Inglés" selected&gt;Inglés&lt;/option&gt;</span>
+<span class="x">                                                    &lt;option value="Francés"&gt;Francés&lt;/option&gt;</span>
+<span class="x">                                                    &lt;option value="Alemán"&gt;Alemán&lt;/option&gt;</span>
+<span class="x">                                                &lt;/select&gt;</span>
+<span class="x">                                            &lt;/div&gt;</span>
+<span class="x">                                        &lt;/div&gt;</span>
+<span class="x">                                    &lt;/div&gt;</span>
+<span class="x">                                &lt;/div&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;hr&gt;</span>
+<span class="x">                        &lt;h2 class="title is-5 has-text-info"&gt;Elemento TEXTAREA&lt;/h2&gt;</span>
+
+<span class="x">                        &lt;!-- TEXTAREA --&gt;</span>
+<span class="x">                        &lt;div class="field"&gt;</span>
+<span class="x">                            &lt;label class="label" for="comentario"&gt;Comentario:&lt;/label&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;textarea class="textarea" id="comentario" name="comentario" rows="3"&gt;Este libro me parece ...&lt;/textarea&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                        &lt;!-- BOTONES DE ENVÍO Y BORRADO --&gt;</span>
+<span class="x">                        &lt;div class="field is-grouped mt-5"&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;button type="submit" class="button is-link"&gt;</span>
+<span class="x">                                    &lt;i class="fa fa-paper-plane mr-2"&gt;&lt;/i&gt; Enviar datos</span>
+<span class="x">                                &lt;/button&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                            &lt;div class="control"&gt;</span>
+<span class="x">                                &lt;button type="reset" class="button is-light"&gt;</span>
+<span class="x">                                    &lt;i class="fa fa-eraser mr-2"&gt;&lt;/i&gt; Borrar datos</span>
+<span class="x">                                &lt;/button&gt;</span>
+<span class="x">                            &lt;/div&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                    &lt;/form&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<h2 id="procesado-del-formulario">PROCESADO DEL FORMULARIO</h2>
+<p>El archivo 'ejemplo-res.php' procesa el formulario anterior:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ============================================================================</span>
+<span class="c1">// PROFESOR DWES: EXPLICACIÓN DEL PROCESAMIENTO MULTINODAL DE DATOS</span>
+<span class="c1">// ============================================================================</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: ejemplo.php"</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 1. Recepción del texto e input hidden</span>
+<span class="nv">$cadena</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'cadena'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+<span class="nv">$tokenHidden</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token_sesion'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="c1">// 2. Recepción del sexo (Radio Button)</span>
+<span class="nv">$sexo</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'sexo'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'No especificado'</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="c1">// 3. Recepción de Checkboxes (Array 'extras')</span>
+<span class="c1">// Si el usuario no marca ninguna opción, la clave no estará definida en $_POST.</span>
+<span class="nv">$extras</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'extras'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+<span class="nv">$extrasTexto</span> <span class="o">=</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$extras</span><span class="p">)</span> <span class="o">?</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span> <span class="nb">array_map</span><span class="p">(</span><span class="s1">'htmlspecialchars'</span><span class="p">,</span> <span class="nv">$extras</span><span class="p">))</span> <span class="o">:</span> <span class="s1">'Ningún extra seleccionado'</span><span class="p">;</span>
+
+<span class="c1">// 4. Recepción de contraseña</span>
+<span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nv">$passwordOculta</span> <span class="o">=</span> <span class="nb">str_repeat</span><span class="p">(</span><span class="s1">'•'</span><span class="p">,</span> <span class="nb">mb_strlen</span><span class="p">(</span><span class="nv">$password</span><span class="p">));</span>
+
+<span class="c1">// 5. Recepción del Select Simple</span>
+<span class="nv">$color</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'No seleccionado'</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="c1">// 6. Recepción del Select Múltiple (Array 'idiomas')</span>
+<span class="nv">$idiomas</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'idiomas'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+<span class="nv">$idiomasTexto</span> <span class="o">=</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$idiomas</span><span class="p">)</span> <span class="o">?</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span> <span class="nb">array_map</span><span class="p">(</span><span class="s1">'htmlspecialchars'</span><span class="p">,</span> <span class="nv">$idiomas</span><span class="p">))</span> <span class="o">:</span> <span class="s1">'Ningún idioma seleccionado'</span><span class="p">;</span>
+
+<span class="c1">// 7. Recepción del Textarea</span>
+<span class="nv">$comentario</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'comentario'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="c1">// 8. Recepción del archivo mediante la superglobal $_FILES</span>
+<span class="nv">$ficheroInfo</span> <span class="o">=</span> <span class="s2">"No se ha subido ningún archivo"</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'fichero'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'fichero'</span><span class="p">][</span><span class="s1">'error'</span><span class="p">]</span> <span class="o">===</span> <span class="nx">UPLOAD_ERR_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$nombreOriginal</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'fichero'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">],</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+    <span class="nv">$tamanoBytes</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'fichero'</span><span class="p">][</span><span class="s1">'size'</span><span class="p">];</span>
+    <span class="nv">$tipoMime</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'fichero'</span><span class="p">][</span><span class="s1">'type'</span><span class="p">],</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+
+    <span class="nv">$ficheroInfo</span> <span class="o">=</span> <span class="s2">"Archivo: &lt;strong&gt;</span><span class="si">$nombreOriginal</span><span class="s2">&lt;/strong&gt; (</span><span class="si">$tamanoBytes</span><span class="s2"> bytes, Tipo: </span><span class="si">$tipoMime</span><span class="s2">)"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;Ejercicio 2 - Resultados&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 800px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-success"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-database mr-2"&gt;&lt;/i&gt; Datos Recibidos del Formulario</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+
+<span class="x">                    &lt;table class="table is-bordered is-striped is-hoverable is-fullwidth"&gt;</span>
+<span class="x">                        &lt;thead&gt;</span>
+<span class="x">                            &lt;tr class="has-background-link-light"&gt;</span>
+<span class="x">                                &lt;th&gt;Elemento&lt;/th&gt;</span>
+<span class="x">                                &lt;th&gt;Valor Recibido&lt;/th&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                        &lt;/thead&gt;</span>
+<span class="x">                        &lt;tbody&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Campo Oculto (HIDDEN)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;code&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$tokenHidden</span> <span class="cp">?&gt;</span><span class="x">&lt;/code&gt;&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Cadena a buscar (TEXT)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$cadena</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Sexo (RADIO)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$sexo</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Extras (CHECKBOX)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$extrasTexto</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Fichero (FILE)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$ficheroInfo</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Contraseña (PASSWORD)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$passwordOculta</span> <span class="cp">?&gt;</span><span class="x"> &lt;em&gt;(Enmascarada por seguridad)&lt;/em&gt;&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Color (SELECT SIMPLE)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;span class="tag is-info"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$color</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Idiomas (SELECT MÚLTIPLE)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$idiomasTexto</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                            &lt;tr&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;strong&gt;Comentario (TEXTAREA)&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                &lt;td&gt;&lt;blockquote class="p-2"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">nl2br</span><span class="p">(</span><span class="nv">$comentario</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&lt;/blockquote&gt;&lt;/td&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                        &lt;/tbody&gt;</span>
+<span class="x">                    &lt;/table&gt;</span>
+
+<span class="x">                    &lt;div class="field mt-5"&gt;</span>
+<span class="x">                        &lt;a href="ejemplo.php" class="button is-link is-outlined is-fullwidth"&gt;</span>
+<span class="x">                            &lt;i class="fa fa-arrow-left mr-2"&gt;&lt;/i&gt; Volver al formulario</span>
+<span class="x">                        &lt;/a&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
