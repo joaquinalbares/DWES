@@ -66,13 +66,27 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ut02_practicas/">UT02 - BOLETÍN DE PRÁCTICAS</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../ut03-ejemplo01/">EJEMPLOS DE USO DE FORMULARIOS</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut03-ejemplo01/">UT03 - EJEMPLOS DE USO DE FORMULARIOS</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">UT03 - BOLETÍN DE PRÁCTICAS</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#practica-1-conversion-de-moneda">Práctica 1: Conversión de Moneda</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-formulario">A) FORMULARIO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#b-resultado">B) RESULTADO</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practica-3-la-quiniela">Práctica 3: La Quiniela</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-formulario_1">A) FORMULARIO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#b-resultado_1">B) RESULTADO</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -185,7 +199,14 @@
 
 <span class="x">&lt;/html&gt;</span>
 </code></pre></div>
+<p>Completa el ejercicio para que haga la conversión de monedas, teniendo en cuenta los siguientes aspectos:</p>
+<ul>
+<li>Guarda en un array los ratios de conversión de EUR a EUR, USD Y JPY, para que no sea necesario hacer if anidados o match.</li>
+<li>Para la conversión, pasa la moneda <code>de</code>a EUR y luego convierte ese resultado a la moneda <code>a</code>.</li>
+</ul>
+<hr />
 <h2 id="practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</h2>
+<h3 id="a-formulario">A) FORMULARIO</h3>
 <p>Dado el siguiente formulario:</p>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
 <span class="x">&lt;html lang="es"&gt;</span>
@@ -286,6 +307,7 @@
 </code></pre></div>
 <p>Crea una aplicación en PHP que muestre algo similar a lo siguiente:</p>
 <p><img alt="Ejemplo de salida" src="../img/ut03-p01.png" /></p>
+<h3 id="b-resultado">B) RESULTADO</h3>
 <p>Usando la siguiente plantilla como ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="cm">/* TODO Crea una aplicación en PHP en la que se debe mostrar lo que ha introducido el usuario en </span>
@@ -351,11 +373,186 @@
 <span class="x">&lt;/html&gt;</span>
 </code></pre></div>
 <hr />
+<h2 id="practica-3-la-quiniela">Práctica 3: La Quiniela</h2>
+<p>Esta práctica genera un formulario para generar un boleto de quiniela simulado usando un bucle en PHP. Una vez que se han marcado las casillas elegidas, al pulsar el botón <code>ENVIAR</code>se va a la página que procesa el boleto y muestra los aciertos y los fallos.</p>
+<h3 id="a-formulario_1">A) FORMULARIO</h3>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;PRÁCTICA 02 - La Quiniela&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-danger"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-futbol-o mr-2"&gt;&lt;/i&gt; LA QUINIELA</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+
+<span class="x">                    &lt;!-- Formulario con envío POST hacia el procesador de quinielas --&gt;</span>
+<span class="x">                    &lt;form action="p02-res.php" method="POST"&gt;</span>
+
+<span class="x">                        &lt;table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered"&gt;</span>
+<span class="x">                            &lt;thead&gt;</span>
+<span class="x">                                &lt;tr class="has-background-dark"&gt;</span>
+<span class="x">                                    &lt;th class="has-text-white"&gt;PARTIDO&lt;/th&gt;</span>
+<span class="x">                                    &lt;th class="has-text-white"&gt;1&lt;/th&gt;</span>
+<span class="x">                                    &lt;th class="has-text-white"&gt;X&lt;/th&gt;</span>
+<span class="x">                                    &lt;th class="has-text-white"&gt;2&lt;/th&gt;</span>
+<span class="x">                                &lt;/tr&gt;</span>
+<span class="x">                            &lt;/thead&gt;</span>
+<span class="x">                            &lt;tbody&gt;</span>
+<span class="x">                                </span><span class="cp">&lt;?php</span>
+                                <span class="c1">// TODO</span>
+                                <span class="c1">// Generamos 10 filas de forma iterativa.</span>
+                                <span class="c1">// Cada grupo de radio buttons utiliza la nomenclatura 'partido[$i]'.</span>
+                                <span class="cp">?&gt;</span>
+<span class="x">                                    &lt;tr&gt;</span>
+<span class="x">                                        &lt;td&gt;&lt;strong&gt;Partido </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                        &lt;td&gt;</span>
+<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="1"&gt;</span>
+<span class="x">                                        &lt;/td&gt;</span>
+<span class="x">                                        &lt;td&gt;</span>
+<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="X"&gt;</span>
+<span class="x">                                        &lt;/td&gt;</span>
+<span class="x">                                        &lt;td&gt;</span>
+<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="2"&gt;</span>
+<span class="x">                                        &lt;/td&gt;</span>
+<span class="x">                                    &lt;/tr&gt;</span>
+<span class="x">                                </span><span class="cp">&lt;?php</span> <span class="cp">?&gt;</span>
+<span class="x">                            &lt;/tbody&gt;</span>
+<span class="x">                        &lt;/table&gt;</span>
+
+<span class="x">                        &lt;div class="field mt-4"&gt;</span>
+<span class="x">                            &lt;button type="submit" class="button is-danger is-fullwidth"&gt;</span>
+<span class="x">                                &lt;i class="fa fa-paper-plane mr-2"&gt;&lt;/i&gt; Enviar Apuesta</span>
+<span class="x">                            &lt;/button&gt;</span>
+<span class="x">                        &lt;/div&gt;</span>
+
+<span class="x">                    &lt;/form&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<h3 id="b-resultado_1">B) RESULTADO</h3>
+<p>Para procesar el resultado, guardaremos un array multidimensional donde se guardara cada partido con el valor elegido, el valor que ha salido y si has acertado o no, mostrando la tabla que se ve en la plantilla.</p>
+<p>El resuldato del partido se generará usando la función <code>rand(0, 2);</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ESCRUTINIO DE LA QUINIELA</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: ejercicio3.php"</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 1. Recuperación del array asociativo 'partido' enviado desde el formulario</span>
+
+
+<span class="c1">// 2. Definición del catálogo de posibles resultados de un partido</span>
+
+
+<span class="c1">// 3. Inicialización del contador de aciertos y la estructura del informe</span>
+<span class="nv">$aciertosTotales</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nv">$informeEscrutinio</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="c1">// 4. Bucle de evaluación de los 10 partidos</span>
+
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="x">    &lt;title&gt;Ejercicio 3 - Resultados Escrutinio&lt;/title&gt;</span>
+<span class="x">    &lt;style&gt;</span>
+<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
+<span class="x">    &lt;/style&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;section class="section"&gt;</span>
+<span class="x">        &lt;div class="container" style="max-width: 700px;"&gt;</span>
+<span class="x">            &lt;div class="card"&gt;</span>
+<span class="x">                &lt;header class="card-header has-background-dark"&gt;</span>
+<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
+<span class="x">                        &lt;i class="fa fa-trophy mr-2"&gt;&lt;/i&gt; LA QUINIELA - RESULTADOS</span>
+<span class="x">                    &lt;/p&gt;</span>
+<span class="x">                &lt;/header&gt;</span>
+<span class="x">                &lt;div class="card-content"&gt;</span>
+
+<span class="x">                    &lt;table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered"&gt;</span>
+<span class="x">                        &lt;thead&gt;</span>
+<span class="x">                            &lt;tr class="has-background-grey-dark"&gt;</span>
+<span class="x">                                &lt;th class="has-text-white"&gt;PARTIDO&lt;/th&gt;</span>
+<span class="x">                                &lt;th class="has-text-white"&gt;TU RESULTADO&lt;/th&gt;</span>
+<span class="x">                                &lt;th class="has-text-white"&gt;HA SALIDO&lt;/th&gt;</span>
+<span class="x">                                &lt;th class="has-text-white"&gt;¿HAS ACERTADO?&lt;/th&gt;</span>
+<span class="x">                            &lt;/tr&gt;</span>
+<span class="x">                        &lt;/thead&gt;</span>
+<span class="x">                        &lt;tbody&gt;</span>
+<span class="x">                            </span><span class="cp">&lt;?php</span>  <span class="cp">?&gt;</span>
+<span class="x">                                &lt;tr&gt;</span>
+<span class="x">                                    &lt;td&gt;&lt;strong&gt;Partido </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$numPartido</span> <span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/td&gt;</span>
+<span class="x">                                    &lt;td&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$datos</span><span class="p">[</span><span class="s1">'tu_resultado'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'SIN MARCAR'</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                                            &lt;span class="tag is-warning"&gt;SIN MARCAR&lt;/span&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                                            &lt;span class="tag is-info"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'tu_resultado'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">                                    &lt;/td&gt;</span>
+<span class="x">                                    &lt;td&gt;</span>
+<span class="x">                                        &lt;span class="tag is-dark"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'ha_salido'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">                                    &lt;/td&gt;</span>
+<span class="x">                                    &lt;td&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$datos</span><span class="p">[</span><span class="s1">'acertado'</span><span class="p">])</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                                            &lt;span class="tag is-success"&gt;&lt;i class="fa fa-check mr-1"&gt;&lt;/i&gt; SI&lt;/span&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                                            &lt;span class="tag is-danger"&gt;&lt;i class="fa fa-times mr-1"&gt;&lt;/i&gt; NO&lt;/span&gt;</span>
+<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">                                    &lt;/td&gt;</span>
+<span class="x">                                &lt;/tr&gt;</span>
+<span class="x">                            </span><span class="cp">&lt;?php</span>  <span class="cp">?&gt;</span>
+<span class="x">                        &lt;/tbody&gt;</span>
+<span class="x">                    &lt;/table&gt;</span>
+
+<span class="x">                    &lt;!-- Notificación del Total de Aciertos --&gt;</span>
+<span class="x">                    &lt;div class="notification is-primary has-text-centered mt-4"&gt;</span>
+<span class="x">                        &lt;p class="is-size-4"&gt;</span>
+<span class="x">                            &lt;strong&gt;&lt;i class="fa fa-star mr-2"&gt;&lt;/i&gt; HAS TENIDO </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$aciertosTotales</span> <span class="cp">?&gt;</span><span class="x"> ACIERTOS&lt;/strong&gt;</span>
+<span class="x">                        &lt;/p&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                    &lt;!-- Botón para volver a jugar --&gt;</span>
+<span class="x">                    &lt;div class="field mt-5"&gt;</span>
+<span class="x">                        &lt;a href="ejercicio3.php" class="button is-danger is-outlined is-fullwidth"&gt;</span>
+<span class="x">                            &lt;i class="fa fa-refresh mr-2"&gt;&lt;/i&gt; Volver a Jugar</span>
+<span class="x">                        &lt;/a&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
-        <a href="../ut03-ejemplo01/" class="btn btn-neutral float-left" title="EJEMPLOS DE USO DE FORMULARIOS"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../ut03-ejemplo01/" class="btn btn-neutral float-left" title="UT03 - EJEMPLOS DE USO DE FORMULARIOS"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
     </div>
 
   <hr/>
