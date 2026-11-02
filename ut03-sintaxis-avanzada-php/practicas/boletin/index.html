@@ -83,23 +83,45 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Boletín de prácticas</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#practica-1-conversion-de-moneda">Práctica 1: Conversión de Moneda</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-basico">🟢 Nivel básico</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#a-formulario">A) FORMULARIO</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p01-formulario-de-busqueda-de-canciones">P01 · Formulario de búsqueda de canciones</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#b-resultado">B) RESULTADO</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p02-catalogo-de-controles-de-formulario">P02 · Catálogo de controles de formulario</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p03-calculadora-de-la-letra-del-dni">P03 · Calculadora de la letra del DNI</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p04-ecuacion-de-segundo-grado">P04 · Ecuación de segundo grado</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-3-la-quiniela">Práctica 3: La Quiniela</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-intermedio">🟡 Nivel intermedio</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#a-formulario_1">A) FORMULARIO</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p05-dibuja-un-triangulo">P05 · Dibuja un triángulo</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#b-resultado_1">B) RESULTADO</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p06-tabla-numerada-dinamica">P06 · Tabla numerada dinámica</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p07-conversor-de-divisas">P07 · Conversor de divisas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p08-la-quiniela">P08 · La quiniela</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p09-formulario-de-alta-validado-con-expresiones-regulares">P09 · Formulario de alta validado con expresiones regulares</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-avanzado">🔴 Nivel avanzado</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#p10-gestion-de-calificaciones">P10 · Gestión de calificaciones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p11-buscador-de-productos-con-filtros">P11 · Buscador de productos con filtros</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p12-reto-calculadora-de-esperanza-de-vida">P12 · Reto: calculadora de esperanza de vida</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#entrega">Entrega</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rubrica">Rúbrica</a>
     </li>
     </ul>
                 </li>
@@ -131,439 +153,454 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="relacion-de-practicas-ut03-uso-de-funciones-de-php-y-formularios">Relación de Prácticas: UT03 - Uso de funciones de PHP y Formularios</h1>
-<h2 id="practica-1-conversion-de-moneda">Práctica 1: Conversión de Moneda</h2>
-<p>Dada la siguiente plantilla: </p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?PHP</span>
-
-<span class="cp">?&gt;</span>
-<span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html lang="es"&gt;</span>
-
-<span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="x">    &lt;title&gt;UT03 - PRACTICA 01: Conversor de Divisas&lt;/title&gt;</span>
-<span class="x">    &lt;style&gt;</span>
-<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
-<span class="x">    &lt;/style&gt;</span>
-<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
-<span class="x">&lt;/head&gt;</span>
-
-<span class="x">&lt;body&gt;</span>
-<span class="x">    &lt;section class="section"&gt;</span>
-<span class="x">        &lt;div class="container" style="max-width: 500px;"&gt;</span>
-<span class="x">            &lt;div class="box"&gt;</span>
-<span class="x">                &lt;h1 class="title has-text-centered"&gt;</span>
-<span class="x">                    &lt;i class="fa fa-money text-primary"&gt;&lt;/i&gt; Conversor de Divisas</span>
-<span class="x">                &lt;/h1&gt;</span>
-
-<span class="x">                &lt;form action="" method="POST"&gt;</span>
-<span class="x">                    &lt;div class="field"&gt;</span>
-<span class="x">                        &lt;label class="label" for="cantidad"&gt;Convertir:&lt;/label&gt;</span>
-<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
-<span class="x">                            &lt;input class="input" type="text" id="cantidad" name="cantidad" value="250"</span>
-<span class="x">                                placeholder="100.00" required&gt;</span>
-<span class="x">                            &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-calculator"&gt;&lt;/i&gt;&lt;/span&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                    &lt;div class="field"&gt;</span>
-<span class="x">                        &lt;label class="label" for="de"&gt;De:&lt;/label&gt;</span>
-<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
-<span class="x">                            &lt;div class="select is-fullwidth"&gt;</span>
-<span class="x">                                &lt;select name="de" id="de"&gt;</span>
-<span class="x">                                    &lt;option value="EUR"&gt;Euro (€)&lt;/option&gt;</span>
-<span class="x">                                    &lt;option value="USD" selected&gt;Dólar Americano ($)&lt;/option&gt;</span>
-<span class="x">                                    &lt;option value="JPY"&gt;Yen Japonés (¥)&lt;/option&gt;</span>
-<span class="x">                                &lt;/select&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                            filer var &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-globe"&gt;&lt;/i&gt;&lt;/span&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                    &lt;div class="field"&gt;</span>
-<span class="x">                        &lt;label class="label" for="a"&gt;A:&lt;/label&gt;</span>
-<span class="x">                        &lt;div class="control has-icons-left"&gt;</span>
-<span class="x">                            &lt;div class="select is-fullwidth"&gt;</span>
-<span class="x">                                &lt;select name="a" id="a"&gt;</span>
-<span class="x">                                    &lt;option value="EUR"&gt;Euro (€)&lt;/option&gt;</span>
-<span class="x">                                    &lt;option value="USD"&gt;Dólar Americano ($)&lt;/option&gt;</span>
-<span class="x">                                    &lt;option value="JPY" selected&gt;Yen Japonés (¥)&lt;/option&gt;</span>
-<span class="x">                                &lt;/select&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                            &lt;span class="icon is-small is-left"&gt;&lt;i class="fa fa-exchange"&gt;&lt;/i&gt;&lt;/span&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                    &lt;div class="field mt-4"&gt;</span>
-<span class="x">                        &lt;button class="button is-link is-fullwidth" type="submit"&gt;</span>
-<span class="x">                            &lt;i class="fa fa-refresh mr-2"&gt;&lt;/i&gt; Convertir</span>
-<span class="x">                        &lt;/button&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-<span class="x">                &lt;/form&gt;</span>
-
-<span class="x">                &lt;div class="notification is-success is-light mt-4 has-text-centered"&gt;</span>
-<span class="x">                    &lt;p class="is-size-5"&gt;</span>
-<span class="x">                        &lt;strong&gt;250 USD = 36.363,636 JPY&lt;/strong&gt;</span>
-<span class="x">                    &lt;/p&gt;</span>
-<span class="x">                &lt;/div&gt;</span>
-<span class="x">            &lt;/div&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    &lt;/section&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
-<p>Completa el ejercicio para que haga la conversión de monedas, teniendo en cuenta los siguientes aspectos:</p>
+                <h1 id="ut3-boletin-de-practicas-formularios-estructuras-de-control-arrays-y-funciones">UT3 · Boletín de prácticas: formularios, estructuras de control, arrays y funciones</h1>
+<p>Este boletín reúne las prácticas de la <strong>UT3 · Sintaxis Avanzada de PHP</strong>. Están <strong>ordenadas de menor a mayor dificultad</strong> en tres niveles. Hazlas en orden: cada práctica usa lo que has aprendido en las anteriores.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Prácticas</th>
+<th>Qué trabajas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 Básico</td>
+<td>P01 – P04</td>
+<td>Envío y recogida de formularios, condicionales y funciones sencillas</td>
+</tr>
+<tr>
+<td>🟡 Intermedio</td>
+<td>P05 – P09</td>
+<td>Bucles (también anidados), arrays asociativos, formularios que conservan los datos y expresiones regulares</td>
+</tr>
+<tr>
+<td>🔴 Avanzado</td>
+<td>P10 – P12</td>
+<td>Funciones propias, filtrado de arrays, <code>require_once</code> y formularios generados desde datos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultados de aprendizaje:</strong> RA2 (sentencias integradas en HTML) y RA3 (estructuras de programación y formularios).</p>
+<div class="admonition note">
+<p class="admonition-title">Requisitos comunes a todas las prácticas</p>
 <ul>
-<li>Guarda en un array los ratios de conversión de EUR a EUR, USD Y JPY, para que no sea necesario hacer if anidados o match.</li>
-<li>Para la conversión, pasa la moneda <code>de</code>a EUR y luego convierte ese resultado a la moneda <code>a</code>.</li>
+<li><strong>Entorno:</strong> Herd (Windows/macOS) o Lerd (Xubuntu) con PHP 8.4.</li>
+<li><strong>Estilos:</strong> Bulma 1.x y Font Awesome por CDN. No hace falta JavaScript.</li>
+<li><strong>Seguridad mínima:</strong> todo lo que muestres y venga del usuario pasa por <code>htmlspecialchars()</code>. Los números se validan con <code>filter_input()</code> o <code>filter_var()</code>.</li>
+<li><strong>Código comentado</strong> (RA3 – CE g): explica qué hace cada bloque.</li>
+<li><strong>Nombres de fichero:</strong> <code>ut03p01.php</code>, <code>ut03p02.php</code>… En las prácticas de dos páginas usa <code>ut03p01.html</code> (formulario) y <code>ut03p01-res.php</code> (resultado).</li>
+<li><strong>Git:</strong> un <em>commit</em> por práctica terminada, con un mensaje del tipo <code>P03: calculadora letra DNI</code>.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Plantillas para empezar</p>
+<p>Descarga <strong><a href="../plantillas-ut03.zip">plantillas-ut03.zip</a></strong>. Tiene un fichero por práctica con el HTML y los estilos ya hechos, y comentarios <code>TODO</code> donde tienes que escribir el código PHP. Incluye también <code>datos.php</code> para la P11.</p>
+<p>Descomprímelo en la carpeta de tu servidor local (Herd o Lerd) y renombra cada fichero a tu gusto si lo necesitas, pero <strong>mantén los atributos <code>name</code> de los formularios</strong>.</p>
+</div>
+<hr />
+<h2 id="nivel-basico">🟢 Nivel básico</h2>
+<h3 id="p01-formulario-de-busqueda-de-canciones">P01 · Formulario de búsqueda de canciones</h3>
+<p><strong>RA/CE:</strong> RA2 – CE c), e) · RA3 – CE e), f) · <strong>Duración:</strong> 1 h</p>
+<p>Crea un formulario HTML (<code>ut03p01.html</code>) para buscar canciones. Debe enviar por <strong>POST</strong> a una página PHP (<code>ut03p01-res.php</code>) estos campos:</p>
+<ul>
+<li><strong>Texto a buscar</strong> (<code>text</code>, obligatorio).</li>
+<li><strong>Buscar en</strong> (<code>radio</code>): <em>Títulos de canción</em>, <em>Nombres de álbum</em> o <em>Ambos campos</em> (marcado por defecto).</li>
+<li><strong>Género musical</strong> (<code>select</code>): Todos, Acústica, Banda sonora, Blues, Electrónica, Folk, Jazz, New Age, Pop y Rock.</li>
+</ul>
+<p>La página de resultados muestra lo que ha introducido el usuario y un botón <strong>Nueva búsqueda</strong> que vuelve al formulario. Si alguien abre <code>ut03p01-res.php</code> directamente, sin enviar el formulario, redirígelo al formulario con <code>header('Location: …')</code>.</p>
+<details>
+<summary>Pista</summary>
+<p>El <em>radio</em> envía un valor interno (<code>cancion</code>, <code>album</code>, <code>ambos</code>). Muestra al usuario un texto legible con una expresión <code>match</code>.</p>
+</details>
+<hr />
+<h3 id="p02-catalogo-de-controles-de-formulario">P02 · Catálogo de controles de formulario</h3>
+<p><strong>RA/CE:</strong> RA3 – CE e), f) · <strong>Duración:</strong> 1,5 h</p>
+<p>Crea un formulario (<code>ut03p02.php</code>) que tenga <strong>todos</strong> los tipos de control y una página (<code>ut03p02-res.php</code>) que muestre en una tabla lo que llega de cada uno:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hidden</code></td>
+<td>Un token fijo, por ejemplo <code>XYZ987654321</code></td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>Cadena a buscar, con un valor por defecto</td>
+</tr>
+<tr>
+<td><code>radio</code></td>
+<td>Sexo: Mujer / Hombre</td>
+</tr>
+<tr>
+<td><code>checkbox</code> (varios)</td>
+<td>Extras: Garaje, Piscina, Jardín → <code>name="extras[]"</code></td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>Un fichero cualquiera: muestra su nombre, tamaño y tipo</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Contraseña: muéstrala <strong>enmascarada</strong> (•••)</td>
+</tr>
+<tr>
+<td><code>select</code> simple</td>
+<td>Color</td>
+</tr>
+<tr>
+<td><code>select multiple</code></td>
+<td>Idiomas → <code>name="idiomas[]"</code></td>
+</tr>
+<tr>
+<td><code>textarea</code></td>
+<td>Comentario: respeta los saltos de línea con <code>nl2br()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Fíjate</p>
+<ul>
+<li>Si no se marca ningún <em>checkbox</em>, la clave <strong>no existe</strong> en <code>$_POST</code>. Usa <code>?? []</code>.</li>
+<li>Para enviar ficheros, el formulario necesita <code>enctype="multipart/form-data"</code>.</li>
+</ul>
+</div>
+<hr />
+<h3 id="p03-calculadora-de-la-letra-del-dni">P03 · Calculadora de la letra del DNI</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g) · RA3 – CE a), d), f) · <strong>Duración:</strong> 1 h</p>
+<p>Crea una página <strong>autoprocesada</strong> (el formulario se envía a sí misma) que pida el número de un DNI y muestre su letra.</p>
+<ul>
+<li>Escribe la función <code>calcularLetraDNI(int $numero): string</code>. La letra es la posición <code>numero % 23</code> de la cadena <code>TRWAGMYFPDXBNJZSQVHLCKE</code>.</li>
+<li>Valida que el dato sea un <strong>entero positivo</strong>. Si no lo es, muestra un aviso de error.</li>
+<li>Muestra el DNI con 8 cifras, rellenando con ceros a la izquierda (<code>str_pad</code>). Por ejemplo, <code>12345678</code> → <strong>12345678Z</strong>.</li>
+<li>Añade un botón <strong>Borrar</strong> que recargue la página vacía.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Antes de programar, haz a mano el cálculo para tu propio DNI y anota el resto de la división y la letra que sale.</p>
+</div>
+<hr />
+<h3 id="p04-ecuacion-de-segundo-grado">P04 · Ecuación de segundo grado</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g) · RA3 – CE a), f) · <strong>Duración:</strong> 1 h</p>
+<p>Crea una página autoprocesada que resuelva <em>a·x² + b·x + c = 0</em> a partir de los tres coeficientes.</p>
+<ul>
+<li>Valida que los tres sean números (<code>FILTER_VALIDATE_FLOAT</code>) y que <strong>a ≠ 0</strong>.</li>
+<li>Calcula el discriminante <em>b² − 4ac</em>:<ul>
+<li>Si es <strong>negativo</strong>, indica que no hay soluciones reales.</li>
+<li>Si es <strong>cero o positivo</strong>, muestra <em>x₁</em> y <em>x₂</em> con dos decimales.</li>
+</ul>
+</li>
+<li>El formulario conserva los valores introducidos después de enviarlo.</li>
+</ul>
+<p><strong>Ejemplo:</strong> a = 1, b = −5, c = 6 → x₁ = 3,00 y x₂ = 2,00.</p>
+<hr />
+<h2 id="nivel-intermedio">🟡 Nivel intermedio</h2>
+<h3 id="p05-dibuja-un-triangulo">P05 · Dibuja un triángulo</h3>
+<p><strong>RA/CE:</strong> RA3 – CE b), f) · <strong>Duración:</strong> 1 h</p>
+<p>Pide una <strong>altura</strong> (de 1 a 30) y un <strong>carácter</strong> (por defecto <code>*</code>) y dibuja un triángulo rectángulo con <strong>dos bucles anidados</strong>:</p>
+<div class="highlight"><pre><span></span><code>*
+* *
+* * *
+* * * *
+</code></pre></div>
+<p>Muestra el resultado dentro de una etiqueta <code>&lt;pre&gt;</code>. Si la altura no es un entero positivo, muestra un error.</p>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Haz la traza de los dos bucles para una altura de 3: apunta los valores de <code>$i</code> y <code>$j</code> en cada vuelta y lo que se añade a la fila.</p>
+</div>
+<hr />
+<h3 id="p06-tabla-numerada-dinamica">P06 · Tabla numerada dinámica</h3>
+<p><strong>RA/CE:</strong> RA3 – CE b), f) · <strong>Duración:</strong> 1,5 h</p>
+<p>Pide el <strong>número total de casillas</strong> y el <strong>número de casillas por fila</strong>, y genera una tabla HTML numerada del 1 al total.</p>
+<ul>
+<li>Abre y cierra cada fila <code>&lt;tr&gt;</code> en el momento justo usando el operador módulo (<code>%</code>).</li>
+<li>Si la última fila no está completa, <strong>rellénala con celdas vacías</strong> para que la tabla quede cuadrada.</li>
+<li>Valida que los dos valores sean enteros mayores que cero.</li>
+</ul>
+<p><strong>Ejemplo:</strong> 12 casillas y 5 por fila → 3 filas. La última tiene 11 y 12 y tres celdas vacías.</p>
+<hr />
+<h3 id="p07-conversor-de-divisas">P07 · Conversor de divisas</h3>
+<p><strong>RA/CE:</strong> RA3 – CE c), e), f) · <strong>Duración:</strong> 1,5 h</p>
+<p>Crea un conversor entre <strong>euros (€), dólares ($) y yenes (¥)</strong>. El formulario tiene una cantidad y dos <code>select</code> (<em>De</em> y <em>A</em>).</p>
+<ul>
+<li>Guarda las tasas en un <strong>array asociativo</strong> tomando el euro como base:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="x">$tasas = ['EUR' =&gt; 1.0, 'USD' =&gt; 1.0850, 'JPY' =&gt; 160.0];</span>
+</code></pre></div>
+<ul>
+<li>Para convertir, pasa primero la cantidad a euros y luego a la divisa de destino.</li>
+<li>El formulario es <strong>persistente</strong>: después de enviarlo, cada <code>select</code> conserva la opción elegida (atributo <code>selected</code>).</li>
+<li>Muestra el resultado con <code>sprintf()</code>, por ejemplo: <code>340.00 EUR = 368.90 USD</code>.</li>
+<li>Comprueba que las divisas recibidas existen en <code>$tasas</code> antes de usarlas.</li>
 </ul>
 <hr />
-<h2 id="practica-2-ejercicio-basico-de-formulario">Práctica 2: Ejercicio básico de formulario</h2>
-<h3 id="a-formulario">A) FORMULARIO</h3>
-<p>Dado el siguiente formulario:</p>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html lang="es"&gt;</span>
-<span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="x">    &lt;title&gt;PRÁCTICA 01 - Búsqueda de Canciones&lt;/title&gt;</span>
-<span class="x">    &lt;!-- Importación de Bulma CSS desde CDN --&gt;</span>
-<span class="x">    &lt;style&gt;</span>
-<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
-<span class="x">    &lt;/style&gt;</span>
-<span class="x">    &lt;!-- Importación de FontAwesome para la iconografía --&gt;</span>
-<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
-<span class="x">&lt;/head&gt;</span>
-<span class="x">&lt;body&gt;</span>
-<span class="x">    &lt;section class="section"&gt;</span>
-<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
-<span class="x">            &lt;div class="card"&gt;</span>
-<span class="x">                &lt;header class="card-header has-background-link"&gt;</span>
-<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
-<span class="x">                        &lt;i class="fa fa-music mr-2"&gt;&lt;/i&gt; Formulario simple - Búsqueda de canciones</span>
-<span class="x">                    &lt;/p&gt;</span>
-<span class="x">                &lt;/header&gt;</span>
-<span class="x">                &lt;div class="card-content"&gt;</span>
-<span class="x">                    &lt;!-- Formulario con método POST dirigido a la página de resultados --&gt;</span>
-<span class="x">                    &lt;form action="p01-res.php" method="POST"&gt;</span>
-
-<span class="x">                        &lt;!-- Campo: Texto a buscar --&gt;</span>
-<span class="x">                        &lt;div class="field"&gt;</span>
-<span class="x">                            &lt;label class="label" for="texto"&gt;Texto a buscar:&lt;/label&gt;</span>
-<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
-<span class="x">                                &lt;input class="input" type="text" id="texto" name="texto" placeholder="Escriba aquí..." required&gt;</span>
-<span class="x">                                &lt;span class="icon is-small is-left"&gt;</span>
-<span class="x">                                    &lt;i class="fa fa-search"&gt;&lt;/i&gt;</span>
-<span class="x">                                &lt;/span&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-
-<span class="x">                        &lt;!-- Campo: Buscar en (Radio buttons) --&gt;</span>
-<span class="x">                        &lt;div class="field"&gt;</span>
-<span class="x">                            &lt;label class="label"&gt;Buscar en:&lt;/label&gt;</span>
-<span class="x">                            &lt;div class="control"&gt;</span>
-<span class="x">                                &lt;label class="radio"&gt;</span>
-<span class="x">                                    &lt;input type="radio" name="buscar_en" value="cancion"&gt;</span>
-<span class="x">                                    Títulos de canción</span>
-<span class="x">                                &lt;/label&gt;</span>
-<span class="x">                                &lt;label class="radio"&gt;</span>
-<span class="x">                                    &lt;input type="radio" name="buscar_en" value="album"&gt;</span>
-<span class="x">                                    Nombres de álbum</span>
-<span class="x">                                &lt;/label&gt;</span>
-<span class="x">                                &lt;label class="radio"&gt;</span>
-<span class="x">                                    &lt;input type="radio" name="buscar_en" value="ambos" checked&gt;</span>
-<span class="x">                                    Ambos campos</span>
-<span class="x">                                &lt;/label&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-
-<span class="x">                        &lt;!-- Campo: Género musical (Select) --&gt;</span>
-<span class="x">                        &lt;div class="field"&gt;</span>
-<span class="x">                            &lt;label class="label" for="genero"&gt;Género musical:&lt;/label&gt;</span>
-<span class="x">                            &lt;div class="control has-icons-left"&gt;</span>
-<span class="x">                                &lt;div class="select is-fullwidth"&gt;</span>
-<span class="x">                                    &lt;select name="genero" id="genero"&gt;</span>
-<span class="x">                                        &lt;option value="Todos" selected&gt;Todos&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Acústica"&gt;Acústica&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Banda Sonora"&gt;Banda Sonora&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Blues"&gt;Blues&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Electrónica"&gt;Electrónica&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Folk"&gt;Folk&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Jazz"&gt;Jazz&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="New Age"&gt;New Age&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Pop"&gt;Pop&lt;/option&gt;</span>
-<span class="x">                                        &lt;option value="Rock"&gt;Rock&lt;/option&gt;</span>
-<span class="x">                                    &lt;/select&gt;</span>
-<span class="x">                                &lt;/div&gt;</span>
-<span class="x">                                &lt;span class="icon is-small is-left"&gt;</span>
-<span class="x">                                    &lt;i class="fa fa-list"&gt;&lt;/i&gt;</span>
-<span class="x">                                &lt;/span&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-
-<span class="x">                        &lt;!-- Botón de Envío --&gt;</span>
-<span class="x">                        &lt;div class="field mt-5"&gt;</span>
-<span class="x">                            &lt;div class="control"&gt;</span>
-<span class="x">                                &lt;button type="submit" class="button is-link is-fullwidth"&gt;</span>
-<span class="x">                                    &lt;i class="fa fa-search mr-2"&gt;&lt;/i&gt; Buscar</span>
-<span class="x">                                &lt;/button&gt;</span>
-<span class="x">                            &lt;/div&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-
-<span class="x">                    &lt;/form&gt;</span>
-<span class="x">                &lt;/div&gt;</span>
-<span class="x">            &lt;/div&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    &lt;/section&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
-<p>Crea una aplicación en PHP que muestre algo similar a lo siguiente:</p>
-<p><img alt="Ejemplo de salida" src="../../../img/ut03-p01.png" /></p>
-<h3 id="b-resultado">B) RESULTADO</h3>
-<p>Usando la siguiente plantilla como ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="cm">/* TODO Crea una aplicación en PHP en la que se debe mostrar lo que ha introducido el usuario en </span>
-<span class="cm">el formulario y un botón que permita volver a la página de búsqueda. */</span>
-
-<span class="c1">// Comprobamos si la petición ha llegado por el método POST. Si el usuario</span>
-<span class="c1">// intenta acceder directamente introduciendo la URL en el navegador,</span>
-<span class="c1">// debemos redirigirlo al formulario o tratar el error.</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: p01.php"</span><span class="p">);</span>
-    <span class="k">exit</span><span class="p">();</span> <span class="c1">// Detenemos la ejecución del script tras la redirección.</span>
-<span class="p">}</span>
-
-<span class="c1">// 1. Recogida y sanitización del campo 'texto'</span>
-
-<span class="c1">// 2. Recogida del campo 'buscar_en' (Radio Button)</span>
-
-<span class="c1">// 3. Recogida del campo 'genero' (Desplegable Select)</span>
-
-<span class="cp">?&gt;</span>
-<span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html lang="es"&gt;</span>
-<span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="x">    &lt;title&gt;Ejercicio 1 - Resultados&lt;/title&gt;</span>
-<span class="x">    &lt;style&gt;</span>
-<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
-<span class="x">    &lt;/style&gt;</span>
-<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
-<span class="x">&lt;/head&gt;</span>
-<span class="x">&lt;body&gt;</span>
-<span class="x">    &lt;section class="section"&gt;</span>
-<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
-<span class="x">            &lt;div class="card"&gt;</span>
-<span class="x">                &lt;header class="card-header has-background-success"&gt;</span>
-<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
-<span class="x">                        &lt;i class="fa fa-check-circle mr-2"&gt;&lt;/i&gt; Formulario simple. Resultados del formulario</span>
-<span class="x">                    &lt;/p&gt;</span>
-<span class="x">                &lt;/header&gt;</span>
-<span class="x">                &lt;div class="card-content"&gt;</span>
-<span class="x">                    &lt;p class="subtitle is-5"&gt;Estos son los datos introducidos:&lt;/p&gt;</span>
-
-<span class="x">                    &lt;div class="content"&gt;</span>
-<span class="x">                        &lt;ul&gt;</span>
-<span class="x">                            &lt;li&gt;&lt;strong&gt;Texto de búsqueda:&lt;/strong&gt; Texto&lt;/li&gt;</span>
-<span class="x">                            &lt;li&gt;&lt;strong&gt;Buscar en:&lt;/strong&gt; Etiqueta&lt;/li&gt;</span>
-<span class="x">                            &lt;li&gt;&lt;strong&gt;Género:&lt;/strong&gt;  Genero&lt;/li&gt;</span>
-<span class="x">                        &lt;/ul&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                    &lt;!-- Botón para regresar al formulario inicial --&gt;</span>
-<span class="x">                    &lt;div class="field mt-5"&gt;</span>
-<span class="x">                        &lt;a href="p01.html" class="button is-link is-outlined is-fullwidth"&gt;</span>
-<span class="x">                            &lt;i class="fa fa-arrow-left mr-2"&gt;&lt;/i&gt; Nueva búsqueda</span>
-<span class="x">                        &lt;/a&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-<span class="x">                &lt;/div&gt;</span>
-<span class="x">            &lt;/div&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    &lt;/section&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
+<h3 id="p08-la-quiniela">P08 · La quiniela</h3>
+<p><strong>RA/CE:</strong> RA3 – CE b), c), e), f) · <strong>Duración:</strong> 2 h</p>
+<p>Crea una quiniela de <strong>10 partidos</strong> con dos ficheros.</p>
+<p><strong>Formulario (<code>ut03p08.php</code>):</strong></p>
+<ul>
+<li>Genera las 10 filas con un <strong>bucle <code>for</code></strong>, no a mano.</li>
+<li>Cada partido es un grupo de tres <em>radio</em> (1, X, 2) llamado <code>partido[1]</code>, <code>partido[2]</code>…, para que lleguen al servidor como un <strong>array</strong>.</li>
+</ul>
+<p><strong>Resultados (<code>ut03p08-res.php</code>):</strong></p>
+<ul>
+<li>Simula el resultado real de cada partido con <code>rand()</code>.</li>
+<li>Muestra una tabla con cuatro columnas: <em>Partido</em>, <em>Tu resultado</em> (o <strong>SIN MARCAR</strong>), <em>Ha salido</em> y <em>¿Has acertado?</em>.</li>
+<li>Muestra el total de aciertos y un botón <strong>Volver a jugar</strong>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Seguridad</p>
+<p>Un usuario puede modificar el formulario y enviar cualquier valor en <code>partido[…]</code>. Acepta solo <code>1</code>, <code>X</code> o <code>2</code> (comprueba con <code>in_array()</code>) y escapa todo lo que muestres.</p>
+</div>
 <hr />
-<h2 id="practica-3-la-quiniela">Práctica 3: La Quiniela</h2>
-<p>Esta práctica genera un formulario para generar un boleto de quiniela simulado usando un bucle en PHP. Una vez que se han marcado las casillas elegidas, al pulsar el botón <code>ENVIAR</code>se va a la página que procesa el boleto y muestra los aciertos y los fallos.</p>
-<h3 id="a-formulario_1">A) FORMULARIO</h3>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html lang="es"&gt;</span>
-<span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="x">    &lt;title&gt;PRÁCTICA 02 - La Quiniela&lt;/title&gt;</span>
-<span class="x">    &lt;style&gt;</span>
-<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
-<span class="x">    &lt;/style&gt;</span>
-<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
-<span class="x">&lt;/head&gt;</span>
-<span class="x">&lt;body&gt;</span>
-<span class="x">    &lt;section class="section"&gt;</span>
-<span class="x">        &lt;div class="container" style="max-width: 600px;"&gt;</span>
-<span class="x">            &lt;div class="card"&gt;</span>
-<span class="x">                &lt;header class="card-header has-background-danger"&gt;</span>
-<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
-<span class="x">                        &lt;i class="fa fa-futbol-o mr-2"&gt;&lt;/i&gt; LA QUINIELA</span>
-<span class="x">                    &lt;/p&gt;</span>
-<span class="x">                &lt;/header&gt;</span>
-<span class="x">                &lt;div class="card-content"&gt;</span>
-
-<span class="x">                    &lt;!-- Formulario con envío POST hacia el procesador de quinielas --&gt;</span>
-<span class="x">                    &lt;form action="p03-res.php" method="POST"&gt;</span>
-
-<span class="x">                        &lt;table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered"&gt;</span>
-<span class="x">                            &lt;thead&gt;</span>
-<span class="x">                                &lt;tr class="has-background-dark"&gt;</span>
-<span class="x">                                    &lt;th class="has-text-white"&gt;PARTIDO&lt;/th&gt;</span>
-<span class="x">                                    &lt;th class="has-text-white"&gt;1&lt;/th&gt;</span>
-<span class="x">                                    &lt;th class="has-text-white"&gt;X&lt;/th&gt;</span>
-<span class="x">                                    &lt;th class="has-text-white"&gt;2&lt;/th&gt;</span>
-<span class="x">                                &lt;/tr&gt;</span>
-<span class="x">                            &lt;/thead&gt;</span>
-<span class="x">                            &lt;tbody&gt;</span>
-<span class="x">                                </span><span class="cp">&lt;?php</span>
-                                <span class="c1">// TODO</span>
-                                <span class="c1">// Generamos 10 filas de forma iterativa.</span>
-                                <span class="c1">// Cada grupo de radio buttons utiliza la nomenclatura 'partido[$i]'.</span>
-                                <span class="cp">?&gt;</span>
-<span class="x">                                    &lt;tr&gt;</span>
-<span class="x">                                        &lt;td&gt;&lt;strong&gt;Partido </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/td&gt;</span>
-<span class="x">                                        &lt;td&gt;</span>
-<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="1"&gt;</span>
-<span class="x">                                        &lt;/td&gt;</span>
-<span class="x">                                        &lt;td&gt;</span>
-<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="X"&gt;</span>
-<span class="x">                                        &lt;/td&gt;</span>
-<span class="x">                                        &lt;td&gt;</span>
-<span class="x">                                            &lt;input type="radio" name="partido[</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$i</span> <span class="cp">?&gt;</span><span class="x">]" value="2"&gt;</span>
-<span class="x">                                        &lt;/td&gt;</span>
-<span class="x">                                    &lt;/tr&gt;</span>
-<span class="x">                                </span><span class="cp">&lt;?php</span> <span class="cp">?&gt;</span>
-<span class="x">                            &lt;/tbody&gt;</span>
-<span class="x">                        &lt;/table&gt;</span>
-
-<span class="x">                        &lt;div class="field mt-4"&gt;</span>
-<span class="x">                            &lt;button type="submit" class="button is-danger is-fullwidth"&gt;</span>
-<span class="x">                                &lt;i class="fa fa-paper-plane mr-2"&gt;&lt;/i&gt; Enviar Apuesta</span>
-<span class="x">                            &lt;/button&gt;</span>
-<span class="x">                        &lt;/div&gt;</span>
-
-<span class="x">                    &lt;/form&gt;</span>
-<span class="x">                &lt;/div&gt;</span>
-<span class="x">            &lt;/div&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    &lt;/section&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
-<h3 id="b-resultado_1">B) RESULTADO</h3>
-<p>Para procesar el resultado, guardaremos un array multidimensional donde se guardara cada partido con el valor elegido, el valor que ha salido y si has acertado o no, mostrando la tabla que se ve en la plantilla.</p>
-<p>El resuldato del partido se generará usando la función <code>rand(0, 2);</code></p>
+<h3 id="p09-formulario-de-alta-validado-con-expresiones-regulares">P09 · Formulario de alta validado con expresiones regulares</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g) · RA3 – CE a), d), e), f), g) · <strong>Duración:</strong> 2 h</p>
+<p>Crea un formulario de alta autoprocesado (<code>ut03p09.php</code>) que valide cada campo con <code>preg_match()</code>. Antes de validar, <strong>normaliza</strong> los datos con <code>preg_replace()</code>: quita espacios sobrantes, guiones y puntos, y pasa a mayúsculas lo que haga falta.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Regla</th>
+<th>Válido</th>
+<th>No válido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre y apellidos</td>
+<td>Letras (con tildes y ñ), espacios, apóstrofo y guion. De 2 a 60 caracteres</td>
+<td><code>Ana María Pérez-Ruiz</code></td>
+<td><code>Ana2</code></td>
+</tr>
+<tr>
+<td>DNI o NIE</td>
+<td>8 cifras + letra, o X/Y/Z + 7 cifras + letra. <strong>La letra debe ser la correcta</strong></td>
+<td><code>12345678Z</code>, <code>X1234567L</code></td>
+<td><code>12345678A</code></td>
+</tr>
+<tr>
+<td>Teléfono</td>
+<td>9 cifras que empiezan por 6, 7, 8 o 9. Prefijo <code>+34</code> o <code>0034</code> opcional</td>
+<td><code>+34 612 345 678</code></td>
+<td><code>512345678</code></td>
+</tr>
+<tr>
+<td>Código postal</td>
+<td>5 cifras; las dos primeras, de 01 a 52</td>
+<td><code>30530</code></td>
+<td><code>60000</code></td>
+</tr>
+<tr>
+<td>Correo electrónico</td>
+<td>Usa <code>filter_var()</code>, <strong>no</strong> una expresión regular</td>
+<td><code>ana@ejemplo.es</code></td>
+<td><code>ana@</code></td>
+</tr>
+<tr>
+<td>Contraseña</td>
+<td>Al menos 8 caracteres, con minúscula, mayúscula, número y símbolo</td>
+<td><code>Segura#2026</code></td>
+<td><code>abc</code></td>
+</tr>
+<tr>
+<td>Matrícula (opcional)</td>
+<td>4 cifras y 3 consonantes, sin vocales, Ñ ni Q</td>
+<td><code>1234 BCD</code></td>
+<td><code>1234 AEI</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requisitos:</strong></p>
+<ol>
+<li>Muestra el error de cada campo <strong>debajo del propio campo</strong> (clase <code>is-danger</code> de Bulma), no todos juntos arriba.</li>
+<li>En la contraseña, di <strong>qué requisitos le faltan</strong>. Para eso, comprueba cada requisito con una expresión regular distinta.</li>
+<li>El formulario conserva lo escrito, salvo la contraseña, que <strong>nunca</strong> se vuelve a mostrar.</li>
+<li>Para el DNI/NIE, reutiliza la función de la letra de la P03. En el NIE, la X vale 0, la Y vale 1 y la Z vale 2.</li>
+<li>Si todo es correcto, muestra una tabla con los datos ya normalizados. El teléfono debe aparecer agrupado (<code>612 345 678</code>); usa <strong>grupos de captura</strong> y <code>$1 $2 $3</code> en <code>preg_replace()</code>.</li>
+</ol>
+<details>
+<summary>Pista: grupos de captura</summary>
+<p><code>preg_match('/^(?:\+34|0034)?([6-9]\d{8})$/', $tel, $partes)</code> guarda en <code>$partes[1]</code> el número sin el prefijo. <code>(?: … )</code> es un grupo que <strong>no</strong> captura.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Escribe a mano la expresión regular del código postal y explica qué significa cada parte: <code>^</code>, <code>( | | )</code>, <code>\d{3}</code> y <code>$</code>.</p>
+</div>
+<details>
+<summary>Para pensar</summary>
+<p>¿Por qué validamos el email con <code>filter_var()</code> y no con una expresión regular hecha a mano?</p>
+</details>
+<hr />
+<h2 id="nivel-avanzado">🔴 Nivel avanzado</h2>
+<h3 id="p10-gestion-de-calificaciones">P10 · Gestión de calificaciones</h3>
+<p><strong>RA/CE:</strong> RA3 – CE c), d), f), g) · <strong>Duración:</strong> 2 h</p>
+<p>Crea un formulario con el <strong>nombre y la nota (0–10) de 4 alumnos</strong>. Usa <code>name="nombres[]"</code> y <code>name="notas[]"</code>.</p>
+<ul>
+<li>Valida cada pareja: el nombre no puede estar vacío y la nota debe ser un número entre 0 y 10. Si alguna falla, muestra un error.</li>
+<li>Guarda los datos válidos en un <strong>array asociativo</strong> <code>nombre =&gt; nota</code>.</li>
+<li>Escribe y usa <strong>tres funciones propias</strong>:<ul>
+<li><code>calcular_media(array $alumnos): float</code></li>
+<li><code>obtener_maximo(array $alumnos): array</code> → devuelve <code>['nombre' =&gt; …, 'nota' =&gt; …]</code></li>
+<li><code>obtener_minimo(array $alumnos): array</code></li>
+</ul>
+</li>
+<li>Muestra la media, la nota más alta y la más baja (con el nombre del alumno), y una tabla con todos los alumnos y su estado: <strong>Aprobado</strong> (nota ≥ 5) o <strong>Suspenso</strong>.</li>
+<li>Muestra los números en formato español con <code>number_format()</code>, por ejemplo <code>7,25</code>.</li>
+</ul>
+<details>
+<summary>Para pensar</summary>
+<p>¿Qué ocurre si dos alumnos tienen el mismo nombre? Propón una solución y anótala en el cuaderno.</p>
+</details>
+<hr />
+<h3 id="p11-buscador-de-productos-con-filtros">P11 · Buscador de productos con filtros</h3>
+<p><strong>RA/CE:</strong> RA2 – CE h) · RA3 – CE c), d), e), f) · <strong>Duración:</strong> 2,5 h</p>
+<p>Crea un buscador sobre un catálogo de productos que está en un fichero aparte, <code>datos.php</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// ESCRUTINIO DE LA QUINIELA</span>
+<span class="nv">$categorias</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Informática'</span><span class="p">,</span> <span class="s1">'Telefonía'</span><span class="p">,</span> <span class="s1">'Audio'</span><span class="p">,</span> <span class="s1">'Hogar'</span><span class="p">];</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: ejercicio3.php"</span><span class="p">);</span>
-    <span class="k">exit</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// 1. Recuperación del array asociativo 'partido' enviado desde el formulario</span>
-
-
-<span class="c1">// 2. Definición del catálogo de posibles resultados de un partido</span>
-
-
-<span class="c1">// 3. Inicialización del contador de aciertos y la estructura del informe</span>
-<span class="nv">$aciertosTotales</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="nv">$informeEscrutinio</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="c1">// 4. Bucle de evaluación de los 10 partidos</span>
-
-<span class="cp">?&gt;</span>
-<span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html lang="es"&gt;</span>
-<span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="x">    &lt;title&gt;Ejercicio 3 - Resultados Escrutinio&lt;/title&gt;</span>
-<span class="x">    &lt;style&gt;</span>
-<span class="x">        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";</span>
-<span class="x">    &lt;/style&gt;</span>
-<span class="x">    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</span>
-<span class="x">&lt;/head&gt;</span>
-<span class="x">&lt;body&gt;</span>
-<span class="x">    &lt;section class="section"&gt;</span>
-<span class="x">        &lt;div class="container" style="max-width: 700px;"&gt;</span>
-<span class="x">            &lt;div class="card"&gt;</span>
-<span class="x">                &lt;header class="card-header has-background-dark"&gt;</span>
-<span class="x">                    &lt;p class="card-header-title has-text-white"&gt;</span>
-<span class="x">                        &lt;i class="fa fa-trophy mr-2"&gt;&lt;/i&gt; LA QUINIELA - RESULTADOS</span>
-<span class="x">                    &lt;/p&gt;</span>
-<span class="x">                &lt;/header&gt;</span>
-<span class="x">                &lt;div class="card-content"&gt;</span>
-
-<span class="x">                    &lt;table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered"&gt;</span>
-<span class="x">                        &lt;thead&gt;</span>
-<span class="x">                            &lt;tr class="has-background-grey-dark"&gt;</span>
-<span class="x">                                &lt;th class="has-text-white"&gt;PARTIDO&lt;/th&gt;</span>
-<span class="x">                                &lt;th class="has-text-white"&gt;TU RESULTADO&lt;/th&gt;</span>
-<span class="x">                                &lt;th class="has-text-white"&gt;HA SALIDO&lt;/th&gt;</span>
-<span class="x">                                &lt;th class="has-text-white"&gt;¿HAS ACERTADO?&lt;/th&gt;</span>
-<span class="x">                            &lt;/tr&gt;</span>
-<span class="x">                        &lt;/thead&gt;</span>
-<span class="x">                        &lt;tbody&gt;</span>
-<span class="x">                            </span><span class="cp">&lt;?php</span>  <span class="cp">?&gt;</span>
-<span class="x">                                &lt;tr&gt;</span>
-<span class="x">                                    &lt;td&gt;&lt;strong&gt;Partido </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$numPartido</span> <span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/td&gt;</span>
-<span class="x">                                    &lt;td&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$datos</span><span class="p">[</span><span class="s1">'tu_resultado'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'SIN MARCAR'</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
-<span class="x">                                            &lt;span class="tag is-warning"&gt;SIN MARCAR&lt;/span&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
-<span class="x">                                            &lt;span class="tag is-info"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'tu_resultado'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
-<span class="x">                                    &lt;/td&gt;</span>
-<span class="x">                                    &lt;td&gt;</span>
-<span class="x">                                        &lt;span class="tag is-dark"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'ha_salido'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
-<span class="x">                                    &lt;/td&gt;</span>
-<span class="x">                                    &lt;td&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$datos</span><span class="p">[</span><span class="s1">'acertado'</span><span class="p">])</span><span class="o">:</span> <span class="cp">?&gt;</span>
-<span class="x">                                            &lt;span class="tag is-success"&gt;&lt;i class="fa fa-check mr-1"&gt;&lt;/i&gt; SI&lt;/span&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
-<span class="x">                                            &lt;span class="tag is-danger"&gt;&lt;i class="fa fa-times mr-1"&gt;&lt;/i&gt; NO&lt;/span&gt;</span>
-<span class="x">                                        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
-<span class="x">                                    &lt;/td&gt;</span>
-<span class="x">                                &lt;/tr&gt;</span>
-<span class="x">                            </span><span class="cp">&lt;?php</span>  <span class="cp">?&gt;</span>
-<span class="x">                        &lt;/tbody&gt;</span>
-<span class="x">                    &lt;/table&gt;</span>
-
-<span class="x">                    &lt;!-- Notificación del Total de Aciertos --&gt;</span>
-<span class="x">                    &lt;div class="notification is-primary has-text-centered mt-4"&gt;</span>
-<span class="x">                        &lt;p class="is-size-4"&gt;</span>
-<span class="x">                            &lt;strong&gt;&lt;i class="fa fa-star mr-2"&gt;&lt;/i&gt; HAS TENIDO </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$aciertosTotales</span> <span class="cp">?&gt;</span><span class="x"> ACIERTOS&lt;/strong&gt;</span>
-<span class="x">                        &lt;/p&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                    &lt;!-- Botón para volver a jugar --&gt;</span>
-<span class="x">                    &lt;div class="field mt-5"&gt;</span>
-<span class="x">                        &lt;a href="ejercicio3.php" class="button is-danger is-outlined is-fullwidth"&gt;</span>
-<span class="x">                            &lt;i class="fa fa-refresh mr-2"&gt;&lt;/i&gt; Volver a Jugar</span>
-<span class="x">                        &lt;/a&gt;</span>
-<span class="x">                    &lt;/div&gt;</span>
-
-<span class="x">                &lt;/div&gt;</span>
-<span class="x">            &lt;/div&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    &lt;/section&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
+<span class="nv">$productos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Portátil 15"'</span><span class="p">,</span>          <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Informática'</span><span class="p">,</span> <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">749.00</span><span class="p">,</span> <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Ratón inalámbrico'</span><span class="p">,</span>     <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Informática'</span><span class="p">,</span> <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">19.90</span><span class="p">,</span>  <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Monitor 27"'</span><span class="p">,</span>           <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Informática'</span><span class="p">,</span> <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">229.00</span><span class="p">,</span> <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Smartphone 128 GB'</span><span class="p">,</span>     <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Telefonía'</span><span class="p">,</span>   <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">399.00</span><span class="p">,</span> <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Funda de silicona'</span><span class="p">,</span>     <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Telefonía'</span><span class="p">,</span>   <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">9.95</span><span class="p">,</span>   <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Auriculares Bluetooth'</span><span class="p">,</span> <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Audio'</span><span class="p">,</span>       <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">59.00</span><span class="p">,</span>  <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Altavoz portátil'</span><span class="p">,</span>      <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Audio'</span><span class="p">,</span>       <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">45.50</span><span class="p">,</span>  <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Robot aspirador'</span><span class="p">,</span>       <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Hogar'</span><span class="p">,</span>       <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">199.00</span><span class="p">,</span> <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Cafetera de cápsulas'</span><span class="p">,</span>  <span class="s1">'categoria'</span> <span class="o">=&gt;</span> <span class="s1">'Hogar'</span><span class="p">,</span>       <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">79.99</span><span class="p">,</span>  <span class="s1">'stock'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">],</span>
+<span class="p">];</span>
 </code></pre></div>
+<p><strong>Formulario (<code>ut03p11.php</code>):</strong></p>
+<ul>
+<li>Lo envía por <strong>GET</strong>.</li>
+<li>Incluye <code>datos.php</code> con <code>require_once</code> y genera el <code>select</code> de categorías <strong>recorriendo <code>$categorias</code></strong>, con la opción <em>Todas las categorías</em>.</li>
+<li>Tiene dos campos de precio (<em>mínimo</em> y <em>máximo</em>) y un <em>checkbox</em> <strong>Solo productos con stock</strong>.</li>
+</ul>
+<p><strong>Resultados (<code>ut03p11-res.php</code>):</strong></p>
+<ul>
+<li>Filtra <code>$productos</code> con <code>array_filter()</code> y una <strong>función anónima</strong> (<code>use</code>). Cada filtro solo se aplica si el usuario lo ha rellenado.</li>
+<li>Muestra un resumen de los filtros aplicados.</li>
+<li>Muestra una tabla con los productos encontrados: precio en formato <code>749,00 €</code> y stock en verde, o <strong>Sin stock</strong> en rojo. Si no hay ninguno, muéstralo con un aviso.</li>
+</ul>
+<details>
+<summary>Pregunta</summary>
+<p>¿Por qué aquí tiene sentido usar <strong>GET</strong> y no POST? Piensa en compartir el enlace de una búsqueda o guardarlo en marcadores.</p>
+</details>
+<hr />
+<h3 id="p12-reto-calculadora-de-esperanza-de-vida">P12 · Reto: calculadora de esperanza de vida</h3>
+<p><strong>RA/CE:</strong> RA3 – CE a), b), c), d), e), f), g) · <strong>Duración:</strong> 3 h</p>
+<p>Crea <strong>en un único fichero</strong> una calculadora orientativa de años de vida. Parte de la esperanza de vida en España (INE, 2024) y súmale o réstale años según cinco hábitos.</p>
+<p><strong>Punto de partida (<code>radio</code>):</strong> hombre <strong>81,4</strong> años · mujer <strong>86,5</strong> años.</p>
+<p><strong>Ajustes (en años):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Opciones y ajuste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabaco</td>
+<td>Nunca <strong>0</strong> · Lo dejé antes de los 40 <strong>−1</strong> · Lo dejé a los 40 o después <strong>−3</strong> · Fumo <strong>−10</strong></td>
+</tr>
+<tr>
+<td>Actividad física semanal</td>
+<td>&lt; 15 min <strong>−1,8</strong> · 15–149 min <strong>0</strong> · 150–449 min <strong>+1,6</strong> · ≥ 450 min <strong>+2,7</strong></td>
+</tr>
+<tr>
+<td>Bebidas alcohólicas semanales</td>
+<td>0–10 <strong>0</strong> · 11–20 <strong>−0,5</strong> · 21–35 <strong>−1,5</strong> · &gt; 35 <strong>−4,5</strong></td>
+</tr>
+<tr>
+<td>Alimentación</td>
+<td>Procesada <strong>−2</strong> · Mixta <strong>0</strong> · Mediterránea <strong>+2,5</strong></td>
+</tr>
+<tr>
+<td>IMC (a partir de altura y peso)</td>
+<td>&lt; 18,5 <strong>−2</strong> · &lt; 25 <strong>0</strong> · &lt; 30 <strong>−0,5</strong> · &lt; 35 <strong>−3</strong> · &lt; 40 <strong>−6</strong> · ≥ 40 <strong>−9</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requisitos:</strong></p>
+<ol>
+<li>Guarda las preguntas, sus opciones y sus ajustes en un <strong>array multidimensional</strong>, y <strong>genera el formulario recorriéndolo</strong> con <code>foreach</code>. Si añades una pregunta al array, debe aparecer en el formulario sin tocar el HTML.</li>
+<li>Valida con <strong>lista blanca</strong>: solo se aceptan claves que existan en el array (<code>array_key_exists</code>). La altura debe estar entre 120 y 220 cm y el peso entre 30 y 250 kg. Si algo falla, muestra <strong>todos</strong> los errores juntos y usa un valor por defecto.</li>
+<li>Calcula el IMC (<em>peso / altura²</em>, con la altura en metros) y busca su tramo recorriendo un array de tramos.</li>
+<li>Muestra el resultado total y un desglose con cada factor, la opción elegida y su ajuste con signo (<code>+1,6</code> / <code>−3,0</code>). Indica también <strong>qué factor resta más años</strong>.</li>
+<li>Crea funciones auxiliares: <code>h()</code> para escapar, <code>fmt()</code> para dar formato a los números y <code>marcado()</code> para conservar los <code>radio</code> elegidos.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Aviso</p>
+<p>Es un ejercicio de programación con datos orientativos sacados de estudios publicados. <strong>No es un consejo médico.</strong> Dilo así en la propia página.</p>
+</div>
+<hr />
+<h2 id="entrega">Entrega</h2>
+<div class="admonition note">
+<p class="admonition-title">Cómo entregar</p>
+<ul>
+<li>Sube a <strong>Moodle</strong> (aulavirtual.murciaeduca.es) un <code>.zip</code> llamado <code>ut03-apellido-nombre.zip</code> con una carpeta por práctica (<code>p01/</code>, <code>p02/</code>…).</li>
+<li>Añade en el comentario de la entrega el enlace a tu repositorio de <strong>GitHub</strong>.</li>
+<li>Entrega también las fotos de las páginas del <strong>cuaderno</strong> que se piden en P03, P05, P09 y P10.</li>
+<li><strong>Mínimo para entregar:</strong> todas las prácticas de nivel básico e intermedio (P01–P09). Las de nivel avanzado suben nota.</li>
+</ul>
+</div>
+<h2 id="rubrica">Rúbrica</h2>
+<p>Cada práctica se puntúa sobre 10:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th style="text-align: center;">Peso</th>
+<th>Excelente</th>
+<th>Suficiente</th>
+<th>Insuficiente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Funcionalidad</strong></td>
+<td style="text-align: center;">40 %</td>
+<td>Hace todo lo que pide el enunciado, también en los casos límite</td>
+<td>Funciona en el caso normal</td>
+<td>No funciona o le faltan partes importantes</td>
+</tr>
+<tr>
+<td><strong>Validación y seguridad</strong></td>
+<td style="text-align: center;">25 %</td>
+<td>Valida todas las entradas y escapa todas las salidas</td>
+<td>Valida lo principal</td>
+<td>Muestra datos sin escapar o no valida</td>
+</tr>
+<tr>
+<td><strong>Calidad del código</strong></td>
+<td style="text-align: center;">20 %</td>
+<td>Buenos nombres, funciones bien usadas y comentarios útiles</td>
+<td>Código correcto pero con repeticiones</td>
+<td>Código desordenado y sin comentarios</td>
+</tr>
+<tr>
+<td><strong>Interfaz</strong></td>
+<td style="text-align: center;">10 %</td>
+<td>Bulma bien usado, mensajes claros y formulario que conserva los datos</td>
+<td>Interfaz correcta y básica</td>
+<td>HTML sin estilos o confuso</td>
+</tr>
+<tr>
+<td><strong>Git y cuaderno</strong></td>
+<td style="text-align: center;">5 %</td>
+<td>Un <em>commit</em> por práctica y cuaderno completo</td>
+<td>Pocos <em>commits</em> o cuaderno incompleto</td>
+<td>Sin repositorio o sin cuaderno</td>
+</tr>
+</tbody>
+</table>
+<p>La nota del boletín cuenta dentro del 50 % de <strong>tareas y prácticas</strong> de RA2 y RA3.</p>
               
             </div>
           </div><footer>

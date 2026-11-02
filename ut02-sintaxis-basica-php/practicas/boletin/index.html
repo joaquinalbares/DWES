@@ -70,41 +70,41 @@
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Boletín de prácticas</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#practica-1-embebido-de-php-directivas-y-salida-dinamica">Práctica 1: Embebido de PHP, Directivas y Salida Dinámica</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-basico">🟢 Nivel básico</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#enunciado-y-requisitos">Enunciado y Requisitos</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p01-tarjeta-de-perfil">P01 · Tarjeta de perfil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p02-estilos-generados-desde-php">P02 · Estilos generados desde PHP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p03-comillas-simples-y-dobles">P03 · Comillas simples y dobles</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p04-ficha-de-datos-variables-constantes-y-tipos">P04 · Ficha de datos: variables, constantes y tipos</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-2-tipos-de-datos-operadores-constantes-y-ambitos">Práctica 2: Tipos de Datos, Operadores, Constantes y Ámbitos</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-intermedio">🟡 Nivel intermedio</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#enunciado-y-requisitos_1">Enunciado y Requisitos</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p05-calculadora-aritmetica">P05 · Calculadora aritmética</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p06-comparaciones-debiles-y-estrictas">P06 · Comparaciones débiles y estrictas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p07-conversion-de-tipos-y-funciones-integradas">P07 · Conversión de tipos y funciones integradas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p08-panel-de-informacion-del-servidor">P08 · Panel de información del servidor</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-3-estructuras-condicionales-y-toma-de-decisiones">Práctica 3: Estructuras Condicionales y Toma de Decisiones</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nivel-avanzado">🔴 Nivel avanzado</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#enunciado-y-requisitos_2">Enunciado y Requisitos</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p09-ambito-de-las-variables">P09 · Ámbito de las variables</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#solucion-propuesta">Solución Propuesta</a>
+    <li class="toctree-l4"><a class="reference internal" href="#p10-factura-de-un-trabajador-autonomo">P10 · Factura de un trabajador autónomo</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-4-procesamiento-de-arrays-multidimensionales-y-bucles">Práctica 4: Procesamiento de Arrays Multidimensionales y Bucles</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#enunciado-y-requisitos_3">Enunciado y Requisitos</a>
+    <li class="toctree-l3"><a class="reference internal" href="#entrega">Entrega</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#solucion-propuesta_1">Solución Propuesta</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#practica-5-funciones-reutilizables-e-interaccion-basica-con-formularios">Práctica 5: Funciones Reutilizables e Interacción Básica con Formularios</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#enunciado-y-requisitos_4">Enunciado y Requisitos</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#solucion-propuesta_2">Solución Propuesta</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#rubrica">Rúbrica</a>
     </li>
     </ul>
                 </li>
@@ -149,309 +149,339 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="relacion-de-practicas-ut02-introduccion-al-lenguaje-php">Relación de Prácticas: UT02 - Introducción al Lenguaje PHP</h1>
-<h2 id="practica-1-embebido-de-php-directivas-y-salida-dinamica">Práctica 1: Embebido de PHP, Directivas y Salida Dinámica</h2>
-<p>Crea una página web dinámica que muestre información del servidor e interactúe con el cliente modificando las directivas por defecto de PHP.</p>
-<h3 id="enunciado-y-requisitos">Enunciado y Requisitos</h3>
-<ol>
-<li>Crea un fichero llamado <code>p1_servidor.php</code>.</li>
-<li>Habilita la visualización de errores y advertencias al inicio del script mediante las directivas <code>ini_set('display_errors', 1)</code> y <code>error_reporting(E_ALL)</code>.</li>
-<li>Integra código PHP dentro de la maquetación HTML5 mediante etiquetas <code>&lt;?php ... ?&gt;</code> y la sintaxis corta de impresión <code>&lt;?= ... ?&gt;</code>.</li>
-<li>Muestra dinámicamente en una tarjeta estilizada:<ul>
-<li>La fecha y hora actual del servidor en formato local español.</li>
-<li>La versión activa de PHP (<code>phpversion()</code>).</li>
-<li>El agente de usuario (<em>User Agent</em>) recuperado de la superglobal <code>$_SERVER</code>.</li>
+                <h1 id="ut2-boletin-de-practicas-sintaxis-basica-de-php">UT2 · Boletín de prácticas: sintaxis básica de PHP</h1>
+<p>Este boletín reúne las prácticas de la <strong>UT2 · Sintaxis Básica de PHP</strong>. Están <strong>ordenadas de menor a mayor dificultad</strong> en tres niveles. Hazlas en orden: cada práctica usa lo que has aprendido en las anteriores.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Prácticas</th>
+<th>Qué trabajas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 Básico</td>
+<td>P01 – P04</td>
+<td>PHP dentro de HTML, <code>echo</code> y <code>&lt;?= ?&gt;</code>, comillas, variables, constantes y tipos</td>
+</tr>
+<tr>
+<td>🟡 Intermedio</td>
+<td>P05 – P08</td>
+<td>Operadores, comparaciones, conversión de tipos, funciones integradas, directivas y <code>$_SERVER</code></td>
+</tr>
+<tr>
+<td>🔴 Avanzado</td>
+<td>P09 – P10</td>
+<td>Ámbito de las variables (<code>global</code>, <code>static</code>) y paso por referencia</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado de aprendizaje:</strong> RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</p>
+<div class="admonition note">
+<p class="admonition-title">Requisitos comunes a todas las prácticas</p>
+<ul>
+<li><strong>Entorno:</strong> Herd (Windows/macOS) o Lerd (Xubuntu) con PHP 8.4.</li>
+<li><strong>Estilos:</strong> Bulma 1.x y Font Awesome por CDN. No hace falta JavaScript.</li>
+<li><strong>Sin formularios:</strong> en esta unidad los datos están escritos en el propio código. Los formularios llegan en la UT3.</li>
+<li><strong>Estructura:</strong> todo el código PHP va <strong>al principio del fichero</strong>, antes del <code>&lt;!DOCTYPE html&gt;</code>. En el HTML solo se usa <code>&lt;?= ?&gt;</code> para mostrar valores.</li>
+<li><strong>Código comentado:</strong> explica qué hace cada bloque.</li>
+<li><strong>Nombres de fichero:</strong> <code>ut02p01.php</code>, <code>ut02p02.php</code>…</li>
+<li><strong>Git:</strong> un <em>commit</em> por práctica terminada, con un mensaje del tipo <code>P04: ficha de datos</code>.</li>
 </ul>
-</li>
-<li>Abre el navegador web, inspecciona el código fuente recibido (<code>Ctrl + U</code>) y verifica la ausencia de etiquetas PHP en el HTML final.</li>
-</ol>
-<h2 id="practica-2-tipos-de-datos-operadores-constantes-y-ambitos">Práctica 2: Tipos de Datos, Operadores, Constantes y Ámbitos</h2>
-<p>Diseña una calculadora de facturación laboral aplicando constantes, operadores lógicos y aritméticos, paso por referencia y gestión del ámbito global.</p>
-<h3 id="enunciado-y-requisitos_1">Enunciado y Requisitos</h3>
-<ol>
-<li>Crea el fichero <code>p2_facturacion.php</code>.</li>
-<li>Define dos constantes: <code>IVA</code> con valor <code>0.21</code> y <code>RETENCION_IRPF</code> con valor <code>0.15</code>.</li>
-<li>Declara una variable global <code>$tarifaHora = 25.50</code> y otra <code>$horasTrabajadas = 160</code>.</li>
-<li>Crea una función <code>calcularNomina(&amp;$totalBruto)</code> que:<ul>
-<li>Acceda a la variable global <code>$tarifaHora</code> mediante la palabra reservada <code>global</code>.</li>
-<li>Calcule el salario bruto multiplicando las horas trabajadas por la tarifa.</li>
-<li>Asigne el resultado a <code>$totalBruto</code> modificando el valor por <strong>referencia</strong> (<code>&amp;</code>).</li>
-<li>Devuelva el salario neto restando las retenciones y sumando el IVA aplicable.</li>
-</ul>
-</li>
-<li>Imprime en pantalla una comparación estricta (<code>===</code>) entre dos comprobaciones de tipo utilizando <code>var_dump()</code>.</li>
-</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Plantillas para empezar</p>
+<p>Descarga <strong><a href="../plantillas-ut02.zip">plantillas-ut02.zip</a></strong>. Tiene un fichero por práctica con el HTML y los estilos ya hechos, y comentarios <code>TODO</code> donde tienes que escribir el código PHP. Los valores que aparecen en la plantilla son de ejemplo: los tuyos los tiene que calcular PHP.</p>
+<p>Descomprímelo en la carpeta de tu servidor local (Herd o Lerd).</p>
+</div>
 <hr />
-<h2 id="practica-3-estructuras-condicionales-y-toma-de-decisiones">Práctica 3: Estructuras Condicionales y Toma de Decisiones</h2>
-<p>!!! info "Ficha de la Práctica 3"
-    * <strong>Duración estimada:</strong> 30 minutos
-    * <strong>Objetivo:</strong> Construir un motor de clasificación de envíos y tarifas de transporte utilizando expresiones <code>match</code> y bloques <code>if-elseif-else</code>.
-    * <strong>Criterios de Evaluación:</strong> RA3 (Mecanismos de decisión, sintaxis de control, comentarios en código).</p>
-<h3 id="enunciado-y-requisitos_2">Enunciado y Requisitos</h3>
-<ol>
-<li>Crea el fichero <code>p3_envios.php</code>.</li>
-<li>Define las variables del paquete: <code>$pesoKg = 4.5</code>, <code>$zonaDestino = 'B'</code> y <code>$esSocio = true</code>.</li>
-<li>Implementa una estructura <code>match</code> (introducida en PHP 8) para determinar el precio base según la zona:<ul>
-<li>Zona <code>'A'</code>: 5.00 €</li>
-<li>Zona <code>'B'</code>: 10.00 €</li>
-<li>Zona <code>'C'</code>: 18.00 €</li>
-<li>Otra zona: Lanzar o registrar una opción no válida.</li>
+<h2 id="nivel-basico">🟢 Nivel básico</h2>
+<h3 id="p01-tarjeta-de-perfil">P01 · Tarjeta de perfil</h3>
+<p><strong>RA/CE:</strong> RA2 – CE a), c), e) · <strong>Duración:</strong> 30 min</p>
+<p>Crea una tarjeta de presentación con tus datos guardados en variables: nombre, puesto, una biografía corta y la URL de tu perfil de GitHub.</p>
+<ul>
+<li>Muestra el <strong>nombre</strong> en un <code>&lt;h2&gt;</code> usando <code>echo</code> y <strong>comillas dobles</strong>, con la variable interpolada dentro de la cadena.</li>
+<li>Muestra el <strong>puesto</strong> y la <strong>biografía</strong> con la etiqueta corta <code>&lt;?= ?&gt;</code>.</li>
+<li>Crea el <strong>enlace</strong> al perfil con <code>echo</code>. Dentro de una cadena de comillas dobles tendrás que <strong>escapar</strong> las comillas del atributo: <code>href=\"…\"</code>.</li>
+<li>Abre el código fuente en el navegador (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-u">U</kbd></span>) y comprueba que no queda <strong>ninguna etiqueta PHP</strong>.</li>
 </ul>
-</li>
-<li>Mediante una estructura <code>if-elseif-else</code>, aplica un recargo por peso:<ul>
-<li>Si el peso es inferior a 2 kg: Sin recargo.</li>
-<li>Si el peso está entre 2 kg y 5 kg: Recargo de 3.50 €.</li>
-<li>Si el peso supera los 5 kg: Recargo de 7.00 €.</li>
-</ul>
-</li>
-<li>Si <code>$esSocio</code> es <code>true</code>, aplica un descuento global del 15% al coste total mediante un operador ternario.</li>
-</ol>
-<h3 id="solucion-propuesta">Solución Propuesta</h3>
-<p>=== "fichero <code>p3_envios.php</code>"
-    ```php title="p3_envios.php" lineno="1"
-    &lt;?php
-    // Práctica 3: Motor de cálculo de gastos de envío mediante estructuras condicionales</p>
-<div class="highlight"><pre><span></span><code>$pesoKg = 4.5;
-$zonaDestino = 'B';
-$esSocio = true;
-
-// 1. Determinación del precio base mediante la expresión match
-$precioBase = match ($zonaDestino) {
-    'A' =&gt; 5.00,
-    'B' =&gt; 10.00,
-    'C' =&gt; 18.00,
-    default =&gt; 0.00,
-};
-
-// 2. Determinación del recargo por peso con if-elseif-else
-$recargo = 0.0;
-if ($pesoKg &lt; 2.0) {
-    $recargo = 0.00;
-} elseif ($pesoKg &gt;= 2.0 &amp;&amp; $pesoKg &lt;= 5.0) {
-    $recargo = 3.50;
-} else {
-    $recargo = 7.00;
-}
-
-// 3. Subtotal antes de descuento
-$subtotal = $precioBase + $recargo;
-
-// 4. Aplicación de descuento a socios con operador ternario
-$descuento = $esSocio ? ($subtotal * 0.15) : 0.0;
-$precioFinal = $subtotal - $descuento;
-?&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Práctica 3 - Cotizador de Envíos&lt;/title&gt;
-    &lt;style&gt;
-        .ticket { font-family: monospace; border: 1px dashed #333; padding: 15px; width: 320px; background: #fffde7; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h2&gt;Desglose de Envío Logístico&lt;/h2&gt;
-    &lt;div class="ticket"&gt;
-        &lt;p&gt;Zona Destino: &lt;?= $zonaDestino ?&gt;&lt;/p&gt;
-        &lt;p&gt;Peso registrado: &lt;?= $pesoKg ?&gt; kg&lt;/p&gt;
-        &lt;hr&gt;
-        &lt;p&gt;Precio Base: &lt;?= number_format($precioBase, 2) ?&gt; €&lt;/p&gt;
-        &lt;p&gt;Recargo por Peso: &lt;?= number_format($recargo, 2) ?&gt; €&lt;/p&gt;
-        &lt;p&gt;Descuento Socio (15%): -&lt;?= number_format($descuento, 2) ?&gt; €&lt;/p&gt;
-        &lt;hr&gt;
-        &lt;h3&gt;TOTAL: &lt;?= number_format($precioFinal, 2) ?&gt; €&lt;/h3&gt;
-    &lt;/div&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-```
-</code></pre></div>
+<details>
+<summary>Pista</summary>
+<p><code>echo "&lt;a href=\"$url\"&gt;Ver perfil&lt;/a&gt;";</code> y <code>echo '&lt;a href="' . $url . '"&gt;Ver perfil&lt;/a&gt;';</code> generan el mismo HTML. ¿Cuál te parece más legible?</p>
+</details>
 <hr />
-<h2 id="practica-4-procesamiento-de-arrays-multidimensionales-y-bucles">Práctica 4: Procesamiento de Arrays Multidimensionales y Bucles</h2>
-<p>!!! info "Ficha de la Práctica 4"
-    * <strong>Duración estimada:</strong> 30 minutos
-    * <strong>Objetivo:</strong> Gestionar un catálogo de productos empleando arrays asociativos multidimensionales e iterando con el bucle <code>foreach</code>.
-    * <strong>Criterios de Evaluación:</strong> RA3 (Arrays, bucles <code>foreach</code>, renderizado de colecciones).</p>
-<h3 id="enunciado-y-requisitos_3">Enunciado y Requisitos</h3>
-<ol>
-<li>Crea el fichero <code>p4_catalogo.php</code>.</li>
-<li>Define un array multidimensional asociativo llamado <code>$inventario</code> con al menos 4 productos. Cada producto debe contener: <code>id</code>, <code>nombre</code>, <code>precio</code>, <code>stock</code> y <code>categoria</code>.</li>
-<li>Recorre el array con un bucle <code>foreach</code> para renderizar los datos en una tabla HTML.</li>
-<li>Aplica lógica condicional dentro de la iteración para:<ul>
-<li>Resaltar en color rojo las filas cuyo <code>stock</code> sea menor que 5 (Aviso de Stock Bajo).</li>
-<li>Calcular el valor total del inventario acumulado (<span class="arithmatex"><span class="MathJax_Preview">\text{precio} \times \text{stock}</span><script type="math/tex">\text{precio} \times \text{stock}</script></span>).</li>
+<h3 id="p02-estilos-generados-desde-php">P02 · Estilos generados desde PHP</h3>
+<p><strong>RA/CE:</strong> RA2 – CE c), e) · <strong>Duración:</strong> 30 min</p>
+<p>Crea una página cuyo <strong>color cambie cada vez que la recargas</strong>. El servidor calcula los estilos y los inserta en el atributo <code>style</code> con <code>&lt;?= ?&gt;</code>.</p>
+<ul>
+<li>Obtén el segundo actual con <code>date('s')</code> y conviértelo en un tono de color: <code>$tono = $segundo * 6;</code> (de 0 a 354 grados).</li>
+<li>Construye dos colores con interpolación: <code>"hsl($tono, 70%, 85%)"</code> para el fondo y <code>"hsl($tono, 70%, 40%)"</code> para el borde.</li>
+<li>Muestra una caja con ese fondo y ese borde, y dentro, la hora del servidor (<code>date('H:i:s')</code>).</li>
+<li>Añade una barra de progreso cuyo <code>width</code> sea el porcentaje del minuto transcurrido. Redondea con <code>round()</code>.</li>
 </ul>
-</li>
-<li>Imprime al final de la tabla el número total de productos en catálogo mediante <code>count()</code> y el valor financiero total.</li>
-</ol>
-<h3 id="solucion-propuesta_1">Solución Propuesta</h3>
-<p>=== "fichero <code>p4_catalogo.php</code>"
-    ```php title="p4_catalogo.php" lineno="1"
-    &lt;?php
-    // Práctica 4: Gestión de catálogo con arrays multidimensionales y foreach</p>
-<div class="highlight"><pre><span></span><code>$inventario = [
-    ["id" =&gt; 101, "nombre" =&gt; "Teclado Mecánico RGB", "precio" =&gt; 59.99, "stock" =&gt; 12, "categoria" =&gt; "Periféricos"],
-    ["id" =&gt; 102, "nombre" =&gt; "Ratón Inalámbrico Ergonomía", "precio" =&gt; 25.50, "stock" =&gt; 3, "categoria" =&gt; "Periféricos"],
-    ["id" =&gt; 103, "nombre" =&gt; "Monitor 27'' UltraWide", "precio" =&gt; 210.00, "stock" =&gt; 2, "categoria" =&gt; "Pantallas"],
-    ["id" =&gt; 104, "nombre" =&gt; "Auriculares Noise Cancelling", "precio" =&gt; 89.00, "stock" =&gt; 15, "categoria" =&gt; "Audio"]
-];
-
-$valorTotalInventario = 0;
-?&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Práctica 4 - Catálogo e Inventario&lt;/title&gt;
-    &lt;style&gt;
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #2c3e50; color: white; }
-        .alerta-stock { background-color: #ffcdd2; color: #b71c1c; font-weight: bold; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h2&gt;Control de Stock de Inventario&lt;/h2&gt;
-
-    &lt;table&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th&gt;ID&lt;/th&gt;
-                &lt;th&gt;Producto&lt;/th&gt;
-                &lt;th&gt;Categoría&lt;/th&gt;
-                &lt;th&gt;Precio&lt;/th&gt;
-                &lt;th&gt;Stock&lt;/th&gt;
-                &lt;th&gt;Subtotal&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;?php foreach ($inventario as $prod): 
-                $subtotalProd = $prod['precio'] * $prod['stock'];
-                $valorTotalInventario += $subtotalProd;
-                $claseFila = ($prod['stock'] &lt; 5) ? 'alerta-stock' : '';
-            ?&gt;
-                &lt;tr class="&lt;?= $claseFila ?&gt;"&gt;
-                    &lt;td&gt;&lt;?= $prod['id'] ?&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;?= htmlspecialchars($prod['nombre']) ?&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;?= htmlspecialchars($prod['categoria']) ?&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;?= number_format($prod['precio'], 2) ?&gt; €&lt;/td&gt;
-                    &lt;td&gt;&lt;?= $prod['stock'] ?&gt; &lt;?= ($prod['stock'] &lt; 5) ? '(¡Bajo!)' : '' ?&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;?= number_format($subtotalProd, 2) ?&gt; €&lt;/td&gt;
-                &lt;/tr&gt;
-            &lt;?php endforeach; ?&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;p&gt;&lt;strong&gt;Total de referencias únicas:&lt;/strong&gt; &lt;?= count($inventario) ?&gt;&lt;/p&gt;
-    &lt;p&gt;&lt;strong&gt;Valoración total del stock:&lt;/strong&gt; &lt;?= number_format($valorTotalInventario, 2) ?&gt; €&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-```
-</code></pre></div>
+<p>Recarga varias veces y compara el atributo <code>style</code> en el código fuente.</p>
 <hr />
-<h2 id="practica-5-funciones-reutilizables-e-interaccion-basica-con-formularios">Práctica 5: Funciones Reutilizables e Interacción Básica con Formularios</h2>
-<p>!!! info "Ficha de la Práctica 5"
-    * <strong>Duración estimada:</strong> 30 minutos
-    * <strong>Objetivo:</strong> Integrar la recogida de datos desde un formulario HTML mediante métodos <code>GET</code>/<code>POST</code> con funciones auxiliares modularizadas.
-    * <strong>Criterios de Evaluación:</strong> RA3 (Creación de funciones, formularios web, captura de parámetros de entrada).</p>
-<h3 id="enunciado-y-requisitos_4">Enunciado y Requisitos</h3>
+<h3 id="p03-comillas-simples-y-dobles">P03 · Comillas simples y dobles</h3>
+<p><strong>RA/CE:</strong> RA2 – CE d), e), g) · <strong>Duración:</strong> 30 min</p>
+<p>Con <code>$producto = 'Portátil'</code> y <code>$precio = 799.99</code>, construye estas frases y muéstralas en una tabla con dos columnas, <strong>Código</strong> y <strong>Resultado</strong>:</p>
 <ol>
-<li>Crea el fichero <code>p5_conversor.php</code>.</li>
-<li>Incluye un formulario HTML en el mismo archivo con el método <code>POST</code> que contenga:<ul>
-<li>Un campo numérico para la cantidad.</li>
-<li>Un desplegable <code>&lt;select&gt;</code> con opciones de conversión (EUR a USD, EUR a GBP).</li>
-<li>Un botón de envío.</li>
-</ul>
-</li>
-<li>Escribe dos funciones PHP personalizadas:<ul>
-<li><code>validarCantidad($valor)</code>: Comprueba que sea un dato numérico y positivo. Devuelve un valor booleano.</li>
-<li><code>convertirMoneda(float $cantidad, string $tipo)</code>: Devuelve el cálculo según el tipo seleccionado.</li>
-</ul>
-</li>
-<li>Captura la petición comprobando <code>$_SERVER['REQUEST_METHOD'] === 'POST'</code>, procesa la respuesta e imprime el resultado o el error correspondiente.</li>
+<li><code>'El producto es $producto'</code> (comillas simples).</li>
+<li><code>"El producto es $producto"</code> (comillas dobles).</li>
+<li><code>"Hay 3 {$producto}s en el almacén"</code> (llaves para separar la variable).</li>
+<li>La frase <em>El Portátil cuesta 799.99 €</em> hecha con <strong>concatenación</strong> (operador <code>.</code>).</li>
+<li>Una frase con comillas dobles que muestre literalmente <code>$producto</code>, usando la secuencia de escape <code>\$</code>.</li>
+<li>Un texto de dos líneas con <strong>heredoc</strong> (<code>&lt;&lt;&lt;TXT … TXT;</code>). Muéstralo respetando el salto de línea con <code>nl2br()</code>.</li>
 </ol>
-<h3 id="solucion-propuesta_2">Solución Propuesta</h3>
-<p>=== "fichero <code>p5_conversor.php</code>"
-    ```php title="p5_conversor.php" lineno="1"
-    &lt;?php
-    // Práctica 5: Conversor de divisa con funciones y procesamiento de formularios</p>
-<div class="highlight"><pre><span></span><code>// Definición de funciones auxiliares
-function validarCantidad($valor): bool {
-    return is_numeric($valor) &amp;&amp; $valor &gt; 0;
-}
-
-function convertirMoneda(float $cantidad, string $tipo): float {
-    $tasas = [
-        'USD' =&gt; 1.08, // 1 EUR -&gt; 1.08 USD
-        'GBP' =&gt; 0.85  // 1 EUR -&gt; 0.85 GBP
-    ];
-
-    return $cantidad * ($tasas[$tipo] ?? 1.0);
-}
-
-$resultado = null;
-$error = null;
-
-// Recogida y procesamiento de la información introducida
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $monto = $_POST['monto'] ?? '';
-    $divisa = $_POST['divisa'] ?? 'USD';
-
-    if (validarCantidad($monto)) {
-        $conversion = convertirMoneda((float)$monto, $divisa);
-        $resultado = number_format((float)$monto, 2) . " EUR son " . number_format($conversion, 2) . " " . $divisa;
-    } else {
-        $error = "Por favor, introduce un importe numérico válido y mayor que cero.";
-    }
-}
-?&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Práctica 5 - Conversor de Divisas&lt;/title&gt;
-    &lt;style&gt;
-        body { font-family: sans-serif; margin: 30px; }
-        .form-box { background: #eef2f5; padding: 20px; border-radius: 6px; width: 300px; }
-        .mensaje { padding: 10px; margin-top: 15px; border-radius: 4px; }
-        .exito { background: #d4edda; color: #155724; }
-        .error { background: #f8d7da; color: #721c24; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h2&gt;Conversor de Divisas Dinámico&lt;/h2&gt;
-
-    &lt;div class="form-box"&gt;
-        &lt;form action="p5_conversor.php" method="POST"&gt;
-            &lt;label for="monto"&gt;Cantidad en Euros (€):&lt;/label&gt;&lt;br&gt;
-            &lt;input type="number" step="0.01" id="monto" name="monto" required&gt;&lt;br&gt;&lt;br&gt;
-
-            &lt;label for="divisa"&gt;Convertir a:&lt;/label&gt;&lt;br&gt;
-            &lt;select id="divisa" name="divisa"&gt;
-                &lt;option value="USD"&gt;Dólar Estadounidense (USD)&lt;/option&gt;
-                &lt;option value="GBP"&gt;Libra Esterlina (GBP)&lt;/option&gt;
-            &lt;/select&gt;&lt;br&gt;&lt;br&gt;
-
-            &lt;button type="submit"&gt;Calcular Conversión&lt;/button&gt;
-        &lt;/form&gt;
-    &lt;/div&gt;
-
-    &lt;?php if ($resultado): ?&gt;
-        &lt;div class="mensaje exito"&gt;&lt;?= htmlspecialchars($resultado) ?&gt;&lt;/div&gt;
-    &lt;?php endif; ?&gt;
-
-    &lt;?php if ($error): ?&gt;
-        &lt;div class="mensaje error"&gt;&lt;?= htmlspecialchars($error) ?&gt;&lt;/div&gt;
-    &lt;?php endif; ?&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-```
-</code></pre></div>
+<p>Escribe como <strong>comentario</strong> en el propio fichero qué diferencia has observado entre los distintos casos.</p>
+<hr />
+<h3 id="p04-ficha-de-datos-variables-constantes-y-tipos">P04 · Ficha de datos: variables, constantes y tipos</h3>
+<p><strong>RA/CE:</strong> RA2 – CE d), g) · <strong>Duración:</strong> 30 min</p>
+<ul>
+<li>Define dos constantes: <code>APP_NAME</code> con <code>define()</code> y <code>APP_VERSION</code> con <code>const</code>.</li>
+<li>Declara cuatro variables de un usuario, una de cada tipo escalar: nombre (<code>string</code>), edad (<code>int</code>), altura (<code>float</code>) y activo (<code>bool</code>).</li>
+<li>Muestra una frase con interpolación: <em>Carlos Ruiz tiene 19 años y mide 1.78 m.</em></li>
+<li>Muestra una tabla con cada variable, su valor y su tipo (<code>gettype()</code>).</li>
+<li>Muestra también la salida de <code>var_dump()</code> dentro de una etiqueta <code>&lt;pre&gt;</code>.</li>
+</ul>
+<details>
+<summary>Para pensar</summary>
+<p>¿Qué muestra <code>echo true</code>? ¿Y <code>echo false</code>? ¿Por qué conviene usar <code>var_export($valor, true)</code> para enseñar un booleano? ¿Por qué <code>gettype()</code> dice <code>double</code> en lugar de <code>float</code>?</p>
+</details>
+<hr />
+<h2 id="nivel-intermedio">🟡 Nivel intermedio</h2>
+<h3 id="p05-calculadora-aritmetica">P05 · Calculadora aritmética</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g) · <strong>Duración:</strong> 45 min</p>
+<p>Con <code>$num1 = 17</code> y <code>$num2 = 5</code>, muestra en dos listas:</p>
+<p><strong>Operadores aritméticos:</strong> suma, resta, multiplicación, división (<code>/</code>), división entera (<code>intdiv()</code>), resto (<code>%</code>) y potencia (<code>**</code>). La potencia muéstrala con separador de miles: <code>1.419.857</code>.</p>
+<p><strong>Asignación e incremento:</strong></p>
+<ul>
+<li>Parte de <code>$acumulado = 10</code> y aplica en orden <code>+= 5</code>, <code>*= 2</code>, <code>-= 4</code> y <code>/= 2</code>. Muestra el resultado final.</li>
+<li>Con <code>$contador = 1</code>, muestra la diferencia entre <code>++$contador</code> y <code>$contador++</code>.</li>
+<li>Muestra el resultado de <code>2 + 3 * 4</code> y de <code>(2 + 3) * 4</code>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Antes de ejecutar, calcula a mano el valor final de <code>$acumulado</code> y de <code>$contador</code>. Luego compáralo con lo que muestra PHP.</p>
+</div>
+<hr />
+<h3 id="p06-comparaciones-debiles-y-estrictas">P06 · Comparaciones débiles y estrictas</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g) · <strong>Duración:</strong> 45 min</p>
+<p>Con <code>$a = "50"</code> (string) y <code>$b = 50</code> (int), muestra una tabla con tres columnas: <strong>Expresión</strong>, <strong>Resultado</strong> (usa <code>var_export(…, true)</code>) y <strong>¿Por qué?</strong> (tu explicación). Incluye estas expresiones:</p>
+<table>
+<thead>
+<tr>
+<th>Expresión</th>
+<th>Qué comprueba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$a == $b</code> · <code>$a === $b</code></td>
+<td>Igualdad débil y estricta</td>
+</tr>
+<tr>
+<td><code>$a != $b</code> · <code>$a !== $b</code></td>
+<td>Desigualdad débil y estricta</td>
+</tr>
+<tr>
+<td><code>$a &lt;=&gt; $b</code></td>
+<td>Operador nave espacial</td>
+</tr>
+<tr>
+<td><code>"abc" == 0</code></td>
+<td>Cambió en PHP 8</td>
+</tr>
+<tr>
+<td><code>"1e3" == "1000"</code></td>
+<td>Cadenas numéricas</td>
+</tr>
+<tr>
+<td><code>null == false</code> · <code>null === false</code></td>
+<td>Valores «vacíos»</td>
+</tr>
+</tbody>
+</table>
+<p>Al final, muestra también <code>var_dump($a == $b, $a === $b, $a !== $b)</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Conclusión</p>
+<p>Usa <strong>siempre</strong> <code>===</code> y <code>!==</code> salvo que tengas un motivo para no hacerlo. La comparación débil da sorpresas como la de <code>"1e3" == "1000"</code>.</p>
+</div>
+<hr />
+<h3 id="p07-conversion-de-tipos-y-funciones-integradas">P07 · Conversión de tipos y funciones integradas</h3>
+<p><strong>RA/CE:</strong> RA2 – CE d), g) · <strong>Duración:</strong> 1 h</p>
+<p>Los datos que llegan de un formulario o de un fichero siempre son <strong>texto</strong>. En esta práctica vas a convertirlos y a usar funciones que PHP trae de serie.</p>
+<p><strong>Tabla 1: conversiones.</strong> Columnas <em>Expresión</em>, <em>Resultado</em> (<code>var_export</code>) y <em>Tipo</em> (<code>gettype</code>):</p>
+<ul>
+<li><code>'10' + '5.5'</code>: conversión <strong>implícita</strong> al operar.</li>
+<li><code>(int) '3.99'</code>: ¿redondea o trunca?</li>
+<li><code>(float) '19,90'</code> frente a <code>(float) str_replace(',', '.', '19,90')</code>: ¿qué pasa con la coma decimal?</li>
+<li><code>intval('1A', 16)</code>: conversión desde hexadecimal.</li>
+<li><code>(bool) '0'</code> y <code>(bool) '0.0'</code>.</li>
+<li><code>is_numeric('19,90')</code>.</li>
+</ul>
+<p><strong>Tabla 2: funciones integradas.</strong> Columnas <em>Función</em> y <em>Resultado</em>. Trabaja con el texto <code>'  ñandú veloz  '</code>:</p>
+<ul>
+<li><code>trim()</code>.</li>
+<li><code>strlen()</code> frente a <code>mb_strlen()</code>: ¿por qué no dan lo mismo?</li>
+<li><code>mb_strtoupper()</code> y <code>mb_convert_case(…, MB_CASE_TITLE)</code>.</li>
+<li><code>str_pad('3', 5, '0', STR_PAD_LEFT)</code> → <code>00003</code>.</li>
+<li><code>round(2.675, 2)</code>, <code>number_format()</code> con formato español (<code>59,70 €</code>), <code>max()</code> y <code>date('d/m/Y')</code>.</li>
+</ul>
+<details>
+<summary>Pista</summary>
+<p>Las funciones que empiezan por <code>mb_</code> trabajan con <strong>caracteres</strong>, no con bytes. En UTF-8, la ñ y las vocales con tilde ocupan 2 bytes.</p>
+</details>
+<hr />
+<h3 id="p08-panel-de-informacion-del-servidor">P08 · Panel de información del servidor</h3>
+<p><strong>RA/CE:</strong> RA2 – CE b), e), f) · <strong>Duración:</strong> 1 h</p>
+<p>Crea un panel en dos columnas con información de PHP y de la petición.</p>
+<p><strong>Directivas</strong> (al principio del script):</p>
+<ul>
+<li>Guarda el valor actual de <code>display_errors</code> con <code>ini_get()</code>. Después actívalo con <code>ini_set('display_errors', '1')</code> y <code>error_reporting(E_ALL)</code>.</li>
+<li>Fija la zona horaria con <code>date_default_timezone_set('Europe/Madrid')</code>.</li>
+</ul>
+<p><strong>Columna PHP:</strong> fecha y hora, <code>phpversion()</code>, <code>PHP_OS_FAMILY</code>, <code>php_sapi_name()</code>, <code>memory_limit</code> y <code>upload_max_filesize</code> (con <code>ini_get()</code>), y el valor de <code>display_errors</code> antes y después del cambio.</p>
+<p><strong>Columna Petición:</strong> de la superglobal <code>$_SERVER</code>, muestra <code>HTTP_HOST</code>, <code>REQUEST_METHOD</code>, <code>REMOTE_ADDR</code>, <code>SERVER_SOFTWARE</code> y <code>SCRIPT_FILENAME</code>. Debajo, muestra <code>HTTP_USER_AGENT</code> completo.</p>
+<div class="admonition warning">
+<p class="admonition-title">Seguridad</p>
+<p>El <code>User-Agent</code> lo envía el navegador y <strong>se puede falsificar</strong>. Muéstralo siempre con <code>htmlspecialchars()</code>. Usa también <code>?? 'No disponible'</code> por si alguna clave no existe.</p>
+</div>
+<details>
+<summary>Para pensar</summary>
+<p><code>display_errors</code> activado es útil mientras programas. ¿Por qué hay que desactivarlo en un servidor de producción?</p>
+</details>
+<hr />
+<h2 id="nivel-avanzado">🔴 Nivel avanzado</h2>
+<h3 id="p09-ambito-de-las-variables">P09 · Ámbito de las variables</h3>
+<p><strong>RA/CE:</strong> RA2 – CE h) · <strong>Duración:</strong> 1 h</p>
+<p>Declara <code>$mensaje = 'Hola desde el ámbito global'</code> y escribe estas funciones:</p>
+<table>
+<thead>
+<tr>
+<th>Función</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sinGlobal()</code></td>
+<td>Intenta devolver <code>$mensaje</code> sin hacer nada especial. Usa <code>??</code> para que no dé error</td>
+</tr>
+<tr>
+<td><code>conGlobal()</code></td>
+<td>Devuelve <code>$mensaje</code> usando la palabra <code>global</code></td>
+</tr>
+<tr>
+<td><code>conArrayGlobals()</code></td>
+<td>Devuelve <code>$mensaje</code> usando <code>$GLOBALS['mensaje']</code></td>
+</tr>
+<tr>
+<td><code>contadorNormal()</code></td>
+<td>Crea <code>$contador = 0</code>, lo incrementa y lo devuelve</td>
+</tr>
+<tr>
+<td><code>incrementar_visitas()</code></td>
+<td>Igual, pero con <code>static $contador = 0</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Muestra en una tabla lo que devuelve cada una de las tres primeras funciones.</li>
+<li>Llama <strong>5 veces seguidas</strong> a <code>contadorNormal()</code> y otras 5 a <code>incrementar_visitas()</code>, y muestra los resultados en una tabla.</li>
+<li>Recarga la página: ¿el contador estático sigue sumando o vuelve a empezar? Explícalo en un comentario.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Dibuja un esquema con dos «cajas»: el ámbito global y el ámbito de una función. Indica qué variables hay en cada una y cómo se comunican.</p>
+</div>
+<hr />
+<h3 id="p10-factura-de-un-trabajador-autonomo">P10 · Factura de un trabajador autónomo</h3>
+<p><strong>RA/CE:</strong> RA2 – CE g), h) · <strong>Duración:</strong> 1 h</p>
+<p>Calcula la factura mensual de un trabajador autónomo. La fórmula es: <strong>total = base imponible + IVA − retención de IRPF</strong>.</p>
+<ul>
+<li>Define las constantes <code>IVA</code> (0.21) con <code>define()</code> y <code>RETENCION_IRPF</code> (0.15) con <code>const</code>.</li>
+<li>Declara las variables globales <code>$tarifaHora = 25.50</code>, <code>$horasTrabajadas = 160</code> y <code>$baseImponible = 0.0</code>.</li>
+<li>Escribe la función <code>calcularFactura(int $horas, float &amp;$base): float</code>, que:<ul>
+<li>lee <code>$tarifaHora</code> con la palabra <code>global</code>;</li>
+<li>guarda la base imponible en <code>$base</code>, que se recibe <strong>por referencia</strong>;</li>
+<li>devuelve el total de la factura.</li>
+</ul>
+</li>
+<li>Muestra la factura: tarifa, horas, base imponible, IVA, IRPF y total, con formato español (<code>4.080,00 €</code>).</li>
+<li>Comprueba que <code>$baseImponible</code> ya no vale 0 después de llamar a la función.</li>
+</ul>
+<p><strong>Copia frente a referencia:</strong> con <code>$original = 100</code>, haz <code>$copia = $original;</code> y <code>$referencia = &amp;$original;</code>. Cambia <code>$referencia</code> a 500 y muestra cuánto valen las tres variables.</p>
+<p><strong>Resultado esperado:</strong> base 4.080,00 €, IVA 856,80 €, IRPF 612,00 € y total 4.324,80 €.</p>
+<hr />
+<h2 id="entrega">Entrega</h2>
+<div class="admonition note">
+<p class="admonition-title">Cómo entregar</p>
+<ul>
+<li>Sube a <strong>Moodle</strong> (aulavirtual.murciaeduca.es) un <code>.zip</code> llamado <code>ut02-apellido-nombre.zip</code> con todos los ficheros <code>ut02pXX.php</code>.</li>
+<li>Añade en el comentario de la entrega el enlace a tu repositorio de <strong>GitHub</strong>.</li>
+<li>Entrega también las fotos de las páginas del <strong>cuaderno</strong> que se piden en P05 y P09.</li>
+<li><strong>Mínimo para entregar:</strong> todas las prácticas de nivel básico e intermedio (P01–P08). Las de nivel avanzado suben nota.</li>
+</ul>
+</div>
+<h2 id="rubrica">Rúbrica</h2>
+<p>Cada práctica se puntúa sobre 10:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th style="text-align: center;">Peso</th>
+<th>Excelente</th>
+<th>Suficiente</th>
+<th>Insuficiente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Funcionalidad</strong></td>
+<td style="text-align: center;">40 %</td>
+<td>Muestra todo lo que pide el enunciado con resultados correctos</td>
+<td>Muestra lo principal</td>
+<td>Faltan partes o hay errores de PHP</td>
+</tr>
+<tr>
+<td><strong>Sintaxis e integración en HTML</strong></td>
+<td style="text-align: center;">25 %</td>
+<td>PHP al principio, <code>&lt;?= ?&gt;</code> en el HTML y código fuente final limpio</td>
+<td>Mezcla algo de lógica dentro del HTML</td>
+<td>Etiquetas mal abiertas o cerradas, HTML roto</td>
+</tr>
+<tr>
+<td><strong>Tipos, operadores y ámbitos</strong></td>
+<td style="text-align: center;">15 %</td>
+<td>Explica correctamente los resultados en comentarios</td>
+<td>Resultados correctos sin explicación</td>
+<td>Confunde tipos, comparaciones o ámbitos</td>
+</tr>
+<tr>
+<td><strong>Calidad del código</strong></td>
+<td style="text-align: center;">10 %</td>
+<td>Buenos nombres de variables y comentarios útiles</td>
+<td>Correcto pero poco comentado</td>
+<td>Desordenado y sin comentarios</td>
+</tr>
+<tr>
+<td><strong>Interfaz</strong></td>
+<td style="text-align: center;">5 %</td>
+<td>Bulma bien usado y datos escapados</td>
+<td>Interfaz básica</td>
+<td>Sin estilos</td>
+</tr>
+<tr>
+<td><strong>Git y cuaderno</strong></td>
+<td style="text-align: center;">5 %</td>
+<td>Un <em>commit</em> por práctica y cuaderno completo</td>
+<td>Pocos <em>commits</em> o cuaderno incompleto</td>
+<td>Sin repositorio o sin cuaderno</td>
+</tr>
+</tbody>
+</table>
+<p>La nota del boletín cuenta dentro del 50 % de <strong>tareas y prácticas</strong> del RA2.</p>
               
             </div>
           </div><footer>
