@@ -36,3 +36,5 @@
     color: #2ECC71; /* Icono verde */
     border-color: #A3E4D7;
 }
+
+.rst-content table td { white-space: normal; }
