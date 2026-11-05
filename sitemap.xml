@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://joaquinalbares.github.io/DWES/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/previo/buenas-practicas/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/previo/configuracion-vscode/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut01-arquitectura-web/practicas/p01-postman-http/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut01-arquitectura-web/teoria/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut02-sintaxis-basica-php/practicas/boletin/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut02-sintaxis-basica-php/teoria/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/boletin/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/ejemplos-formularios/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
+    </url>
+    <url>
+         <loc>https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/guia-resolucion/</loc>
+         <lastmod>2026-11-05</lastmod>
     </url>
     <url>
          <loc>https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/teoria/</loc>
-         <lastmod>2026-11-02</lastmod>
+         <lastmod>2026-11-05</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/guia-resolucion/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>UT3 · Guía para resolver las prácticas paso a paso - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT3 \u00b7 Gu\u00eda para resolver las pr\u00e1cticas paso a paso";
+        var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/guia-resolucion.md";
+        var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/guia-resolucion/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · Arquitectura y Desarrollo Web</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · Sintaxis Básica de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT3 · Guía para resolver las prácticas paso a paso</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut3-guia-para-resolver-las-practicas-paso-a-paso">UT3 · Guía para resolver las prácticas paso a paso</h1>
+<p>Esta guía <strong>no trae el código de las prácticas</strong>. Te enseña <strong>cómo pensar</strong> cada una: por dónde empezar, en qué trozos dividirla, qué preguntarte y cómo comprobar que funciona. El código lo escribes tú.</p>
+<p>Úsala así:</p>
+<ol>
+<li>Lee primero la <strong>parte 1</strong> (el método) y la <strong>parte 2</strong> (los patrones). Sirven para todas las prácticas.</li>
+<li>Cuando vayas a hacer una práctica, abre su ficha en la <strong>parte 3</strong> y síguela con el cuaderno al lado.</li>
+<li>Si te atascas, vuelve al patrón que se cita en la ficha.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Si te bloqueas</p>
+<p>Atascarse es normal: es parte de aprender a programar. Lo que no funciona es quedarse mirando la pantalla. Si llevas más de 15 minutos sin avanzar, <strong>vuelve al cuaderno</strong>, escribe en una frase qué intentas hacer y qué ocurre, y pregunta con esa frase.</p>
+</div>
+<hr />
+<h2 id="1-el-metodo-seis-pasos-para-cualquier-ejercicio">1. El método: seis pasos para cualquier ejercicio</h2>
+<p>Casi todos los bloqueos vienen de <strong>empezar a escribir código demasiado pronto</strong>. Antes de abrir VS Code, haz los pasos 1 a 4 en el cuaderno.</p>
+<h3 id="paso-1-lee-y-subraya">Paso 1. Lee y subraya</h3>
+<p>Lee el enunciado <strong>dos veces</strong>. En la segunda, subraya:</p>
+<ul>
+<li>los <strong>datos</strong> que da el usuario (normalmente, los campos del formulario);</li>
+<li>lo que hay que <strong>mostrar</strong>;</li>
+<li>las <strong>condiciones</strong>: «obligatorio», «entre 1 y 30», «solo si…», «si no…».</li>
+</ul>
+<p>Mira también la plantilla: los atributos <code>name</code> del formulario te dicen <strong>cómo se llaman</strong> los datos que te llegan.</p>
+<h3 id="paso-2-haz-la-tabla-entrada-proceso-salida">Paso 2. Haz la tabla Entrada – Proceso – Salida</h3>
+<p>Dibuja en el cuaderno una tabla de tres columnas:</p>
+<table>
+<thead>
+<tr>
+<th>Entrada (¿qué tengo?)</th>
+<th>Proceso (¿qué hago?)</th>
+<th>Salida (¿qué muestro?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Los campos del formulario y sus <code>name</code></td>
+<td>Validar, calcular, buscar, recorrer…</td>
+<td>Mensajes, resultados, tablas…</td>
+</tr>
+</tbody>
+</table>
+<p>Si no sabes rellenar alguna columna, <strong>todavía no has entendido el problema</strong>. Vuelve a leer el enunciado antes de seguir.</p>
+<h3 id="paso-3-divide-el-problema-en-trozos-pequenos">Paso 3. Divide el problema en trozos pequeños</h3>
+<p>Un problema grande da miedo; cinco problemas pequeños, no. Casi todas las prácticas de esta unidad se dividen en los mismos trozos:</p>
+<ol>
+<li>Saber si el formulario <strong>se ha enviado</strong>.</li>
+<li><strong>Recoger</strong> los datos.</li>
+<li><strong>Validarlos</strong> y apuntar los errores.</li>
+<li>Si no hay errores, <strong>calcular</strong> el resultado.</li>
+<li><strong>Mostrar</strong> el formulario (con lo que escribió el usuario), los errores y el resultado.</li>
+</ol>
+<p>Escribe la lista en el cuaderno y ve tachando cada trozo cuando funcione.</p>
+<h3 id="paso-4-escribe-el-pseudocodigo">Paso 4. Escribe el pseudocódigo</h3>
+<p>El pseudocódigo es el programa escrito <strong>en castellano</strong>, con la estructura de un programa: <code>SI … ENTONCES</code>, <code>PARA CADA …</code>, <code>MIENTRAS …</code>. No tiene que compilar; tiene que ser <strong>claro</strong>.</p>
+<div class="highlight"><pre><span></span><code>SI se ha enviado el formulario ENTONCES
+    recoger número
+    SI número no es entero positivo ENTONCES
+        apuntar error
+    SI NO
+        calcular letra
+FIN SI
+</code></pre></div>
+<p>Después, haz una <strong>traza</strong>: elige unos datos de prueba y sigue el pseudocódigo a mano, línea a línea, apuntando el valor de cada variable. Si la traza da el resultado correcto, el algoritmo está bien y solo queda traducirlo a PHP.</p>
+<h3 id="paso-5-programa-poco-a-poco-y-comprueba-cada-trozo">Paso 5. Programa poco a poco y comprueba cada trozo</h3>
+<p>No escribas todo de golpe. Escribe <strong>un trozo</strong>, guarda, recarga el navegador y comprueba que hace lo que esperas. Para ver qué contiene una variable, usa:</p>
+<div class="highlight"><pre><span></span><code><span class="x">echo '&lt;pre&gt;';</span>
+<span class="x">var_dump($_POST);   // o la variable que quieras inspeccionar</span>
+<span class="x">echo '&lt;/pre&gt;';</span>
+</code></pre></div>
+<p>Cuando el trozo funcione, <strong>borra la línea de depuración</strong> y pasa al siguiente.</p>
+<div class="admonition warning">
+<p class="admonition-title">Lee los mensajes de error</p>
+<p>Un mensaje como <code>Warning: Undefined array key "altura" in … on line 12</code> te dice <strong>qué</strong> pasa (esa clave no existe en el array) y <strong>dónde</strong> (línea 12). Léelo entero antes de cambiar nada.</p>
+</div>
+<h3 id="paso-6-prueba-con-casos-pensados-y-haz-commit">Paso 6. Prueba con casos pensados y haz <em>commit</em></h3>
+<p>Prueba siempre tres tipos de casos:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de caso</th>
+<th>Ejemplo</th>
+<th>Qué compruebas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normal</strong></td>
+<td>Un dato correcto y típico</td>
+<td>Que el cálculo es correcto</td>
+</tr>
+<tr>
+<td><strong>Límite</strong></td>
+<td>El valor más pequeño y el más grande permitidos, una lista vacía…</td>
+<td>Que no fallas «por uno»</td>
+</tr>
+<tr>
+<td><strong>Erróneo</strong></td>
+<td>Letras donde van números, campo vacío, valor fuera de rango, formulario manipulado</td>
+<td>Que la validación lo detecta</td>
+</tr>
+</tbody>
+</table>
+<p>Cada ficha de la parte 3 trae una tabla de casos de prueba. Cuando todos pasen, haz el <em>commit</em> (<code>P05: dibuja triángulo</code>).</p>
+<hr />
+<h2 id="2-patrones-que-se-repiten">2. Patrones que se repiten</h2>
+<p>Un <strong>patrón</strong> es una forma de resolver un tipo de problema que aparece una y otra vez. Si reconoces el patrón, ya tienes media práctica hecha. En cada ficha se indica cuáles usar.</p>
+<h3 id="patron-a-estructura-de-una-pagina-php">Patrón A · Estructura de una página PHP</h3>
+<p>Separa la página en dos zonas:</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────┐
+│ ZONA DE LÓGICA (PHP, antes del DOCTYPE)  │
+│  · inicializar variables                 │
+│  · ¿se ha enviado? → recoger, validar,   │
+│    calcular                              │
+├──────────────────────────────────────────┤
+│ ZONA DE PRESENTACIÓN (HTML)              │
+│  · solo muestra variables ya calculadas  │
+│  · if / foreach con sintaxis alternativa │
+└──────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Regla de oro:</strong> en la zona de HTML no se calcula nada; solo se muestra. Si te ves haciendo cuentas en mitad de una <code>&lt;table&gt;</code>, sube ese cálculo a la zona de lógica y guarda el resultado en una variable.</p>
+<p><strong>Inicializa al principio</strong> todas las variables que usará el HTML (<code>$errores = []</code>, <code>$resultado = null</code>, los valores de los campos a <code>''</code>). Así la página funciona igual la primera vez que se abre, cuando todavía no se ha enviado nada.</p>
+<h3 id="patron-b-se-ha-enviado-el-formulario">Patrón B · ¿Se ha enviado el formulario?</h3>
+<p>En una página autoprocesada hay dos momentos: la <strong>primera visita</strong> (formulario vacío) y el <strong>envío</strong>. Distínguelos preguntando por el método de la petición (<code>$_SERVER['REQUEST_METHOD']</code>), como en la teoría (apartado 4).</p>
+<p>En una página de resultados separada (<code>…-res.php</code>), si <strong>no</strong> se ha llegado por POST, redirige al formulario con <code>header('Location: …')</code> seguido de <code>exit</code>. Recuerda que <code>header()</code> tiene que ir <strong>antes</strong> de cualquier salida HTML, incluso antes de un espacio en blanco.</p>
+<h3 id="patron-c-validar-y-acumular-errores">Patrón C · Validar y acumular errores</h3>
+<p>No muestres el primer error y te pares. Revisa <strong>todos</strong> los campos y apunta cada error en un array:</p>
+<div class="highlight"><pre><span></span><code>errores ← lista vacía
+SI campo1 no es válido ENTONCES errores['campo1'] ← "mensaje"
+SI campo2 no es válido ENTONCES errores['campo2'] ← "mensaje"
+…
+SI errores está vacío ENTONCES
+    calcular y preparar el resultado
+FIN SI
+</code></pre></div>
+<p>Usar el nombre del campo como clave te permite, después, mostrar cada error <strong>debajo de su campo</strong> (P09) o todos juntos (P12).</p>
+<p>Para validar números, usa <code>filter_input()</code> o <code>filter_var()</code> con <code>FILTER_VALIDATE_INT</code> o <code>FILTER_VALIDATE_FLOAT</code>. Devuelven <code>false</code> si el dato no es válido, y admiten la opción <code>min_range</code> / <code>max_range</code> para los rangos. Compara siempre con <code>=== false</code>, porque el número <code>0</code> también se evalúa como falso.</p>
+<h3 id="patron-d-formulario-persistente">Patrón D · Formulario persistente</h3>
+<p>Después de enviar, el formulario debe mostrar lo que escribió el usuario:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Qué haces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code>, <code>number</code></td>
+<td>Pon en <code>value</code> el dato recibido, <strong>escapado</strong> con <code>htmlspecialchars()</code></td>
+</tr>
+<tr>
+<td><code>radio</code>, <code>checkbox</code></td>
+<td>Escribe <code>checked</code> solo en la opción cuyo <code>value</code> coincide con lo recibido</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td>Escribe <code>selected</code> solo en la <code>&lt;option&gt;</code> cuyo <code>value</code> coincide con lo recibido</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><strong>Nunca</strong> se vuelve a mostrar</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando haya muchas opciones, no compares una a una: <strong>genera las opciones con un bucle</strong> a partir de un array y compara dentro del bucle. Si lo haces en varias prácticas, crea una pequeña función que devuelva <code>'checked'</code> o <code>''</code>.</p>
+<h3 id="patron-e-escapar-todo-lo-que-se-muestra">Patrón E · Escapar todo lo que se muestra</h3>
+<p>Todo dato que venga del usuario y vaya a aparecer en la página pasa por <code>htmlspecialchars()</code>. Si lo escribes muchas veces, crea una función corta <code>h()</code> que lo haga (la pide la P12, pero puedes usarla desde la P01).</p>
+<h3 id="patron-f-tabla-de-consulta-en-lugar-de-muchos-if">Patrón F · Tabla de consulta en lugar de muchos <code>if</code></h3>
+<p>Si tienes que traducir un valor a otro (un código a un texto, una divisa a su tasa, una opción a su ajuste), <strong>no encadenes <code>if</code></strong>. Usa:</p>
+<ul>
+<li>un <strong>array asociativo</strong> <code>clave =&gt; valor</code>, si los datos se usan en varios sitios (P07, P11, P12);</li>
+<li>una expresión <strong><code>match</code></strong>, si solo es una traducción puntual (P01).</li>
+</ul>
+<p>Ventaja: para añadir una opción nueva solo cambias el array, no la lógica.</p>
+<h3 id="patron-g-lista-blanca">Patrón G · Lista blanca</h3>
+<p>No te fíes de lo que llega del formulario: el usuario puede modificar el HTML desde el navegador y enviar cualquier cosa. Comprueba que el valor recibido <strong>está entre los permitidos</strong> antes de usarlo:</p>
+<ul>
+<li><code>in_array($valor, $permitidos)</code> si tienes una lista de valores (P08);</li>
+<li><code>array_key_exists($valor, $array)</code> o <code>isset($array[$valor])</code> si los valores son claves de un array (P07, P11, P12).</li>
+</ul>
+<h3 id="patron-h-acumulador-contador-maximo-y-minimo">Patrón H · Acumulador, contador, máximo y mínimo</h3>
+<p>Cuatro cosas que se calculan <strong>recorriendo</strong> una lista:</p>
+<div class="highlight"><pre><span></span><code>suma ← 0                       contador ← 0
+PARA CADA x EN lista           PARA CADA x EN lista
+    suma ← suma + x                SI x cumple la condición ENTONCES
+FIN PARA                               contador ← contador + 1
+                                   FIN SI
+                               FIN PARA
+
+máximo ← primer elemento
+PARA CADA x EN lista
+    SI x &gt; máximo ENTONCES máximo ← x
+FIN PARA
+</code></pre></div>
+<p>Fíjate en el valor inicial: la suma y el contador empiezan en <strong>0</strong>; el máximo y el mínimo empiezan en el <strong>primer elemento</strong> de la lista (no en 0: si todas las notas fueran negativas, o todas fueran mayores que 0 al buscar el mínimo, fallaría).</p>
+<h3 id="patron-i-bucles-anidados">Patrón I · Bucles anidados</h3>
+<p>Cuando el resultado tiene <strong>filas y columnas</strong>, piensa en dos bucles:</p>
+<ul>
+<li>el <strong>exterior</strong> recorre las <strong>filas</strong>;</li>
+<li>el <strong>interior</strong> recorre los <strong>elementos de cada fila</strong>.</li>
+</ul>
+<p>La clave es descubrir <strong>de qué depende el número de vueltas del bucle interior</strong>. A veces es fijo; a veces depende de la fila en que estás (como en el triángulo de la P05).</p>
+<h3 id="patron-j-cada-n-elementos-con-el-modulo">Patrón J · «Cada N elementos» con el módulo</h3>
+<p>El operador <code>%</code> da el resto de una división. Sirve para hacer algo <strong>cada N elementos</strong>: si numeras desde 1, <code>i % N == 0</code> es cierto en el elemento N, 2N, 3N…, y <code>(i - 1) % N == 0</code> es cierto en el elemento 1, N+1, 2N+1… Úsalo en la P06 para saber cuándo abrir y cuándo cerrar una fila.</p>
+<hr />
+<h2 id="3-fichas-de-las-practicas">3. Fichas de las prácticas</h2>
+<p>Cada ficha tiene la misma estructura: <strong>qué tienes y qué quieres</strong>, <strong>estrategia</strong> (los trozos en orden), <strong>preguntas para el cuaderno</strong>, <strong>casos de prueba</strong> y <strong>errores típicos</strong>.</p>
+<hr />
+<h3 id="p01-formulario-de-busqueda-de-canciones">P01 · Formulario de búsqueda de canciones</h3>
+<p><strong>Patrones:</strong> B, E, F · <strong>Plantillas:</strong> <code>ut03p01.html</code> (ya hecho) y <code>ut03p01-res.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>texto</code>, <code>buscar_en</code>, <code>genero</code> por POST</td>
+<td>Traducir <code>buscar_en</code> a un texto legible</td>
+<td>Lista con los tres datos y botón <em>Nueva búsqueda</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li>En <code>ut03p01-res.php</code>, antes del <code>DOCTYPE</code>, comprueba si se ha llegado por POST. Si no, redirige al formulario (patrón B). Pruébalo abriendo <code>ut03p01-res.php</code> directamente.</li>
+<li>Recoge los tres campos. Usa el operador <code>??</code> para dar un valor por defecto si alguno no llega.</li>
+<li>Traduce el valor interno de <code>buscar_en</code> (<code>cancion</code>, <code>album</code>, <code>ambos</code>) a un texto con <code>match</code> (patrón F). Piensa qué hace <code>match</code> si llega un valor que no está en la lista: añade un caso <code>default</code>.</li>
+<li>Sustituye los textos de ejemplo de la plantilla por tus variables, escapadas (patrón E).</li>
+</ol>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rock and roll</code>, Ambos, Rock</td>
+<td>Se muestran los tres datos</td>
+</tr>
+<tr>
+<td>Escribe <code>&lt;b&gt;hola&lt;/b&gt;</code> en el texto</td>
+<td>Se ve literalmente <code>&lt;b&gt;hola&lt;/b&gt;</code>, <strong>no</strong> «hola» en negrita</td>
+</tr>
+<tr>
+<td>Abre <code>ut03p01-res.php</code> en una pestaña nueva</td>
+<td>Vuelves al formulario</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li><em>«Cannot modify header information – headers already sent»</em>: hay algo (HTML, un espacio, una línea en blanco) <strong>antes</strong> de <code>header()</code>. Pon el bloque PHP en la primera línea del fichero.</li>
+<li>Olvidar <code>exit</code> después de <code>header()</code>: el resto de la página se sigue ejecutando.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p02-catalogo-de-controles-de-formulario">P02 · Catálogo de controles de formulario</h3>
+<p><strong>Patrones:</strong> B, E · <strong>Plantillas:</strong> <code>ut03p02.php</code> (ya hecho) y <code>ut03p02-res.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9 controles distintos, uno de ellos <code>file</code></td>
+<td>Recoger cada uno según su tipo</td>
+<td>Tabla con lo que llega de cada control</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li>Antes de programar nada, envía el formulario con <code>var_dump($_POST)</code> y <code>var_dump($_FILES)</code> en la página de resultados. <strong>Mira cómo llega cada control</strong>: ¿es una cadena?, ¿un array?, ¿no aparece?</li>
+<li>Apunta en el cuaderno, para cada control, si llega como <strong>cadena</strong> o como <strong>array</strong>, y qué pasa si no lo rellenas.</li>
+<li>Recoge uno a uno. Los que llegan como array (<code>extras[]</code>, <code>idiomas[]</code>) se recogen con <code>?? []</code> y se muestran unidos con <code>implode()</code>.</li>
+<li>Para el fichero, todo está en <code>$_FILES['fichero']</code>: busca en la teoría (apartado 4.3.1) qué claves tiene (<code>name</code>, <code>size</code>, <code>type</code>, <code>error</code>…). Comprueba antes si se ha subido algo.</li>
+<li>La contraseña no se muestra: genera tantos <code>•</code> como caracteres tenga (<code>str_repeat()</code> y <code>strlen()</code>), o un número fijo.</li>
+<li>El comentario se escapa <strong>primero</strong> y después se pasa por <code>nl2br()</code>. Piensa por qué el orden importa.</li>
+</ol>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rellenar todo</td>
+<td>Cada fila muestra su valor</td>
+</tr>
+<tr>
+<td>No marcar ningún <em>checkbox</em> ni idioma</td>
+<td>Aparece un texto como «Ninguno», sin <em>warnings</em></td>
+</tr>
+<tr>
+<td>No elegir fichero</td>
+<td>«No se ha enviado ningún fichero», sin <em>warnings</em></td>
+</tr>
+<tr>
+<td>Comentario de tres líneas</td>
+<td>Se ven tres líneas</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li><code>Undefined array key "extras"</code>: si no se marca ningún <em>checkbox</em>, la clave <strong>no existe</strong>. Usa <code>?? []</code>.</li>
+<li><code>$_FILES</code> vacío: falta <code>enctype="multipart/form-data"</code> en el <code>&lt;form&gt;</code>.</li>
+<li>Si haces <code>nl2br()</code> antes de <code>htmlspecialchars()</code>, los <code>&lt;br&gt;</code> se escapan y se ven como texto.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p03-calculadora-de-la-letra-del-dni">P03 · Calculadora de la letra del DNI</h3>
+<p><strong>Patrones:</strong> A, B, C, D, E · <strong>Plantilla:</strong> <code>ut03p03.php</code> (autoprocesada)</p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numero</code> por POST</td>
+<td>Validar entero positivo; calcular el resto entre 23; buscar la letra</td>
+<td>DNI de 8 cifras con su letra, o un error</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li><strong>Cuaderno primero:</strong> haz el cálculo con tu DNI (lo pide el enunciado). Divide entre 23, apunta el resto y busca esa posición en la cadena <code>TRWAGMYFPDXBNJZSQVHLCKE</code>. <strong>Ojo:</strong> la primera letra es la posición 0.</li>
+<li>Escribe la función <code>calcularLetraDNI()</code> y pruébala <strong>sola</strong>, sin formulario, con un <code>echo</code> y un número fijo. Cuando dé <code>Z</code> para <code>12345678</code>, sigue.</li>
+<li>Monta la zona de lógica (patrón A): inicializa <code>$error</code>, <code>$numero</code> y <code>$resultado</code>.</li>
+<li>Si se ha enviado (patrón B), valida con <code>FILTER_VALIDATE_INT</code> y <code>min_range</code> (patrón C).</li>
+<li>Si es válido, llama a tu función y construye el DNI completo rellenando con ceros (<code>str_pad()</code>, con <code>STR_PAD_LEFT</code>).</li>
+<li>En el HTML, muestra el error <strong>solo si existe</strong> y el resultado <strong>solo si existe</strong>. Haz el campo persistente (patrón D).</li>
+<li>Botón <em>Borrar</em>: piensa por qué un enlace a la propia página la deja vacía (es una petición GET).</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Pregunta para el cuaderno</p>
+<p>Un DNI tiene como máximo 8 cifras. ¿Deberías aceptar <code>123456789</code>? Decide qué haces y añade la regla a la validación.</p>
+</div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>12345678</code></td>
+<td><code>12345678Z</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>00000001R</code></td>
+</tr>
+<tr>
+<td><code>87654321</code></td>
+<td><code>87654321X</code></td>
+</tr>
+<tr>
+<td><code>0</code>, <code>-5</code>, <code>abc</code>, <code>12.5</code>, vacío</td>
+<td>Mensaje de error</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Coger la letra con <code>resto + 1</code> o <code>resto - 1</code>: las cadenas empiezan en la posición 0.</li>
+<li><code>if (!$numero)</code> para detectar errores: falla con el número 0. Usa <code>=== false</code>.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p04-ecuacion-de-segundo-grado">P04 · Ecuación de segundo grado</h3>
+<p><strong>Patrones:</strong> A, B, C, D · <strong>Plantilla:</strong> <code>ut03p04.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code>, <code>b</code>, <code>c</code></td>
+<td>Validar; calcular discriminante; decidir el caso</td>
+<td>Dos soluciones con 2 decimales, o «no hay soluciones reales»</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li><strong>Cuaderno:</strong> escribe la fórmula <em>x = (−b ± √(b² − 4ac)) / 2a</em> y resuelve a mano el ejemplo del enunciado.</li>
+<li>Valida los tres coeficientes con <code>FILTER_VALIDATE_FLOAT</code> (patrón C). Después, comprueba aparte que <code>a</code> no es 0. ¿Por qué? Piensa qué pasa en la fórmula si <code>a</code> vale 0.</li>
+<li>Calcula el discriminante en una variable.</li>
+<li>Decide con un <code>if</code>: negativo → aviso; cero o positivo → dos soluciones (<code>sqrt()</code>).</li>
+<li>Formatea con <code>number_format()</code> (2 decimales, coma decimal).</li>
+<li>Haz persistentes los tres campos.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>SI discriminante &lt; 0 ENTONCES
+    resultado ← "sin soluciones reales"
+SI NO
+    x1 ← (−b + raíz(discriminante)) / (2·a)
+    x2 ← (−b − raíz(discriminante)) / (2·a)
+FIN SI
+</code></pre></div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>−5</td>
+<td>6</td>
+<td>x₁ = 3,00 · x₂ = 2,00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>−7</td>
+<td>3</td>
+<td>x₁ = 3,00 · x₂ = 0,50</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>x₁ = −1,00 · x₂ = −1,00 (discriminante 0)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>No hay soluciones reales</td>
+</tr>
+<tr>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>Error: <em>a</em> no puede ser 0</td>
+</tr>
+<tr>
+<td><code>hola</code></td>
+<td>1</td>
+<td>1</td>
+<td>Error: no es un número</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Escribir <code>-b + sqrt($d) / 2 * $a</code>: sin paréntesis, PHP divide antes de sumar y multiplica por <code>a</code> en vez de dividir. Pon paréntesis en el numerador <strong>y</strong> en el denominador.</li>
+<li>Con <code>FILTER_VALIDATE_FLOAT</code>, un <code>0</code> es válido pero se evalúa como falso. Compara con <code>=== false</code>.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p05-dibuja-un-triangulo">P05 · Dibuja un triángulo</h3>
+<p><strong>Patrones:</strong> A, C, D, I · <strong>Plantilla:</strong> <code>ut03p05.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>altura</code> (1–30), <code>caracter</code></td>
+<td>Dos bucles anidados que construyen las filas</td>
+<td>El triángulo dentro de <code>&lt;pre&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li><strong>Cuaderno:</strong> dibuja el triángulo de altura 4 y numera las filas. Responde: en la fila 1, ¿cuántos caracteres hay?, ¿y en la 2?, ¿y en la fila <em>i</em>? Ahí tienes el límite del bucle interior.</li>
+<li>Haz la traza que pide el enunciado para altura 3.</li>
+<li>Valida la altura con <code>FILTER_VALIDATE_INT</code>, <code>min_range</code> 1 y <code>max_range</code> 30. Si el carácter llega vacío, usa <code>*</code>.</li>
+<li>Construye <strong>todo el dibujo en una variable</strong> (en la zona de lógica), concatenando, y muéstrala en el <code>&lt;pre&gt;</code> al final (patrón A).</li>
+</ol>
+<div class="highlight"><pre><span></span><code>dibujo ← ""
+PARA fila DESDE 1 HASTA altura
+    PARA columna DESDE 1 HASTA ¿…?        ← lo has deducido en el cuaderno
+        añadir carácter y un espacio a dibujo
+    FIN PARA
+    añadir salto de línea a dibujo
+FIN PARA
+</code></pre></div>
+<details>
+<summary>Para ir más allá</summary>
+<p>Cuando funcione, intenta el triángulo invertido (la fila 1 es la más larga) o una pirámide centrada. Solo cambian los límites de los bucles… y en la pirámide aparece un tercer bucle para los espacios.</p>
+</details>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Altura 4, <code>*</code></td>
+<td>El triángulo del enunciado</td>
+</tr>
+<tr>
+<td>Altura 1</td>
+<td>Un solo carácter</td>
+</tr>
+<tr>
+<td>Altura 30</td>
+<td>30 filas, la última con 30 caracteres</td>
+</tr>
+<tr>
+<td>Altura 0, 31, <code>abc</code></td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Carácter <code>&lt;</code></td>
+<td>Se dibuja <code>&lt;</code> (escápalo)</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Las filas salen todas iguales: el bucle interior no depende de la fila.</li>
+<li>Sale todo en una sola línea: falta el salto de línea <code>"\n"</code> al terminar cada fila, o no estás dentro de <code>&lt;pre&gt;</code>.</li>
+<li>El salto de línea sale como <code>\n</code> literal: lo has escrito entre comillas simples.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p06-tabla-numerada-dinamica">P06 · Tabla numerada dinámica</h3>
+<p><strong>Patrones:</strong> A, C, D, J · <strong>Plantilla:</strong> <code>ut03p06.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_casillas</code>, <code>casillas_por_fila</code></td>
+<td>Un bucle de 1 a total; abrir y cerrar filas con <code>%</code>; rellenar la última</td>
+<td>Tabla HTML</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li><strong>Cuaderno:</strong> dibuja la tabla para 12 casillas y 5 por fila. Rodea con un círculo los números <strong>donde empieza</strong> cada fila (1, 6, 11) y los números <strong>donde acaba</strong> (5, 10). ¿Qué tienen en común respecto al 5? (patrón J).</li>
+<li>Escribe primero un bucle que genere todas las celdas <strong>sin filas</strong>. Comprueba que salen los 12 números.</li>
+<li>Añade la apertura de <code>&lt;tr&gt;</code>: ¿en qué números se abre una fila?</li>
+<li>Añade el cierre de <code>&lt;/tr&gt;</code>: ¿en qué números se cierra?</li>
+<li>Al terminar el bucle, mira si la última fila quedó abierta. Si es así, calcula <strong>cuántas celdas vacías faltan</strong>, añádelas y cierra la fila.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Pregunta para el cuaderno</p>
+<p>Con 12 casillas y 5 por fila faltan 3 celdas. Con 10 casillas y 5 por fila no falta ninguna. Escribe una expresión con <code>%</code> que dé el número de celdas que faltan y comprueba que funciona en los dos casos.</p>
+</div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Total</th>
+<th>Por fila</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>5</td>
+<td>3 filas; la última: 11, 12 y tres vacías</td>
+</tr>
+<tr>
+<td>10</td>
+<td>5</td>
+<td>2 filas completas, sin celdas vacías</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>1 fila: 1, 2, 3 y dos vacías</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>7 filas de una celda</td>
+</tr>
+<tr>
+<td>0, −2, <code>abc</code></td>
+<td>—</td>
+<td>Error</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Una fila vacía de más al final: cierras la fila y luego, al rellenar, la vuelves a cerrar. Rellena <strong>solo</strong> si la última fila quedó incompleta.</li>
+<li>Abre el inspector del navegador (<kbd>F12</kbd>) y mira el HTML generado: es la forma más rápida de ver si los <code>&lt;tr&gt;</code> cuadran.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p07-conversor-de-divisas">P07 · Conversor de divisas</h3>
+<p><strong>Patrones:</strong> C, D, F, G · <strong>Plantilla:</strong> <code>ut03p07.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cantidad</code>, <code>de</code>, <code>a</code></td>
+<td>Pasar a euros y de euros a destino, usando <code>$tasas</code></td>
+<td><code>340.00 EUR = 368.90 USD</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li><strong>Cuaderno:</strong> las tasas dicen «cuántas unidades de esa divisa vale 1 euro». Resuelve a mano: ¿cuántos euros son 100 USD?, ¿y cuántos yenes son esos euros? Deduce la regla: para pasar <strong>a</strong> euros, ¿multiplicas o divides?</li>
+<li>Crea el array <code>$tasas</code> (patrón F).</li>
+<li>Valida la cantidad (número no negativo) y comprueba que <code>de</code> y <code>a</code> son claves de <code>$tasas</code> (patrón G).</li>
+<li>Calcula en dos pasos, con una variable intermedia para los euros. Así cada paso se entiende y se puede comprobar.</li>
+<li>Formatea con <code>sprintf()</code> y <code>%.2f</code>.</li>
+<li><strong>Genera las <code>&lt;option&gt;</code> de los <code>select</code> con un <code>foreach</code> sobre <code>$tasas</code></strong> y añade <code>selected</code> a la elegida (patrón D). Así no repites el código en los dos <code>select</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>euros ← cantidad / tasa[de]
+resultado ← euros · tasa[a]
+</code></pre></div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>340 EUR → USD</td>
+<td><code>340.00 EUR = 368.90 USD</code></td>
+</tr>
+<tr>
+<td>100 USD → JPY</td>
+<td><code>100.00 USD = 14746.54 JPY</code></td>
+</tr>
+<tr>
+<td>1000 JPY → EUR</td>
+<td><code>1000.00 JPY = 6.25 EUR</code></td>
+</tr>
+<tr>
+<td>50 EUR → EUR</td>
+<td><code>50.00 EUR = 50.00 EUR</code></td>
+</tr>
+<tr>
+<td>Cantidad <code>abc</code></td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Cambia con F12 el <code>value</code> de una opción a <code>GBP</code></td>
+<td>Error de divisa no válida, sin <em>warnings</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="p08-la-quiniela">P08 · La quiniela</h3>
+<p><strong>Patrones:</strong> B, E, G, H · <strong>Plantillas:</strong> <code>ut03p08.php</code> y <code>ut03p08-res.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array <code>partido[1..10]</code> con <code>1</code>, <code>X</code> o <code>2</code></td>
+<td>Simular cada partido, comparar, contar aciertos</td>
+<td>Tabla de 10 filas y total de aciertos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<p><em>Formulario</em></p>
+<ol>
+<li>Coge la fila modelo de la plantilla y métela en un <code>for</code> de 1 a 10. Sustituye el número fijo por la variable del bucle <strong>en todos los sitios</strong> donde aparece (texto, <code>name</code>, <code>id</code>, <code>for</code>).</li>
+<li>Comprueba con F12 que los <code>name</code> quedan como <code>partido[1]</code>, <code>partido[2]</code>… y que los <code>id</code> no se repiten.</li>
+</ol>
+<p><em>Resultados</em></p>
+<ol>
+<li>Redirige si no se llega por POST (patrón B).</li>
+<li>Recoge el array <code>partido</code> con <code>?? []</code> y haz <code>var_dump()</code> para ver su forma.</li>
+<li>Prepara un array con los tres signos válidos. Te sirve para dos cosas: validar (patrón G) y simular el resultado eligiendo una posición al azar con <code>rand()</code>.</li>
+<li>Recorre de 1 a 10. En cada vuelta: tu apuesta (o «SIN MARCAR» si no existe o no es válida), el resultado simulado y si coinciden. Si coinciden, suma un acierto (patrón H).</li>
+<li><strong>Guarda cada fila en un array</strong> en la zona de lógica y, en el HTML, recórrelo con <code>foreach</code> para pintar la tabla (patrón A).</li>
+</ol>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marcar los 10</td>
+<td>10 filas; aciertos entre 0 y 10</td>
+</tr>
+<tr>
+<td>No marcar ninguno</td>
+<td>10 filas «SIN MARCAR», 0 aciertos, sin <em>warnings</em></td>
+</tr>
+<tr>
+<td>Cambiar con F12 un <code>value</code> a <code>3</code></td>
+<td>Esa fila cuenta como no válida</td>
+</tr>
+<tr>
+<td>Recargar la página de resultados</td>
+<td>Cambian los resultados simulados (es normal)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="p09-formulario-de-alta-validado-con-expresiones-regulares">P09 · Formulario de alta validado con expresiones regulares</h3>
+<p><strong>Patrones:</strong> A, C, D, E · <strong>Plantilla:</strong> <code>ut03p09.php</code></p>
+<p>Es la práctica más larga del nivel intermedio. <strong>No la abordes entera</strong>: hazla campo a campo.</p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nombre</code>, <code>documento</code>, <code>telefono</code>, <code>cp</code>, <code>email</code>, <code>clave</code>, <code>matricula</code></td>
+<td>Normalizar → validar → apuntar errores por campo</td>
+<td>Errores debajo de cada campo, o tabla de datos normalizados</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia general</strong></p>
+<ol>
+<li>Monta primero el esqueleto con <strong>un solo campo</strong> (el código postal, que es el más sencillo): recoger, normalizar, validar, mostrar el error debajo del campo y hacerlo persistente. Cuando funcione, <strong>copia la mecánica</strong> a los demás.</li>
+<li>Usa el array de errores con el nombre del campo como clave (patrón C). En el HTML, cada campo pregunta si existe su clave en <code>$errores</code> para añadir <code>is-danger</code> y el mensaje.</li>
+<li>Para cada campo sigue siempre el mismo orden: <strong>normalizar → validar → guardar el valor normalizado</strong>.</li>
+</ol>
+<p><strong>Cómo construir una expresión regular sin perderte</strong></p>
+<ol>
+<li>Escribe en castellano la regla, trozo a trozo, de izquierda a derecha: «empieza por…, luego vienen…, y termina».</li>
+<li>Traduce cada trozo por separado: «una cifra» → <code>\d</code>; «exactamente 5» → <code>{5}</code>; «uno de estos caracteres» → <code>[…]</code>; «esto o esto otro» → <code>( | )</code>; «opcional» → <code>?</code>.</li>
+<li>Ancla siempre con <code>^</code> al principio y <code>$</code> al final. Sin anclas, <code>12345</code> también «encaja» dentro de <code>abc12345xyz</code>.</li>
+<li>Prueba la expresión <strong>aislada</strong> en una web como regex101.com (elige el modo PCRE, que es el de PHP) con los ejemplos válidos y no válidos de la tabla del enunciado, antes de ponerla en el código.</li>
+</ol>
+<p><strong>Pistas por campo</strong></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Piensa en esto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código postal</td>
+<td>Las dos primeras cifras van de 01 a 52. Divide ese rango en tramos que se puedan escribir con clases: ¿qué pasa si la primera cifra es 0?, ¿y si es 1, 2, 3 o 4?, ¿y si es 5? Cada tramo es una alternativa del grupo.</td>
+</tr>
+<tr>
+<td>Teléfono</td>
+<td>Normaliza primero (quita espacios, guiones y puntos). Después, la expresión tiene un prefijo <strong>opcional</strong> y el número. Usa el grupo de captura de la pista del enunciado para quedarte solo con las 9 cifras.</td>
+</tr>
+<tr>
+<td>DNI / NIE</td>
+<td>Normaliza (mayúsculas, sin guiones ni espacios). Una expresión comprueba el <strong>formato</strong>. Si encaja, calcula la letra con tu función de la P03 y compárala. Para el NIE, sustituye la X, Y o Z inicial por 0, 1 o 2 antes de calcular.</td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Las letras con tilde y la ñ no entran en <code>[a-z]</code>. Añádelas a la clase o usa <code>\p{L}</code> con el modificador <code>u</code> (UTF-8).</td>
+</tr>
+<tr>
+<td>Correo</td>
+<td><code>filter_var()</code> con <code>FILTER_VALIDATE_EMAIL</code>. Nada de expresiones regulares aquí.</td>
+</tr>
+<tr>
+<td>Contraseña</td>
+<td><strong>Cinco comprobaciones separadas</strong> (longitud, minúscula, mayúscula, número, símbolo). Cada una que falle añade su texto a una lista de requisitos pendientes. Al final, si la lista no está vacía, el error es esa lista unida con <code>implode()</code>.</td>
+</tr>
+<tr>
+<td>Matrícula</td>
+<td>Es opcional: si llega vacía, no hay error. Si no, normaliza y escribe la clase de consonantes <strong>enumerando</strong> las letras permitidas: el alfabeto sin A, E, I, O, U, Ñ ni Q.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Casos de prueba</strong>: usa directamente las columnas <em>Válido</em> y <em>No válido</em> de la tabla del enunciado, más estos:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNI</td>
+<td><code>12.345.678-z</code></td>
+<td>Válido, se guarda <code>12345678Z</code></td>
+</tr>
+<tr>
+<td>NIE</td>
+<td><code>X1234567L</code></td>
+<td>Válido</td>
+</tr>
+<tr>
+<td>NIE</td>
+<td><code>X1234567A</code></td>
+<td>Error: letra incorrecta</td>
+</tr>
+<tr>
+<td>Teléfono</td>
+<td><code>0034-612.345.678</code></td>
+<td>Válido, se muestra <code>612 345 678</code></td>
+</tr>
+<tr>
+<td>CP</td>
+<td><code>00123</code>, <code>53000</code></td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Contraseña</td>
+<td><code>abcdefgh</code></td>
+<td>Error que dice que faltan mayúscula, número y símbolo</td>
+</tr>
+<tr>
+<td>Todo correcto</td>
+<td>—</td>
+<td>Tabla de datos; la contraseña no aparece</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Validar <strong>antes</strong> de normalizar: <code>+34 612 345 678</code> falla porque tiene espacios.</li>
+<li>Olvidar las anclas <code>^</code> y <code>$</code>.</li>
+<li>Mostrar la contraseña en el <code>value</code> del campo después de enviar.</li>
+<li>Las tildes no funcionan: falta el modificador <code>u</code> al final de la expresión (<code>/…/u</code>).</li>
+</ul>
+</details>
+<hr />
+<h3 id="p10-gestion-de-calificaciones">P10 · Gestión de calificaciones</h3>
+<p><strong>Patrones:</strong> C, D, H · <strong>Plantilla:</strong> <code>ut03p10.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays <code>nombres[]</code> y <code>notas[]</code> (4 cada uno)</td>
+<td>Validar parejas; crear <code>nombre =&gt; nota</code>; media, máximo, mínimo</td>
+<td>Resumen y tabla con <em>Aprobado</em> / <em>Suspenso</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li>Envía el formulario con <code>var_dump($_POST)</code> y observa: llegan <strong>dos arrays paralelos</strong>. El alumno de la posición 0 de <code>nombres</code> tiene su nota en la posición 0 de <code>notas</code>.</li>
+<li>Recorre las posiciones de 0 a 3. En cada una, valida el nombre (no vacío tras <code>trim()</code>) y la nota (<code>FILTER_VALIDATE_FLOAT</code> con rango 0–10). Si falla, apunta el error indicando <strong>qué fila</strong> falla (patrón C). Si es correcta, añádela al array asociativo <code>$alumnos</code>.</li>
+<li>Escribe las tres funciones <strong>antes</strong> de usarlas y pruébalas con un array fijo escrito a mano, sin formulario.<ul>
+<li><code>calcular_media()</code>: acumulador (patrón H), o <code>array_sum()</code> y <code>count()</code>.</li>
+<li><code>obtener_maximo()</code> / <code>obtener_minimo()</code>: patrón H, pero recuerda <strong>también el nombre</strong>, no solo la nota. Recorre con <code>foreach ($alumnos as $nombre =&gt; $nota)</code>.</li>
+</ul>
+</li>
+<li>Solo si no hay errores, llama a las funciones y prepara los datos para el HTML.</li>
+<li>En la tabla, decide el estado y la clase de color con un <code>if</code> o con el operador ternario.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mejor_nombre ← primer nombre;  mejor_nota ← primera nota
+PARA CADA (nombre, nota) EN alumnos
+    SI nota &gt; mejor_nota ENTONCES
+        mejor_nota ← nota
+        mejor_nombre ← nombre
+    FIN SI
+FIN PARA
+devolver [nombre ← mejor_nombre, nota ← mejor_nota]
+</code></pre></div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Datos</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ana 7 · Luis 4,5 · Eva 9 · Pepe 6,5</td>
+<td>Media 6,75 · Máx. Eva (9,00) · Mín. Luis (4,50) · Luis suspenso</td>
+</tr>
+<tr>
+<td>Una nota <code>11</code> o <code>-1</code></td>
+<td>Error en esa fila</td>
+</tr>
+<tr>
+<td>Un nombre vacío</td>
+<td>Error en esa fila</td>
+</tr>
+<tr>
+<td>Nota <code>5</code></td>
+<td>Aprobado (el límite es ≥ 5)</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Empezar el mínimo en 0: nunca encuentra una nota menor que 0. Empieza por el primer alumno (<code>array_key_first()</code> te da su nombre).</li>
+<li>Escribir la nota con coma (<code>7,5</code>): <code>FILTER_VALIDATE_FLOAT</code> la rechaza. Decide si avisas al usuario o si cambias la coma por un punto antes de validar.</li>
+<li>Para el caso de dos alumnos con el mismo nombre, mira la pregunta <em>Para pensar</em> del enunciado: ¿qué le pasa a un array asociativo si repites una clave?</li>
+</ul>
+</details>
+<hr />
+<h3 id="p11-buscador-de-productos-con-filtros">P11 · Buscador de productos con filtros</h3>
+<p><strong>Patrones:</strong> D, F, G · <strong>Plantillas:</strong> <code>ut03p11.php</code>, <code>ut03p11-res.php</code> y <code>datos.php</code></p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>categoria</code>, <code>precio_min</code>, <code>precio_max</code>, <code>solo_stock</code> por GET</td>
+<td>Filtrar <code>$productos</code> con <code>array_filter()</code></td>
+<td>Resumen de filtros y tabla de productos, o aviso</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<p><em>Formulario</em></p>
+<ol>
+<li>Incluye <code>datos.php</code> con <code>require_once</code> y comprueba con <code>var_dump($categorias)</code> que llega.</li>
+<li>Genera las <code>&lt;option&gt;</code> con un <code>foreach</code> sobre <code>$categorias</code>, después de la opción <em>Todas</em>.</li>
+</ol>
+<p><em>Resultados</em></p>
+<ol>
+<li>Recoge los filtros de <code>$_GET</code>. Para cada uno, decide qué significa «no rellenado»: categoría vacía o <em>Todas</em>; precio vacío; <em>checkbox</em> sin marcar (no existe en <code>$_GET</code>).</li>
+<li>Valida la categoría con lista blanca contra <code>$categorias</code> (patrón G) y los precios como números.</li>
+<li>
+<p><strong>Antes de usar <code>array_filter()</code>, escribe la condición en pseudocódigo para un solo producto.</strong> Una buena estrategia es empezar suponiendo que el producto pasa y descartarlo si falla algún filtro activo:</p>
+<div class="highlight"><pre><span></span><code>FUNCIÓN pasa_los_filtros(producto)
+    SI hay filtro de categoría Y la categoría del producto es distinta ENTONCES devolver falso
+    SI hay precio mínimo Y el precio del producto es menor ENTONCES devolver falso
+    SI ¿… precio máximo …?
+    SI ¿… solo con stock …?
+    devolver verdadero
+FIN FUNCIÓN
+</code></pre></div>
+</li>
+<li>
+<p>Convierte ese pseudocódigo en una <strong>función anónima</strong> y pásala a <code>array_filter()</code>. La función recibe un producto, pero los filtros están fuera de ella: por eso necesitas <code>use (…)</code> para «meterlos» dentro.</p>
+</li>
+<li>Prepara los textos del resumen (por ejemplo, «Todas», «Sin límite»).</li>
+<li>En el HTML: si el array filtrado está vacío, aviso; si no, tabla con <code>foreach</code>. Precio con <code>number_format()</code> y <code>€</code>; stock en verde o <em>Sin stock</em> en rojo.</li>
+</ol>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Filtros</th>
+<th>Productos esperados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ninguno</td>
+<td>Los 9</td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Auriculares Bluetooth y Altavoz portátil</td>
+</tr>
+<tr>
+<td>Máximo 50 + solo stock</td>
+<td>Funda de silicona y Altavoz portátil</td>
+</tr>
+<tr>
+<td>Informática + mínimo 200</td>
+<td>Portátil 15" y Monitor 27"</td>
+</tr>
+<tr>
+<td>Hogar + solo stock</td>
+<td>Robot aspirador</td>
+</tr>
+<tr>
+<td>Mínimo 800</td>
+<td>Ninguno: aviso</td>
+</tr>
+<tr>
+<td>Categoría <code>Juguetes</code> escrita en la URL</td>
+<td>Error o se ignora el filtro, sin <em>warnings</em></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li><code>Undefined variable $categoria</code> dentro de la función anónima: falta <code>use ($categoria, …)</code>.</li>
+<li>Un precio mínimo de <code>0</code> desactiva el filtro sin querer: distingue «campo vacío» de «el número 0».</li>
+<li>Las claves de <code>array_filter()</code> se conservan (pueden quedar 1, 3, 6…). Para recorrer con <code>foreach</code> no importa.</li>
+</ul>
+</details>
+<hr />
+<h3 id="p12-reto-calculadora-de-esperanza-de-vida">P12 · Reto: calculadora de esperanza de vida</h3>
+<p><strong>Patrones:</strong> todos · <strong>Plantilla:</strong> <code>ut03p12.php</code></p>
+<p>Es el reto final: junta todo lo de la unidad. La clave está en <strong>diseñar bien el array</strong> antes de escribir una sola línea.</p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Proceso</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sexo</code>, 4 preguntas de opción, <code>altura</code>, <code>peso</code></td>
+<td>Validar con lista blanca; sumar ajustes; calcular IMC y buscar su tramo</td>
+<td>Total, desglose con signo y factor que más resta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estrategia</strong></p>
+<ol>
+<li>
+<p><strong>Diseña el array en el cuaderno.</strong> Dibuja su forma como un árbol antes de escribirlo en PHP. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>$preguntas
+ ├── 'tabaco'
+ │    ├── 'titulo'   → "¿Fumas o has fumado?"
+ │    ├── 'ayuda'    → "Cuenta cigarrillos, puros y pipa."
+ │    └── 'opciones'
+ │         ├── 'nunca'      → [ 'texto' → "Nunca he fumado",   'ajuste' → 0 ]
+ │         ├── 'ex_antes'   → [ 'texto' → "Lo dejé antes…",    'ajuste' → -1 ]
+ │         └── …
+ ├── 'actividad'
+ │    └── …
+ └── …
+</code></pre></div>
+<p>Las claves de primer nivel serán los <code>name</code> de los <code>radio</code>; las claves de <code>opciones</code>, sus <code>value</code>. Respeta las que ya usa la plantilla (<code>tabaco</code>, <code>nunca</code>, <code>ex_antes</code>…). Haz lo mismo para la esperanza de vida base (<code>hombre</code>, <code>mujer</code>) y para los <strong>tramos del IMC</strong> (una lista ordenada de pares <em>límite – ajuste</em>).</p>
+</li>
+<li>
+<p><strong>Escribe las funciones auxiliares</strong> <code>h()</code>, <code>fmt()</code> y <code>marcado()</code> y pruébalas aisladas. <code>fmt()</code> debe poner el signo <code>+</code> delante de los positivos.</p>
+</li>
+<li><strong>Genera el formulario</strong> desde el array: un <code>foreach</code> exterior para las preguntas (un <code>fieldset</code> cada una) y un <code>foreach</code> interior para las opciones (patrón I). Comprueba que, si añades una pregunta al array, aparece sin tocar el HTML.</li>
+<li><strong>Valida</strong> con lista blanca: para cada pregunta, la opción recibida debe ser una clave de sus <code>opciones</code> (patrón G). Altura y peso, con rango. Acumula <strong>todos</strong> los errores (patrón C) y, si algo falla, usa un valor por defecto.</li>
+<li><strong>Calcula</strong>:<ul>
+<li>Parte de la esperanza base según el sexo.</li>
+<li>Recorre las preguntas: busca el ajuste de la opción elegida, súmalo al total y guarda una entrada en un array <code>$desglose</code> (factor, opción elegida, ajuste).</li>
+<li>IMC: convierte la altura a metros. Recorre los tramos <strong>en orden</strong> y quédate con el <strong>primero</strong> cuyo límite sea mayor que el IMC. Añade su ajuste al total y al desglose.</li>
+<li>Factor que más resta: recorre <code>$desglose</code> buscando el ajuste <strong>mínimo</strong> (patrón H).</li>
+</ul>
+</li>
+<li><strong>Muestra</strong> el resultado y el desglose con <code>foreach</code>, eligiendo la clase de color según el signo del ajuste.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Pregunta para el cuaderno</p>
+<p>¿Qué pasa si ningún factor resta (todos los ajustes son 0 o positivos)? Decide qué mensaje muestras en ese caso.</p>
+</div>
+<p><strong>Casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Datos</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mujer · nunca · 150–449 min · 0–10 · mediterránea · 172 cm, 70 kg (IMC 23,7)</td>
+<td>86,5 + 1,6 + 2,5 = <strong>90,6 años</strong> · no resta nada</td>
+</tr>
+<tr>
+<td>Hombre · fuma · &lt; 15 min · 21–35 · procesada · 175 cm, 95 kg (IMC 31,0)</td>
+<td>81,4 − 10 − 1,8 − 1,5 − 2 − 3 = <strong>63,1 años</strong> · lo que más resta: tabaco (−10,0)</td>
+</tr>
+<tr>
+<td>Altura 100 y peso 300</td>
+<td>Dos errores mostrados juntos</td>
+</tr>
+<tr>
+<td>Cambiar con F12 un <code>value</code> a <code>mucho</code></td>
+<td>Error de opción no válida</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Errores típicos</summary>
+<ul>
+<li>Tramos del IMC desordenados: el primero que cumpla la condición no es el correcto. Ordénalos de menor a mayor límite.</li>
+<li>El último tramo (IMC ≥ 40) no tiene límite superior: usa un límite muy grande, por ejemplo <code>INF</code>.</li>
+<li>El formulario no recuerda lo elegido: <code>marcado()</code> compara con el valor recibido, pero en la primera visita no hay nada recibido. Decide qué opción va marcada por defecto.</li>
+</ul>
+</details>
+<hr />
+<h2 id="4-lista-de-comprobacion-antes-de-entregar">4. Lista de comprobación antes de entregar</h2>
+<p>Repasa esta lista con cada práctica antes de hacer el <em>commit</em> final:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> He hecho en el cuaderno la tabla E-P-S y el pseudocódigo (y la traza, si se pide).</li>
+<li class="task-list-item"><input type="checkbox" disabled/> La página funciona la <strong>primera vez</strong> que se abre, sin <em>warnings</em>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> He probado los casos <strong>normales, límite y erróneos</strong> de la ficha.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Todo lo que viene del usuario se muestra con <code>htmlspecialchars()</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Los números se validan con <code>filter_input()</code> o <code>filter_var()</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Los valores de <code>radio</code>, <code>select</code> y <code>checkbox</code> se comprueban con <strong>lista blanca</strong>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> El formulario conserva los datos (salvo la contraseña).</li>
+<li class="task-list-item"><input type="checkbox" disabled/> No hay cálculos en mitad del HTML: la lógica está arriba.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> El código tiene comentarios que explican <strong>qué hace cada bloque</strong>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> He borrado los <code>var_dump()</code> de depuración.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> He hecho el <em>commit</em> con un mensaje claro.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
