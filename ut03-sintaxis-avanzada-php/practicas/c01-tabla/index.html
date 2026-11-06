@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/c01-tabla/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Ejercicio de Clase - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Ejercicio de Clase";
+        var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/c01-tabla.md";
+        var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/c01-tabla/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · Arquitectura y Desarrollo Web</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · Sintaxis Básica de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Prácticas</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Ejercicio de Clase</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#enunciado">ENUNCIADO</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-a-distingue-entre-entrada-proceso-y-salida">Parte A · Distingue entre Entrada, Proceso y Salida.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-b-construye-la-tabla-12-min-unos-6-por-ejercicio">Parte B · Construye la tabla (12 min, unos 6 por ejercicio)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT3 · Sintaxis Avanzada de PHP</li>
+          <li class="breadcrumb-item">Prácticas</li>
+      <li class="breadcrumb-item active">Ejercicio de Clase</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="c01-analiza-antes-de-programar-la-tabla-entrada-proceso-salida">C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida</h1>
+<h2 id="enunciado">ENUNCIADO</h2>
+<blockquote>
+<p><strong>Taquilla del cine.</strong> Un formulario envía por POST la <code>edad</code> (número), el <code>dia</code> (un <code>select</code> con los siete días de la semana) y <code>carnet_joven</code> (un <em>checkbox</em>). La entrada cuesta 9 €. Los miércoles cuesta 5,50 €. Los menores de 12 años y los mayores de 65 pagan la mitad. Con carnet joven se resta 1 €, salvo los miércoles. La página muestra el precio final y la lista de descuentos aplicados.</p>
+</blockquote>
+<h3 id="parte-a-distingue-entre-entrada-proceso-y-salida">Parte A · Distingue entre Entrada, Proceso y Salida.</h3>
+<p>Escribe en el cuaderno los números del 1 al 12 y, al lado de cada uno, una <strong>E</strong>, una <strong>P</strong> o una <strong>S</strong>:</p>
+<ol>
+<li>Comprobar que la edad es un entero entre 0 y 120.</li>
+<li>El precio final, con dos decimales y el símbolo €.</li>
+<li>El valor de <code>dia</code> que llega por POST.</li>
+<li>Restar 1 € si se ha marcado el carnet joven y no es miércoles.</li>
+<li>El precio general de 9 €.</li>
+<li>El mensaje «La edad debe ser un número entre 0 y 120».</li>
+<li>Comprobar que <code>dia</code> es uno de los siete días permitidos.</li>
+<li>El valor de <code>carnet_joven</code>, que solo llega si se marca la casilla.</li>
+<li>Aplicar el 50 % de descuento si la edad es menor que 12 o mayor que 65.</li>
+<li>La lista con los descuentos que se han aplicado.</li>
+<li>El valor de <code>edad</code> que llega por POST.</li>
+<li>Volver a mostrar el formulario con lo que escribió el usuario.</li>
+</ol>
+<h3 id="parte-b-construye-la-tabla-12-min-unos-6-por-ejercicio">Parte B · Construye la tabla (12 min, unos 6 por ejercicio)</h3>
+<p>Para cada ejercicio: <strong>subraya</strong> en el enunciado los datos, las condiciones y lo que hay que mostrar (paso 1 de la guía) y después dibuja la tabla de tres columnas (paso 2).</p>
+<p>En la columna <strong>Entrada</strong>, para cada dato del formulario indica:</p>
+<ul>
+<li>su <code>name</code>;</li>
+<li>cómo llega a PHP (cadena, o «solo llega si…»);</li>
+<li>los valores permitidos o el rango, si los hay.</li>
+</ul>
+<p><strong>B1 · Repartir la cuenta</strong></p>
+<blockquote>
+<p>Página autoprocesada. El usuario escribe el importe de la cuenta, el número de comensales y elige la propina. Si el importe no es un número mayor que 0, o los comensales no son un entero entre 1 y 20, se muestra un error junto a cada campo. Si no se elige propina, se toma el 0 %. Si todo es correcto, se muestra el total con propina y lo que paga cada comensal, con dos decimales. El formulario conserva los datos.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"importe"</span> <span class="na">step</span><span class="o">=</span><span class="s">"0.01"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"comensales"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"0"</span><span class="p">&gt;</span> Sin propina<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"5"</span><span class="p">&gt;</span> 5 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span> 10 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"15"</span><span class="p">&gt;</span> 15 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Calcular<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>B2 · Tabla de multiplicar</strong></p>
+<blockquote>
+<p>Los datos se envían por GET. La página muestra la tabla de multiplicar del número elegido (un entero del 1 al 10), desde «× 1» hasta «× 10» o hasta «× 20», según lo que se elija en <code>hasta</code>. Si se marca la casilla, los resultados pares aparecen en negrita. Si el número no es válido, o <code>hasta</code> no vale 10 ni 20, se muestra un mensaje de error y no se dibuja la tabla. El formulario conserva los datos.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"get"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"numero"</span> <span class="na">min</span><span class="o">=</span><span class="s">"1"</span> <span class="na">max</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">"hasta"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span>Hasta 10<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"20"</span><span class="p">&gt;</span>Hasta 20<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"checkbox"</span> <span class="na">name</span><span class="o">=</span><span class="s">"pares"</span> <span class="na">value</span><span class="o">=</span><span class="s">"si"</span><span class="p">&gt;</span> Resaltar los pares<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Ver tabla<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Pista</p>
+<p>En la columna <strong>Proceso</strong> no escribas código: escribe acciones en castellano («validar que…», «si…, entonces…», «repetir desde… hasta…»). Si una acción se repite, dilo.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../boletin/" class="btn btn-neutral float-left" title="Boletín de prácticas"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../boletin/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
