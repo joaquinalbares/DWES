@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/P03-resuelta/" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <title>Práctica 03 resuelta - Desarrollo Web en Entorno Servidor 2026/27</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var properdocs_page_name = "C01 \u00b7 Analiza antes de programar: la tabla Entrada \u2013 Proceso \u2013 Salida";
+        var properdocs_page_name = "Pr\u00e1ctica 03 resuelta";
         var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/P03-resuelta.md";
         var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/P03-resuelta/";
       </script>
@@ -78,16 +78,58 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Prácticas</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../c01-tabla/">Ejercicio de Clase</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Práctica 03 resuelta</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#lectura-y-resumen-del-enunciado">LECTURA Y RESUMEN DEL ENUNCIADO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-tabla-de-entrada-proceso-y-salida">Paso 2. Tabla de Entrada, Proceso y Salida.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-division-del-problema-en-trozos">Paso 3. División del problema en trozos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-pseudocodigo-y-traza">Paso 4. Pseudocódigo y traza</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#41-calculo-a-mano">4.1. Cálculo a mano</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#42-pseudocodigo">4.2. Pseudocódigo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#43-traza">4.3. Traza</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-programa-poco-a-poco">Paso 5. Programa poco a poco</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-1-la-funcion-probada-sola">Trozo 1 · La función, probada sola</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-2-se-ha-enviado-recoger-el-dato">Trozo 2 · ¿Se ha enviado? Recoger el dato</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-3-validar">Trozo 3 · Validar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-4-calcular-y-formatear">Trozo 4 · Calcular y formatear</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-5-el-html">Trozo 5 · El HTML</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-6-prueba-con-casos-pensados">Paso 6. Prueba con casos pensados</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#un-error-encontrado-los-ceros-a-la-izquierda">Un error encontrado: los ceros a la izquierda</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#codigo-completo">Código completo</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -106,7 +148,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
-      <li class="breadcrumb-item active">C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida</li>
+          <li class="breadcrumb-item">UT3 · Sintaxis Avanzada de PHP</li>
+          <li class="breadcrumb-item">Prácticas</li>
+      <li class="breadcrumb-item active">Práctica 03 resuelta</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -574,6 +618,9 @@ SI hay resultado ENTONCES mostrar resultado
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../c01-tabla/" class="btn btn-neutral float-left" title="Ejercicio de Clase"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
 
   <hr/>
 
@@ -594,6 +641,8 @@ SI hay resultado ENTONCES mostrar resultado
   <div class="rst-versions" role="note" aria-label="Versiones">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../c01-tabla/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
   </span>
