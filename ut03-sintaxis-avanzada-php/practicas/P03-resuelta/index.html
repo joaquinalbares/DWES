@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/P03-resuelta/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "C01 \u00b7 Analiza antes de programar: la tabla Entrada \u2013 Proceso \u2013 Salida";
+        var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/P03-resuelta.md";
+        var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/P03-resuelta/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · Arquitectura y Desarrollo Web</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · Sintaxis Básica de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../c01-tabla/">Ejercicio de Clase</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="c01-analiza-antes-de-programar-la-tabla-entrada-proceso-salida">C01 · Analiza antes de programar: la tabla Entrada – Proceso – Salida</h1>
+<h2 id="lectura-y-resumen-del-enunciado">LECTURA Y RESUMEN DEL ENUNCIADO</h2>
+<p>En el cuaderno lo resumimos así:</p>
+<p>Que recibo: un número que escribe el usuario; la cadena de 23 letras; el divisor 23.
+Que debo mostrar: el DNI completo (8 cifras + letra), un aviso de error o, en la primera visita, el formulario vacío.
+Que condiciones debo verificar: </p>
+<ul>
+<li>Que sea un entero positivo (entre 1 y 99.999.999). </li>
+<li>Que si el número es menor de 8 cifras, rellenar con ceros a la izquierda.</li>
+<li>Como el formulario se envía a la misma página, comprobar si se ha enviado para mostrar el número escrito y procesar el formulario.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Condiciones Internas</p>
+<p>Una condición que falta en el enunciado Un DNI tiene como máximo 8 cifras, pero el enunciado solo dice «entero positivo». Pero nosotros sabemos que el número debe estar entre 1 y 99 999 999. Esa condición la hemos añadido nosotros y debemos indicarlo en los comentarios. </p>
+</div>
+<h2 id="paso-2-tabla-de-entrada-proceso-y-salida">Paso 2. Tabla de  Entrada, Proceso y Salida.</h2>
+<table>
+<thead>
+<tr>
+<th>Entrada (¿qué tengo?)</th>
+<th>Proceso (¿qué hago?)</th>
+<th>Salida (¿qué muestro?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ENVIAR</code> (POST): se hace una <code>REQUEST</code> mediante el método <code>POST</code></td>
+<td>Comprobar si se ha enviado el formulario</td>
+<td><ul><li>Formulario con el número que escribió el usuario (persistente).</li><li> Salida procesada.</li><li> Botón <code>Borrar</code> </li></ul></td>
+</tr>
+<tr>
+<td><code>numero</code> (POST): campo del formulario</td>
+<td><ul><li> Recoger <code>numero</code> y quitarle los espacios. </li><li> Validar: entero entre 1 y 99.999.999.</li><li> Rellenar con ceros hasta 8 cifras y añadir la letra</td>
+<td><ul><li>Mensaje de error, <strong>solo si hay error</strong>.</li><li> DNI completo con 8 cifras y letra, <strong>solo si es válido</strong>. </li></ul></td>
+</tr>
+<tr>
+<td>Dato fijo: cadena <code>TRWAGMYFPDXBNJZSQVHLCKE</code></td>
+<td>Calcular la letra con <code>calcularLetraDNI()</code></td>
+<td>DNI completo con 8 cifras y letra,</td>
+</tr>
+<tr>
+<td>Dato fijo: divisor 23</td>
+<td>Calcular la letra con <code>calcularLetraDNI()</code></td>
+<td>DNI completo con 8 cifras y letra,</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="paso-3-division-del-problema-en-trozos">Paso 3. División del problema en trozos</h2>
+<p>Estos son los trozos en el orden en que se van a programar. Cada uno se prueba y se guarda con un <em>commit</em> antes de pasar al siguiente:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 1.</strong> La función <code>calcularLetraDNI()</code>, probada sola.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 2.</strong> Saber si se ha enviado el formulario y recoger el dato.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 3.</strong> Validar el dato y preparar el mensaje de error.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 4.</strong> Calcular la letra y construir el DNI de 8 cifras.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 5.</strong> Mostrarlo todo en el HTML: formulario persistente, error, resultado y botón <em>Borrar</em>.</li>
+</ul>
+<hr />
+<h2 id="paso-4-pseudocodigo-y-traza">Paso 4. Pseudocódigo y traza</h2>
+<h3 id="41-calculo-a-mano">4.1. Cálculo a mano</h3>
+<p>Antes de escribir pseudocódigo, comprobamos que <strong>entendemos el cálculo</strong> con un ejemplo. Copia en el cuaderno la cadena numerando cada letra. <strong>Cuidado: la primera posición es la 0.</strong></p>
+<div class="highlight"><pre><span></span><code>Posición:  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22
+Letra:     T  R  W  A  G  M  Y  F  P  D  X  B  N  J  Z  S  Q  V  H  L  C  K  E
+</code></pre></div>
+<p>Para el número <code>12345678</code>:</p>
+<div class="highlight"><pre><span></span><code>12345678 / 23 = 536768,17…   →  cociente entero: 536768
+536768 · 23   = 12345664
+resto         = 12345678 − 12345664 = 14
+posición 14   →  Z
+</code></pre></div>
+<p>Resultado: <strong>12345678Z</strong>, que coincide con el ejemplo del enunciado. Repite el cálculo con tu propio DNI: si te sale tu letra, has entendido el algoritmo.</p>
+<h3 id="42-pseudocodigo">4.2. Pseudocódigo</h3>
+<div class="highlight"><pre><span></span><code>FUNCIÓN calcularLetraDNI(numero)
+    resto ← numero MOD 23
+    devolver el carácter de la posición resto en "TRWAGMYFPDXBNJZSQVHLCKE"
+FIN FUNCIÓN
+
+texto ← ""          error ← nada          resultado ← nada
+
+SI se ha enviado el formulario ENTONCES
+    texto ← dato "numero" sin espacios al principio ni al final
+    SI texto no es un entero entre 1 y 99999999 ENTONCES
+        error ← "Escribe un número entero positivo de 8 cifras como máximo."
+    SI NO
+        letra ← calcularLetraDNI(número)
+        resultado ← número rellenado con ceros hasta 8 cifras + letra
+    FIN SI
+FIN SI
+
+mostrar formulario con texto
+SI hay error ENTONCES mostrar error
+SI hay resultado ENTONCES mostrar resultado
+</code></pre></div>
+<h3 id="43-traza">4.3. Traza</h3>
+<p>Seguimos el pseudocódigo a mano con tres situaciones distintas:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th style="text-align: center;">¿Enviado?</th>
+<th><code>texto</code></th>
+<th style="text-align: center;">¿Válido?</th>
+<th><code>error</code></th>
+<th><code>resultado</code></th>
+<th>Se ve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primera visita</td>
+<td style="text-align: center;">No</td>
+<td><code>""</code></td>
+<td style="text-align: center;">—</td>
+<td>nada</td>
+<td>nada</td>
+<td>Formulario vacío</td>
+</tr>
+<tr>
+<td>Escribe <code>12345678</code></td>
+<td style="text-align: center;">Sí</td>
+<td><code>"12345678"</code></td>
+<td style="text-align: center;">Sí</td>
+<td>nada</td>
+<td><code>"12345678Z"</code></td>
+<td>Formulario con <code>12345678</code> y el DNI</td>
+</tr>
+<tr>
+<td>Escribe <code>abc</code></td>
+<td style="text-align: center;">Sí</td>
+<td><code>"abc"</code></td>
+<td style="text-align: center;">No</td>
+<td><code>"ERROR: Escribe un…"</code></td>
+<td>nada</td>
+<td>Formulario con <code>abc</code> y el error</td>
+</tr>
+</tbody>
+</table>
+<p>La traza da lo esperado en los tres casos. <strong>El algoritmo está bien</strong>: ya solo queda traducirlo a PHP.</p>
+<hr />
+<h2 id="paso-5-programa-poco-a-poco">Paso 5. Programa poco a poco</h2>
+<div class="admonition tip">
+<p class="admonition-title">Commits</p>
+<p>Hay que hacer un commit en cada uno de los pasos donde escribamos un trozo de código para poder volver atrás y tener un histórico práctico que nos pueda servir de referencia. </p>
+</div>
+<h3 id="trozo-1-la-funcion-probada-sola">Trozo 1 · La función, probada sola</h3>
+<p>Creamos <code>ut03p03.php</code> con <strong>solo la función</strong> y dos pruebas:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">calcularLetraDNI</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$numero</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+<span class="p">{</span>
+    <span class="nv">$letras</span> <span class="o">=</span> <span class="s1">'TRWAGMYFPDXBNJZSQVHLCKE'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nv">$letras</span><span class="p">[</span><span class="nv">$numero</span> <span class="o">%</span> <span class="mi">23</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// Pruebas provisionales (se borrarán)</span>
+<span class="k">echo</span> <span class="nx">calcularLetraDNI</span><span class="p">(</span><span class="mi">12345678</span><span class="p">);</span>   <span class="c1">// debe mostrar Z</span>
+<span class="k">echo</span> <span class="nx">calcularLetraDNI</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>          <span class="c1">// debe mostrar R</span>
+</code></pre></div>
+<p>Abrimos la página en el navegador: aparece <code>ZR</code>. Coincide con lo calculado a mano (el 1 entre 23 da resto 1 → <code>R</code>).</p>
+<p>En PHP una cadena se puede leer <strong>como un array de caracteres</strong>: <code>$letras[14]</code> es la <code>Z</code>. No hace falta crear un array con las 23 letras.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"P03: función calcularLetraDNI"</span>
+</code></pre></div>
+<h3 id="trozo-2-se-ha-enviado-recoger-el-dato">Trozo 2 · ¿Se ha enviado? Recoger el dato</h3>
+<p>Borramos los dos <code>echo</code> de prueba. Añadimos debajo de la función la <strong>zona de lógica</strong> (patrón A), con las variables que usará el HTML ya inicializadas, y un formulario mínimo para poder enviar algo:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Variables que usa el HTML (valores de la primera visita)</span>
+<span class="x">$texto     = '';</span>
+<span class="x">$error     = null;</span>
+<span class="x">$resultado = null;</span>
+
+<span class="x">if ($_SERVER['REQUEST_METHOD'] === 'POST') {</span>
+<span class="x">    $texto = trim($_POST['numero'] ?? '');</span>
+
+<span class="x">    echo '&lt;pre&gt;';            // depuración provisional</span>
+<span class="x">    var_dump($_POST);</span>
+<span class="x">    echo '&lt;/pre&gt;';</span>
+<span class="x">}</span>
+<span class="x">?&gt;</span>
+<span class="x">&lt;form method="post"&gt;</span>
+<span class="x">    &lt;input type="text" name="numero"&gt;</span>
+<span class="x">    &lt;button type="submit"&gt;Calcular letra&lt;/button&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<p>Enviamos <code>12345678</code> y vemos:</p>
+<div class="highlight"><pre><span></span><code>array(1) {
+  ["numero"]=&gt;
+  string(8) "12345678"
+}
+</code></pre></div>
+<p>Fíjate: llega como <strong><code>string</code></strong>, no como número. Todo lo que viene de un formulario es texto. Por eso hay que validarlo y convertirlo antes de pasárselo a una función que espera un <code>int</code>.</p>
+<p>El <code>&lt;form&gt;</code> no lleva atributo <code>action</code>: así <strong>se envía a la misma URL</strong>, que es lo que significa <em>autoprocesada</em>.</p>
+<h3 id="trozo-3-validar">Trozo 3 · Validar</h3>
+<p>Sustituimos el <code>var_dump()</code> por la validación (patrón C):</p>
+<div class="highlight"><pre><span></span><code><span class="x">    $numero = filter_var($texto, FILTER_VALIDATE_INT, [</span>
+<span class="x">        'options' =&gt; ['min_range' =&gt; 1, 'max_range' =&gt; 99999999],</span>
+<span class="x">    ]);</span>
+
+<span class="x">    if ($numero === false) {</span>
+<span class="x">        $error = 'Escribe un número entero positivo de 8 cifras como máximo.';</span>
+<span class="x">    }</span>
+</code></pre></div>
+<p>Comprobamos con un <code>var_dump($numero)</code> provisional:</p>
+<table>
+<thead>
+<tr>
+<th>Escribimos</th>
+<th><code>var_dump($numero)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>12345678</code></td>
+<td><code>int(12345678)</code></td>
+</tr>
+<tr>
+<td><code>abc</code></td>
+<td><code>bool(false)</code></td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>bool(false)</code> (fuera de rango)</td>
+</tr>
+</tbody>
+</table>
+<p><code>filter_var()</code> hace dos cosas a la vez: <strong>comprueba</strong> el dato y, si es válido, lo <strong>devuelve convertido a <code>int</code></strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">¿Por qué <code>=== false</code> y no <code>!$numero</code>?</p>
+<p>Si algún día el rango admitiera el 0, <code>filter_var()</code> devolvería el entero <code>0</code>, que también se evalúa como falso. Con <code>!$numero</code> lo trataríamos como un error. <code>=== false</code> solo es cierto cuando la validación ha fallado de verdad.</p>
+</div>
+<h3 id="trozo-4-calcular-y-formatear">Trozo 4 · Calcular y formatear</h3>
+<p>Completamos el <code>if</code> con la rama <code>else</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">    } else {</span>
+<span class="x">        $letra     = calcularLetraDNI($numero);</span>
+<span class="x">        $resultado = str_pad((string) $numero, 8, '0', STR_PAD_LEFT) . $letra;</span>
+<span class="x">    }</span>
+</code></pre></div>
+<p><code>str_pad()</code> recibe:</p>
+<ul>
+<li>la cadena;</li>
+<li>la longitud final (8);</li>
+<li>el carácter de relleno (<code>'0'</code>);</li>
+<li>el lado por donde rellenar (<code>STR_PAD_LEFT</code>).</li>
+</ul>
+<p>Con <code>1</code> devuelve <code>00000001</code>, y al añadir la letra queda <code>00000001R</code>.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"P03: validación y cálculo del DNI completo"</span>
+</code></pre></div>
+<h3 id="trozo-5-el-html">Trozo 5 · El HTML</h3>
+<p>Ahora la zona de presentación. Solo <strong>muestra</strong> variables que ya están calculadas; aquí no se calcula nada:</p>
+<ul>
+<li><strong>Formulario persistente</strong> (patrón D): el <code>value</code> del campo lleva <code>$texto</code>, escapado con <code>htmlspecialchars()</code> (patrón E). Si alguien escribe <code>&lt;b&gt;hola&lt;/b&gt;</code>, debe verse tal cual en el campo.</li>
+<li><strong>Error y resultado</strong> con <code>if</code> en sintaxis alternativa, para que solo aparezcan cuando existen.</li>
+<li><strong>Botón <em>Borrar</em>:</strong> es un <strong>enlace</strong> a la propia página. Al pulsarlo, el navegador hace una petición <strong>GET</strong>: no se cumple <code>REQUEST_METHOD === 'POST'</code> y la página se muestra como en la primera visita.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Por qué no un <code>&lt;button type="reset"&gt;</code>?</p>
+<p>Un botón <em>reset</em> devuelve los campos al valor que tienen <strong>en el HTML</strong>. Después de enviar, ese valor es el número que escribió el usuario (el formulario es persistente), así que el campo no se vaciaría. Además, el resultado seguiría en pantalla.</p>
+</div>
+<p>El campo es <code>type="text"</code> y no <code>type="number"</code> a propósito. Con <code>number</code>, el navegador impediría escribir letras y <strong>no podríamos comprobar la validación del servidor</strong>. Y esa validación es la que de verdad protege la aplicación: cualquiera puede saltarse la del navegador con <kbd>F12</kbd>.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"P03: formulario persistente, mensajes y botón Borrar"</span>
+</code></pre></div>
+<hr />
+<h2 id="paso-6-prueba-con-casos-pensados">Paso 6. Prueba con casos pensados</h2>
+<p>Probamos los casos de la ficha de la guía y anotamos lo que <strong>obtenemos</strong> al lado de lo que <strong>esperamos</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Entrada</th>
+<th>Esperado</th>
+<th>Obtenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td><code>12345678</code></td>
+<td><code>12345678Z</code></td>
+<td><code>12345678Z</code> ✔</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>87654321</code></td>
+<td><code>87654321X</code></td>
+<td><code>87654321X</code> ✔</td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>1</code></td>
+<td><code>00000001R</code></td>
+<td><code>00000001R</code> ✔</td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>99999999</code></td>
+<td><code>99999999R</code></td>
+<td><code>99999999R</code> ✔</td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>00000001</code></td>
+<td><code>00000001R</code></td>
+<td><strong>Error</strong> ✘</td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td><code>0</code>, <code>-5</code>, <code>abc</code>, <code>12.5</code>, vacío</td>
+<td>Error</td>
+<td>Error ✔</td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td><code>123456789</code></td>
+<td>Error (más de 8 cifras)</td>
+<td>Error ✔</td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td><code>&lt;b&gt;hola&lt;/b&gt;</code></td>
+<td>Error, y en el campo se ve el texto literal</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td>Abrir la página por primera vez</td>
+<td>Formulario vacío, sin errores ni <em>warnings</em></td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<h3 id="un-error-encontrado-los-ceros-a-la-izquierda">Un error encontrado: los ceros a la izquierda</h3>
+<p>Un usuario que copia su DNI con los ceros (<code>00000001</code>) recibe un error, y no debería. Investigamos con <code>var_dump()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">var_dump(filter_var('00000001', FILTER_VALIDATE_INT));   // bool(false)</span>
+<span class="x">var_dump(filter_var('1', FILTER_VALIDATE_INT));          // int(1)</span>
+</code></pre></div>
+<p><code>FILTER_VALIDATE_INT</code> <strong>rechaza los números que empiezan por 0</strong>. En programación, un 0 inicial puede indicar que el número está en base 8 (octal), así que el filtro no se arriesga a interpretarlo.</p>
+<p><strong>Solución:</strong> normalizar antes de validar, <strong>quitando los ceros de la izquierda</strong> con <code>ltrim()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">    $texto    = trim($_POST['numero'] ?? '');</span>
+<span class="x">    $sinCeros = ltrim($texto, '0');          // "00000001" → "1"</span>
+
+<span class="x">    $numero = filter_var($sinCeros, FILTER_VALIDATE_INT, [ … ]);</span>
+</code></pre></div>
+<p>¿Rompe algo este cambio? Repasamos los casos:</p>
+<ul>
+<li><code>0</code> y <code>0000</code> se quedan en cadena vacía, que sigue dando error: correcto.</li>
+<li>Al formulario le seguimos devolviendo <code>$texto</code>, no <code>$sinCeros</code>: el usuario ve exactamente lo que escribió.</li>
+</ul>
+<p>Repetimos <strong>todas</strong> las pruebas (no solo la que fallaba) y ya pasan todas.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"P03: admitir ceros a la izquierda en el número"</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Lo que enseña este error</p>
+<p>Los casos <strong>límite</strong> son los que encuentran los fallos. Si solo hubiéramos probado <code>12345678</code>, el programa habría parecido perfecto. Cada vez que corrijas un error, <strong>vuelve a pasar todas las pruebas</strong>: un arreglo puede estropear otra cosa.</p>
+</div>
+<hr />
+<h2 id="codigo-completo">Código completo</h2>
+<details>
+<summary><code>ut03p03.php</code></summary>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * P03 · Calculadora de la letra del DNI</span>
+<span class="sd"> * Página autoprocesada: muestra el formulario y, al enviarlo,</span>
+<span class="sd"> * valida el número y calcula su letra.</span>
+<span class="sd"> */</span>
+
+<span class="c1">// ── Funciones ────────────────────────────────────────────────</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Devuelve la letra que corresponde a un número de DNI.</span>
+<span class="sd"> * La letra es la posición (numero % 23) de la cadena de control.</span>
+<span class="sd"> */</span>
+<span class="k">function</span> <span class="nf">calcularLetraDNI</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$numero</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+<span class="p">{</span>
+    <span class="nv">$letras</span> <span class="o">=</span> <span class="s1">'TRWAGMYFPDXBNJZSQVHLCKE'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nv">$letras</span><span class="p">[</span><span class="nv">$numero</span> <span class="o">%</span> <span class="mi">23</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// ── Zona de lógica ──────────────────────────────────────────</span>
+
+<span class="c1">// Variables que usa el HTML (valores de la primera visita)</span>
+<span class="nv">$texto</span>     <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>     <span class="c1">// lo que escribió el usuario (formulario persistente)</span>
+<span class="nv">$error</span>     <span class="o">=</span> <span class="k">null</span><span class="p">;</span>   <span class="c1">// mensaje de error, si lo hay</span>
+<span class="nv">$resultado</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>   <span class="c1">// DNI completo, si el número es válido</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Recoger el dato y normalizarlo</span>
+    <span class="nv">$texto</span>    <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'numero'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">);</span>
+    <span class="nv">$sinCeros</span> <span class="o">=</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nv">$texto</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>   <span class="c1">// FILTER_VALIDATE_INT rechaza ceros iniciales</span>
+
+    <span class="c1">// Validar: entero entre 1 y 99 999 999 (8 cifras como máximo)</span>
+    <span class="nv">$numero</span> <span class="o">=</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$sinCeros</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_INT</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'options'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'min_range'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'max_range'</span> <span class="o">=&gt;</span> <span class="mi">99999999</span><span class="p">],</span>
+    <span class="p">]);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$numero</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$error</span> <span class="o">=</span> <span class="s1">'Escribe un número entero positivo de 8 cifras como máximo.'</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Calcular la letra y rellenar con ceros hasta 8 cifras</span>
+        <span class="nv">$letra</span>     <span class="o">=</span> <span class="nx">calcularLetraDNI</span><span class="p">(</span><span class="nv">$numero</span><span class="p">);</span>
+        <span class="nv">$resultado</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">((</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$numero</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">,</span> <span class="nx">STR_PAD_LEFT</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$letra</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span>
+<span class="x">    &lt;title&gt;P03 · Letra del DNI&lt;/title&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">&lt;section class="section"&gt;</span>
+<span class="x">    &lt;div class="container" style="max-width: 32rem;"&gt;</span>
+<span class="x">        &lt;h1 class="title"&gt;Calculadora de la letra del DNI&lt;/h1&gt;</span>
+
+<span class="x">        &lt;!-- Sin "action": el formulario se envía a esta misma página --&gt;</span>
+<span class="x">        &lt;form method="post"&gt;</span>
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="label" for="numero"&gt;Número del DNI&lt;/label&gt;</span>
+<span class="x">                &lt;div class="control"&gt;</span>
+<span class="x">                    &lt;input class="input</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$error</span> <span class="o">!==</span> <span class="k">null</span> <span class="o">?</span> <span class="s1">' is-danger'</span> <span class="o">:</span> <span class="s1">''</span> <span class="cp">?&gt;</span><span class="x">"</span>
+<span class="x">                           type="text" id="numero" name="numero"</span>
+<span class="x">                           inputmode="numeric" placeholder="12345678"</span>
+<span class="x">                           value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$texto</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$error</span> <span class="o">!==</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;p class="help is-danger"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$error</span> <span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class="field is-grouped"&gt;</span>
+<span class="x">                &lt;div class="control"&gt;</span>
+<span class="x">                    &lt;button type="submit" class="button is-primary"&gt;Calcular letra&lt;/button&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">                &lt;div class="control"&gt;</span>
+<span class="x">                    &lt;!-- Enlace = petición GET: la página se carga vacía --&gt;</span>
+<span class="x">                    &lt;a href="ut03p03.php" class="button is-light"&gt;Borrar&lt;/a&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/form&gt;</span>
+
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$resultado</span> <span class="o">!==</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;div class="notification is-success mt-5"&gt;</span>
+<span class="x">                El DNI completo es &lt;strong&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$resultado</span> <span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+</details>
+<p><code>$error</code> y <code>$resultado</code> se muestran sin <code>htmlspecialchars()</code> porque <strong>no contienen texto del usuario</strong>:</p>
+<ul>
+<li>el error es un mensaje fijo;</li>
+<li>el resultado se construye a partir de un entero ya validado y de una letra de nuestra cadena.</li>
+</ul>
+<p><code>$texto</code> sí viene del usuario, y por eso se escapa.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

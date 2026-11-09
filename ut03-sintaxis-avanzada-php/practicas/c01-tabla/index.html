@@ -90,12 +90,42 @@
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Ejercicio de Clase</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#enunciado">ENUNCIADO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-entrada-proceso-y-salida">Paso 1. Entrada, Proceso y Salida.</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parte-a-distingue-entre-entrada-proceso-y-salida">Parte A · Distingue entre Entrada, Proceso y Salida.</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#parte-b-construye-la-tabla-12-min-unos-6-por-ejercicio">Parte B · Construye la tabla (12 min, unos 6 por ejercicio)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#antes-de-hacer-la-tabla-dos-huecos-del-enunciado">Antes de hacer la tabla: dos huecos del enunciado</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#la-tabla">La tabla</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-pasos-para-resolver">Paso 3. Pasos para resolver</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-pseudocodigo-y-traza">Paso 4. Pseudocódigo y traza</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#41-pseudocodigo">4.1. Pseudocódigo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#42-traza">4.2. Traza</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-programa-poco-a-poco">Paso 5. Programa poco a poco</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-1-datos-fijos-y-formulario">Trozo 1 · Datos fijos y formulario</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-2-se-ha-enviado-recoger-los-datos">Trozo 2 · ¿Se ha enviado? Recoger los datos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-3-validar">Trozo 3 · Validar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-4-calcular">Trozo 4 · Calcular</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trozo-5-mostrar">Trozo 5 · Mostrar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#codigo-completo">Código completo</a>
     </li>
     </ul>
                 </li>
@@ -132,6 +162,7 @@
 <blockquote>
 <p><strong>Taquilla del cine.</strong> Un formulario envía por POST la <code>edad</code> (número), el <code>dia</code> (un <code>select</code> con los siete días de la semana) y <code>carnet_joven</code> (un <em>checkbox</em>). La entrada cuesta 9 €. Los miércoles cuesta 5,50 €. Los menores de 12 años y los mayores de 65 pagan la mitad. Con carnet joven se resta 1 €, salvo los miércoles. La página muestra el precio final y la lista de descuentos aplicados.</p>
 </blockquote>
+<h2 id="paso-1-entrada-proceso-y-salida">Paso 1. Entrada, Proceso y Salida.</h2>
 <h3 id="parte-a-distingue-entre-entrada-proceso-y-salida">Parte A · Distingue entre Entrada, Proceso y Salida.</h3>
 <p>Escribe en el cuaderno los números del 1 al 12 y, al lado de cada uno, una <strong>E</strong>, una <strong>P</strong> o una <strong>S</strong>:</p>
 <ol>
@@ -148,46 +179,588 @@
 <li>El valor de <code>edad</code> que llega por POST.</li>
 <li>Volver a mostrar el formulario con lo que escribió el usuario.</li>
 </ol>
-<h3 id="parte-b-construye-la-tabla-12-min-unos-6-por-ejercicio">Parte B · Construye la tabla (12 min, unos 6 por ejercicio)</h3>
-<p>Para cada ejercicio: <strong>subraya</strong> en el enunciado los datos, las condiciones y lo que hay que mostrar (paso 1 de la guía) y después dibuja la tabla de tres columnas (paso 2).</p>
-<p>En la columna <strong>Entrada</strong>, para cada dato del formulario indica:</p>
+<h3 id="antes-de-hacer-la-tabla-dos-huecos-del-enunciado">Antes de hacer la tabla: dos huecos del enunciado</h3>
+<p>Al subrayar el enunciado (paso 1) aparecen dos dudas que hay que resolver <strong>antes</strong> de programar:</p>
 <ul>
-<li>su <code>name</code>;</li>
-<li>cómo llega a PHP (cadena, o «solo llega si…»);</li>
-<li>los valores permitidos o el rango, si los hay.</li>
+<li><strong>¿En qué orden se aplican el 50 % y el euro del carnet?</strong> No da lo mismo. Con 70 años y carnet joven, un viernes:<ul>
+<li>Si primero se aplica la mitad: 9 / 2 − 1 = <strong>3,50 €</strong>.</li>
+<li>Si primero se resta el euro: (9 − 1) / 2 = <strong>4,00 €</strong>.</li>
 </ul>
-<p><strong>B1 · Repartir la cuenta</strong></p>
-<blockquote>
-<p>Página autoprocesada. El usuario escribe el importe de la cuenta, el número de comensales y elige la propina. Si el importe no es un número mayor que 0, o los comensales no son un entero entre 1 y 20, se muestra un error junto a cada campo. Si no se elige propina, se toma el 0 %. Si todo es correcto, se muestra el total con propina y lo que paga cada comensal, con dos decimales. El formulario conserva los datos.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"importe"</span> <span class="na">step</span><span class="o">=</span><span class="s">"0.01"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"comensales"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"0"</span><span class="p">&gt;</span> Sin propina<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"5"</span><span class="p">&gt;</span> 5 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span> 10 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"propina"</span> <span class="na">value</span><span class="o">=</span><span class="s">"15"</span><span class="p">&gt;</span> 15 %<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Calcular<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></div>
-<p><strong>B2 · Tabla de multiplicar</strong></p>
-<blockquote>
-<p>Los datos se envían por GET. La página muestra la tabla de multiplicar del número elegido (un entero del 1 al 10), desde «× 1» hasta «× 10» o hasta «× 20», según lo que se elija en <code>hasta</code>. Si se marca la casilla, los resultados pares aparecen en negrita. Si el número no es válido, o <code>hasta</code> no vale 10 ni 20, se muestra un mensaje de error y no se dibuja la tabla. El formulario conserva los datos.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"get"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"numero"</span> <span class="na">min</span><span class="o">=</span><span class="s">"1"</span> <span class="na">max</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">"hasta"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;</span>Hasta 10<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"20"</span><span class="p">&gt;</span>Hasta 20<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"checkbox"</span> <span class="na">name</span><span class="o">=</span><span class="s">"pares"</span> <span class="na">value</span><span class="o">=</span><span class="s">"si"</span><span class="p">&gt;</span> Resaltar los pares<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Ver tabla<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Pista</p>
-<p>En la columna <strong>Proceso</strong> no escribas código: escribe acciones en castellano («validar que…», «si…, entonces…», «repetir desde… hasta…»). Si una acción se repite, dilo.</p>
+</li>
+<li><strong>¿El 50 % por edad se aplica también los miércoles?</strong> El enunciado solo excluye el carnet joven los miércoles,pero nososotros lo interpretamos que tampoco se aplica, así que la edad <strong>no</strong> cuenta: un niño paga 5,50 € los miercoles.</li>
+</ul>
+<p><strong>Decisiones:</strong></p>
+<ol>
+<li>Primero se fija el precio del día, si es miercoles, se aplica el descuento y finalizamos .</li>
+<li>Si no es miercoles, se aplica el descuento por edad.</li>
+<li>Si no es miercoles, por último se resta el euro del carnet joven.</li>
+<li>La edad válida va de <strong>0</strong> a 120: un bebé tiene 0 años.</li>
+</ol>
+<h3 id="la-tabla">La tabla</h3>
+<table>
+<thead>
+<tr>
+<th>Entrada (¿qué tengo?)</th>
+<th>Proceso (¿qué hago?)</th>
+<th>Salida (¿qué muestro?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El <strong>método</strong> de la petición (<code>$_SERVER['REQUEST_METHOD']</code>): dice si se ha enviado el formulario</td>
+<td>Saber si se ha enviado el formulario</td>
+<td>El formulario <strong>persistente</strong>: la edad escrita, el día elegido y la casilla marcada</td>
+</tr>
+<tr>
+<td><code>dia</code> (POST): llega como <strong>cadena</strong></td>
+<td><ul><li>Recoger <code>dia</code></li><li>Comprobar el valor de <code>dia</code></li><li>Si <code>dia</code> <strong>NO es miercoles</strong>, verificar <code>edad</code>.</li><li>Si <code>dia</code> es <strong>miercoles</strong>, finalizar.</li></ul></td>
+<td><ul><li>Si <code>dia</code> es <strong>miercoles</strong> mostrar <code>"Precio 5€ - Descuento por miércoles Aplicado"</code>.</li></ul></td>
+</tr>
+<tr>
+<td><code>edad</code> (POST): llega como <strong>cadena</strong></td>
+<td><ul><li>Recoger <code>edad</code>. </li><li>Validar: entero entre 0 y 120<li>Si <code>edad</code>&lt;12 OR <code>edad</code>&gt;65, aplicar 50%.</li><li> anotar descuento.</li><li>Ir a verificar <code>carnet joven</code>.</li></td>
+<td><ul><li>Mensaje de error, <strong>solo si hay error</strong></li><li>Si <code>edad</code>&lt;12 OR <code>edad</code>&gt;65, mostrar <code>"Descuento por edad Aplicado"</code>.</li></ul></td>
+</tr>
+<tr>
+<td><code>carnet_joven</code> (POST): llega como <strong>cadena</strong> o no llega.</td>
+<td><ul><li>Comprobar si ha llegado <code>carnet_joven</code></li><li>Restar 1 € al precio <strong>si existe <code>carnet_joven</code></strong>.</li><li> anotar descuento. </li></td>
+<td><ul><li>Mostrar <code>"Descuento por carnet joven Aplicado"</code> <strong>si existe</strong></li></ul></td>
+</tr>
+<tr>
+<td><strong>Datos fijos:</strong> 9 €; 5,50 € los miércoles; límites de edad 12 y 65; 50 %; 1 € del carnet; lista de los 7 días; rango de edad 0–120</td>
+<td>Si no hay errores, fijar el precio base: 5,50 € si es miércoles y 9 € si no</td>
+<td>Precio final de la entrada</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Errores habituales al construir esta tabla</p>
+<ul>
+<li><strong>Poner acciones en la columna Salida.</strong> «Aplicar el 50 %» o «quitar 1 €» son <strong>proceso</strong>. En Salida solo va lo que se ve: el precio, la lista y los errores.</li>
+<li><strong>Olvidar los datos fijos.</strong> El 9 €, el 5,50 €, el 12 y el 65 se usan en los cálculos. Si no están en Entrada, acabarás escribiendo números «mágicos» en mitad del código.</li>
+<li><strong>Aplicar descuentos el miércoles.</strong> El miércoles tiene su propio precio y ahí termina el cálculo: no cuentan ni la edad ni el carnet.</li>
+<li><strong>Cambiar el orden de los descuentos.</strong> Primero va la edad y después el carnet. Al revés, el precio sale distinto.</li>
+<li><strong>Validar solo la edad.</strong> El <code>select</code> se puede manipular con <kbd>F12</kbd>, así que <code>dia</code> también se valida (patrón G).</li>
+<li><strong>Olvidar el formulario persistente.</strong> Es la salida 12 de la parte A.</li>
+<li><strong>Copiar mal los datos del enunciado.</strong> El precio de los miércoles es 5,50 €, no 5 €.</li>
+<li><strong>Confundir el botón con un dato.</strong> El botón de enviar no hace falta para saber si se ha enviado el formulario: se mira el método de la petición (patrón B).</li>
+</ul>
 </div>
+<hr />
+<h2 id="paso-3-pasos-para-resolver">Paso 3. Pasos para resolver</h2>
+<p>Rellena en el cuaderno los pasos a resolver tomando como referencia los valores .</p>
+<h2 id="paso-4-pseudocodigo-y-traza">Paso 4. Pseudocódigo y traza</h2>
+<h3 id="41-pseudocodigo">4.1. Pseudocódigo</h3>
+<div class="highlight"><pre><span></span><code>DATOS FIJOS
+    precio_general ← 9          precio_miercoles ← 5,50
+    edad_infantil ← 12          edad_mayor ← 65
+    descuento_carnet ← 1
+    dias ← lunes, martes, miércoles, jueves, viernes, sábado, domingo
+
+errores ← lista vacía     precio ← nada     descuentos ← lista vacía
+
+SI se ha enviado el formulario ENTONCES
+    edad ← dato "edad" sin espacios al principio ni al final
+    dia ← dato "dia"
+    carnet ← ¿ha llegado "carnet_joven"?
+
+    SI edad no es un entero entre 0 y 120 ENTONCES
+        errores['edad'] ← "La edad debe ser un número entre 0 y 120."
+    FIN SI
+    SI dia no está en dias ENTONCES
+        errores['dia'] ← "Elige un día de la semana."
+    FIN SI
+
+    SI errores está vacía ENTONCES
+        SI dia = miércoles ENTONCES
+            precio ← precio_miercoles
+            añadir "Precio de miércoles (5,50 €)" a descuentos
+        SI NO
+            precio ← precio_general
+
+            SI edad &lt; edad_infantil O edad &gt; edad_mayor ENTONCES
+                precio ← precio / 2
+                añadir "Descuento por edad (50 %)" a descuentos
+            FIN SI
+
+            SI carnet ENTONCES
+                precio ← precio − descuento_carnet
+                añadir "Carnet joven (−1 €)" a descuentos
+            FIN SI
+        FIN SI
+    FIN SI
+FIN SI
+
+mostrar el formulario con edad, dia y carnet
+SI hay errores ENTONCES mostrar cada error junto a su campo
+SI hay precio ENTONCES mostrar el precio con 2 decimales y €, y la lista de descuentos
+</code></pre></div>
+<p>Fíjate en dos detalles:</p>
+<ul>
+<li>Los descuentos están <strong>dentro del <code>SI NO</code></strong> del miércoles. Por eso, si es miércoles, no se llega a comprobarlos y ya no hace falta preguntar «Y dia ≠ miércoles» en el carnet.</li>
+<li>Dentro del <code>SI NO</code>, los dos <code>SI</code> van <strong>uno detrás de otro</strong>, no con <code>SI NO</code>, porque una persona puede tener los dos descuentos. El orden en que se escriben es el orden en que se aplican: primero la edad y después el carnet.</li>
+</ul>
+<h3 id="42-traza">4.2. Traza</h3>
+<p>Sigue el pseudocódigo a mano y apunta el precio <strong>después de cada <code>SI</code></strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th style="text-align: center;"><code>edad</code></th>
+<th><code>dia</code></th>
+<th style="text-align: center;"><code>carnet</code></th>
+<th style="text-align: center;">Precio base</th>
+<th style="text-align: center;">Tras la edad</th>
+<th style="text-align: center;">Tras el carnet</th>
+<th>Descuentos</th>
+<th>Se ve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td style="text-align: center;">30</td>
+<td>lunes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+<td>ninguno</td>
+<td><strong>9,00 €</strong>, «Sin descuentos»</td>
+</tr>
+<tr>
+<td>Carnet en miércoles</td>
+<td style="text-align: center;">30</td>
+<td>miércoles</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">5,50</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>miércoles</td>
+<td><strong>5,50 €</strong> (no se comprueba el carnet)</td>
+</tr>
+<tr>
+<td>Niño en miércoles</td>
+<td style="text-align: center;">8</td>
+<td>miércoles</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">5,50</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>miércoles</td>
+<td><strong>5,50 €</strong> (no se comprueba la edad)</td>
+</tr>
+<tr>
+<td>Todo a la vez</td>
+<td style="text-align: center;">70</td>
+<td>viernes</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4,50</td>
+<td style="text-align: center;">3,50</td>
+<td>edad, carnet</td>
+<td><strong>3,50 €</strong></td>
+</tr>
+<tr>
+<td>Límite</td>
+<td style="text-align: center;">12</td>
+<td>martes</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">8</td>
+<td>carnet</td>
+<td><strong>8,00 €</strong> (12 <strong>no</strong> es menor que 12)</td>
+</tr>
+<tr>
+<td>Límite</td>
+<td style="text-align: center;">0</td>
+<td>sábado</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4,50</td>
+<td style="text-align: center;">4,50</td>
+<td>edad</td>
+<td><strong>4,50 €</strong></td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td style="text-align: center;"><code>abc</code></td>
+<td>lunes</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>—</td>
+<td>Error en la edad</td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td style="text-align: center;">30</td>
+<td>(vacío)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>—</td>
+<td>Error en el día</td>
+</tr>
+</tbody>
+</table>
+<p>Si tu traza da estos resultados, el algoritmo está bien y solo queda traducirlo a PHP.</p>
+<hr />
+<h2 id="paso-5-programa-poco-a-poco">Paso 5. Programa poco a poco</h2>
+<p>Estos son los trozos en el orden en que se van a programar. Cada uno se prueba antes de pasar al siguiente:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 1.</strong> Los datos fijos y el formulario, con el <code>select</code> generado por un bucle.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 2.</strong> Saber si se ha enviado el formulario y recoger los datos.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 3.</strong> Validar la edad y el día.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 4.</strong> Calcular el precio y la lista de descuentos.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Trozo 5.</strong> Mostrar el formulario persistente, los errores y el resultado.</li>
+</ul>
+<h3 id="trozo-1-datos-fijos-y-formulario">Trozo 1 · Datos fijos y formulario</h3>
+<p>Los datos fijos de la columna Entrada se escriben <strong>al principio</strong>, como constantes. Así, si mañana la entrada sube a 9,50 €, solo cambias una línea.</p>
+<p>Los días van en un array asociativo:</p>
+<ul>
+<li>la <strong>clave</strong> es el <code>value</code> que viaja en el formulario, sin tildes;</li>
+<li>el <strong>valor</strong> es el texto que ve el usuario.</li>
+</ul>
+<p>Con ese array se generan las <code>&lt;option&gt;</code> con un <code>foreach</code>, en lugar de escribirlas a mano.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ── Datos fijos ──────────────────────────────────────────────</span>
+<span class="k">const</span> <span class="no">PRECIO_GENERAL</span>   <span class="o">=</span> <span class="mf">9.00</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">PRECIO_MIERCOLES</span> <span class="o">=</span> <span class="mf">5.50</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">DESCUENTO_CARNET</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">EDAD_INFANTIL</span>    <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>   <span class="c1">// los menores de 12 pagan la mitad</span>
+<span class="k">const</span> <span class="no">EDAD_MAYOR</span>       <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>   <span class="c1">// los mayores de 65 pagan la mitad</span>
+
+<span class="c1">// Días permitidos: clave = value del formulario, valor = texto visible</span>
+<span class="nv">$dias</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'lunes'</span>     <span class="o">=&gt;</span> <span class="s1">'Lunes'</span><span class="p">,</span>
+    <span class="s1">'martes'</span>    <span class="o">=&gt;</span> <span class="s1">'Martes'</span><span class="p">,</span>
+    <span class="s1">'miercoles'</span> <span class="o">=&gt;</span> <span class="s1">'Miércoles'</span><span class="p">,</span>
+    <span class="s1">'jueves'</span>    <span class="o">=&gt;</span> <span class="s1">'Jueves'</span><span class="p">,</span>
+    <span class="s1">'viernes'</span>   <span class="o">=&gt;</span> <span class="s1">'Viernes'</span><span class="p">,</span>
+    <span class="s1">'sabado'</span>    <span class="o">=&gt;</span> <span class="s1">'Sábado'</span><span class="p">,</span>
+    <span class="s1">'domingo'</span>   <span class="o">=&gt;</span> <span class="s1">'Domingo'</span><span class="p">,</span>
+<span class="p">];</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;form method="post"&gt;</span>
+<span class="x">    &lt;input type="text" name="edad"&gt;</span>
+<span class="x">    &lt;select name="dia"&gt;</span>
+<span class="x">        &lt;option value=""&gt;Elige un día&lt;/option&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$dias</span> <span class="k">as</span> <span class="nv">$valor</span> <span class="o">=&gt;</span> <span class="nv">$nombre</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;option value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$valor</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span><span class="x">&lt;/option&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;/select&gt;</span>
+<span class="x">    &lt;label&gt;&lt;input type="checkbox" name="carnet_joven" value="si"&gt; Tengo carnet joven&lt;/label&gt;</span>
+<span class="x">    &lt;button type="submit"&gt;Calcular precio&lt;/button&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<p>Abre el inspector (<kbd>F12</kbd>) y comprueba que hay 8 <code>&lt;option&gt;</code>: la vacía y los 7 días, cada uno con su <code>value</code> sin tilde.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>ut03c01.php
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"C01: datos fijos y formulario de la taquilla"</span>
+</code></pre></div>
+<h3 id="trozo-2-se-ha-enviado-recoger-los-datos">Trozo 2 · ¿Se ha enviado? Recoger los datos</h3>
+<p>Entre los datos fijos y el <code>?&gt;</code>, añade la zona de lógica (patrón A). Empieza por las variables que usará el HTML, con los valores de la primera visita:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// ── Variables que usa el HTML (valores de la primera visita) ──</span>
+<span class="x">$edadTexto  = '';      // lo que escribió el usuario</span>
+<span class="x">$dia        = '';      // el día elegido</span>
+<span class="x">$carnet     = false;   // ¿se marcó la casilla?</span>
+<span class="x">$errores    = [];      // errores por campo</span>
+<span class="x">$precio     = null;    // precio final, si todo es válido</span>
+<span class="x">$descuentos = [];      // textos de los descuentos aplicados</span>
+
+<span class="x">if ($_SERVER['REQUEST_METHOD'] === 'POST') {</span>
+<span class="x">    $edadTexto = trim($_POST['edad'] ?? '');</span>
+<span class="x">    $dia       = $_POST['dia'] ?? '';</span>
+<span class="x">    $carnet    = isset($_POST['carnet_joven']);</span>
+
+<span class="x">    echo '&lt;pre&gt;';                         // depuración provisional</span>
+<span class="x">    var_dump($_POST, $carnet);</span>
+<span class="x">    echo '&lt;/pre&gt;';</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>Envía <code>70</code>, <em>Viernes</em> y la casilla marcada. Después repite <strong>sin</strong> marcar la casilla:</p>
+<div class="highlight"><pre><span></span><code>array(3) {                          array(2) {
+  ["edad"]=&gt; string(2) "70"            ["edad"]=&gt; string(2) "70"
+  ["dia"]=&gt; string(7) "viernes"        ["dia"]=&gt; string(7) "viernes"
+  ["carnet_joven"]=&gt; string(2) "si"  }
+}                                   bool(false)
+bool(true)
+</code></pre></div>
+<p>Con la casilla sin marcar, la clave <code>carnet_joven</code> <strong>ni siquiera aparece</strong> en <code>$_POST</code>. Por eso no se pregunta por su valor, sino si existe, con <code>isset()</code>. Fíjate también en que la edad llega como <code>string</code>, aunque escribas un número.</p>
+<h3 id="trozo-3-validar">Trozo 3 · Validar</h3>
+<p>Sustituye el <code>var_dump()</code> por la validación. Cada error se guarda con el nombre de su campo como clave (patrón C), para mostrarlo después debajo de ese campo:</p>
+<div class="highlight"><pre><span></span><code><span class="x">    // Validar la edad: entero entre 0 y 120</span>
+<span class="x">    $edad = filter_var($edadTexto, FILTER_VALIDATE_INT, [</span>
+<span class="x">        'options' =&gt; ['min_range' =&gt; 0, 'max_range' =&gt; 120],</span>
+<span class="x">    ]);</span>
+<span class="x">    if ($edad === false) {</span>
+<span class="x">        $errores['edad'] = 'La edad debe ser un número entre 0 y 120.';</span>
+<span class="x">    }</span>
+
+<span class="x">    // Validar el día con lista blanca (patrón G)</span>
+<span class="x">    if (!array_key_exists($dia, $dias)) {</span>
+<span class="x">        $errores['dia'] = 'Elige un día de la semana.';</span>
+<span class="x">    }</span>
+</code></pre></div>
+<p>Pruébalo con un <code>var_dump($edad, $errores)</code> provisional:</p>
+<table>
+<thead>
+<tr>
+<th>Escribes</th>
+<th><code>$edad</code></th>
+<th><code>$errores</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>30</code>, <em>Lunes</em></td>
+<td><code>int(30)</code></td>
+<td>vacío</td>
+</tr>
+<tr>
+<td><code>0</code>, <em>Lunes</em></td>
+<td><code>int(0)</code></td>
+<td>vacío</td>
+</tr>
+<tr>
+<td><code>abc</code>, <em>Lunes</em></td>
+<td><code>bool(false)</code></td>
+<td>clave <code>edad</code></td>
+</tr>
+<tr>
+<td><code>121</code>, <em>Lunes</em></td>
+<td><code>bool(false)</code></td>
+<td>clave <code>edad</code></td>
+</tr>
+<tr>
+<td><code>30</code>, <em>Elige un día</em></td>
+<td><code>int(30)</code></td>
+<td>clave <code>dia</code></td>
+</tr>
+<tr>
+<td><code>30</code> y, con <kbd>F12</kbd>, cambias un <code>value</code> a <code>festivo</code></td>
+<td><code>int(30)</code></td>
+<td>clave <code>dia</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Aquí <code>=== false</code> es imprescindible</p>
+<p>Un bebé tiene <strong>0</strong> años y <code>filter_var()</code> devuelve <code>int(0)</code>, que es válido. Si escribieras <code>if (!$edad)</code>, el 0 se evaluaría como falso y la página diría que la edad no es válida.</p>
+</div>
+<h3 id="trozo-4-calcular">Trozo 4 · Calcular</h3>
+<p>Debajo de la validación, y <strong>solo si no hay errores</strong>, se traduce el cálculo del pseudocódigo con la misma estructura: un <code>if … else</code> para el miércoles y, dentro del <code>else</code>, dos <code>if</code> seguidos:</p>
+<div class="highlight"><pre><span></span><code><span class="x">    // Calcular el precio solo si todo es válido</span>
+<span class="x">    if (empty($errores)) {</span>
+<span class="x">        if ($dia === 'miercoles') {</span>
+<span class="x">            // Miércoles: precio especial y ningún descuento más</span>
+<span class="x">            $precio       = PRECIO_MIERCOLES;</span>
+<span class="x">            $descuentos[] = 'Precio de miércoles (5,50 €)';</span>
+<span class="x">        } else {</span>
+<span class="x">            // Resto de días: precio general y descuentos en orden</span>
+<span class="x">            $precio = PRECIO_GENERAL;</span>
+
+<span class="x">            // 1. Descuento por edad</span>
+<span class="x">            if ($edad &lt; EDAD_INFANTIL || $edad &gt; EDAD_MAYOR) {</span>
+<span class="x">                $precio       = $precio / 2;</span>
+<span class="x">                $descuentos[] = 'Descuento por edad (50 %)';</span>
+<span class="x">            }</span>
+
+<span class="x">            // 2. Carnet joven, después del descuento por edad</span>
+<span class="x">            if ($carnet) {</span>
+<span class="x">                $precio      -= DESCUENTO_CARNET;</span>
+<span class="x">                $descuentos[] = 'Carnet joven (−1 €)';</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+</code></pre></div>
+<p>Los comentarios <code>// 1.</code> y <code>// 2.</code> recuerdan que el orden de los dos <code>if</code> <strong>no se puede cambiar</strong>: si los intercambias, el caso de 70 años con carnet da 4,00 € en lugar de 3,50 €.</p>
+<p>Comprueba con un <code>var_dump($precio, $descuentos)</code> provisional los casos de la traza. Por ejemplo, con <code>70</code>, <em>Viernes</em> y carnet:</p>
+<div class="highlight"><pre><span></span><code>float(3.5)
+array(2) {
+  [0]=&gt; string(25) "Descuento por edad (50 %)"
+  [1]=&gt; string(23) "Carnet joven (−1 €)"
+}
+</code></pre></div>
+<p>Si <strong>cada caso</strong> coincide con la traza del paso 4, borra el <code>var_dump()</code> y guarda:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"C01: validación y cálculo del precio"</span>
+</code></pre></div>
+<h3 id="trozo-5-mostrar">Trozo 5 · Mostrar</h3>
+<p>La zona de presentación solo <strong>muestra</strong> lo que ya está calculado:</p>
+<ul>
+<li><strong>Edad persistente</strong> (patrones D y E): <code>value</code> con <code>$edadTexto</code>, escapado con <code>htmlspecialchars()</code>.</li>
+<li><strong>Día persistente:</strong> dentro del <code>foreach</code>, se añade <code>selected</code> a la opción cuyo <code>value</code> coincide con <code>$dia</code>.</li>
+<li><strong>Casilla persistente:</strong> se añade <code>checked</code> si <code>$carnet</code> es <code>true</code>.</li>
+<li><strong>Errores:</strong> cada campo pregunta si existe su clave en <code>$errores</code>. Si existe, se pone en rojo (<code>is-danger</code>) y muestra el mensaje debajo.</li>
+<li><strong>Resultado:</strong> solo si <code>$precio</code> no es <code>null</code>. El precio se formatea con <code>number_format()</code> usando coma decimal. Esto es <strong>dar formato</strong> al dato para mostrarlo, no calcular. Si no hay descuentos, se muestra «Sin descuentos».</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"C01: formulario persistente, errores y resultado"</span>
+</code></pre></div>
+<p>Vuelve a pasar <strong>todos</strong> los casos de la traza en el navegador y comprueba que coinciden.</p>
+<hr />
+<h2 id="codigo-completo">Código completo</h2>
+<details>
+<summary><code>ut03c01.php</code></summary>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * C01 · Taquilla del cine</span>
+<span class="sd"> * Página autoprocesada: calcula el precio de la entrada según el día,</span>
+<span class="sd"> * la edad y el carnet joven, y muestra los descuentos aplicados.</span>
+<span class="sd"> */</span>
+
+<span class="c1">// ── Datos fijos ──────────────────────────────────────────────</span>
+<span class="k">const</span> <span class="no">PRECIO_GENERAL</span>   <span class="o">=</span> <span class="mf">9.00</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">PRECIO_MIERCOLES</span> <span class="o">=</span> <span class="mf">5.50</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">DESCUENTO_CARNET</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">EDAD_INFANTIL</span>    <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>   <span class="c1">// los menores de 12 pagan la mitad</span>
+<span class="k">const</span> <span class="no">EDAD_MAYOR</span>       <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>   <span class="c1">// los mayores de 65 pagan la mitad</span>
+
+<span class="c1">// Días permitidos: clave = value del formulario, valor = texto visible</span>
+<span class="nv">$dias</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'lunes'</span>     <span class="o">=&gt;</span> <span class="s1">'Lunes'</span><span class="p">,</span>
+    <span class="s1">'martes'</span>    <span class="o">=&gt;</span> <span class="s1">'Martes'</span><span class="p">,</span>
+    <span class="s1">'miercoles'</span> <span class="o">=&gt;</span> <span class="s1">'Miércoles'</span><span class="p">,</span>
+    <span class="s1">'jueves'</span>    <span class="o">=&gt;</span> <span class="s1">'Jueves'</span><span class="p">,</span>
+    <span class="s1">'viernes'</span>   <span class="o">=&gt;</span> <span class="s1">'Viernes'</span><span class="p">,</span>
+    <span class="s1">'sabado'</span>    <span class="o">=&gt;</span> <span class="s1">'Sábado'</span><span class="p">,</span>
+    <span class="s1">'domingo'</span>   <span class="o">=&gt;</span> <span class="s1">'Domingo'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">// ── Variables que usa el HTML (valores de la primera visita) ──</span>
+<span class="nv">$edadTexto</span>  <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>      <span class="c1">// lo que escribió el usuario</span>
+<span class="nv">$dia</span>        <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>      <span class="c1">// el día elegido</span>
+<span class="nv">$carnet</span>     <span class="o">=</span> <span class="k">false</span><span class="p">;</span>   <span class="c1">// ¿se marcó la casilla?</span>
+<span class="nv">$errores</span>    <span class="o">=</span> <span class="p">[];</span>      <span class="c1">// errores por campo</span>
+<span class="nv">$precio</span>     <span class="o">=</span> <span class="k">null</span><span class="p">;</span>    <span class="c1">// precio final, si todo es válido</span>
+<span class="nv">$descuentos</span> <span class="o">=</span> <span class="p">[];</span>      <span class="c1">// textos de los descuentos aplicados</span>
+
+<span class="c1">// ── Zona de lógica ───────────────────────────────────────────</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Recoger los datos</span>
+    <span class="nv">$edadTexto</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'edad'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">);</span>
+    <span class="nv">$dia</span>       <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'dia'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nv">$carnet</span>    <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'carnet_joven'</span><span class="p">]);</span>   <span class="c1">// el checkbox solo llega si se marca</span>
+
+    <span class="c1">// Validar la edad: entero entre 0 y 120</span>
+    <span class="nv">$edad</span> <span class="o">=</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$edadTexto</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_INT</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'options'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'min_range'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'max_range'</span> <span class="o">=&gt;</span> <span class="mi">120</span><span class="p">],</span>
+    <span class="p">]);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$edad</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$errores</span><span class="p">[</span><span class="s1">'edad'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'La edad debe ser un número entre 0 y 120.'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Validar el día con lista blanca</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="nv">$dia</span><span class="p">,</span> <span class="nv">$dias</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$errores</span><span class="p">[</span><span class="s1">'dia'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Elige un día de la semana.'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Calcular el precio solo si todo es válido</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$errores</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$dia</span> <span class="o">===</span> <span class="s1">'miercoles'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Miércoles: precio especial y ningún descuento más</span>
+            <span class="nv">$precio</span>       <span class="o">=</span> <span class="nx">PRECIO_MIERCOLES</span><span class="p">;</span>
+            <span class="nv">$descuentos</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Precio de miércoles (5,50 €)'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Resto de días: precio general y descuentos en orden</span>
+            <span class="nv">$precio</span> <span class="o">=</span> <span class="nx">PRECIO_GENERAL</span><span class="p">;</span>
+
+            <span class="c1">// 1. Descuento por edad</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$edad</span> <span class="o">&lt;</span> <span class="nx">EDAD_INFANTIL</span> <span class="o">||</span> <span class="nv">$edad</span> <span class="o">&gt;</span> <span class="nx">EDAD_MAYOR</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$precio</span>       <span class="o">=</span> <span class="nv">$precio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+                <span class="nv">$descuentos</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Descuento por edad (50 %)'</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 2. Carnet joven, después del descuento por edad</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$carnet</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$precio</span>      <span class="o">-=</span> <span class="nx">DESCUENTO_CARNET</span><span class="p">;</span>
+                <span class="nv">$descuentos</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Carnet joven (−1 €)'</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span>
+<span class="x">    &lt;title&gt;C01 · Taquilla del cine&lt;/title&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">&lt;section class="section"&gt;</span>
+<span class="x">    &lt;div class="container" style="max-width: 32rem;"&gt;</span>
+<span class="x">        &lt;h1 class="title"&gt;Taquilla del cine&lt;/h1&gt;</span>
+
+<span class="x">        &lt;!-- Sin "action": el formulario se envía a esta misma página --&gt;</span>
+<span class="x">        &lt;form method="post"&gt;</span>
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="label" for="edad"&gt;Edad&lt;/label&gt;</span>
+<span class="x">                &lt;div class="control"&gt;</span>
+<span class="x">                    &lt;input class="input</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$errores</span><span class="p">[</span><span class="s1">'edad'</span><span class="p">])</span> <span class="o">?</span> <span class="s1">' is-danger'</span> <span class="o">:</span> <span class="s1">''</span> <span class="cp">?&gt;</span><span class="x">"</span>
+<span class="x">                           type="text" id="edad" name="edad" inputmode="numeric"</span>
+<span class="x">                           value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$edadTexto</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$errores</span><span class="p">[</span><span class="s1">'edad'</span><span class="p">]))</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;p class="help is-danger"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$errores</span><span class="p">[</span><span class="s1">'edad'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="label" for="dia"&gt;Día&lt;/label&gt;</span>
+<span class="x">                &lt;div class="control"&gt;</span>
+<span class="x">                    &lt;div class="select</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$errores</span><span class="p">[</span><span class="s1">'dia'</span><span class="p">])</span> <span class="o">?</span> <span class="s1">' is-danger'</span> <span class="o">:</span> <span class="s1">''</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
+<span class="x">                        &lt;select id="dia" name="dia"&gt;</span>
+<span class="x">                            &lt;option value=""&gt;Elige un día&lt;/option&gt;</span>
+<span class="x">                            </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$dias</span> <span class="k">as</span> <span class="nv">$valor</span> <span class="o">=&gt;</span> <span class="nv">$nombre</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                                &lt;option value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$valor</span> <span class="cp">?&gt;</span><span class="x">"</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$valor</span> <span class="o">===</span> <span class="nv">$dia</span> <span class="o">?</span> <span class="s1">' selected'</span> <span class="o">:</span> <span class="s1">''</span> <span class="cp">?&gt;</span><span class="x">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span><span class="x">&lt;/option&gt;</span>
+<span class="x">                            </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">                        &lt;/select&gt;</span>
+<span class="x">                    &lt;/div&gt;</span>
+<span class="x">                &lt;/div&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$errores</span><span class="p">[</span><span class="s1">'dia'</span><span class="p">]))</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;p class="help is-danger"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$errores</span><span class="p">[</span><span class="s1">'dia'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="checkbox"&gt;</span>
+<span class="x">                    &lt;input type="checkbox" name="carnet_joven" value="si"</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$carnet</span> <span class="o">?</span> <span class="s1">' checked'</span> <span class="o">:</span> <span class="s1">''</span> <span class="cp">?&gt;</span><span class="x">&gt;</span>
+<span class="x">                    Tengo carnet joven</span>
+<span class="x">                &lt;/label&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;button type="submit" class="button is-primary"&gt;Calcular precio&lt;/button&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/form&gt;</span>
+
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$precio</span> <span class="o">!==</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;div class="notification is-success content mt-5"&gt;</span>
+<span class="x">                &lt;p&gt;Precio final: &lt;strong&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$precio</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">','</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"> €&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$descuentos</span><span class="p">))</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;p&gt;Sin descuentos.&lt;/p&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;p&gt;Descuentos aplicados:&lt;/p&gt;</span>
+<span class="x">                    &lt;ul&gt;</span>
+<span class="x">                        </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$descuentos</span> <span class="k">as</span> <span class="nv">$descuento</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                            &lt;li&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$descuento</span> <span class="cp">?&gt;</span><span class="x">&lt;/li&gt;</span>
+<span class="x">                        </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">                    &lt;/ul&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+</details>
+<p>Los errores, los nombres de los días y los textos de los descuentos se muestran sin <code>htmlspecialchars()</code> porque los escribimos nosotros en el código. <code>$edadTexto</code> sí viene del usuario, y por eso se escapa.</p>
+<p><code>$dia</code> también viene del usuario, pero nunca se muestra directamente: solo se compara con las claves de <code>$dias</code>.</p>
               
             </div>
           </div><footer>
