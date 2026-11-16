@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/guia-resolucion/" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>UT3 · Guía para resolver las prácticas paso a paso - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <title>Guía de Resolución de ejercicios - Desarrollo Web en Entorno Servidor 2026/27</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var properdocs_page_name = "UT3 \u00b7 Gu\u00eda para resolver las pr\u00e1cticas paso a paso";
+        var properdocs_page_name = "Gu\u00eda de Resoluci\u00f3n de ejercicios";
         var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/guia-resolucion.md";
         var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/guia-resolucion/";
       </script>
@@ -78,11 +78,85 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Prácticas</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Guía de Resolución de ejercicios</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#1-el-metodo-seis-pasos-para-cualquier-ejercicio">1. El método: seis pasos para cualquier ejercicio</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-1-lee-y-subraya">Paso 1. Lee y subraya</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-2-haz-la-tabla-entrada-proceso-salida">Paso 2. Haz la tabla Entrada – Proceso – Salida</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-3-divide-el-problema-en-trozos-pequenos">Paso 3. Divide el problema en trozos pequeños</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-4-escribe-el-pseudocodigo">Paso 4. Escribe el pseudocódigo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-5-programa-poco-a-poco-y-comprueba-cada-trozo">Paso 5. Programa poco a poco y comprueba cada trozo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-6-prueba-con-casos-pensados-y-haz-commit">Paso 6. Prueba con casos pensados y haz commit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-patrones-que-se-repiten">2. Patrones que se repiten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-a-estructura-de-una-pagina-php">Patrón A · Estructura de una página PHP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-b-se-ha-enviado-el-formulario">Patrón B · ¿Se ha enviado el formulario?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-c-validar-y-acumular-errores">Patrón C · Validar y acumular errores</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-d-formulario-persistente">Patrón D · Formulario persistente</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-e-escapar-todo-lo-que-se-muestra">Patrón E · Escapar todo lo que se muestra</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-f-tabla-de-consulta-en-lugar-de-muchos-if">Patrón F · Tabla de consulta en lugar de muchos if</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-g-lista-blanca">Patrón G · Lista blanca</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-h-acumulador-contador-maximo-y-minimo">Patrón H · Acumulador, contador, máximo y mínimo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-i-bucles-anidados">Patrón I · Bucles anidados</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patron-j-cada-n-elementos-con-el-modulo">Patrón J · «Cada N elementos» con el módulo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-fichas-de-las-practicas">3. Fichas de las prácticas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#p01-formulario-de-busqueda-de-canciones">P01 · Formulario de búsqueda de canciones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p02-catalogo-de-controles-de-formulario">P02 · Catálogo de controles de formulario</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p03-calculadora-de-la-letra-del-dni">P03 · Calculadora de la letra del DNI</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p04-ecuacion-de-segundo-grado">P04 · Ecuación de segundo grado</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p05-dibuja-un-triangulo">P05 · Dibuja un triángulo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p06-tabla-numerada-dinamica">P06 · Tabla numerada dinámica</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p07-conversor-de-divisas">P07 · Conversor de divisas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p08-la-quiniela">P08 · La quiniela</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p09-formulario-de-alta-validado-con-expresiones-regulares">P09 · Formulario de alta validado con expresiones regulares</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p10-gestion-de-calificaciones">P10 · Gestión de calificaciones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p11-buscador-de-productos-con-filtros">P11 · Buscador de productos con filtros</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#p12-reto-calculadora-de-esperanza-de-vida">P12 · Reto: calculadora de esperanza de vida</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-lista-de-comprobacion-antes-de-entregar">4. Lista de comprobación antes de entregar</a>
+    </li>
+    </ul>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
@@ -90,6 +164,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../c01-tabla/">Ejercicio de Clase</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../P03-resuelta/">Práctica 03 resuelta</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../c03-subida-ficheros/">Subida de Ficheros</a>
                 </li>
     </ul>
                   </li>
@@ -108,7 +184,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
-      <li class="breadcrumb-item active">UT3 · Guía para resolver las prácticas paso a paso</li>
+          <li class="breadcrumb-item">UT3 · Sintaxis Avanzada de PHP</li>
+          <li class="breadcrumb-item">Prácticas</li>
+      <li class="breadcrumb-item active">Guía de Resolución de ejercicios</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -1285,6 +1363,10 @@ FIN FUNCIÓN
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../../teoria/" class="btn btn-neutral float-left" title="Teoría"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../ejemplos-formularios/" class="btn btn-neutral float-right" title="Ejemplos de uso de formularios">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -1306,6 +1388,10 @@ FIN FUNCIÓN
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../teoria/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../ejemplos-formularios/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
   </span>
 </div>

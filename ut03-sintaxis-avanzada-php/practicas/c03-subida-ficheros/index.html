@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Subida de Ficheros - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Subida de Ficheros";
+        var properdocs_page_input_path = "ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros.md";
+        var properdocs_page_url = "/DWES/ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · Arquitectura y Desarrollo Web</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · Sintaxis Básica de PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · Sintaxis Avanzada de PHP</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Prácticas</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../guia-resolucion/">Guía de Resolución de ejercicios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../c01-tabla/">Ejercicio de Clase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../P03-resuelta/">Práctica 03 resuelta</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Subida de Ficheros</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objetivos">Objetivos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#requisitos">Requisitos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enunciado">Enunciado</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-1-antes-de-programar-cuaderno-15-min">Parte 1 · Antes de programar (cuaderno, 15 min)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-2-el-formulario-y-_files-15-min">Parte 2 · El formulario y $_FILES (15 min)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-3-validar-y-guardar-30-min">Parte 3 · Validar y guardar (30 min)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-4-la-galeria-15-min">Parte 4 · La galería (15 min)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parte-5-pruebas-15-min">Parte 5 · Pruebas (15 min)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#entregables">Entregables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#entrega-en-moodle">Entrega en Moodle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rubrica-10-puntos">Rúbrica (10 puntos)</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT3 · Sintaxis Avanzada de PHP</li>
+          <li class="breadcrumb-item">Prácticas</li>
+      <li class="breadcrumb-item active">Subida de Ficheros</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="c03-subida-de-ficheros-galeria-de-fotos">C03 · Subida de ficheros: galería de fotos</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unidad</strong></td>
+<td>UT3 · Sintaxis Avanzada de PHP</td>
+</tr>
+<tr>
+<td><strong>RA / CE</strong></td>
+<td>RA2 – CE f) · RA3 – CE a), CE b), CE c), CE d), CE e), CE f), CE g)</td>
+</tr>
+<tr>
+<td><strong>Duración</strong></td>
+<td>1,5 horas: 15 minutos en el cuaderno (parte 1) y 75 minutos con el ordenador (partes 2 a 5)</td>
+</tr>
+<tr>
+<td><strong>Modalidad</strong></td>
+<td>Individual</td>
+</tr>
+<tr>
+<td><strong>Patrones de la guía</strong></td>
+<td>A (estructura), B (¿se ha enviado?), C (validar), D (persistente), E (escapar)</td>
+</tr>
+<tr>
+<td><strong>Fichero</strong></td>
+<td><code>ut03c03.php</code> (página autoprocesada) y carpeta <code>uploads/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Enviar un fichero con un formulario y explicar qué contiene <code>$_FILES</code> en cada situación.</li>
+<li>Validar una subida en el servidor: código de error, tamaño y <strong>tipo real</strong> del fichero.</li>
+<li>Guardar el fichero con <code>move_uploaded_file()</code> y con un nombre que decide el servidor, no el usuario.</li>
+<li>Recorrer una carpeta del servidor y mostrar su contenido con un bucle.</li>
+<li>Probar la subida con ficheros normales, límite y maliciosos.</li>
+</ul>
+<h2 id="requisitos">Requisitos</h2>
+<ul>
+<li>Haber leído el apartado <strong>5.6. Subida de ficheros: <code>$_FILES</code></strong> de la teoría de la UT3.</li>
+<li>Conocer los formularios autoprocesados y persistentes, las expresiones regulares y las funciones propias.</li>
+<li>Cuaderno y bolígrafo. Herd o Lerd con PHP 8.4 y tu repositorio Git de las prácticas de la UT3.</li>
+<li>Ficheros de prueba, que preparas tú en la parte 2: dos o tres fotos pequeñas (JPG, PNG o WebP), una imagen de más de 1 MB y un fichero de texto.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Funciones nuevas que vas a necesitar</p>
+<table>
+<thead>
+<tr>
+<th>Función</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>move_uploaded_file($temporal, $destino)</code></td>
+<td>Mueve el fichero temporal a su sitio definitivo. Devuelve <code>true</code> o <code>false</code>. Solo acepta ficheros que han llegado por un formulario.</td>
+</tr>
+<tr>
+<td><code>new finfo(FILEINFO_MIME_TYPE)</code> y su método <code>file($ruta)</code></td>
+<td>Devuelve el tipo MIME <strong>leyendo el contenido</strong> del fichero, por ejemplo <code>image/png</code>.</td>
+</tr>
+<tr>
+<td><code>is_dir($ruta)</code> y <code>mkdir($ruta, 0755, true)</code></td>
+<td>Comprueba si existe una carpeta y la crea.</td>
+</tr>
+<tr>
+<td><code>bin2hex(random_bytes(4))</code></td>
+<td>Genera 8 caracteres hexadecimales al azar.</td>
+</tr>
+<tr>
+<td><code>glob($patron)</code></td>
+<td>Devuelve un array con las rutas que cumplen un patrón, por ejemplo <code>glob(__DIR__ . '/uploads/*.png')</code>.</td>
+</tr>
+<tr>
+<td><code>basename($ruta)</code> y <code>filesize($ruta)</code></td>
+<td>Nombre del fichero sin carpetas y tamaño en bytes.</td>
+</tr>
+</tbody>
+</table>
+<p>Busca cada una en <a href="https://www.php.net/manual/es/">php.net</a> antes de usarla y fíjate en qué devuelve cuando falla.</p>
+</div>
+<h2 id="enunciado">Enunciado</h2>
+<blockquote>
+<p><strong>Galería de fotos.</strong> Página autoprocesada. El usuario escribe su alias y elige una imagen. El alias tiene entre 3 y 15 letras sin tilde o cifras. Solo se admiten imágenes JPG, PNG o WebP de 1 MB como máximo. Si algo no es correcto, se muestra un error junto a cada campo y no se guarda nada. Si todo es correcto, la imagen se guarda en la carpeta <code>uploads/</code> con un nombre nuevo formado por el alias, un guion, 8 caracteres al azar y la extensión que corresponde a su tipo real (por ejemplo, <code>ana-3f9c01ab.png</code>). Debajo del formulario se muestran siempre todas las imágenes guardadas, con el alias de quien las subió y su tamaño, y el número total de imágenes.</p>
+</blockquote>
+<p>Este es el formulario de partida:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"alias"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"file"</span> <span class="na">name</span><span class="o">=</span><span class="s">"foto"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Subir<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="parte-1-antes-de-programar-cuaderno-15-min">Parte 1 · Antes de programar (cuaderno, 15 min)</h3>
+<p><strong>1.1. El viaje del fichero.</strong> Dibuja un diagrama con el recorrido de la imagen desde que el usuario pulsa <em>Subir</em> hasta que aparece en la galería. Deben aparecer, al menos: el navegador, la petición POST, la carpeta temporal del servidor, <code>$_FILES</code>, tu script y la carpeta <code>uploads/</code>. Indica en qué punto del recorrido desaparece el fichero temporal si no haces nada con él.</p>
+<p><strong>1.2. Los huecos del enunciado.</strong> Escribe tu <strong>decisión razonada</strong> para cada pregunta:</p>
+<ul>
+<li>a) El usuario escribe el alias <code>Ana</code>. ¿Lo rechazas o lo conviertes?</li>
+<li>b) Dos personas suben un fichero que se llama <code>foto.jpg</code>. ¿Qué pasaría si guardaras cada fichero con su nombre original?</li>
+<li>c) Alguien sube un fichero llamado <code>../../index.php</code>. ¿Qué pasaría si usaras ese nombre para guardarlo?</li>
+<li>d) El formulario tiene errores y se vuelve a mostrar. ¿Qué campos puedes conservar y cuál no? ¿Por qué?</li>
+</ul>
+<p><strong>1.3. El orden de las comprobaciones.</strong> Estas son las cuatro comprobaciones del fichero, desordenadas. Ordénalas, escribe al lado de cada una qué dato de <code>$_FILES</code> o qué función necesitas y explica por qué ese orden:</p>
+<ul>
+<li>¿Es de verdad una imagen JPG, PNG o WebP?</li>
+<li>¿Ha llegado el campo <code>foto</code> al servidor?</li>
+<li>¿Ocupa 1 MB o menos?</li>
+<li>¿Ha terminado la subida sin errores?</li>
+</ul>
+<hr />
+<h3 id="parte-2-el-formulario-y-_files-15-min">Parte 2 · El formulario y <code>$_FILES</code> (15 min)</h3>
+<ol>
+<li>Crea <code>ut03c03.php</code> con el formulario de partida, con Bulma, y con la zona de lógica arriba (<strong>patrón A</strong>). Añade al formulario lo que falta para que pueda enviar ficheros.</li>
+<li>De forma provisional, muestra <code>$_POST</code> y <code>$_FILES</code> con <code>var_dump()</code> dentro de una etiqueta <code>&lt;pre&gt;</code>.</li>
+<li>Prepara los ficheros de prueba. Para el fichero falso, crea un fichero de texto con una frase y guárdalo como <code>falso.jpg</code>.</li>
+<li>Haz estos cinco experimentos y <strong>anota el resultado en el cuaderno</strong>:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">N.º</th>
+<th>Experimento</th>
+<th style="text-align: center;"><code>error</code></th>
+<th><code>size</code></th>
+<th><code>type</code></th>
+<th><code>tmp_name</code></th>
+<th>¿Qué has aprendido?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Envía una foto pequeña</td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Envía sin elegir fichero</td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Envía <code>falso.jpg</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Envía un fichero mayor que <code>upload_max_filesize</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Quita el <code>enctype</code> y envía una foto</td>
+<td style="text-align: center;">—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>¿Dónde aparece <code>foto</code> ahora? ¿Qué contiene?</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Pista para el experimento 4</p>
+<p>Muestra el límite de tu servidor con <code>ini_get('upload_max_filesize')</code> y busca un fichero que lo supere: un vídeo o un <code>.zip</code> sirven. No tiene por qué ser una imagen.</p>
+</div>
+<ol>
+<li>Vuelve a poner el <code>enctype</code>, borra los <code>var_dump()</code> y haz un <em>commit</em>: <code>C03: formulario de subida</code>.</li>
+</ol>
+<hr />
+<h3 id="parte-3-validar-y-guardar-30-min">Parte 3 · Validar y guardar (30 min)</h3>
+<p>Programa por trozos. Prueba cada trozo en el navegador antes de pasar al siguiente y termina cada uno con un <em>commit</em>.</p>
+<p><strong>Trozo 1 · Datos fijos y funciones.</strong></p>
+<ul>
+<li>Define con <code>const</code> la carpeta de subidas (usa <code>__DIR__</code>), el tamaño máximo en bytes y un array asociativo con la <strong>lista blanca</strong> de tipos: la clave es el tipo MIME y el valor es la extensión.</li>
+<li>Escribe la función <code>mensajeErrorSubida(int $codigo): string</code>, que traduce el código de error a un mensaje en castellano que entienda el usuario. Trata al menos <code>UPLOAD_ERR_INI_SIZE</code>, <code>UPLOAD_ERR_PARTIAL</code> y <code>UPLOAD_ERR_NO_FILE</code>, y da un mensaje genérico para los demás.</li>
+<li>Escribe la función <code>tamanoLegible(int $bytes): string</code>: <code>512</code> → <code>512 B</code>, <code>1536</code> → <code>1,5 KB</code>, <code>2621440</code> → <code>2,5 MB</code>.</li>
+</ul>
+<p><strong>Trozo 2 · Validar.</strong></p>
+<ul>
+<li>Distingue la primera visita del envío (<strong>patrón B</strong>). En la primera visita no puede aparecer ningún error ni ningún <em>warning</em>.</li>
+<li>Valida el alias con una expresión regular, aplicando tu decisión 1.2 a).</li>
+<li>Valida el fichero con las cuatro comprobaciones de 1.3, <strong>en tu orden</strong>. Como máximo se muestra un error del fichero: el primero que se encuentre.</li>
+<li>Guarda los errores en un array asociativo cuya clave sea el nombre del campo (<strong>patrón C</strong>).</li>
+</ul>
+<p><strong>Trozo 3 · Guardar.</strong></p>
+<ul>
+<li>Solo si no hay ningún error: crea la carpeta <code>uploads/</code> si no existe, construye el nombre nuevo y mueve el fichero.</li>
+<li>Comprueba lo que devuelve <code>move_uploaded_file()</code>. Si falla, muestra un error; si funciona, muestra una notificación con el nombre con el que se ha guardado.</li>
+</ul>
+<p><strong>Trozo 4 · El HTML.</strong></p>
+<ul>
+<li>Muestra cada error <strong>debajo de su campo</strong> con la clase <code>is-danger</code> de Bulma.</li>
+<li>El formulario conserva el alias si hay errores (<strong>patrón D</strong>) y lo vacía después de una subida correcta.</li>
+<li>Escapa con <code>htmlspecialchars()</code> todo lo que venga del usuario (<strong>patrón E</strong>).</li>
+<li>Indica en la etiqueta del campo los formatos admitidos y el tamaño máximo, usando tus constantes y <code>tamanoLegible()</code>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Tres cosas que no puedes hacer</p>
+<ul>
+<li>Usar <code>$_FILES['foto']['type']</code> o la extensión del nombre original para decidir si es una imagen.</li>
+<li>Usar <code>$_FILES['foto']['name']</code> para construir el nombre o la ruta de destino.</li>
+<li>Guardar el fichero con <code>copy()</code> o <code>rename()</code> en lugar de <code>move_uploaded_file()</code>.</li>
+</ul>
+</div>
+<hr />
+<h3 id="parte-4-la-galeria-15-min">Parte 4 · La galería (15 min)</h3>
+<ol>
+<li>En la zona de lógica, después de procesar el formulario, lee con <code>glob()</code> las imágenes de <code>uploads/</code> y prepara un array <code>$galeria</code>. Cada elemento es un array asociativo con el nombre del fichero, el alias (sácalo del nombre con <code>explode()</code>) y el tamaño legible.</li>
+<li>En el HTML, recorre <code>$galeria</code> con un <code>foreach</code> y muestra cada imagen en una tarjeta de Bulma (<code>card</code>) dentro de <code>columns is-multiline</code>, con el alias y el tamaño. En el HTML no se calcula nada.</li>
+<li>Muestra encima el número de imágenes. Si no hay ninguna, muestra un mensaje en lugar de la galería.</li>
+<li>
+<p>Crea un fichero <code>.gitignore</code> para que Git <strong>no</strong> guarde las imágenes subidas:</p>
+<div class="highlight"><pre><span></span><code>uploads/*
+!uploads/.gitkeep
+</code></pre></div>
+<p>Crea el fichero vacío <code>uploads/.gitkeep</code>, comprueba con <code>git status</code> que las imágenes no aparecen y haz el <em>commit</em>: <code>C03: galería</code>.</p>
+</li>
+</ol>
+<details>
+<summary>Ampliación, si te sobra tiempo</summary>
+<ul>
+<li>Ordena la galería para que las imágenes más recientes salgan primero, con <code>usort()</code> y <code>filemtime()</code>.</li>
+<li>Muestra debajo del formulario los límites del servidor: <code>upload_max_filesize</code> y <code>post_max_size</code>.</li>
+<li>Envía un fichero mayor que <code>post_max_size</code> y observa qué error aparece. Explica por qué en el cuaderno y consigue que el mensaje sea correcto.</li>
+</ul>
+</details>
+<hr />
+<h3 id="parte-5-pruebas-15-min">Parte 5 · Pruebas (15 min)</h3>
+<p>Copia la tabla en el cuaderno. <strong>Antes de ejecutar</strong>, rellena la columna <em>Esperado</em>. Después ejecuta cada caso y rellena <em>Obtenido</em> con ✔ o ✘.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Alias</th>
+<th>Fichero</th>
+<th>Esperado</th>
+<th>Obtenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td><code>ana</code></td>
+<td>Foto JPG pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>luis2</code></td>
+<td>Foto PNG pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>Ana</code></td>
+<td>Foto WebP pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>ana</code></td>
+<td>Imagen de más de 1 MB y menos que <code>upload_max_filesize</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>ana</code></td>
+<td>Fichero mayor que <code>upload_max_filesize</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Límite</td>
+<td><code>ab</code></td>
+<td>Foto pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td>vacío</td>
+<td>Ninguno</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td><code>ana</code></td>
+<td>Ninguno</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Erróneo</td>
+<td><code>ana</code></td>
+<td>Un PDF o un GIF</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Malicioso</td>
+<td><code>ana</code></td>
+<td><code>falso.jpg</code> (texto)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Malicioso</td>
+<td><code>ana</code></td>
+<td>Un <code>.php</code> renombrado a <code>truco.png</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Malicioso</td>
+<td><code>../ana</code></td>
+<td>Foto pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Malicioso</td>
+<td><code>&lt;b&gt;ana&lt;/b&gt;</code></td>
+<td>Foto pequeña</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Engañoso</td>
+<td><code>ana</code></td>
+<td>Una foto PNG renombrada a <code>foto.txt</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Repetido</td>
+<td><code>ana</code></td>
+<td>La misma foto dos veces seguidas</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Persistencia</td>
+<td><code>ana</code></td>
+<td><code>falso.jpg</code></td>
+<td>El alias se conserva; el fichero, no</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Si algún caso da ✘: localiza el fallo con <code>var_dump()</code>, corrígelo, haz un <em>commit</em> y <strong>vuelve a pasar todos los casos</strong>. Anota en el cuaderno qué fallaba y cómo lo has corregido.</p>
+<details>
+<summary>Para pensar</summary>
+<p>Sube una foto correcta y, cuando aparezca el mensaje de éxito, pulsa <span class="keys"><kbd class="key-f5">F5</kbd></span>. ¿Qué pregunta el navegador? ¿Qué pasa en la galería si aceptas? Escribe en el cuaderno por qué ocurre. Aprenderás a evitarlo en la UT4.</p>
+</details>
+<h2 id="entregables">Entregables</h2>
+<ul>
+<li><strong>Cuaderno:</strong> el diagrama, las decisiones y el orden de la parte 1, la tabla de experimentos de la parte 2 y la tabla de pruebas de la parte 5, con tu nombre y la fecha.</li>
+<li><strong>Código:</strong> <code>ut03c03.php</code>, <code>.gitignore</code> y <code>uploads/.gitkeep</code>. <strong>No entregues las imágenes.</strong></li>
+<li><strong>Git:</strong> al menos cuatro <em>commits</em> con mensajes que digan qué se ha hecho.</li>
+</ul>
+<h2 id="entrega-en-moodle">Entrega en Moodle</h2>
+<p>Sube a la tarea <strong>«UT3 · C03 · Galería de fotos»</strong> del aula virtual:</p>
+<ol>
+<li>Un <code>.zip</code> llamado <code>c03-apellido-nombre.zip</code> con <code>ut03c03.php</code>, <code>.gitignore</code> y un fichero <code>git-log.txt</code> con la salida de <code>git log --oneline</code>.</li>
+<li>Un <strong>único PDF</strong> con las fotos o el escaneo de las páginas del cuaderno. La foto debe ser legible; si no se lee, la parte afectada se califica con 0.</li>
+<li>En el comentario de la entrega, el enlace a tu repositorio de <strong>GitHub</strong>.</li>
+</ol>
+<h2 id="rubrica-10-puntos">Rúbrica (10 puntos)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>CE</th>
+<th>Excelente</th>
+<th>Suficiente</th>
+<th>Insuficiente</th>
+<th style="text-align: center;">Puntos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parte 1.</strong> Diagrama, decisiones y orden</td>
+<td>RA3 – CE e)</td>
+<td>Diagrama completo, cuatro decisiones razonadas y orden justificado (1,5)</td>
+<td>Diagrama correcto con dos o tres decisiones, u orden sin justificar (0,75)</td>
+<td>Sin diagrama o sin decisiones (0)</td>
+<td style="text-align: center;">1,5</td>
+</tr>
+<tr>
+<td><strong>Parte 2.</strong> Formulario y experimentos</td>
+<td>RA3 – CE e), CE f) · RA2 – CE f)</td>
+<td>Formulario correcto y los cinco experimentos anotados con su conclusión (1,5)</td>
+<td>Tres o cuatro experimentos, o sin conclusiones (0,75)</td>
+<td>Menos de tres experimentos (0)</td>
+<td style="text-align: center;">1,5</td>
+</tr>
+<tr>
+<td><strong>Parte 3.</strong> Validación</td>
+<td>RA3 – CE a), CE f)</td>
+<td>Alias con expresión regular; fichero con código de error, tamaño y tipo real con lista blanca; un error bajo cada campo (2)</td>
+<td>Falta una comprobación o los errores no van junto a su campo (1)</td>
+<td>Confía en <code>type</code> o en la extensión, o no valida (0)</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td><strong>Parte 3.</strong> Guardado</td>
+<td>RA3 – CE a), CE d)</td>
+<td>Nombre nuevo sin usar el original, extensión de la lista blanca, <code>move_uploaded_file()</code> comprobado y carpeta creada si falta (1,5)</td>
+<td>Guarda bien, pero no comprueba el resultado o no crea la carpeta (0,75)</td>
+<td>Usa el nombre original o no guarda (0)</td>
+<td style="text-align: center;">1,5</td>
+</tr>
+<tr>
+<td><strong>Parte 3.</strong> Funciones y comentarios</td>
+<td>RA3 – CE d), CE g)</td>
+<td>Las dos funciones con tipos y PHPDoc, y un comentario por bloque (1)</td>
+<td>Funciones correctas con pocos comentarios (0,5)</td>
+<td>Sin funciones o sin comentarios (0)</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><strong>Parte 4.</strong> Galería</td>
+<td>RA3 – CE b), CE c)</td>
+<td>Array preparado en la lógica, <code>foreach</code> en el HTML, alias, tamaño, contador y mensaje si está vacía; todo escapado (1)</td>
+<td>Muestra las imágenes, pero calcula en el HTML o le falta algún dato (0,5)</td>
+<td>No muestra la galería (0)</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><strong>Parte 5.</strong> Pruebas</td>
+<td>RA3 – CE f)</td>
+<td>Esperado escrito antes de ejecutar, todos los casos y los fallos anotados y corregidos (1)</td>
+<td>Tabla completa sin anotar los fallos (0,5)</td>
+<td>Tabla incompleta o solo con lo obtenido (0)</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><strong>Git</strong></td>
+<td>—</td>
+<td>Un <em>commit</em> por trozo, <code>.gitignore</code> correcto y ninguna imagen en el repositorio (0,5)</td>
+<td>Pocos <em>commits</em> o imágenes en el repositorio (0,25)</td>
+<td>Un solo <em>commit</em> o ninguno (0)</td>
+<td style="text-align: center;">0,5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Esta actividad cuenta dentro del 50 % de <strong>tareas y prácticas</strong> del RA3.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../P03-resuelta/" class="btn btn-neutral float-left" title="Práctica 03 resuelta"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../P03-resuelta/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
