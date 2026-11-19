@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut04-cookies-sesiones-seguridad/plantillas/respuestas-p03/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>UT04 · P03 · Las cookies por dentro - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT04 \u00b7 P03 \u00b7 Las cookies por dentro";
+        var properdocs_page_input_path = "ut04-cookies-sesiones-seguridad/plantillas/respuestas-p03.md";
+        var properdocs_page_url = "/DWES/ut04-cookies-sesiones-seguridad/plantillas/respuestas-p03/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · ARQUITECTURA Y DESARROLLO WEB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · SINTAXIS BÁSICA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · SINTAXIS AVANZADA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/guia-resolucion/">Guía de Resolución de ejercicios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/c01-tabla/">Ejercicio de Clase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/P03-resuelta/">Práctica 03 resuelta</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/">Subida de Ficheros</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT4 · UT4 · COOKIES, SESIONES Y SEGURIDAD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT04 · P03 · Las cookies por dentro</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut04-p03-las-cookies-por-dentro">UT04 · P03 · Las cookies por dentro</h1>
+<p><strong>Nombre y apellidos:</strong></p>
+<blockquote>
+<p>Contesta debajo de cada apartado. Guarda las capturas en una carpeta <code>capturas/</code> y enlázalas así: <code>![Cookies de la P01](capturas/p03-1.png)</code>.</p>
+</blockquote>
+<h2 id="1-ver">1. Ver</h2>
+<table>
+<thead>
+<tr>
+<th>Cookie</th>
+<th>Valor</th>
+<th>Caducidad</th>
+<th>HttpOnly</th>
+<th>Secure</th>
+<th>SameSite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Captura:</p>
+<h2 id="2-seguir-el-intercambio">2. Seguir el intercambio</h2>
+<p>Cabecera <code>Cookie</code> de la petición:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Cabeceras <code>Set-Cookie</code> de la respuesta:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>¿Coinciden los valores? ¿Por qué?</p>
+<h2 id="3-manipular">3. Manipular</h2>
+<ul>
+<li>Con <code>visitas=abc</code>:</li>
+<li>Con <code>visitas=99999</code>:</li>
+<li>¿Qué impide que alguien se invente su número de visitas?</li>
+</ul>
+<h2 id="4-manipular-el-json">4. Manipular el JSON</h2>
+<ul>
+<li>Qué ves:</li>
+<li>Qué parte de tu código lo ha resuelto:</li>
+</ul>
+<h2 id="5-sin-navegador">5. Sin navegador</h2>
+<p>Salida de la tercera orden:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ul>
+<li>Número de visita que aparece y por qué:</li>
+<li><code>-i</code>:</li>
+<li><code>-c</code>:</li>
+<li><code>-b</code>:</li>
+<li>Contenido de <code>galletas.txt</code>:</li>
+</ul>
+<h2 id="6-enviar-lo-que-quieras">6. Enviar lo que quieras</h2>
+<ul>
+<li>Número que aparece:</li>
+<li>Conclusión:</li>
+</ul>
+<h2 id="7-javascript">7. JavaScript</h2>
+<ul>
+<li>Resultado en la P01:</li>
+<li>Resultado en la P02:</li>
+<li>Explicación:</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

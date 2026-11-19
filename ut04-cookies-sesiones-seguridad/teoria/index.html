@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut04-cookies-sesiones-seguridad/teoria/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Teoría - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Teor\u00eda";
+        var properdocs_page_input_path = "ut04-cookies-sesiones-seguridad/teoria/index.md";
+        var properdocs_page_url = "/DWES/ut04-cookies-sesiones-seguridad/teoria/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · ARQUITECTURA Y DESARROLLO WEB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · SINTAXIS BÁSICA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · SINTAXIS AVANZADA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/guia-resolucion/">Guía de Resolución de ejercicios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/c01-tabla/">Ejercicio de Clase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/P03-resuelta/">Práctica 03 resuelta</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/">Subida de Ficheros</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT4 · UT4 · COOKIES, SESIONES Y SEGURIDAD</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Teoría</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ra-y-contenidos">RA Y CONTENIDOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contenidos">CONTENIDOS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#relacion-con-las-practicas">RELACIÓN CON LAS PRÁCTICAS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calificacion">CALIFICACIÓN</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-el-problema-del-estado-en-http">1. EL PROBLEMA DEL ESTADO EN HTTP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11-mecanismos-para-mantener-el-estado">1.1. Mecanismos para mantener el estado</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-cookies">2. COOKIES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-como-funcionan-dos-cabeceras">2.1. Cómo funcionan: dos cabeceras</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-crear-una-cookie-setcookie">2.2. Crear una cookie: setcookie()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-leer-una-cookie-_cookie">2.3. Leer una cookie: $_COOKIE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#24-modificar-y-borrar-una-cookie">2.4. Modificar y borrar una cookie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#25-guardar-varios-datos-en-una-cookie">2.5. Guardar varios datos en una cookie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#26-las-cookies-no-son-de-fiar">2.6. Las cookies no son de fiar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#27-almacenamiento-en-el-cliente-desde-javascript">2.7. Almacenamiento en el cliente desde JavaScript</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-sesiones">3. SESIONES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-iniciar-la-sesion-y-usar-_session">3.1. Iniciar la sesión y usar $_SESSION</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#32-ejemplo-carrito-de-la-compra">3.2. Ejemplo: carrito de la compra</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#33-configurar-la-sesion">3.3. Configurar la sesión</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#34-caducidad-por-inactividad">3.4. Caducidad por inactividad</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#35-cerrar-la-sesion-por-completo">3.5. Cerrar la sesión por completo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#36-mensajes-flash">3.6. Mensajes flash</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#37-las-sesiones-se-bloquean">3.7. Las sesiones se bloquean</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-mecanismos-de-autenticacion">4. MECANISMOS DE AUTENTICACIÓN</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-autenticacion-y-autorizacion">4.1. Autenticación y autorización</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-mecanismos-disponibles">4.2. Mecanismos disponibles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#43-autenticacion-http-basic">4.3. Autenticación HTTP Basic</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-almacenamiento-seguro-de-contrasenas">5. ALMACENAMIENTO SEGURO DE CONTRASEÑAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-password_hash-y-password_verify">5.1. password_hash() y password_verify()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-actualizar-hashes-antiguos">5.2. Actualizar hashes antiguos</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-inicio-de-sesion-con-formulario-y-control-de-acceso">6. INICIO DE SESIÓN CON FORMULARIO Y CONTROL DE ACCESO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#61-los-usuarios">6.1. Los usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#62-las-funciones-comunes">6.2. Las funciones comunes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#63-el-formulario-de-inicio-de-sesion">6.3. El formulario de inicio de sesión</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#64-las-paginas-protegidas">6.4. Las páginas protegidas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#65-cerrar-la-sesion">6.5. Cerrar la sesión</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#66-recordarme">6.6. «Recordarme»</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-seguridad-en-la-gestion-del-estado">7. SEGURIDAD EN LA GESTIÓN DEL ESTADO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#71-robo-de-sesion-session-hijacking">7.1. Robo de sesión (session hijacking)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#72-fijacion-de-sesion-session-fixation">7.2. Fijación de sesión (session fixation)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#73-csrf-cross-site-request-forgery">7.3. CSRF (Cross-Site Request Forgery)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#74-fuerza-bruta">7.4. Fuerza bruta</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#75-resumen">7.5. Resumen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-herramientas-de-prueba-y-depuracion">8. HERRAMIENTAS DE PRUEBA Y DEPURACIÓN</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#81-herramientas-del-navegador">8.1. Herramientas del navegador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#82-curl-desde-la-terminal">8.2. curl desde la terminal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#83-mostrar-el-estado-mientras-desarrollas">8.3. Mostrar el estado mientras desarrollas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#84-registro-de-errores">8.4. Registro de errores</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#85-depuracion-paso-a-paso-con-xdebug">8.5. Depuración paso a paso con Xdebug</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-autoevaluacion">9. AUTOEVALUACIÓN</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT4 · UT4 · COOKIES, SESIONES Y SEGURIDAD</li>
+      <li class="breadcrumb-item active">Teoría</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut4-cookies-sesiones-y-seguridad">UT4 · COOKIES, SESIONES Y SEGURIDAD</h1>
+<h2 id="ra-y-contenidos">RA Y CONTENIDOS</h2>
+<h3 id="resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</h3>
+<p>En esta unidad se trabaja por completo el <strong>RA4</strong>.</p>
+<p><strong>RA4.</strong> Desarrolla aplicaciones web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CE</th>
+<th>Criterio de evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">a)</td>
+<td>Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.</td>
+</tr>
+<tr>
+<td style="text-align: center;">b)</td>
+<td>Se han utilizado mecanismos para mantener el estado de las aplicaciones web.</td>
+</tr>
+<tr>
+<td style="text-align: center;">c)</td>
+<td>Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.</td>
+</tr>
+<tr>
+<td style="text-align: center;">d)</td>
+<td>Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios.</td>
+</tr>
+<tr>
+<td style="text-align: center;">e)</td>
+<td>Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.</td>
+</tr>
+<tr>
+<td style="text-align: center;">f)</td>
+<td>Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contenidos">CONTENIDOS</h3>
+<ul>
+<li>El problema del estado en HTTP. Mecanismos para mantenerlo.</li>
+<li>Cookies:<ul>
+<li>Creación, lectura, modificación y borrado.</li>
+<li>Atributos de seguridad: <code>Secure</code>, <code>HttpOnly</code> y <code>SameSite</code>.</li>
+</ul>
+</li>
+<li>Almacenamiento en el cliente desde JavaScript: <code>localStorage</code> y <code>sessionStorage</code>.</li>
+<li>Sesiones:<ul>
+<li>Funcionamiento, configuración y ciclo de vida.</li>
+<li>Mensajes <em>flash</em> y caducidad por inactividad.</li>
+</ul>
+</li>
+<li>Autenticación de usuarios:<ul>
+<li>Autenticación y autorización.</li>
+<li>Mecanismos: HTTP Basic, formulario y sesión, tokens, identidad delegada, certificados y doble factor.</li>
+<li>Almacenamiento seguro de contraseñas.</li>
+<li>Control de acceso por roles.</li>
+</ul>
+</li>
+<li>Seguridad: robo y fijación de sesión, CSRF, XSS, fuerza bruta.</li>
+<li>Herramientas de prueba y depuración: herramientas del navegador, <code>curl</code>, registro de errores y Xdebug.</li>
+</ul>
+<h3 id="relacion-con-las-practicas">RELACIÓN CON LAS PRÁCTICAS</h3>
+<table>
+<thead>
+<tr>
+<th>Apartado</th>
+<th>CE principales</th>
+<th>Prácticas del boletín</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. El estado en HTTP</td>
+<td>RA4 – CE a)</td>
+<td>P01, P03</td>
+</tr>
+<tr>
+<td>2. Cookies</td>
+<td>RA4 – CE a), b), c)</td>
+<td>P01, P02, P03</td>
+</tr>
+<tr>
+<td>3. Sesiones</td>
+<td>RA4 – CE b)</td>
+<td>P04, P05, P07</td>
+</tr>
+<tr>
+<td>4. Mecanismos de autenticación</td>
+<td>RA4 – CE d)</td>
+<td>P06, P07</td>
+</tr>
+<tr>
+<td>5 y 6. Contraseñas y login con roles</td>
+<td>RA4 – CE d), e)</td>
+<td>P06, P07, P08</td>
+</tr>
+<tr>
+<td>7. Seguridad</td>
+<td>RA4 – CE b), e)</td>
+<td>P07, P08</td>
+</tr>
+<tr>
+<td>8. Herramientas de depuración</td>
+<td>RA4 – CE f)</td>
+<td>P03, P08</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calificacion">CALIFICACIÓN</h3>
+<p>El RA4 se aprueba con una nota igual o superior a 5. Según la programación docente, la nota se calcula así:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pruebas objetivas y controles</th>
+<th style="text-align: center;">Tareas, ejercicios y prácticas (incluye el cuaderno de clase)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">50 %</td>
+<td style="text-align: center;">50 %</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-el-problema-del-estado-en-http">1. EL PROBLEMA DEL ESTADO EN HTTP</h2>
+<p>En la UT1 viste que HTTP es un protocolo <strong>sin estado</strong> (<em>stateless</em>): cada petición se procesa de forma independiente y, cuando el servidor termina de responder, olvida al cliente. Si pides tres páginas seguidas, para el servidor son tres desconocidos distintos.</p>
+<p>Sin embargo, casi todas las aplicaciones web necesitan <strong>recordar</strong> cosas de un cliente concreto entre una petición y la siguiente:</p>
+<ul>
+<li>Que ya has iniciado sesión y quién eres.</li>
+<li>Qué productos has metido en el carrito.</li>
+<li>En qué paso de un formulario largo te has quedado.</li>
+<li>Tus preferencias: idioma, tema oscuro, número de resultados por página.</li>
+</ul>
+<p>A ese conjunto de datos lo llamamos <strong>estado</strong>. Mantener el estado consiste en conseguir que los datos de un cliente <strong>viajen o se guarden</strong> de forma que la siguiente petición pueda recuperarlos.</p>
+<h3 id="11-mecanismos-para-mantener-el-estado">1.1. Mecanismos para mantener el estado</h3>
+<table>
+<thead>
+<tr>
+<th>Mecanismo</th>
+<th>Dónde se guardan los datos</th>
+<th>Cómo viajan</th>
+<th>Ventajas</th>
+<th>Inconvenientes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parámetros en la URL</strong> (<code>?paso=2</code>)</td>
+<td>En el enlace</td>
+<td>En cada enlace o redirección</td>
+<td>Sencillo; se puede compartir y guardar en marcadores</td>
+<td>Se ven, quedan en el historial y hay que añadirlos a <strong>todos</strong> los enlaces</td>
+</tr>
+<tr>
+<td><strong>Campos ocultos</strong> (<code>&lt;input type="hidden"&gt;</code>)</td>
+<td>En el formulario</td>
+<td>Al enviar el formulario</td>
+<td>No necesita nada especial</td>
+<td>Solo funciona de formulario en formulario; el usuario puede cambiarlos</td>
+</tr>
+<tr>
+<td><strong>Cookies</strong></td>
+<td>En el <strong>navegador</strong></td>
+<td>En la cabecera <code>Cookie</code> de cada petición</td>
+<td>Persisten días o meses; no ocupan el servidor</td>
+<td>Unos 4 KB por cookie; el usuario puede leerlas y <strong>modificarlas</strong></td>
+</tr>
+<tr>
+<td><strong>Sesiones</strong></td>
+<td>En el <strong>servidor</strong></td>
+<td>Solo viaja un identificador (en una cookie)</td>
+<td>Los datos no salen del servidor; sin límite práctico de tamaño</td>
+<td>Ocupan recursos del servidor; caducan</td>
+</tr>
+<tr>
+<td><strong>Web Storage</strong> (<code>localStorage</code>)</td>
+<td>En el navegador</td>
+<td><strong>No viajan</strong>: solo los lee JavaScript</td>
+<td>Hasta unos 5 MB; cómodo desde JavaScript</td>
+<td>El servidor no los ve; accesibles a cualquier script de la página</td>
+</tr>
+<tr>
+<td><strong>Base de datos</strong></td>
+<td>En el servidor</td>
+<td>— (se asocia a un usuario identificado)</td>
+<td>Permanente y compartida entre dispositivos</td>
+<td>Necesita identificar antes al usuario (UT6)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Regla práctica</p>
+<ul>
+<li>Lo que <strong>no importa</strong> que el usuario vea o cambie (idioma, tema), en una <strong>cookie</strong>.</li>
+<li>Lo que <strong>sí importa</strong> (quién es, qué rol tiene, qué hay en su carrito), en la <strong>sesión</strong>.</li>
+<li>Lo que tiene que durar siempre y verse desde cualquier dispositivo, en la <strong>base de datos</strong>.</li>
+</ul>
+</div>
+<hr />
+<h2 id="2-cookies">2. COOKIES</h2>
+<p>Una <strong>cookie</strong> es un par <em>nombre = valor</em> que el servidor pide al navegador que guarde. A partir de ese momento, el navegador la <strong>devuelve automáticamente</strong> en todas las peticiones al mismo sitio, hasta que caduque.</p>
+<h3 id="21-como-funcionan-dos-cabeceras">2.1. Cómo funcionan: dos cabeceras</h3>
+<p>Todo ocurre en las cabeceras HTTP que estudiaste en la UT1:</p>
+<div class="highlight"><pre><span></span><code> 1. GET /index.php                               (primera visita: no hay cookie)
+    ─────────────────────────────────────────►
+ 2. 200 OK
+    Set-Cookie: idioma=es; Max-Age=2592000; Path=/; HttpOnly; SameSite=Lax
+    ◄─────────────────────────────────────────
+                                  (el navegador guarda la cookie)
+ 3. GET /productos.php
+    Cookie: idioma=es                            (la envía él solo)
+    ─────────────────────────────────────────►
+</code></pre></div>
+<ul>
+<li>El servidor <strong>crea</strong> o <strong>modifica</strong> una cookie con la cabecera de respuesta <code>Set-Cookie</code>.</li>
+<li>El navegador la <strong>devuelve</strong> con la cabecera de petición <code>Cookie</code>.</li>
+</ul>
+<h3 id="22-crear-una-cookie-setcookie">2.2. Crear una cookie: <code>setcookie()</code></h3>
+<p>En PHP 8 la forma recomendada es pasar las opciones en un <strong>array asociativo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Guarda el idioma preferido durante 30 días</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s1">'idioma'</span><span class="p">,</span> <span class="s1">'es'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'expires'</span>  <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span>  <span class="c1">// marca de tiempo: ahora + 30 días</span>
+    <span class="s1">'path'</span>     <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>                          <span class="c1">// válida en todo el sitio</span>
+    <span class="s1">'httponly'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>                         <span class="c1">// JavaScript no puede leerla</span>
+    <span class="s1">'samesite'</span> <span class="o">=&gt;</span> <span class="s1">'Lax'</span><span class="p">,</span>                        <span class="c1">// protege frente a CSRF (apartado 7)</span>
+<span class="p">]);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Significado</th>
+<th>Valor habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>expires</code></td>
+<td>Momento en que caduca (marca de tiempo Unix). Con <code>0</code> es una <strong>cookie de sesión</strong>: se borra al cerrar el navegador</td>
+<td><code>time() + segundos</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>Ruta a partir de la cual se envía</td>
+<td><code>'/'</code></td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td>Dominio al que se envía. Si se omite, solo el dominio actual</td>
+<td>Vacío</td>
+</tr>
+<tr>
+<td><code>secure</code></td>
+<td>Solo se envía por <strong>HTTPS</strong></td>
+<td><code>true</code> en producción</td>
+</tr>
+<tr>
+<td><code>httponly</code></td>
+<td>No es accesible desde JavaScript (<code>document.cookie</code>)</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>samesite</code></td>
+<td>Si se envía en peticiones que vienen <strong>de otros sitios</strong>: <code>Strict</code>, <code>Lax</code> o <code>None</code></td>
+<td><code>'Lax'</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Antes de cualquier salida</p>
+<p><code>setcookie()</code> añade una <strong>cabecera</strong> a la respuesta, y las cabeceras van <strong>antes</strong> del cuerpo. Si ya has enviado algo (HTML, un <code>echo</code>, un espacio o una línea en blanco antes de <code>&lt;?php</code>), PHP no puede añadirla y muestra el aviso:</p>
+<p><code>Warning: Cannot modify header information - headers already sent by (output started at …)</code></p>
+<p>Lo mismo ocurre con <code>header()</code> y <code>session_start()</code>. Coloca toda la lógica <strong>al principio</strong> del fichero, antes del <code>&lt;!DOCTYPE html&gt;</code>.</p>
+</div>
+<p><code>setcookie()</code> codifica el valor como en una URL (los espacios, tildes y símbolos se convierten en <code>%20</code>, <code>%C3%B3</code>…) y <code>$_COOKIE</code> lo descodifica al leerlo, así que no tienes que preocuparte por ello.</p>
+<h3 id="23-leer-una-cookie-_cookie">2.3. Leer una cookie: <code>$_COOKIE</code></h3>
+<p>Las cookies que envía el navegador llegan en la superglobal <code>$_COOKIE</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$idioma</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'idioma'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'es'</span><span class="p">;</span>   <span class="c1">// valor por defecto si no existe</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">La cookie nueva no está en <code>$_COOKIE</code> hasta la siguiente petición</p>
+<p><code>$_COOKIE</code> contiene lo que el navegador envió <strong>en esta petición</strong>. Si llamas a <code>setcookie()</code> y a continuación lees <code>$_COOKIE</code>, verás el valor <strong>anterior</strong> (o nada). Si necesitas el valor nuevo en la misma página, usa la variable que acabas de guardar.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Contador de visitas: lee, incrementa y guarda</span>
+<span class="nv">$visitas</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'visitas'</span><span class="p">]</span> <span class="o">??</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nb">setcookie</span><span class="p">(</span><span class="s1">'visitas'</span><span class="p">,</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$visitas</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'expires'</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span><span class="p">,</span>
+    <span class="s1">'path'</span>    <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="k">echo</span> <span class="s2">"Es tu visita número </span><span class="si">$visitas</span><span class="s2">"</span><span class="p">;</span>   <span class="c1">// usa $visitas, no $_COOKIE['visitas']</span>
+</code></pre></div>
+<h3 id="24-modificar-y-borrar-una-cookie">2.4. Modificar y borrar una cookie</h3>
+<ul>
+<li><strong>Modificar:</strong> vuelve a llamar a <code>setcookie()</code> con el mismo nombre (y la misma <code>path</code> y <code>domain</code>) y el nuevo valor.</li>
+<li><strong>Borrar:</strong> no existe una función para borrar. Se le indica al navegador una fecha de caducidad <strong>en el pasado</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Borra la cookie 'visitas'. La ruta debe ser la misma con la que se creó.</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s1">'visitas'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'expires'</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3600</span><span class="p">,</span>
+    <span class="s1">'path'</span>    <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'visitas'</span><span class="p">]);</span>   <span class="c1">// para que el resto del script tampoco la vea</span>
+</code></pre></div>
+<h3 id="25-guardar-varios-datos-en-una-cookie">2.5. Guardar varios datos en una cookie</h3>
+<p>Una cookie solo guarda <strong>texto</strong>. Para guardar varios datos relacionados, convierte un array a <strong>JSON</strong> al guardarlo y vuelve a convertirlo al leerlo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Guardar</span>
+<span class="nv">$preferencias</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'tema'</span> <span class="o">=&gt;</span> <span class="s1">'oscuro'</span><span class="p">,</span> <span class="s1">'letra'</span> <span class="o">=&gt;</span> <span class="s1">'grande'</span><span class="p">];</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s1">'preferencias'</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$preferencias</span><span class="p">),</span> <span class="p">[</span>
+    <span class="s1">'expires'</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span><span class="p">,</span>
+    <span class="s1">'path'</span>    <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>
+    <span class="s1">'httponly'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">'samesite'</span> <span class="o">=&gt;</span> <span class="s1">'Lax'</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="c1">// Leer (en otra petición)</span>
+<span class="nv">$datos</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'preferencias'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$datos</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$datos</span> <span class="o">=</span> <span class="p">[];</span>   <span class="c1">// la cookie no existe o no es JSON válido</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">No uses <code>unserialize()</code> con datos del usuario</p>
+<p>Verás código antiguo que guarda arrays con <code>serialize()</code> y los lee con <code>unserialize()</code>. Con una cookie manipulada, <code>unserialize()</code> puede crear objetos arbitrarios y llegar a ejecutar código en el servidor. Usa siempre JSON.</p>
+</div>
+<h3 id="26-las-cookies-no-son-de-fiar">2.6. Las cookies no son de fiar</h3>
+<p>El usuario puede ver, cambiar o borrar sus cookies en cualquier momento desde las herramientas del navegador (apartado 8) o enviar las que quiera con <code>curl</code>. Por eso:</p>
+<ol>
+<li><strong>Valida</strong> el valor de una cookie como si viniera de un formulario: tipo, rango y lista blanca (UT3).</li>
+<li><strong>Escápalo</strong> con <code>htmlspecialchars()</code> si lo muestras.</li>
+<li><strong>Nunca</strong> decidas permisos con una cookie: una cookie <code>rol=admin</code> la puede escribir cualquiera.</li>
+<li><strong>Nunca</strong> guardes en una cookie contraseñas ni datos personales.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Lista blanca: si la cookie trae un valor no previsto, se usa el de por defecto</span>
+<span class="nv">$temas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'claro'</span><span class="p">,</span> <span class="s1">'oscuro'</span><span class="p">];</span>
+<span class="nv">$tema</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'tema'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'claro'</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$tema</span><span class="p">,</span> <span class="nv">$temas</span><span class="p">,</span> <span class="k">true</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$tema</span> <span class="o">=</span> <span class="s1">'claro'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<details>
+<summary>Ampliación: cookies firmadas</summary>
+<p>Si necesitas detectar que una cookie ha sido modificada, puedes <strong>firmarla</strong>: guarda junto al valor un código calculado con una clave secreta que solo conoce el servidor. Si el usuario cambia el valor, la firma ya no coincide.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">const</span> <span class="no">CLAVE_SECRETA</span> <span class="o">=</span> <span class="s1">'cámbiame-por-una-cadena-larga-y-aleatoria'</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">firmar</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$valor</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$valor</span> <span class="o">.</span> <span class="s1">'|'</span> <span class="o">.</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$valor</span><span class="p">,</span> <span class="nx">CLAVE_SECRETA</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">verificar</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$cookie</span><span class="p">)</span><span class="o">:</span> <span class="o">?</span><span class="nx">string</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nv">$valor</span><span class="p">,</span> <span class="nv">$firma</span><span class="p">]</span> <span class="o">=</span> <span class="nb">array_pad</span><span class="p">(</span><span class="nb">explode</span><span class="p">(</span><span class="s1">'|'</span><span class="p">,</span> <span class="nv">$cookie</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+    <span class="nv">$esperada</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$valor</span><span class="p">,</span> <span class="nx">CLAVE_SECRETA</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">hash_equals</span><span class="p">(</span><span class="nv">$esperada</span><span class="p">,</span> <span class="nv">$firma</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$valor</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>   <span class="c1">// null si la han tocado</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Firmar impide modificar, pero <strong>no</strong> oculta el valor. Los frameworks como CodeIgniter (UT5) ya hacen esto por ti.</p>
+</details>
+<h3 id="27-almacenamiento-en-el-cliente-desde-javascript">2.7. Almacenamiento en el cliente desde JavaScript</h3>
+<p>Además de las cookies, el navegador ofrece el <strong>Web Storage</strong>, que se maneja desde JavaScript (lo estudias a fondo en Desarrollo Web en Entorno Cliente):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="c1">// localStorage: dura hasta que se borre. sessionStorage: hasta cerrar la pestaña.</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'vista'</span><span class="p">,</span><span class="w"> </span><span class="s1">'cuadricula'</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">vista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'vista'</span><span class="p">);</span><span class="w">   </span><span class="c1">// 'cuadricula'</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Cookie</th>
+<th><code>localStorage</code></th>
+<th><code>sessionStorage</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Lo recibe el servidor?</td>
+<td>Sí, en cada petición</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Tamaño</td>
+<td>Unos 4 KB por cookie</td>
+<td>Unos 5 MB por sitio</td>
+<td>Unos 5 MB por sitio</td>
+</tr>
+<tr>
+<td>Duración</td>
+<td>La que fije <code>expires</code></td>
+<td>Indefinida</td>
+<td>Hasta cerrar la pestaña</td>
+</tr>
+<tr>
+<td>Accesible desde JavaScript</td>
+<td>Sí, salvo con <code>HttpOnly</code></td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table>
+<p>Úsalo para preferencias que solo afectan a la interfaz (abrir o cerrar un panel, vista en lista o en cuadrícula). Lo que tenga que conocer PHP va en una cookie o en la sesión.</p>
+<hr />
+<h2 id="3-sesiones">3. SESIONES</h2>
+<p>Con una <strong>sesión</strong>, los datos se guardan en el <strong>servidor</strong> y al navegador solo se le entrega un <strong>identificador</strong> aleatorio, el <em>ID de sesión</em>. En cada petición, el navegador devuelve el ID y PHP recupera los datos que le corresponden.</p>
+<div class="highlight"><pre><span></span><code> Navegador                                Servidor
+ ─────────                                ────────
+ Cookie: PHPSESSID=k3j9…   ───────►   session_start()
+                                       busca el fichero sess_k3j9…
+                                       y lo carga en $_SESSION
+                                              │
+                           ◄───────   tu script lee y cambia $_SESSION
+                                       al terminar, PHP guarda $_SESSION
+                                       en sess_k3j9…
+</code></pre></div>
+<p>El ID viaja en una cookie que, por defecto, se llama <code>PHPSESSID</code>. Los datos <strong>nunca salen del servidor</strong>: el usuario no puede ver ni cambiar lo que hay en <code>$_SESSION</code>.</p>
+<h3 id="31-iniciar-la-sesion-y-usar-_session">3.1. Iniciar la sesión y usar <code>$_SESSION</code></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>   <span class="c1">// crea una sesión nueva o recupera la existente</span>
+
+<span class="c1">// Escribir</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'nombre'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Lucía'</span><span class="p">;</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'P01'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'P07'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">];</span>
+
+<span class="c1">// Leer (en esta o en cualquier petición posterior)</span>
+<span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'nombre'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'invitado'</span><span class="p">;</span>
+
+<span class="c1">// Borrar un dato</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">]);</span>
+</code></pre></div>
+<ul>
+<li><code>session_start()</code> debe llamarse <strong>en cada página</strong> que use la sesión y <strong>antes de cualquier salida</strong>, porque puede enviar la cabecera <code>Set-Cookie</code>.</li>
+<li><code>$_SESSION</code> es un array normal: puedes guardar números, cadenas, arrays… Al terminar el script, PHP lo guarda solo.</li>
+<li>A diferencia de <code>$_COOKIE</code>, los cambios en <code>$_SESSION</code> se ven <strong>inmediatamente</strong>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Comprueba si la sesión ya está iniciada</p>
+<p>Si incluyes ficheros que llaman a <code>session_start()</code>, puedes acabar llamándolo dos veces (y PHP avisa). Protégelo así:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">session_status</span><span class="p">()</span> <span class="o">!==</span> <span class="nx">PHP_SESSION_ACTIVE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">session_start</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<h3 id="32-ejemplo-carrito-de-la-compra">3.2. Ejemplo: carrito de la compra</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="c1">// Productos disponibles (en la UT6 vendrán de una base de datos)</span>
+<span class="nv">$catalogo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'P01'</span> <span class="o">=&gt;</span> <span class="s1">'Teclado'</span><span class="p">,</span> <span class="s1">'P02'</span> <span class="o">=&gt;</span> <span class="s1">'Ratón'</span><span class="p">,</span> <span class="s1">'P03'</span> <span class="o">=&gt;</span> <span class="s1">'Monitor'</span><span class="p">];</span>
+
+<span class="c1">// El carrito es un array: código del producto =&gt; unidades</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">]</span> <span class="o">??=</span> <span class="p">[];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$codigo</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'codigo'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+
+    <span class="c1">// Lista blanca: solo productos que existen</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="nv">$codigo</span><span class="p">,</span> <span class="nv">$catalogo</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">][</span><span class="nv">$codigo</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">][</span><span class="nv">$codigo</span><span class="p">]</span> <span class="o">??</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Patrón POST/Redirect/GET (UT3): al recargar no se vuelve a añadir</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: carrito.php'</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$unidades</span> <span class="o">=</span> <span class="nb">array_sum</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'carrito'</span><span class="p">]);</span>
+</code></pre></div>
+<p>El operador <code>??=</code> (PHP 7.4) asigna el valor solo si la clave no existe o es <code>null</code>.</p>
+<h3 id="33-configurar-la-sesion">3.3. Configurar la sesión</h3>
+<p>El comportamiento de las sesiones se controla con directivas de <code>php.ini</code> que empiezan por <code>session.</code>. Puedes cambiarlas para tu aplicación pasándolas a <code>session_start()</code> <strong>sin</strong> el prefijo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">([</span>
+    <span class="s1">'cookie_httponly'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>    <span class="c1">// JavaScript no puede leer el ID de sesión</span>
+    <span class="s1">'cookie_samesite'</span> <span class="o">=&gt;</span> <span class="s1">'Lax'</span><span class="p">,</span>   <span class="c1">// no se envía en formularios de otros sitios</span>
+    <span class="s1">'cookie_secure'</span>   <span class="o">=&gt;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTPS'</span><span class="p">]),</span>  <span class="c1">// solo por HTTPS si lo hay</span>
+    <span class="s1">'use_strict_mode'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>    <span class="c1">// rechaza ID inventados por el cliente</span>
+<span class="p">]);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Directiva</th>
+<th>Valor por defecto</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session.name</code></td>
+<td><code>PHPSESSID</code></td>
+<td>Nombre de la cookie</td>
+</tr>
+<tr>
+<td><code>session.cookie_lifetime</code></td>
+<td><code>0</code></td>
+<td>Duración de la cookie; <code>0</code> = hasta cerrar el navegador</td>
+</tr>
+<tr>
+<td><code>session.gc_maxlifetime</code></td>
+<td><code>1440</code> (24 min)</td>
+<td>Segundos sin uso tras los que los datos <strong>pueden</strong> borrarse</td>
+</tr>
+<tr>
+<td><code>session.cookie_httponly</code></td>
+<td>Desactivada</td>
+<td>Marca la cookie como <code>HttpOnly</code></td>
+</tr>
+<tr>
+<td><code>session.use_strict_mode</code></td>
+<td><code>0</code></td>
+<td>Si vale <code>1</code>, no acepta un ID que el servidor no haya creado</td>
+</tr>
+<tr>
+<td><code>session.save_path</code></td>
+<td>Depende del sistema</td>
+<td>Carpeta donde se guardan los ficheros <code>sess_…</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">¿Dónde están mis sesiones?</p>
+<p>Ejecuta <code>php -i | grep session.save_path</code> en la terminal (o busca <code>session</code> en la salida de <code>phpinfo()</code>) y abre esa carpeta: verás un fichero <code>sess_</code> seguido del ID por cada sesión, con el contenido de <code>$_SESSION</code> en texto. Compara el nombre con el valor de la cookie <code>PHPSESSID</code> de tu navegador.</p>
+</div>
+<h3 id="34-caducidad-por-inactividad">3.4. Caducidad por inactividad</h3>
+<p><code>session.gc_maxlifetime</code> no garantiza que la sesión caduque a su hora: el recolector de basura de PHP se ejecuta de forma <strong>aleatoria</strong>, de vez en cuando. Si tu aplicación necesita cerrar la sesión tras un tiempo sin actividad (una intranet, un banco), contrólalo tú:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">const</span> <span class="no">INACTIVIDAD_MAXIMA</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>   <span class="c1">// 10 minutos en segundos</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ultimo_acceso'</span><span class="p">])</span>
+    <span class="o">&amp;&amp;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ultimo_acceso'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">INACTIVIDAD_MAXIMA</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Ha pasado demasiado tiempo: se cierra la sesión (apartado 3.5)</span>
+    <span class="nx">cerrarSesion</span><span class="p">();</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: login.php?caducada=1'</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ultimo_acceso'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>   <span class="c1">// se renueva en cada petición</span>
+</code></pre></div>
+<h3 id="35-cerrar-la-sesion-por-completo">3.5. Cerrar la sesión por completo</h3>
+<p>Cerrar una sesión bien requiere <strong>tres pasos</strong>: vaciar los datos, borrar la cookie del navegador y eliminar el fichero del servidor.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">cerrarSesion</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="c1">// 1. Vaciar los datos</span>
+    <span class="nv">$_SESSION</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="c1">// 2. Borrar la cookie del ID, con los mismos parámetros con que se creó</span>
+    <span class="nv">$parametros</span> <span class="o">=</span> <span class="nb">session_get_cookie_params</span><span class="p">();</span>
+    <span class="nb">setcookie</span><span class="p">(</span><span class="nb">session_name</span><span class="p">(),</span> <span class="s1">''</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'expires'</span>  <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3600</span><span class="p">,</span>
+        <span class="s1">'path'</span>     <span class="o">=&gt;</span> <span class="nv">$parametros</span><span class="p">[</span><span class="s1">'path'</span><span class="p">],</span>
+        <span class="s1">'domain'</span>   <span class="o">=&gt;</span> <span class="nv">$parametros</span><span class="p">[</span><span class="s1">'domain'</span><span class="p">],</span>
+        <span class="s1">'secure'</span>   <span class="o">=&gt;</span> <span class="nv">$parametros</span><span class="p">[</span><span class="s1">'secure'</span><span class="p">],</span>
+        <span class="s1">'httponly'</span> <span class="o">=&gt;</span> <span class="nv">$parametros</span><span class="p">[</span><span class="s1">'httponly'</span><span class="p">],</span>
+        <span class="s1">'samesite'</span> <span class="o">=&gt;</span> <span class="nv">$parametros</span><span class="p">[</span><span class="s1">'samesite'</span><span class="p">],</span>
+    <span class="p">]);</span>
+
+    <span class="c1">// 3. Destruir la sesión en el servidor</span>
+    <span class="nb">session_destroy</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>session_destroy()</code> no vacía <code>$_SESSION</code></p>
+<p><code>session_destroy()</code> borra el fichero del servidor, pero el array <code>$_SESSION</code> sigue lleno <strong>hasta que termina el script</strong>. Si solo llamas a <code>session_destroy()</code> y luego muestras la página, todavía verás al usuario «conectado». Por eso se vacía primero con <code>$_SESSION = []</code>.</p>
+</div>
+<h3 id="36-mensajes-flash">3.6. Mensajes <em>flash</em></h3>
+<p>En la UT3 aplicaste el patrón <strong>POST/Redirect/GET</strong>, pero no podías mostrar en la página de destino un mensaje como «Producto añadido». Con la sesión sí: se guarda el mensaje antes de redirigir y se <strong>borra en cuanto se muestra</strong>. Por eso se llama <em>flash</em>: aparece una sola vez.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Guardar un mensaje para la siguiente petición</span>
+<span class="k">function</span> <span class="nf">flash</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$tipo</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$texto</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'flash'</span><span class="p">][]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'tipo'</span> <span class="o">=&gt;</span> <span class="nv">$tipo</span><span class="p">,</span> <span class="s1">'texto'</span> <span class="o">=&gt;</span> <span class="nv">$texto</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// Recuperar los mensajes y borrarlos</span>
+<span class="k">function</span> <span class="nf">obtenerFlash</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+<span class="p">{</span>
+    <span class="nv">$mensajes</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'flash'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+    <span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'flash'</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="nv">$mensajes</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nx">obtenerFlash</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$m</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;div class="notification is-</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$m</span><span class="p">[</span><span class="s1">'tipo'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$m</span><span class="p">[</span><span class="s1">'texto'</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">&lt;/div&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<h3 id="37-las-sesiones-se-bloquean">3.7. Las sesiones se bloquean</h3>
+<p>Mientras un script tiene la sesión abierta, PHP <strong>bloquea</strong> su fichero: si el mismo usuario hace dos peticiones a la vez (dos pestañas, varias peticiones con Axios), la segunda espera a que termine la primera. En scripts que tardan (generar un informe, llamar a un servicio externo), llama a <code>session_write_close()</code> en cuanto termines de escribir en <code>$_SESSION</code>; podrás seguir leyéndola.</p>
+<hr />
+<h2 id="4-mecanismos-de-autenticacion">4. MECANISMOS DE AUTENTICACIÓN</h2>
+<h3 id="41-autenticacion-y-autorizacion">4.1. Autenticación y autorización</h3>
+<p>Son dos preguntas distintas que conviene no confundir:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pregunta</th>
+<th>Ejemplo</th>
+<th>Si falla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autenticación</strong></td>
+<td>¿Quién eres?</td>
+<td>Usuario y contraseña correctos</td>
+<td><code>401 Unauthorized</code> o vuelta al login</td>
+</tr>
+<tr>
+<td><strong>Autorización</strong></td>
+<td>¿Qué puedes hacer?</td>
+<td>Solo el rol <code>admin</code> entra en el panel de administración</td>
+<td><code>403 Forbidden</code></td>
+</tr>
+</tbody>
+</table>
+<p>Primero se autentica (una vez, al iniciar sesión) y después se autoriza (en <strong>cada</strong> petición a una zona protegida).</p>
+<h3 id="42-mecanismos-disponibles">4.2. Mecanismos disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Mecanismo</th>
+<th>Cómo funciona</th>
+<th>Dónde se usa</th>
+<th>Ventajas</th>
+<th>Inconvenientes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP Basic</strong></td>
+<td>El navegador pide usuario y contraseña en un cuadro propio y los envía en <strong>cada</strong> petición en la cabecera <code>Authorization</code></td>
+<td>Paneles internos, entornos de prueba</td>
+<td>Muy sencillo; lo implementa el propio servidor web</td>
+<td>Credenciales solo codificadas en Base64 (no cifradas): exige HTTPS. No hay botón de «cerrar sesión». Interfaz no personalizable</td>
+</tr>
+<tr>
+<td><strong>HTTP Digest</strong></td>
+<td>Como Basic, pero envía un resumen (<em>hash</em>) en lugar de la contraseña</td>
+<td>Casi en desuso</td>
+<td>No envía la contraseña</td>
+<td>Algoritmos antiguos; poco soporte</td>
+</tr>
+<tr>
+<td><strong>Formulario y sesión</strong></td>
+<td>El usuario rellena un formulario; si es correcto, se guarda su identidad en la sesión</td>
+<td>La mayoría de aplicaciones web</td>
+<td>Control total de la interfaz y del flujo; permite cerrar sesión</td>
+<td>Hay que programar bien la seguridad (apartados 5 a 7)</td>
+</tr>
+<tr>
+<td><strong>Tokens</strong> (<em>Bearer</em>, JWT)</td>
+<td>Tras identificarse, el cliente recibe un token que envía en la cabecera <code>Authorization</code></td>
+<td>APIs REST y aplicaciones móviles (UT7)</td>
+<td>No necesita sesión en el servidor; sirve para cualquier cliente</td>
+<td>Revocar un token antes de que caduque es complicado</td>
+</tr>
+<tr>
+<td><strong>Identidad delegada</strong> (OAuth 2.0, OpenID Connect)</td>
+<td>Otro proveedor verifica al usuario y le dice a tu aplicación quién es</td>
+<td>«Iniciar sesión con Google o GitHub»</td>
+<td>El usuario no crea otra contraseña; tú no la guardas</td>
+<td>Dependes de un tercero; configuración más compleja</td>
+</tr>
+<tr>
+<td><strong>Certificado de cliente</strong></td>
+<td>El navegador presenta un certificado digital en la conexión HTTPS</td>
+<td>Administración electrónica (certificado FNMT, DNIe)</td>
+<td>Muy seguro</td>
+<td>El usuario tiene que instalar el certificado</td>
+</tr>
+<tr>
+<td><strong>Doble factor</strong> (2FA/MFA)</td>
+<td>Añade a la contraseña algo que se <em>tiene</em> (código del móvil, llave) o que se <em>es</em> (huella)</td>
+<td>Banca, correo, GitHub</td>
+<td>Una contraseña robada ya no basta</td>
+<td>Más pasos para el usuario</td>
+</tr>
+</tbody>
+</table>
+<p>En esta unidad programas los dos primeros de la lista que se hacen con PHP puro: <strong>HTTP Basic</strong> y <strong>formulario y sesión</strong>. Los tokens los verás en la UT7.</p>
+<h3 id="43-autenticacion-http-basic">4.3. Autenticación HTTP Basic</h3>
+<p>El intercambio es así:</p>
+<div class="highlight"><pre><span></span><code> 1. GET /panel.php
+                    ◄── 401 Unauthorized
+                        WWW-Authenticate: Basic realm="Panel interno"
+    (el navegador muestra su cuadro de usuario y contraseña)
+ 2. GET /panel.php
+    Authorization: Basic YW5hOkFuYSMyMDI2      ← "ana:Ana#2026" en Base64
+                    ◄── 200 OK
+    (a partir de aquí, el navegador repite la cabecera en cada petición)
+</code></pre></div>
+<p>PHP descodifica la cabecera y deja los datos en <code>$_SERVER['PHP_AUTH_USER']</code> y <code>$_SERVER['PHP_AUTH_PW']</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Usuarios permitidos: nombre =&gt; hash de la contraseña (apartado 5)</span>
+<span class="nv">$usuarios</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'ana'</span> <span class="o">=&gt;</span> <span class="s1">'$2y$12$sY7v8Tbgz89e02xQN0uLDu6binsLw4HIf3O31VxJ6mwJZXEmqrsV.'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$usuario</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'PHP_AUTH_USER'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nv">$clave</span>   <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'PHP_AUTH_PW'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+
+<span class="nv">$valido</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$usuarios</span><span class="p">[</span><span class="nv">$usuario</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$clave</span><span class="p">,</span> <span class="nv">$usuarios</span><span class="p">[</span><span class="nv">$usuario</span><span class="p">]);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$valido</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Se pide al navegador que muestre el cuadro de credenciales</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">'WWW-Authenticate: Basic realm="Panel interno", charset="UTF-8"'</span><span class="p">);</span>
+    <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s1">'Necesitas identificarte para ver esta página.'</span><span class="p">;</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s1">'Bienvenida, '</span> <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$usuario</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Base64 no es cifrado</p>
+<p>Copia el valor de la cabecera <code>Authorization</code> desde las herramientas del navegador y escribe en la consola <code>atob('YW5hOkFuYSMyMDI2')</code>: obtienes el usuario y la contraseña. Basic solo es aceptable sobre <strong>HTTPS</strong>.</p>
+</div>
+<hr />
+<h2 id="5-almacenamiento-seguro-de-contrasenas">5. ALMACENAMIENTO SEGURO DE CONTRASEÑAS</h2>
+<p>Una aplicación <strong>nunca</strong> debe guardar las contraseñas tal cual. Si alguien roba el fichero o la base de datos, tendría las contraseñas de todos los usuarios, que además suelen repetirlas en otros sitios.</p>
+<p>Lo que se guarda es un <em><strong>hash</strong></em>: el resultado de aplicar a la contraseña una función de un solo sentido. A partir del hash no se puede obtener la contraseña, pero sí <strong>comprobar</strong> si una contraseña coincide.</p>
+<h3 id="51-password_hash-y-password_verify">5.1. <code>password_hash()</code> y <code>password_verify()</code></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Al dar de alta al usuario: se guarda el hash, nunca la contraseña</span>
+<span class="nv">$hash</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="s1">'Ana#2026'</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
+<span class="c1">// $2y$12$sY7v8Tbgz89e02xQN0uLDu6binsLw4HIf3O31VxJ6mwJZXEmqrsV.</span>
+
+<span class="c1">// Al iniciar sesión: se comprueba la contraseña escrita contra el hash guardado</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">password_verify</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'clave'</span><span class="p">],</span> <span class="nv">$hash</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// contraseña correcta</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Un hash de <code>password_hash()</code> contiene todo lo necesario para comprobarlo:</p>
+<div class="highlight"><pre><span></span><code>$2y$12$sY7v8Tbgz89e02xQN0uLDu6binsLw4HIf3O31VxJ6mwJZXEmqrsV.
+ │   │  └────────── sal ─────────┘└──────────── hash ──────────┘
+ │   └─ coste: 2¹² iteraciones
+ └─ algoritmo: bcrypt
+</code></pre></div>
+<ul>
+<li>La <strong>sal</strong> (<em>salt</em>) es un valor aleatorio distinto para cada hash. Por eso, si ejecutas <code>password_hash()</code> dos veces con la misma contraseña, obtienes <strong>hashes distintos</strong>, y los dos son válidos.</li>
+<li>El <strong>coste</strong> hace el cálculo deliberadamente lento (unas décimas de segundo). Para un usuario no se nota; para un atacante que prueba millones de contraseñas, sí. En PHP 8.4 el coste por defecto de bcrypt es 12.</li>
+<li><code>PASSWORD_DEFAULT</code> usa el algoritmo que PHP considere más adecuado en cada versión. Como puede cambiar, la columna donde se guarde el hash debe admitir <strong>255 caracteres</strong>.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Ni <code>md5()</code> ni <code>sha1()</code></p>
+<p>Son funciones <strong>rápidas</strong>, pensadas para comprobar ficheros, no contraseñas. Con una tarjeta gráfica se prueban miles de millones de contraseñas por segundo, y además existen tablas con los hashes de millones de contraseñas habituales. Tampoco se «cifra» la contraseña con una clave para poder descifrarla después: si la aplicación puede recuperarla, también puede hacerlo quien la robe.</p>
+</div>
+<h3 id="52-actualizar-hashes-antiguos">5.2. Actualizar hashes antiguos</h3>
+<p>Si un día aumenta el coste por defecto o cambia el algoritmo, <code>password_needs_rehash()</code> te dice si un hash guardado está anticuado. El momento de rehacerlo es justo después de un inicio de sesión correcto, que es cuando tienes la contraseña en claro:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">password_verify</span><span class="p">(</span><span class="nv">$clave</span><span class="p">,</span> <span class="nv">$hash</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">password_needs_rehash</span><span class="p">(</span><span class="nv">$hash</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$nuevoHash</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$clave</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
+    <span class="c1">// guardar $nuevoHash en lugar del anterior (en la UT6, con un UPDATE)</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Generar un hash desde la terminal</p>
+<p>Mientras no tengas base de datos, guardarás los usuarios en un array. Para obtener el hash de una contraseña, crea este pequeño script y ejecútalo desde la terminal (funciona igual en Xubuntu, Windows y macOS):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// crear-hash.php · Uso: php crear-hash.php "Contraseña#2026"</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">PHP_SAPI</span> <span class="o">!==</span> <span class="s1">'cli'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s1">'Ejecuta este script desde la terminal.'</span><span class="p">);</span>   <span class="c1">// no debe abrirse en el navegador</span>
+<span class="p">}</span>
+<span class="k">echo</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">),</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>crear-hash.php<span class="w"> </span><span class="s2">"Ana#2026"</span>
+</code></pre></div>
+</div>
+<hr />
+<h2 id="6-inicio-de-sesion-con-formulario-y-control-de-acceso">6. INICIO DE SESIÓN CON FORMULARIO Y CONTROL DE ACCESO</h2>
+<p>Vamos a construir una pequeña aplicación con zona privada. Mientras no tengas base de datos (UT6), los usuarios se guardan en un fichero PHP que devuelve un array.</p>
+<div class="highlight"><pre><span></span><code>app/
+├── datos/
+│   └── usuarios.php      ← usuarios, hashes y roles
+├── includes/
+│   └── auth.php          ← funciones de sesión y control de acceso
+├── login.php             ← formulario de inicio de sesión
+├── privado.php           ← zona para cualquier usuario identificado
+├── admin.php             ← zona solo para el rol admin
+└── logout.php            ← cierre de sesión
+</code></pre></div>
+<h3 id="61-los-usuarios">6.1. Los usuarios</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// datos/usuarios.php</span>
+<span class="c1">// Cada usuario: nombre de usuario =&gt; datos. Las contraseñas están como hash.</span>
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">'ana'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Ana Pérez'</span><span class="p">,</span>
+        <span class="s1">'rol'</span>    <span class="o">=&gt;</span> <span class="s1">'usuario'</span><span class="p">,</span>
+        <span class="s1">'hash'</span>   <span class="o">=&gt;</span> <span class="s1">'$2y$12$sY7v8Tbgz89e02xQN0uLDu6binsLw4HIf3O31VxJ6mwJZXEmqrsV.'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'admin'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Administración'</span><span class="p">,</span>
+        <span class="s1">'rol'</span>    <span class="o">=&gt;</span> <span class="s1">'admin'</span><span class="p">,</span>
+        <span class="s1">'hash'</span>   <span class="o">=&gt;</span> <span class="s1">'$2y$12$zdpEX4D76gFFK3ndqjEgduengrdF4CpbBf32QUHSscP4GQRri6HSO'</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Un fichero incluido con <code>return</code> devuelve ese valor: <code>$usuarios = require __DIR__ . '/datos/usuarios.php';</code>.</p>
+<h3 id="62-las-funciones-comunes">6.2. Las funciones comunes</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// includes/auth.php: se incluye al principio de todas las páginas</span>
+
+<span class="c1">// Inicia la sesión con una configuración segura (apartado 7)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">session_status</span><span class="p">()</span> <span class="o">!==</span> <span class="nx">PHP_SESSION_ACTIVE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">session_start</span><span class="p">([</span>
+        <span class="s1">'cookie_httponly'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">'cookie_samesite'</span> <span class="o">=&gt;</span> <span class="s1">'Lax'</span><span class="p">,</span>
+        <span class="s1">'use_strict_mode'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="sd">/** Escapa un texto para mostrarlo en HTML. */</span>
+<span class="k">function</span> <span class="nf">h</span><span class="p">(</span><span class="o">?</span><span class="nx">string</span> <span class="nv">$texto</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$texto</span> <span class="o">??</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">'UTF-8'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="sd">/** Devuelve los datos del usuario identificado, o null si no hay nadie. */</span>
+<span class="k">function</span> <span class="nf">usuarioActual</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="k">array</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'usuario'</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/** Si no hay nadie identificado, redirige al login y termina el script. */</span>
+<span class="k">function</span> <span class="nf">requiereLogin</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">usuarioActual</span><span class="p">()</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: login.php'</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">;</span>   <span class="c1">// ¡imprescindible!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="sd">/** Además de estar identificado, exige un rol concreto. */</span>
+<span class="k">function</span> <span class="nf">requiereRol</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$rol</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="nx">requiereLogin</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">usuarioActual</span><span class="p">()[</span><span class="s1">'rol'</span><span class="p">]</span> <span class="o">!==</span> <span class="nv">$rol</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">403</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">(</span><span class="s1">'403 · No tienes permiso para ver esta página.'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><code>exit</code> después de redirigir</p>
+<p><code>header('Location: …')</code> solo <strong>añade una cabecera</strong>: el script <strong>sigue ejecutándose</strong> y envía el resto de la página. El navegador obedece la redirección y no la muestra, pero cualquiera que haga la petición con <code>curl</code> verá todo el contenido «protegido». Pon siempre <code>exit;</code> justo después.</p>
+</div>
+<h3 id="63-el-formulario-de-inicio-de-sesion">6.3. El formulario de inicio de sesión</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// login.php</span>
+<span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/includes/auth.php'</span><span class="p">;</span>
+<span class="nv">$usuarios</span> <span class="o">=</span> <span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/datos/usuarios.php'</span><span class="p">;</span>
+
+<span class="nv">$error</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$login</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'usuario'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">);</span>
+    <span class="nv">$clave</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'clave'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+
+    <span class="nv">$datos</span> <span class="o">=</span> <span class="nv">$usuarios</span><span class="p">[</span><span class="nv">$login</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$datos</span> <span class="o">!==</span> <span class="k">null</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$clave</span><span class="p">,</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'hash'</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="c1">// Nuevo ID de sesión al cambiar de privilegios (apartado 7.2)</span>
+        <span class="nb">session_regenerate_id</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+        <span class="c1">// Se guarda lo necesario, nunca la contraseña ni el hash</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'usuario'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'login'</span>  <span class="o">=&gt;</span> <span class="nv">$login</span><span class="p">,</span>
+            <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'nombre'</span><span class="p">],</span>
+            <span class="s1">'rol'</span>    <span class="o">=&gt;</span> <span class="nv">$datos</span><span class="p">[</span><span class="s1">'rol'</span><span class="p">],</span>
+        <span class="p">];</span>
+
+        <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: privado.php'</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Mismo mensaje tanto si el usuario no existe como si la clave es incorrecta</span>
+    <span class="nv">$error</span> <span class="o">=</span> <span class="s1">'Usuario o contraseña incorrectos.'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang="es"&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="x">    &lt;title&gt;Iniciar sesión&lt;/title&gt;</span>
+<span class="x">    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">&lt;section class="section"&gt;</span>
+<span class="x">    &lt;div class="container" style="max-width: 400px;"&gt;</span>
+<span class="x">        &lt;form method="post" class="box"&gt;</span>
+<span class="x">            &lt;h1 class="title"&gt;Iniciar sesión&lt;/h1&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$error</span> <span class="o">!==</span> <span class="s1">''</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">                &lt;div class="notification is-danger"&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">h</span><span class="p">(</span><span class="nv">$error</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&lt;/div&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="label" for="usuario"&gt;Usuario&lt;/label&gt;</span>
+<span class="x">                &lt;input class="input" id="usuario" name="usuario" value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">h</span><span class="p">(</span><span class="nv">$login</span> <span class="o">??</span> <span class="s1">''</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">" required&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div class="field"&gt;</span>
+<span class="x">                &lt;label class="label" for="clave"&gt;Contraseña&lt;/label&gt;</span>
+<span class="x">                &lt;input class="input" type="password" id="clave" name="clave" required&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;button class="button is-link is-fullwidth"&gt;Entrar&lt;/button&gt;</span>
+<span class="x">        &lt;/form&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/section&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Fíjate en tres decisiones:</p>
+<ol>
+<li>El mensaje de error es <strong>el mismo</strong> en los dos casos. Si dijera «el usuario no existe», un atacante podría averiguar qué usuarios hay.</li>
+<li>El formulario conserva el usuario escrito, pero <strong>nunca</strong> la contraseña (UT3).</li>
+<li>En la sesión se guarda el <strong>rol</strong>, que viene de los datos del servidor, nunca de algo que envíe el cliente.</li>
+</ol>
+<h3 id="64-las-paginas-protegidas">6.4. Las páginas protegidas</h3>
+<p>Proteger una página es una sola línea al principio:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// privado.php: cualquier usuario identificado</span>
+<span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/includes/auth.php'</span><span class="p">;</span>
+<span class="nx">requiereLogin</span><span class="p">();</span>
+<span class="nv">$usuario</span> <span class="o">=</span> <span class="nx">usuarioActual</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+<span class="x">&lt;h1 class="title"&gt;Hola, </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">h</span><span class="p">(</span><span class="nv">$usuario</span><span class="p">[</span><span class="s1">'nombre'</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$usuario</span><span class="p">[</span><span class="s1">'rol'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'admin'</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;a href="admin.php"&gt;Ir a administración&lt;/a&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// admin.php: solo el rol admin</span>
+<span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/includes/auth.php'</span><span class="p">;</span>
+<span class="nx">requiereRol</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Que «Atrás» no muestre la página</p>
+<p>Después de cerrar sesión, el botón <strong>Atrás</strong> del navegador puede mostrar una copia guardada de la página privada. Para evitarlo, envía en las páginas protegidas la cabecera <code>header('Cache-Control: no-store');</code>. Puedes ponerla dentro de <code>requiereLogin()</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Ocultar el enlace no es proteger</p>
+<p>Que el enlace a <code>admin.php</code> solo aparezca para los administradores es una cuestión de <strong>interfaz</strong>. Cualquiera puede escribir la URL a mano. La protección real es <code>requiereRol('admin')</code> al principio de <code>admin.php</code>.</p>
+</div>
+<h3 id="65-cerrar-la-sesion">6.5. Cerrar la sesión</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// logout.php</span>
+<span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/includes/auth.php'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">cerrarSesion</span><span class="p">();</span>   <span class="c1">// función del apartado 3.5, guardada en auth.php</span>
+<span class="p">}</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Location: login.php'</span><span class="p">);</span>
+<span class="k">exit</span><span class="p">;</span>
+</code></pre></div>
+<p>El botón de salir es un <strong>formulario POST</strong>, no un enlace. Así otra web no puede cerrar la sesión de tus usuarios con una simple imagen <code>&lt;img src="https://tusitio/logout.php"&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span> <span class="na">action</span><span class="o">=</span><span class="s">"logout.php"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"button is-light"</span><span class="p">&gt;</span>Cerrar sesión<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="66-recordarme">6.6. «Recordarme»</h3>
+<p>Muchas webs ofrecen mantener la sesión abierta durante semanas. <strong>Nunca</strong> se hace guardando el usuario y la contraseña en una cookie. La técnica correcta guarda en la cookie un <strong>token aleatorio</strong> (<code>bin2hex(random_bytes(32))</code>) y en la base de datos su hash, asociado al usuario y con fecha de caducidad. La retomarás cuando tengas base de datos. Lo que sí puedes hacer ya es recordar el <strong>nombre de usuario</strong> para rellenar el formulario.</p>
+<hr />
+<h2 id="7-seguridad-en-la-gestion-del-estado">7. SEGURIDAD EN LA GESTIÓN DEL ESTADO</h2>
+<p>Quien consigue el ID de sesión de otra persona <strong>es</strong> esa persona para tu aplicación. La mayoría de ataques de este apartado buscan eso, o hacer que el navegador de la víctima actúe por ella.</p>
+<h3 id="71-robo-de-sesion-session-hijacking">7.1. Robo de sesión (<em>session hijacking</em>)</h3>
+<p>El atacante obtiene el ID de sesión de la víctima: leyendo la cookie con un script inyectado (XSS), espiando una red wifi sin HTTPS o encontrándolo en una URL compartida.</p>
+<p><strong>Defensas:</strong> cookie de sesión con <code>HttpOnly</code> (los scripts no la leen) y <code>Secure</code> (solo viaja cifrada por HTTPS), escapar toda la salida para evitar XSS, no poner nunca el ID en la URL y limitar la duración de la sesión.</p>
+<h3 id="72-fijacion-de-sesion-session-fixation">7.2. Fijación de sesión (<em>session fixation</em>)</h3>
+<p>El atacante <strong>no roba</strong> el ID: consigue que la víctima use uno que él ya conoce (por ejemplo, con un enlace que lo fija). Cuando la víctima inicia sesión, el atacante, que tiene el mismo ID, entra con ella.</p>
+<p><strong>Defensas:</strong></p>
+<ul>
+<li><code>session_regenerate_id(true)</code> justo después de iniciar sesión (y en cualquier cambio de privilegios). El ID que conocía el atacante deja de valer. El <code>true</code> borra los datos asociados al ID antiguo.</li>
+<li><code>use_strict_mode</code> activado: PHP no acepta un ID que no haya generado él.</li>
+</ul>
+<h3 id="73-csrf-cross-site-request-forgery">7.3. CSRF (<em>Cross-Site Request Forgery</em>)</h3>
+<p>La víctima, que ha iniciado sesión en tu aplicación, visita otra web. Esa web contiene un formulario oculto que se envía solo a tu aplicación (por ejemplo, para cambiar el correo de la cuenta). Como el navegador adjunta las cookies automáticamente, tu servidor recibe una petición <strong>auténtica</strong> de la víctima que ella no ha querido hacer.</p>
+<p><strong>Defensas:</strong></p>
+<ol>
+<li>Cookie de sesión con <code>SameSite=Lax</code>: el navegador no la envía en peticiones POST que vienen de otro sitio.</li>
+<li>Un <strong>token anti-CSRF</strong>: un valor aleatorio guardado en la sesión que se incluye en cada formulario. La otra web no puede conocerlo.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/** Devuelve el token CSRF de la sesión; lo crea si no existe. */</span>
+<span class="k">function</span> <span class="nf">tokenCsrf</span><span class="p">()</span><span class="o">:</span> <span class="nx">string</span>
+<span class="p">{</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf'</span><span class="p">]</span> <span class="o">??=</span> <span class="nb">bin2hex</span><span class="p">(</span><span class="nb">random_bytes</span><span class="p">(</span><span class="mi">32</span><span class="p">));</span>
+    <span class="k">return</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="sd">/** Detiene la petición si el token enviado no coincide con el de la sesión. */</span>
+<span class="k">function</span> <span class="nf">comprobarCsrf</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="nv">$enviado</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'csrf'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$enviado</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="nb">hash_equals</span><span class="p">(</span><span class="nx">tokenCsrf</span><span class="p">(),</span> <span class="nv">$enviado</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nb">http_response_code</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">(</span><span class="s1">'Petición no válida. Recarga la página e inténtalo de nuevo.'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;form method="post"&gt;</span>
+<span class="x">    &lt;input type="hidden" name="csrf" value="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">tokenCsrf</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
+<span class="x">    &lt;!-- resto de campos --&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<p>Y en el procesamiento, lo primero: <code>if ($_SERVER['REQUEST_METHOD'] === 'POST') { comprobarCsrf(); … }</code>.</p>
+<p><code>hash_equals()</code> compara dos cadenas tardando siempre lo mismo, para que el tiempo de respuesta no dé pistas sobre cuántos caracteres coinciden.</p>
+<h3 id="74-fuerza-bruta">7.4. Fuerza bruta</h3>
+<p>Un programa prueba miles de contraseñas contra un usuario. <strong>Defensas:</strong> exigir contraseñas robustas (como en la UT3, P09), hashes lentos (apartado 5) y limitar los intentos: tras varios fallos, bloquear durante unos minutos.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">const</span> <span class="no">MAX_INTENTOS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">BLOQUEO</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>   <span class="c1">// segundos</span>
+
+<span class="nv">$bloqueadoHasta</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'bloqueado_hasta'</span><span class="p">]</span> <span class="o">??</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nv">$bloqueadoHasta</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$error</span> <span class="o">=</span> <span class="s1">'Demasiados intentos. Espera unos minutos.'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// … comprobar las credenciales …</span>
+    <span class="c1">// Si fallan:</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'intentos'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'intentos'</span><span class="p">]</span> <span class="o">??</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'intentos'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nx">MAX_INTENTOS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'bloqueado_hasta'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="nx">BLOQUEO</span><span class="p">;</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'intentos'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Limitación</p>
+<p>Contar los intentos en la sesión sirve para aprender y frena a un usuario con el navegador, pero un atacante con <code>curl</code> simplemente no envía la cookie y obtiene una sesión nueva en cada intento. La solución real guarda los intentos <strong>por usuario y por IP</strong> en la base de datos (UT6).</p>
+</div>
+<h3 id="75-resumen">7.5. Resumen</h3>
+<table>
+<thead>
+<tr>
+<th>Ataque</th>
+<th>Qué consigue el atacante</th>
+<th>Defensas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XSS</strong></td>
+<td>Ejecutar su JavaScript en tu página (y leer cookies, si no son <code>HttpOnly</code>)</td>
+<td><code>htmlspecialchars()</code> en toda la salida; cookies <code>HttpOnly</code></td>
+</tr>
+<tr>
+<td><strong>Robo de sesión</strong></td>
+<td>Usar el ID de otro usuario</td>
+<td><code>HttpOnly</code>, <code>Secure</code> y HTTPS; caducidad; nunca el ID en la URL</td>
+</tr>
+<tr>
+<td><strong>Fijación de sesión</strong></td>
+<td>Imponer a la víctima un ID que él conoce</td>
+<td><code>session_regenerate_id(true)</code> al iniciar sesión; <code>use_strict_mode</code></td>
+</tr>
+<tr>
+<td><strong>CSRF</strong></td>
+<td>Que el navegador de la víctima envíe peticiones en su nombre</td>
+<td>Token anti-CSRF; <code>SameSite=Lax</code>; acciones que cambian datos solo por POST</td>
+</tr>
+<tr>
+<td><strong>Manipulación de cookies</strong></td>
+<td>Cambiar valores que la aplicación cree fiables</td>
+<td>Validar las cookies; los permisos, en la sesión</td>
+</tr>
+<tr>
+<td><strong>Fuerza bruta</strong></td>
+<td>Adivinar contraseñas probando</td>
+<td>Hashes lentos; límite de intentos; contraseñas robustas</td>
+</tr>
+<tr>
+<td><strong>Enumeración de usuarios</strong></td>
+<td>Saber qué usuarios existen</td>
+<td>Mensajes de error genéricos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-herramientas-de-prueba-y-depuracion">8. HERRAMIENTAS DE PRUEBA Y DEPURACIÓN</h2>
+<p>Con cookies y sesiones aparecen errores que no se ven en la página: una cookie que no se guarda, una sesión que se pierde al cambiar de página, una redirección infinita. Estas herramientas te permiten <strong>ver</strong> lo que pasa (RA4 – CE f).</p>
+<h3 id="81-herramientas-del-navegador">8.1. Herramientas del navegador</h3>
+<p>Ábrelas con <span class="keys"><kbd class="key-f12">F12</kbd></span> (o <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-i">I</kbd></span>; en macOS, <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-i">I</kbd></span>).</p>
+<ul>
+<li><strong>Red (<em>Network</em>):</strong> pulsa sobre una petición y mira las cabeceras. En la respuesta busca <code>Set-Cookie</code> y <code>Location</code>; en la petición, <code>Cookie</code>. Marca <strong>Conservar registro</strong> (<em>Preserve log</em>) para no perder las peticiones cuando hay una redirección.</li>
+<li><strong>Aplicación</strong> (Chrome) o <strong>Almacenamiento</strong> (Firefox) → <strong>Cookies:</strong> lista las cookies del sitio con todos sus atributos. Puedes <strong>editar</strong> el valor de una cookie o <strong>borrarla</strong> para comprobar cómo responde tu aplicación ante una cookie manipulada o ante una sesión perdida.</li>
+<li><strong>Ventana privada o de incógnito:</strong> empieza sin cookies. Úsala para probar como otro usuario sin cerrar tu sesión.</li>
+</ul>
+<h3 id="82-curl-desde-la-terminal">8.2. <code>curl</code> desde la terminal</h3>
+<p><code>curl</code> envía peticiones sin el comportamiento «amable» del navegador: no sigue redirecciones si no se lo pides y te enseña la respuesta completa.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># -i muestra las cabeceras de la respuesta</span>
+curl<span class="w"> </span>-i<span class="w"> </span>http://localhost/ut04/privado.php
+
+<span class="c1"># -c guarda las cookies recibidas en un fichero; -b las envía</span>
+curl<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>cookies.txt<span class="w"> </span>-d<span class="w"> </span><span class="s2">"usuario=ana&amp;clave=Ana#2026"</span><span class="w"> </span>http://localhost/ut04/login.php
+curl<span class="w"> </span>-i<span class="w"> </span>-b<span class="w"> </span>cookies.txt<span class="w"> </span>http://localhost/ut04/privado.php
+
+<span class="c1"># Enviar una cookie inventada</span>
+curl<span class="w"> </span>-i<span class="w"> </span>-b<span class="w"> </span><span class="s2">"rol=admin"</span><span class="w"> </span>http://localhost/ut04/admin.php
+</code></pre></div>
+<p>Con la primera orden comprobarás si tu página protegida tiene el <code>exit</code> después de la redirección: si ves el contenido privado debajo de la cabecera <code>Location</code>, no lo tiene. Postman, que usaste en la UT1, también guarda y envía cookies (pestaña <em>Cookies</em> de la respuesta).</p>
+<h3 id="83-mostrar-el-estado-mientras-desarrollas">8.3. Mostrar el estado mientras desarrollas</h3>
+<p>Un bloque temporal al final de la página te enseña qué hay en cada petición:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">'APP_ENV'</span><span class="p">)</span> <span class="o">===</span> <span class="s1">'desarrollo'</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">    &lt;pre&gt;</span><span class="cp">&lt;?php</span>
+        <span class="k">echo</span> <span class="s1">'ID de sesión: '</span><span class="p">,</span> <span class="nb">session_id</span><span class="p">(),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">'$_SESSION = '</span><span class="p">;</span> <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="s1">'$_COOKIE = '</span><span class="p">;</span>  <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">);</span>
+    <span class="cp">?&gt;</span><span class="x">&lt;/pre&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Nunca en producción</p>
+<p>Mostrar el ID de sesión o el contenido de la sesión en una página publicada es regalarle a cualquiera los datos para suplantar al usuario. Si usas este bloque, protégelo con una condición como la del ejemplo y bórralo antes de entregar.</p>
+</div>
+<h3 id="84-registro-de-errores">8.4. Registro de errores</h3>
+<p>En desarrollo conviene ver todos los errores; en producción, <strong>ninguno</strong> en la página, pero todos en un fichero de registro:</p>
+<table>
+<thead>
+<tr>
+<th>Directiva</th>
+<th>Desarrollo</th>
+<th>Producción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error_reporting</code></td>
+<td><code>E_ALL</code></td>
+<td><code>E_ALL</code></td>
+</tr>
+<tr>
+<td><code>display_errors</code></td>
+<td><code>On</code></td>
+<td><code>Off</code></td>
+</tr>
+<tr>
+<td><code>log_errors</code></td>
+<td><code>On</code></td>
+<td><code>On</code></td>
+</tr>
+</tbody>
+</table>
+<p>Con <code>error_log()</code> escribes tus propios mensajes en ese registro sin que el usuario los vea. Es útil para dejar rastro de eventos de seguridad:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">error_log</span><span class="p">(</span><span class="s2">"Login fallido para el usuario '</span><span class="si">$login</span><span class="s2">' desde "</span> <span class="o">.</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">]);</span>
+</code></pre></div>
+<p>Para saber dónde está el fichero: <code>php -i | grep error_log</code>. Si la directiva está vacía, los mensajes van al registro del servidor web. Para verlos en tiempo real: <code>tail -f ruta/del/fichero.log</code>.</p>
+<h3 id="85-depuracion-paso-a-paso-con-xdebug">8.5. Depuración paso a paso con Xdebug</h3>
+<p><strong>Xdebug</strong> es una extensión de PHP que permite detener el script en una línea (<strong>punto de ruptura</strong>, <em>breakpoint</em>), avanzar instrucción a instrucción y ver el valor de todas las variables, incluidas <code>$_SESSION</code>, <code>$_COOKIE</code> y <code>$_SERVER</code>.</p>
+<ol>
+<li>Comprueba que está cargada: <code>php -v</code> debe mostrar <code>with Xdebug</code>. Si no aparece, actívala en la configuración de PHP de tu entorno (Herd o Lerd) o en <code>php.ini</code>.</li>
+<li>
+<p>Configúrala en modo depuración:</p>
+<div class="highlight"><pre><span></span><code><span class="na">xdebug.mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">debug</span>
+<span class="na">xdebug.start_with_request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</code></pre></div>
+</li>
+<li>
+<p>Conecta el editor:</p>
+<ul>
+<li><strong>VS Code:</strong> instala la extensión <em>PHP Debug</em> (de Xdebug), crea la configuración <em>Listen for Xdebug</em> (puerto 9003) y pulsa <span class="keys"><kbd class="key-f5">F5</kbd></span>.</li>
+<li><strong>PhpStorm:</strong> pulsa el icono del teléfono <em>Start Listening for PHP Debug Connections</em>.</li>
+</ul>
+</li>
+<li>Pon un punto de ruptura (clic a la izquierda del número de línea) y carga la página en el navegador. La ejecución se detiene y puedes inspeccionar las variables.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Cuándo usar cada herramienta</p>
+<ul>
+<li>¿La cookie llega o no llega? → Pestaña <strong>Red</strong>.</li>
+<li>¿Qué valor tiene ahora? → <strong>Aplicación/Almacenamiento</strong>.</li>
+<li>¿Por qué entra en ese <code>if</code>? → <strong>Xdebug</strong>.</li>
+<li>¿Está bien protegida la página? → <strong>curl</strong>.</li>
+<li>¿Qué pasó ayer a las 10:15? → <strong>Registro de errores</strong>.</li>
+</ul>
+</div>
+<hr />
+<h2 id="9-autoevaluacion">9. AUTOEVALUACIÓN</h2>
+<div class="admonition question">
+<p class="admonition-title">1. Un script ejecuta <code>setcookie('tema', 'oscuro');</code> y en la línea siguiente <code>echo $_COOKIE['tema'] ?? 'nada';</code>. Es la primera visita. ¿Qué muestra?</p>
+<ul>
+<li>A) <code>oscuro</code></li>
+<li>B) <code>nada</code>, porque <code>$_COOKIE</code> solo contiene lo que envió el navegador en esta petición.</li>
+<li>C) Un error, porque la cookie no tiene fecha de caducidad.</li>
+<li>D) <code>tema=oscuro</code></li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">2. ¿Qué atributo de una cookie impide que un script inyectado mediante XSS la lea con <code>document.cookie</code>?</p>
+<ul>
+<li>A) <code>Secure</code></li>
+<li>B) <code>SameSite=Strict</code></li>
+<li>C) <code>HttpOnly</code></li>
+<li>D) <code>Path=/</code></li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">3. ¿Dónde se guardan los datos de <code>$_SESSION</code>?</p>
+<ul>
+<li>A) En la cookie <code>PHPSESSID</code>, cifrados.</li>
+<li>B) En el servidor; al navegador solo se le envía un identificador.</li>
+<li>C) En el <code>localStorage</code> del navegador.</li>
+<li>D) En un campo oculto de cada formulario.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">4. Para cerrar una sesión por completo hay que…</p>
+<ul>
+<li>A) Llamar solo a <code>session_destroy()</code>.</li>
+<li>B) Hacer <code>unset($_SESSION['usuario'])</code>.</li>
+<li>C) Vaciar <code>$_SESSION</code>, borrar la cookie de sesión y llamar a <code>session_destroy()</code>.</li>
+<li>D) Cerrar la pestaña del navegador.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">5. ¿Para qué sirve llamar a <code>session_regenerate_id(true)</code> justo después de un inicio de sesión correcto?</p>
+<ul>
+<li>A) Para alargar la duración de la sesión.</li>
+<li>B) Para evitar la fijación de sesión: el ID anterior deja de ser válido.</li>
+<li>C) Para cifrar los datos de la sesión.</li>
+<li>D) Para borrar las cookies de preferencias.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">6. ¿Cuál es la forma correcta de guardar la contraseña de un usuario?</p>
+<ul>
+<li>A) <code>md5($clave)</code></li>
+<li>B) <code>base64_encode($clave)</code></li>
+<li>C) <code>password_hash($clave, PASSWORD_DEFAULT)</code></li>
+<li>D) Cifrarla con una clave secreta para poder recuperarla si el usuario la olvida.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">7. Un usuario con rol <code>usuario</code> escribe a mano la URL <code>admin.php</code>. La página comprueba que hay sesión iniciada pero no el rol. ¿Qué falla?</p>
+<ul>
+<li>A) La autenticación.</li>
+<li>B) La autorización.</li>
+<li>C) El token CSRF.</li>
+<li>D) Nada: el enlace a <code>admin.php</code> no se le mostraba.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">8. Una página protegida hace <code>header('Location: login.php');</code> sin <code>exit</code> cuando no hay sesión. ¿Qué pasa si se pide con <code>curl -i</code>?</p>
+<ul>
+<li>A) <code>curl</code> muestra un error 403.</li>
+<li>B) <code>curl</code> sigue la redirección y muestra el login.</li>
+<li>C) <code>curl</code> recibe la cabecera <code>Location</code> y, debajo, el contenido protegido completo.</li>
+<li>D) No ocurre nada: <code>header()</code> detiene el script.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">9. ¿Qué mecanismo de autenticación envía usuario y contraseña en cada petición, codificados en Base64?</p>
+<ul>
+<li>A) Formulario y sesión.</li>
+<li>B) HTTP Basic.</li>
+<li>C) OAuth 2.0.</li>
+<li>D) Certificado de cliente.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">10. Quieres que el botón <strong>Cerrar sesión</strong> no pueda activarse desde otra web. ¿Qué haces?</p>
+<ul>
+<li>A) Usar un enlace <code>&lt;a href="logout.php"&gt;</code>.</li>
+<li>B) Usar un formulario POST con un token anti-CSRF.</li>
+<li>C) Guardar en una cookie que el usuario quiere salir.</li>
+<li>D) Poner <code>target="_blank"</code> en el enlace.</li>
+</ul>
+</div>
+<details>
+<summary>Soluciones</summary>
+<p>1. B) · 2. C) · 3. B) · 4. C) · 5. B) · 6. C) · 7. B) · 8. C) · 9. B) · 10. B)</p>
+</details>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../../ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/" class="btn btn-neutral float-left" title="Subida de Ficheros"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../js/copy-button.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

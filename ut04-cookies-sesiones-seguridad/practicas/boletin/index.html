@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://joaquinalbares.github.io/DWES/ut04-cookies-sesiones-seguridad/practicas/boletin/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>UT4 · Boletín de prácticas: cookies, sesiones y autenticación - Desarrollo Web en Entorno Servidor 2026/27</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "UT4 \u00b7 Bolet\u00edn de pr\u00e1cticas: cookies, sesiones y autenticaci\u00f3n";
+        var properdocs_page_input_path = "ut04-cookies-sesiones-seguridad/practicas/boletin.md";
+        var properdocs_page_url = "/DWES/ut04-cookies-sesiones-seguridad/practicas/boletin/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Desarrollo Web en Entorno Servidor 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Antes de empezar</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/buenas-practicas/">Buenas prácticas en desarrollo web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../previo/configuracion-vscode/">Configuración de VS Code para PHP</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT1 · ARQUITECTURA Y DESARROLLO WEB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-arquitectura-web/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut01-arquitectura-web/practicas/p01-postman-http/">P01 · Postman y peticiones HTTP (GET/POST)</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT2 · SINTAXIS BÁSICA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut02-sintaxis-basica-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT3 · SINTAXIS AVANZADA DE PHP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/teoria/">Teoría</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Prácticas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/guia-resolucion/">Guía de Resolución de ejercicios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/ejemplos-formularios/">Ejemplos de uso de formularios</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/boletin/">Boletín de prácticas</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/c01-tabla/">Ejercicio de Clase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/P03-resuelta/">Práctica 03 resuelta</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ut03-sintaxis-avanzada-php/practicas/c03-subida-ficheros/">Subida de Ficheros</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT4 · UT4 · COOKIES, SESIONES Y SEGURIDAD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/">Teoría</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Desarrollo Web en Entorno Servidor 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">UT4 · Boletín de prácticas: cookies, sesiones y autenticación</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut4-boletin-de-practicas-cookies-sesiones-y-autenticacion">UT4 · Boletín de prácticas: cookies, sesiones y autenticación</h1>
+<p>Este boletín reúne las prácticas de la <strong>UT4 · Cookies, Sesiones y Seguridad</strong>. Están <strong>ordenadas de menor a mayor dificultad</strong> en tres niveles. Hazlas en orden: las últimas reutilizan funciones que escribes en las primeras.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Prácticas</th>
+<th>Qué trabajas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 Básico</td>
+<td>P01 – P03</td>
+<td>Crear, leer, validar y borrar cookies; inspeccionarlas con el navegador y con <code>curl</code></td>
+</tr>
+<tr>
+<td>🟡 Intermedio</td>
+<td>P04 – P06</td>
+<td>Mantener el estado con sesiones, mensajes <em>flash</em> y autenticación HTTP Basic</td>
+</tr>
+<tr>
+<td>🔴 Avanzado</td>
+<td>P07 – P08</td>
+<td>Inicio de sesión con roles, control de acceso, seguridad y depuración</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado de aprendizaje:</strong> RA4 (aplicaciones con mantenimiento de estado y autenticación de usuarios).</p>
+<table>
+<thead>
+<tr>
+<th>Práctica</th>
+<th>RA4 – CE</th>
+<th style="text-align: center;">Duración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P01 · Contador de visitas</td>
+<td>a), c)</td>
+<td style="text-align: center;">45 min</td>
+</tr>
+<tr>
+<td>P02 · Preferencias de aspecto</td>
+<td>b), c)</td>
+<td style="text-align: center;">1 h</td>
+</tr>
+<tr>
+<td>P03 · Las cookies por dentro</td>
+<td>a), c), f)</td>
+<td style="text-align: center;">45 min</td>
+</tr>
+<tr>
+<td>P04 · Carrito de la compra</td>
+<td>a), b)</td>
+<td style="text-align: center;">1,5 h</td>
+</tr>
+<tr>
+<td>P05 · Inscripción en tres pasos</td>
+<td>b)</td>
+<td style="text-align: center;">1 h</td>
+</tr>
+<tr>
+<td>P06 · Panel con HTTP Basic</td>
+<td>d), e)</td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr>
+<td>P07 · Intranet con roles</td>
+<td>b), d), e)</td>
+<td style="text-align: center;">2,5 h</td>
+</tr>
+<tr>
+<td>P08 · Reto: auditoría de una aplicación insegura</td>
+<td>e), f)</td>
+<td style="text-align: center;">2 h</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Requisitos comunes a todas las prácticas</p>
+<ul>
+<li><strong>Entorno:</strong> Herd (Windows/macOS) o Lerd (Xubuntu) con PHP 8.4. Navegador con herramientas de desarrollo (Firefox, Chrome o Brave) y <code>curl</code>.</li>
+<li><strong>Estilos:</strong> Bulma 1.x y Font Awesome por CDN. No hace falta JavaScript.</li>
+<li><strong>Cabeceras primero:</strong> <code>setcookie()</code>, <code>session_start()</code> y <code>header()</code> van <strong>antes</strong> de cualquier salida. Pon la lógica al principio del fichero y el HTML al final.</li>
+<li><strong>Seguridad mínima:</strong> escapa todo lo que muestres con <code>htmlspecialchars()</code> (o tu función <code>h()</code>). Valida las cookies igual que los datos de un formulario. Después de cada <code>header('Location: …')</code>, <code>exit</code>.</li>
+<li><strong>Código comentado:</strong> explica qué hace cada bloque.</li>
+<li><strong>Nombres de fichero:</strong> <code>ut04p01.php</code>, <code>ut04p02.php</code>… Las prácticas P07 y P08 son aplicaciones de varios ficheros: van en las carpetas <code>p07/</code> y <code>p08/</code>.</li>
+<li><strong>Git:</strong> un <em>commit</em> por práctica terminada, con un mensaje del tipo <code>P04: carrito con sesiones</code>. En la P08, un <em>commit</em> por cada fallo corregido.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Plantillas para empezar</p>
+<p>Descarga <strong><a href="../plantillas-ut04.zip">plantillas-ut04.zip</a></strong>. Tiene un fichero por práctica con el HTML y los estilos ya hechos, y comentarios <code>TODO</code> donde tienes que escribir el código PHP. Incluye también:</p>
+<ul>
+<li><code>catalogo.php</code> para la P04 y <code>respuestas-p03.md</code> para la P03.</li>
+<li><code>crear-hash.php</code>, para generar el hash de una contraseña desde la terminal: <code>php crear-hash.php "Tecnico#2026"</code>.</li>
+<li>La carpeta <code>p07/</code>, con el fichero de usuarios y el esqueleto de la aplicación.</li>
+<li>La carpeta <code>p08/</code>, con la aplicación que tienes que auditar.</li>
+</ul>
+<p>Descomprímelo en la carpeta de tu servidor local, pero <strong>mantén los atributos <code>name</code> de los formularios</strong>.</p>
+</div>
+<hr />
+<h2 id="nivel-basico">🟢 Nivel básico</h2>
+<h3 id="p01-contador-de-visitas-con-cookies">P01 · Contador de visitas con cookies</h3>
+<p><strong>RA/CE:</strong> RA4 – CE a), c) · <strong>Duración:</strong> 45 min</p>
+<p><strong>Objetivo:</strong> guardar información en el navegador del usuario y recuperarla en visitas posteriores.</p>
+<p>Crea <code>ut04p01.php</code>, una página que recuerde cuántas veces la ha visitado el usuario y cuándo fue la última vez. Usa dos cookies que duren <strong>30 días</strong>:</p>
+<ul>
+<li><code>visitas</code>: número de visitas.</li>
+<li><code>ultima_visita</code>: marca de tiempo (<code>time()</code>) de la visita anterior.</li>
+</ul>
+<p>La página muestra:</p>
+<ul>
+<li>En la primera visita: <strong>¡Bienvenido! Es la primera vez que entras.</strong></li>
+<li>En las siguientes: <strong>Es tu visita número 4. Tu última visita fue el 06/11/2026 a las 10:35.</strong></li>
+</ul>
+<p>Añade un botón <strong>Olvidarme</strong> (formulario POST) que borre las dos cookies y vuelva a cargar la página con una redirección.</p>
+<p>Requisitos:</p>
+<ol>
+<li>Valida las cookies: <code>visitas</code> debe ser un entero mayor o igual que 0 y <code>ultima_visita</code> un entero positivo. Si no lo son, trátalas como si no existieran.</li>
+<li>Recuerda que <code>$_COOKIE</code> tiene los valores <strong>de esta petición</strong>: calcula el número de visita en una variable y muestra esa variable.</li>
+<li>Formatea la fecha con <code>date('d/m/Y \a \l\a\s H:i', …)</code> y la zona horaria <code>Europe/Madrid</code> (<code>date_default_timezone_set()</code>).</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Dibuja el intercambio de cabeceras de las <strong>tres primeras visitas</strong>: para cada petición, qué cabecera <code>Cookie</code> envía el navegador y qué cabeceras <code>Set-Cookie</code> devuelve el servidor, con sus valores.</p>
+</div>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>El contador aumenta en cada recarga y se mantiene al cerrar y abrir el navegador.</li>
+<li>La fecha mostrada es la de la visita <strong>anterior</strong>, no la actual.</li>
+<li><strong>Olvidarme</strong> borra las dos cookies y la página vuelve a dar la bienvenida.</li>
+<li>Una cookie <code>visitas=abc</code> no provoca errores ni se muestra tal cual.</li>
+</ul>
+<hr />
+<h3 id="p02-preferencias-de-aspecto">P02 · Preferencias de aspecto</h3>
+<p><strong>RA/CE:</strong> RA4 – CE b), c) · <strong>Duración:</strong> 1 h</p>
+<p><strong>Objetivo:</strong> guardar varias preferencias en una cookie con JSON y aplicarlas en cada visita.</p>
+<p>Crea <code>ut04p02.php</code>, una página con un formulario de preferencias que se recuerden durante <strong>un año</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Preferencia</th>
+<th>Clave (<code>name</code>)</th>
+<th>Control</th>
+<th>Valores permitidos</th>
+<th>Por defecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tema</td>
+<td><code>tema</code></td>
+<td><code>radio</code></td>
+<td><code>claro</code>, <code>oscuro</code></td>
+<td><code>claro</code></td>
+</tr>
+<tr>
+<td>Tamaño de letra</td>
+<td><code>letra</code></td>
+<td><code>select</code></td>
+<td><code>pequena</code>, <code>normal</code>, <code>grande</code></td>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<td>Idioma de la página</td>
+<td><code>idioma</code></td>
+<td><code>select</code></td>
+<td><code>es</code>, <code>en</code></td>
+<td><code>es</code></td>
+</tr>
+</tbody>
+</table>
+<p>Requisitos:</p>
+<ol>
+<li>Guarda las tres preferencias en <strong>una sola cookie</strong> llamada <code>preferencias</code>, con el array convertido a JSON. Usa las opciones <code>httponly</code> y <code>samesite</code> = <code>Lax</code>.</li>
+<li>Al cargar la página, lee la cookie con <code>json_decode()</code> y valida <strong>cada</strong> preferencia con una <strong>lista blanca</strong>. Si una no es válida o falta, usa su valor por defecto.</li>
+<li>Aplica las preferencias:<ul>
+<li><strong>Tema:</strong> Bulma 1.x cambia de tema con el atributo <code>data-theme="dark"</code> o <code>data-theme="light"</code> en la etiqueta <code>&lt;html&gt;</code>.</li>
+<li><strong>Tamaño de letra:</strong> cambia el tamaño base de la página (<code>14px</code>, <code>16px</code> o <code>18px</code>) con el atributo <code>style</code> de <code>&lt;html&gt;</code>.</li>
+<li><strong>Idioma:</strong> guarda los textos de la página en un array <code>$textos['es'][…]</code> y <code>$textos['en'][…]</code> y muestra los del idioma elegido.</li>
+</ul>
+</li>
+<li>El formulario es <strong>persistente</strong>: muestra marcadas las preferencias actuales.</li>
+<li>Tras guardar, aplica <strong>POST/Redirect/GET</strong> y muestra el aviso «Preferencias guardadas» (llega con <code>?guardado=1</code>).</li>
+<li>Un botón <strong>Restablecer</strong> borra la cookie.</li>
+</ol>
+<details>
+<summary>Para pensar</summary>
+<p>¿Por qué aquí no importa que el usuario pueda cambiar la cookie a mano? ¿Pasaría lo mismo con una cookie <code>es_administrador=1</code>?</p>
+</details>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>Las preferencias se aplican y se mantienen al cerrar el navegador.</li>
+<li>Solo existe <strong>una</strong> cookie, con JSON válido.</li>
+<li>Con una cookie manipulada (<code>{"tema":"rosa"}</code> o un texto que no es JSON) la página usa los valores por defecto sin errores.</li>
+<li>Recargar después de guardar no vuelve a enviar el formulario.</li>
+</ul>
+<hr />
+<h3 id="p03-las-cookies-por-dentro">P03 · Las cookies por dentro</h3>
+<p><strong>RA/CE:</strong> RA4 – CE a), c), f) · <strong>Duración:</strong> 45 min</p>
+<p><strong>Objetivo:</strong> usar las herramientas del navegador y <code>curl</code> para observar, modificar y probar cookies.</p>
+<p>Esta práctica no tiene código nuevo: trabajas sobre tus soluciones de la P01 y la P02. Copia la plantilla <code>respuestas-p03.md</code> y contesta en ella cada apartado, con capturas de pantalla donde se pidan.</p>
+<ol>
+<li><strong>Ver.</strong> Abre la P01, ve a <em>Aplicación</em> (Chrome) o <em>Almacenamiento</em> (Firefox) → <em>Cookies</em>. Anota el nombre, el valor, la fecha de caducidad y los atributos <code>HttpOnly</code>, <code>Secure</code> y <code>SameSite</code> de cada cookie. <strong>Captura.</strong></li>
+<li><strong>Seguir el intercambio.</strong> En la pestaña <em>Red</em>, recarga la P01. Copia la cabecera <code>Cookie</code> de la petición y las cabeceras <code>Set-Cookie</code> de la respuesta. ¿Coinciden los valores? ¿Por qué no?</li>
+<li><strong>Manipular.</strong> Edita a mano la cookie <code>visitas</code> y escribe <code>abc</code>; recarga. Después escribe <code>99999</code>. ¿Qué hace tu aplicación en cada caso? ¿Qué impide que alguien se invente su número de visitas?</li>
+<li><strong>Manipular el JSON.</strong> En la P02, cambia la cookie <code>preferencias</code> a <code>{"tema":"rosa","letra":"enorme","idioma":"fr"}</code>. ¿Qué ves? Explica qué parte de tu código lo ha resuelto.</li>
+<li>
+<p><strong>Sin navegador.</strong> Ejecuta en la terminal (ajusta la URL a la tuya):</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost/ut04/ut04p01.php
+curl<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>galletas.txt<span class="w"> </span>-b<span class="w"> </span>galletas.txt<span class="w"> </span>http://localhost/ut04/ut04p01.php
+curl<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>galletas.txt<span class="w"> </span>-b<span class="w"> </span>galletas.txt<span class="w"> </span>http://localhost/ut04/ut04p01.php
+</code></pre></div>
+<p>Copia la salida de la tercera orden. ¿Qué número de visita aparece? ¿Qué hace cada opción <code>-i</code>, <code>-c</code> y <code>-b</code>? Abre <code>galletas.txt</code> y explica su contenido.
+6. <strong>Enviar lo que quieras.</strong> Ejecuta <code>curl -b "visitas=41" http://localhost/ut04/ut04p01.php</code>. ¿Qué número aparece? ¿Qué conclusión sacas sobre la confianza que merece una cookie?
+7. <strong>JavaScript.</strong> En la consola del navegador, escribe <code>document.cookie</code> en la P01 y en la P02. ¿Por qué ves unas cookies y otras no?</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Haz una tabla de cuatro columnas: <strong>cookie · <code>localStorage</code> · <code>sessionStorage</code> · sesión de PHP</strong>, con estas filas: dónde se guarda, quién puede leerlo, si viaja al servidor, cuánto dura y un ejemplo de uso adecuado.</p>
+</div>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>Las respuestas son correctas y se apoyan en lo que se ve en las capturas y en la salida de <code>curl</code>.</li>
+<li>Se explica la diferencia entre la cabecera <code>Cookie</code> y <code>Set-Cookie</code>.</li>
+<li>La conclusión de los apartados 3 y 6 relaciona la manipulación con la necesidad de validar.</li>
+</ul>
+<hr />
+<h2 id="nivel-intermedio">🟡 Nivel intermedio</h2>
+<h3 id="p04-carrito-de-la-compra-con-sesiones">P04 · Carrito de la compra con sesiones</h3>
+<p><strong>RA/CE:</strong> RA4 – CE a), b) · <strong>Duración:</strong> 1,5 h</p>
+<p><strong>Objetivo:</strong> mantener en el servidor el estado de un usuario a lo largo de varias peticiones.</p>
+<p>Crea <code>ut04p04.php</code>, una tienda de una sola página con un catálogo y un carrito. El catálogo está en <code>catalogo.php</code> (en la plantilla):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Código del producto =&gt; datos</span>
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">'TEC01'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Teclado mecánico'</span><span class="p">,</span>   <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">69.90</span><span class="p">],</span>
+    <span class="s1">'RAT02'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Ratón inalámbrico'</span><span class="p">,</span>  <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">24.50</span><span class="p">],</span>
+    <span class="s1">'MON03'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Monitor 27"'</span><span class="p">,</span>        <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">229.00</span><span class="p">],</span>
+    <span class="s1">'AUR04'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Auriculares USB-C'</span><span class="p">,</span>  <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">39.95</span><span class="p">],</span>
+    <span class="s1">'WEB05'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Cámara web Full HD'</span><span class="p">,</span> <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">49.00</span><span class="p">],</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ol>
+<li>El carrito se guarda en <code>$_SESSION['carrito']</code> como un array <strong>código ⇒ unidades</strong>.</li>
+<li>Todas las acciones son formularios <strong>POST</strong> con un campo <code>accion</code>:<ul>
+<li><code>anadir</code>: código y cantidad (entero de 1 a 10). Si el producto ya está, suma las unidades. Máximo 20 unidades por producto.</li>
+<li><code>quitar</code>: elimina un producto del carrito.</li>
+<li><code>vaciar</code>: vacía el carrito.</li>
+</ul>
+</li>
+<li>Valida el código con una <strong>lista blanca</strong> (las claves de <code>catalogo.php</code>) y la cantidad con <code>filter_input()</code>.</li>
+<li>Tras cada acción, guarda un <strong>mensaje <em>flash</em></strong> («Has añadido 2 × Teclado mecánico») y redirige a la misma página (<strong>POST/Redirect/GET</strong>). Escribe las funciones <code>flash()</code> y <code>obtenerFlash()</code>.</li>
+<li>Muestra:<ul>
+<li>El catálogo, con un formulario por producto.</li>
+<li>El carrito en una tabla: producto, precio, unidades, subtotal y botón <strong>Quitar</strong>. Debajo, el <strong>total</strong> con formato <code>1.234,56 €</code>.</li>
+<li>En la barra superior, un contador con el <strong>número total de unidades</strong>.</li>
+<li>Si el carrito está vacío, un aviso en lugar de la tabla.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Haz la traza de <code>$_SESSION['carrito']</code> después de cada una de estas acciones: añadir 2 × <code>TEC01</code>, añadir 1 × <code>MON03</code>, añadir 1 × <code>TEC01</code>, quitar <code>MON03</code>, añadir 25 × <code>RAT02</code>.</p>
+</div>
+<details>
+<summary>Para pensar</summary>
+<p>Abre la tienda en una ventana privada. ¿Ves el mismo carrito? ¿Y si copias el valor de la cookie <code>PHPSESSID</code> de una ventana a la otra con las herramientas del navegador? ¿Qué nombre tiene ese ataque y cómo se previene?</p>
+</details>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>El carrito se conserva al navegar y recargar, y es distinto en otra ventana privada.</li>
+<li>Las cantidades se suman y respetan los límites; códigos o cantidades inventados se rechazan.</li>
+<li>Los mensajes aparecen una sola vez y recargar no repite la acción.</li>
+<li>El total y los subtotales son correctos y tienen formato español.</li>
+</ul>
+<hr />
+<h3 id="p05-inscripcion-en-tres-pasos">P05 · Inscripción en tres pasos</h3>
+<p><strong>RA/CE:</strong> RA4 – CE b) · <strong>Duración:</strong> 1 h</p>
+<p><strong>Objetivo:</strong> usar la sesión para conservar los datos de un formulario dividido en varias pantallas.</p>
+<p>Crea <code>ut04p05.php</code>, un asistente para inscribirse en un curso de verano. El paso actual llega por GET (<code>?paso=1</code>, <code>?paso=2</code>, <code>?paso=3</code>) y los datos se acumulan en <code>$_SESSION['inscripcion']</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Campos</th>
+<th>Validación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 · Datos personales</td>
+<td>Nombre y correo electrónico</td>
+<td>Nombre de 2 a 60 caracteres; correo con <code>filter_var()</code></td>
+</tr>
+<tr>
+<td>2 · Curso</td>
+<td>Curso (<code>select</code>) y modalidad (<code>radio</code>: presencial / en línea)</td>
+<td>Lista blanca en los dos</td>
+</tr>
+<tr>
+<td>3 · Confirmación</td>
+<td>Resumen de todos los datos y botón <strong>Confirmar</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Cursos disponibles: <code>php</code> (Iniciación a PHP), <code>git</code> (Git y GitHub), <code>bulma</code> (Maquetación con Bulma), <code>ci4</code> (CodeIgniter 4).</p>
+<p>Requisitos:</p>
+<ol>
+<li>Cada paso se envía por POST. Si es válido, guarda sus datos en la sesión y <strong>redirige</strong> al paso siguiente; si no, muestra los errores en el mismo paso.</li>
+<li><strong>Control del flujo:</strong> no se puede llegar al paso 2 sin haber completado el 1, ni al 3 sin haber completado el 2. Si alguien escribe <code>?paso=3</code> a mano, redirígelo al primer paso que le falte.</li>
+<li>Cada paso tiene un botón <strong>Atrás</strong> (salvo el primero) y los campos se rellenan con lo que ya hay en la sesión.</li>
+<li>Muestra un indicador de progreso (componente <code>steps</code> o <code>tabs</code> de Bulma, o una barra <code>progress</code>).</li>
+<li><strong>Confirmar</strong> muestra un mensaje final con un número de inscripción aleatorio y borra <code>$_SESSION['inscripcion']</code>. Un botón <strong>Cancelar</strong>, disponible en todos los pasos, también la borra.</li>
+</ol>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>Los datos se conservan al ir adelante y atrás.</li>
+<li>No se puede saltar pasos escribiendo la URL.</li>
+<li>Tras confirmar o cancelar, el asistente empieza vacío.</li>
+<li>Todos los datos se validan y se muestran escapados.</li>
+</ul>
+<hr />
+<h3 id="p06-panel-con-autenticacion-http-basic">P06 · Panel con autenticación HTTP Basic</h3>
+<p><strong>RA/CE:</strong> RA4 – CE d), e) · <strong>Duración:</strong> 30 min</p>
+<p><strong>Objetivo:</strong> proteger una página con el mecanismo de autenticación más sencillo de HTTP y conocer sus límites.</p>
+<p>Crea <code>ut04p06.php</code>, un panel de estado del servidor protegido con <strong>HTTP Basic</strong>.</p>
+<ol>
+<li>Los usuarios autorizados están en un array <code>usuario ⇒ hash</code>. Crea dos: <code>tecnico</code> / <code>Tecnico#2026</code> y <code>jefa</code> / <code>Jefa#2026</code>. Genera los hashes con <code>crear-hash.php</code> (apartado 5 de la teoría).</li>
+<li>Si no llegan credenciales o no son válidas, responde con el código <strong>401</strong> y la cabecera <code>WWW-Authenticate: Basic realm="Panel del servidor"</code>.</li>
+<li>Si son válidas, muestra: el usuario identificado, la fecha y hora, la versión de PHP (<code>PHP_VERSION</code>), el software del servidor y la IP del cliente (de <code>$_SERVER</code>).</li>
+</ol>
+<p>Comprueba y responde en el propio fichero, en un comentario al final:</p>
+<ul>
+<li>En la pestaña <em>Red</em>, copia el valor de la cabecera <code>Authorization</code> y descodifícalo en la consola con <code>atob('…')</code>. ¿Qué obtienes?</li>
+<li>¿Cómo «cierras la sesión»? ¿Qué pasa si cierras la pestaña y vuelves a entrar?</li>
+<li>Prueba con <code>curl -i -u tecnico:Tecnico#2026 …</code> y sin <code>-u</code>. ¿Qué código de estado recibes en cada caso?</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Completa una tabla comparando <strong>HTTP Basic</strong> y <strong>formulario + sesión</strong>: dónde se piden las credenciales, cuántas veces viajan, cómo se cierra la sesión, si se puede personalizar la interfaz y cuándo usarías cada uno.</p>
+</div>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>Sin credenciales o con credenciales erróneas se recibe un 401 y el navegador muestra su cuadro.</li>
+<li>Las contraseñas se comprueban con <code>password_verify()</code>; no están en claro en el código.</li>
+<li>Las respuestas a las preguntas son correctas.</li>
+</ul>
+<hr />
+<h2 id="nivel-avanzado">🔴 Nivel avanzado</h2>
+<h3 id="p07-intranet-con-inicio-de-sesion-y-roles">P07 · Intranet con inicio de sesión y roles</h3>
+<p><strong>RA/CE:</strong> RA4 – CE b), d), e) · <strong>Duración:</strong> 2,5 h</p>
+<p><strong>Objetivo:</strong> escribir una aplicación con autenticación por formulario, control de acceso por roles y las medidas de seguridad de la unidad.</p>
+<p>Crea, en la carpeta <code>p07/</code>, la intranet del departamento de Informática con esta estructura:</p>
+<div class="highlight"><pre><span></span><code>p07/
+├── datos/usuarios.php     ← en la plantilla (no lo cambies, salvo para la ampliación)
+├── includes/
+│   ├── auth.php           ← tus funciones
+│   ├── cabecera.php       ← HTML inicial, barra de navegación y mensajes flash
+│   └── pie.php            ← cierre del HTML (ya hecho)
+├── login.php
+├── panel.php              ← cualquier usuario identificado
+├── admin.php              ← solo el rol admin
+└── logout.php
+</code></pre></div>
+<p>Usuarios de prueba (los hashes están en <code>datos/usuarios.php</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Usuario</th>
+<th>Contraseña</th>
+<th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ana</code></td>
+<td><code>Ana#2026</code></td>
+<td><code>usuario</code></td>
+</tr>
+<tr>
+<td><code>luis</code></td>
+<td><code>Luis#2026</code></td>
+<td><code>usuario</code></td>
+</tr>
+<tr>
+<td><code>admin</code></td>
+<td><code>Admin#2026</code></td>
+<td><code>admin</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requisitos de funcionamiento:</strong></p>
+<ol>
+<li><strong>Login</strong> (<code>login.php</code>): formulario POST con usuario y contraseña. Si son correctos, guarda en la sesión el login, el nombre y el rol, y redirige a <code>panel.php</code>. Si no, muestra <strong>un único mensaje</strong> para los dos casos de error. Si alguien que ya ha iniciado sesión abre <code>login.php</code>, redirígelo al panel.</li>
+<li><strong>Panel</strong> (<code>panel.php</code>): saluda al usuario por su nombre y muestra su rol y la hora a la que inició sesión.</li>
+<li><strong>Administración</strong> (<code>admin.php</code>): muestra la lista de usuarios (login, nombre y rol, <strong>nunca</strong> el hash). Si entra alguien sin sesión, va al login; si entra un usuario sin rol <code>admin</code>, recibe un <strong>403</strong> con una página de error.</li>
+<li><strong>Barra de navegación</strong> común (en un <code>include</code>): nombre del usuario, enlace a <em>Administración</em> solo para el rol <code>admin</code> y botón <strong>Cerrar sesión</strong>.</li>
+<li><strong>Cerrar sesión</strong> (<code>logout.php</code>): solo por <strong>POST</strong>, destruye la sesión por completo (datos, cookie y fichero) y vuelve al login con el mensaje «Has cerrado la sesión».</li>
+</ol>
+<p><strong>Requisitos de seguridad:</strong></p>
+<ol>
+<li>Sesión iniciada con <code>cookie_httponly</code>, <code>cookie_samesite</code> = <code>Lax</code> y <code>use_strict_mode</code>.</li>
+<li><code>session_regenerate_id(true)</code> justo después del inicio de sesión correcto.</li>
+<li><strong>Token anti-CSRF</strong> en el formulario de login y en el de cerrar sesión, comprobado con <code>hash_equals()</code>.</li>
+<li><strong>Caducidad por inactividad:</strong> tras <strong>10 minutos</strong> sin peticiones, la sesión se cierra y el login muestra «Tu sesión ha caducado».</li>
+<li><strong>Límite de intentos:</strong> tras <strong>5 fallos</strong> seguidos, el formulario se bloquea <strong>2 minutos</strong> e indica cuánto falta.</li>
+<li><code>exit</code> después de cada redirección y <code>h()</code> en toda la salida.</li>
+</ol>
+<p>En <code>includes/auth.php</code> escribe, como mínimo, estas funciones documentadas con PHPDoc: <code>h()</code>, <code>usuarioActual()</code>, <code>requiereLogin()</code>, <code>requiereRol()</code>, <code>cerrarSesion()</code>, <code>tokenCsrf()</code>, <code>comprobarCsrf()</code>, <code>flash()</code> y <code>obtenerFlash()</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Cuaderno</p>
+<p>Dibuja el <strong>diagrama de flujo</strong> de <code>login.php</code> desde que llega la petición: ¿es GET o POST?, ¿está bloqueado?, ¿el token es válido?, ¿las credenciales son correctas? Marca en cada salida a qué página se redirige o qué se muestra.</p>
+</div>
+<details>
+<summary>Ampliación (sube nota)</summary>
+<ul>
+<li>Casilla <strong>Recordar mi usuario</strong>: guarda <strong>solo el nombre de usuario</strong> en una cookie de 30 días y úsalo para rellenar el formulario. Explica en un comentario por qué nunca se guarda la contraseña.</li>
+<li>Página <code>clave.php</code> para que el usuario cambie su contraseña (pide la actual y la nueva dos veces). Como aún no tienes base de datos, muestra el hash nuevo en lugar de guardarlo.</li>
+</ul>
+</details>
+<p><strong>Se comprueba:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Prueba</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entrar con <code>ana</code> y la contraseña correcta</td>
+<td>Panel con su nombre</td>
+</tr>
+<tr>
+<td><code>ana</code> abre <code>admin.php</code> escribiendo la URL</td>
+<td>403</td>
+</tr>
+<tr>
+<td><code>curl -i …/panel.php</code> sin cookie</td>
+<td><code>302</code> a <code>login.php</code> y <strong>sin</strong> contenido del panel</td>
+</tr>
+<tr>
+<td>Usuario inexistente / contraseña incorrecta</td>
+<td>El mismo mensaje en los dos casos</td>
+</tr>
+<tr>
+<td>Cambiar el valor del campo <code>csrf</code> con las herramientas del navegador</td>
+<td>La petición se rechaza</td>
+</tr>
+<tr>
+<td>La cookie <code>PHPSESSID</code> antes y después del login</td>
+<td>Valores distintos; marcada como <code>HttpOnly</code></td>
+</tr>
+<tr>
+<td>6 intentos fallidos seguidos</td>
+<td>Bloqueo con aviso del tiempo restante</td>
+</tr>
+<tr>
+<td>Cerrar sesión y pulsar «Atrás» en el navegador</td>
+<td>No se puede volver al panel</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="p08-reto-auditoria-de-una-aplicacion-insegura">P08 · Reto: auditoría de una aplicación insegura</h3>
+<p><strong>RA/CE:</strong> RA4 – CE e), f) · <strong>Duración:</strong> 2 h</p>
+<p><strong>Objetivo:</strong> usar las herramientas de prueba y depuración para encontrar y corregir fallos de seguridad en una aplicación con autenticación.</p>
+<p>La carpeta <code>p08/</code> de la plantilla contiene la intranet de una academia: login, zona privada, zona de administración y cierre de sesión. <strong>Funciona</strong>, pero tiene <strong>al menos diez fallos</strong> de seguridad relacionados con lo que has estudiado en esta unidad.</p>
+<ol>
+<li>Crea un repositorio nuevo, copia la aplicación tal cual y haz un primer <em>commit</em> <code>P08: aplicación original</code>.</li>
+<li>Prueba la aplicación como usuario y como atacante: herramientas del navegador, <code>curl</code>, modificación de cookies y URL escritas a mano.</li>
+<li>Usa <strong>Xdebug</strong> al menos una vez: pon un punto de ruptura en <code>privado.php</code> y haz una captura en la que se vea el contenido de <code>$_SESSION</code> y de <code>$_COOKIE</code>.</li>
+<li>
+<p>Documenta <strong>al menos ocho fallos</strong> en <code>informe-p08.md</code> con esta tabla:</p>
+<table>
+<thead>
+<tr>
+<th>N.º</th>
+<th>Fichero y línea</th>
+<th>Fallo</th>
+<th>Cómo lo has comprobado</th>
+<th>Riesgo</th>
+<th>Corrección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>En «Cómo lo has comprobado» indica la orden de <code>curl</code>, la cookie modificada o la acción concreta, y adjunta una captura en al menos tres fallos.
+5. Corrige cada fallo con un <em>commit</em> propio: <code>P08: corrige fijación de sesión</code>, <code>P08: contraseñas con hash</code>…
+6. Para las contraseñas, genera los hashes con <code>password_hash()</code>. Las contraseñas de los usuarios están en el propio fichero <code>usuarios.php</code>.</p>
+</li>
+</ol>
+<details>
+<summary>Pista: por dónde empezar</summary>
+<ul>
+<li>¿Qué pasa si pides <code>privado.php</code> con <code>curl -i</code> sin haber iniciado sesión?</li>
+<li>¿De dónde saca <code>admin.php</code> el rol del usuario?</li>
+<li>¿Qué guarda la casilla «Recordarme»?</li>
+<li>Escribe en la URL de la página de login <code>?msg=&lt;b&gt;hola&lt;/b&gt;</code>.</li>
+<li>¿Cambia la cookie <code>PHPSESSID</code> al iniciar sesión? ¿Desaparece al cerrarla?</li>
+</ul>
+</details>
+<p><strong>Se comprueba:</strong></p>
+<ul>
+<li>Número y calidad de los fallos encontrados (cada uno, bien explicado y comprobado).</li>
+<li>Uso de las herramientas: capturas de <em>Red</em>, <em>Aplicación/Almacenamiento</em>, <code>curl</code> y Xdebug.</li>
+<li>La aplicación corregida sigue funcionando y los fallos ya no se reproducen.</li>
+<li>Historial de Git con un <em>commit</em> por corrección.</li>
+</ul>
+<hr />
+<h2 id="entrega">Entrega</h2>
+<div class="admonition note">
+<p class="admonition-title">Cómo entregar</p>
+<p>Sube a <strong>Moodle</strong> (aulavirtual.murciaeduca.es) un <code>.zip</code> llamado <code>ut04-apellido-nombre.zip</code> con una carpeta por práctica (<code>p01/</code>, <code>p02/</code>… <code>p08/</code>) que contenga:</p>
+<table>
+<thead>
+<tr>
+<th>Práctica</th>
+<th>Ficheros</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P01, P02, P05, P06</td>
+<td><code>ut04p0X.php</code></td>
+</tr>
+<tr>
+<td>P03</td>
+<td><code>respuestas-p03.md</code> y las capturas</td>
+</tr>
+<tr>
+<td>P04</td>
+<td><code>ut04p04.php</code> y <code>catalogo.php</code></td>
+</tr>
+<tr>
+<td>P07</td>
+<td>Carpeta <code>p07/</code> completa</td>
+</tr>
+<tr>
+<td>P08</td>
+<td>Carpeta <code>p08/</code> corregida, <code>informe-p08.md</code> y las capturas</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Añade en el comentario de la entrega el enlace a tu repositorio de <strong>GitHub</strong>.</li>
+<li>Entrega también las fotos de las páginas del <strong>cuaderno</strong> que se piden en P01, P03, P04, P06 y P07.</li>
+<li><strong>Mínimo para entregar:</strong> P01 a P07. La P08 sube nota.</li>
+</ul>
+</div>
+<h2 id="rubrica">Rúbrica</h2>
+<p>Cada práctica se puntúa sobre 10:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th style="text-align: center;">Peso</th>
+<th>Excelente</th>
+<th>Suficiente</th>
+<th>Insuficiente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Funcionalidad</strong></td>
+<td style="text-align: center;">35 %</td>
+<td>Supera todas las pruebas del apartado «Se comprueba», también en los casos límite</td>
+<td>Funciona en el caso normal</td>
+<td>No funciona o le faltan partes importantes</td>
+</tr>
+<tr>
+<td><strong>Seguridad y validación</strong></td>
+<td style="text-align: center;">30 %</td>
+<td>Valida cookies y formularios, escapa toda la salida y aplica todas las medidas pedidas (<code>HttpOnly</code>, regeneración del ID, CSRF, <code>exit</code>…)</td>
+<td>Aplica las medidas principales</td>
+<td>Confía en cookies, muestra datos sin escapar o deja páginas sin proteger</td>
+</tr>
+<tr>
+<td><strong>Calidad del código</strong></td>
+<td style="text-align: center;">20 %</td>
+<td>Funciones reutilizables, buenos nombres, PHPDoc y comentarios útiles</td>
+<td>Código correcto pero con repeticiones</td>
+<td>Código desordenado y sin comentarios</td>
+</tr>
+<tr>
+<td><strong>Interfaz</strong></td>
+<td style="text-align: center;">10 %</td>
+<td>Bulma bien usado, mensajes claros y formularios persistentes</td>
+<td>Interfaz correcta y básica</td>
+<td>HTML sin estilos o confuso</td>
+</tr>
+<tr>
+<td><strong>Git y cuaderno</strong></td>
+<td style="text-align: center;">5 %</td>
+<td>Un <em>commit</em> por práctica (por fallo en la P08) y cuaderno completo</td>
+<td>Pocos <em>commits</em> o cuaderno incompleto</td>
+<td>Sin repositorio o sin cuaderno</td>
+</tr>
+</tbody>
+</table>
+<p>En la <strong>P03</strong> y en el <strong>informe de la P08</strong>, el criterio de <em>Funcionalidad</em> se aplica a la corrección y la claridad de las respuestas, y el de <em>Interfaz</em>, a la presentación del documento y las capturas.</p>
+<p>La nota del boletín cuenta dentro del 50 % de <strong>tareas y prácticas</strong> del RA4.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
