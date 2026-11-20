@@ -128,7 +128,33 @@
               
                 <h1 id="cuaderno-y-repositorio-lo-que-tienes-que-tener-ut1-ut3">Cuaderno y repositorio: lo que tienes que tener (UT1 – UT3)</h1>
 <p>Esta página reúne <strong>todo lo que debe haber en tu cuaderno y en tu repositorio de GitHub</strong> al terminar las tres primeras unidades. Úsala como lista de comprobación: marca cada casilla cuando la tengas hecha.</p>
-<p>Leyenda: ⭐ es opcional · 💾 va en el repositorio.</p>
+<table>
+<thead>
+<tr>
+<th>UT</th>
+<th>Título</th>
+<th>RA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT1</td>
+<td>Arquitectura y Desarrollo Web</td>
+<td>RA1</td>
+</tr>
+<tr>
+<td>UT2</td>
+<td>Sintaxis Básica de PHP</td>
+<td>RA2</td>
+</tr>
+<tr>
+<td>UT3</td>
+<td>Sintaxis Avanzada de PHP</td>
+<td>RA2, RA3</td>
+</tr>
+</tbody>
+</table>
+<p>Leyenda: 📝 lo revisa el profesor en clase · ✏️ es para estudiar, no se entrega · ⭐ es opcional · 💾 va en el repositorio.</p>
 <hr />
 <h2 id="1-normas-generales">1. Normas generales</h2>
 <div class="admonition note">
@@ -139,13 +165,13 @@
 <li>Encabeza cada tarea con la unidad y la actividad, por ejemplo: <strong>«UT3 · P05 · Traza del triángulo»</strong>.</li>
 <li>Escribe con bolígrafo. Cuando compruebes algo con el ordenador, <strong>corrige en rojo</strong>, sin tachar lo que hiciste antes: el error también cuenta como aprendizaje.</li>
 <li>Lo que se hace «antes de programar» o «antes de ejecutar» se hace <strong>de verdad antes</strong>. Se nota.</li>
-<li>Para entregar, fotografía o escanea las páginas y súbelas a Moodle en <strong>un único PDF</strong>. Si una foto no se lee, esa parte se califica con 0.</li>
+<li>El cuaderno <strong>no se sube a Moodle</strong>: lo revisa el profesor en clase. Tenlo al día y tráelo a todas las sesiones.</li>
 </ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">El repositorio</p>
 <ul>
-<li>Tiene que existir <strong>un solo repositorio</strong> para todo el módulo. Dentro debe haber una carpeta por unidad.</li>
+<li>Tienes <strong>un solo repositorio</strong> para todo el módulo. Dentro hay una carpeta por unidad.</li>
 <li>El repositorio es privado, <strong>invita al profesor como colaborador</strong>.</li>
 <li>Haz <strong>un <em>commit</em> por práctica terminada</strong> (o por trozo, cuando la actividad lo pida), con un mensaje que diga qué has hecho: <code>P04: ficha de datos</code>, <code>C02: función euros()</code>.</li>
 <li>Haz <code>git push</code> al terminar cada sesión. Lo que no está en GitHub no existe.</li>
@@ -192,14 +218,19 @@ git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> 
 <h3 id="cuaderno">Cuaderno</h3>
 <p><strong>Práctica de aula · Peticiones y respuestas HTTP con httpbin</strong> (RA1 – CE a), c) · 30 min)</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>1.1.</strong> URL completa de la petición <code>GET /get</code> y método HTTP empleado.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>1.2.</strong> Valor de <code>headers → User-Agent</code> y de <code>origin</code> en la respuesta JSON.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>1.3.</strong> Diagrama del flujo: cliente (navegador) → petición GET → servidor (httpbin) → respuesta <code>200 OK</code>.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>2.1.</strong> <code>Content-Type</code> de la petición <code>POST /post</code> que has enviado.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>2.2.</strong> Parámetro del JSON de respuesta (<code>data</code>, <code>form</code> o <code>json</code>) en el que aparecen tus datos.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>2.3.</strong> Diferencia entre enviar datos por GET y por POST, en dos líneas.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>3.1.</strong> Tabla de códigos de estado 200, 404 y 500 completa: categoría y qué le indica al desarrollador.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>3.2.</strong> Nombre del código especial que devuelve <code>/status/418</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>1.1.</strong> URL completa de la petición <code>GET /get</code> y método HTTP empleado.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>1.2.</strong> Valor de <code>headers → User-Agent</code> y de <code>origin</code> en la respuesta JSON.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>1.3.</strong> Diagrama del flujo: cliente (navegador) → petición GET → servidor (httpbin) → respuesta <code>200 OK</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>2.1.</strong> <code>Content-Type</code> de la petición <code>POST /post</code> que has enviado.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>2.2.</strong> Parámetro del JSON de respuesta (<code>data</code>, <code>form</code> o <code>json</code>) en el que aparecen tus datos.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>2.3.</strong> Diferencia entre enviar datos por GET y por POST, en dos líneas.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>3.1.</strong> Tabla de códigos de estado 200, 404 y 500 completa: categoría y qué le indica al desarrollador.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>3.2.</strong> Nombre del código especial que devuelve <code>/status/418</code>.</li>
+</ul>
+<p><strong>Teoría</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> ✏️ Esquema propio del modelo cliente/servidor en capas (apartado 1.3) y de cómo ejecuta PHP el servidor web: módulo de Apache frente a Nginx con PHP-FPM (apartado 5).</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ✏️ Respuestas razonadas a las preguntas de <strong>autoevaluación</strong> (apartado 9).</li>
 </ul>
 <h3 id="repositorio">Repositorio</h3>
 <ul class="task-list">
@@ -218,11 +249,17 @@ git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> 
 <hr />
 <h2 id="3-ut2-sintaxis-basica-de-php">3. UT2 · Sintaxis Básica de PHP</h2>
 <h3 id="cuaderno_1">Cuaderno</h3>
-<p><strong>Ejercicio de clase 01 · Traza del ticket de la cafetería</strong> </p>
+<p><strong>Boletín de prácticas</strong></p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte A.</strong> Tabla de traza de las líneas 4 a 16, con el valor y el tipo (<code>gettype()</code>) de cada variable.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte B.</strong> Contenido del <code>&lt;body&gt;</code> tal y como lo recibe el navegador, sin restos de PHP.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte C.</strong> Respuestas a las cuatro preguntas cortas.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P05 · Calculadora aritmética</strong> (RA2 – CE g). Cálculo a mano del valor final de <code>$acumulado</code> y de <code>$contador</code> <strong>antes de ejecutar</strong>, y comparación con lo que muestra PHP.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P09 · Ámbito de las variables</strong> (RA2 – CE h). Esquema con dos «cajas» (ámbito global y ámbito de una función): qué variables hay en cada una y cómo se comunican.</li>
+</ul>
+<p><strong>C01 · Traza del ticket de la cafetería</strong> (en clase, sin ordenador)</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte A.</strong> Tabla de traza de las líneas 4 a 16, con el valor y el tipo (<code>gettype()</code>) de cada variable.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte B.</strong> Contenido del <code>&lt;body&gt;</code> tal y como lo recibe el navegador, sin restos de PHP.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte C.</strong> Respuestas a las cuatro preguntas cortas.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ <strong>Para casa.</strong> Correcciones en rojo tras comparar con el código fuente real de <code>ticket.php</code>.</li>
 </ul>
 <h3 id="repositorio_1">Repositorio</h3>
 <p>Todos los ficheros van en <code>ut02/</code>. El código PHP va al principio del fichero, antes del <code>&lt;!DOCTYPE html&gt;</code>, y cada bloque lleva su comentario.</p>
@@ -306,41 +343,64 @@ git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> 
 </table>
 <ul class="task-list">
 <li class="task-list-item"><input type="checkbox" disabled/> 💾 <strong>Mínimo:</strong> P01 a P08, cada una con su <em>commit</em>. P09 y P10 suben nota.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 💾 <code>ticket.php</code> con su <em>commit</em> (si has hecho la parte «Para casa» de la C01).</li>
 </ul>
 <hr />
 <h2 id="4-ut3-sintaxis-avanzada-de-php">4. UT3 · Sintaxis Avanzada de PHP</h2>
 <h3 id="cuaderno_2">Cuaderno</h3>
+<p><strong>Teoría</strong> (para estudiar; no se entrega, pero entra en los controles de traza)</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> ✏️ <strong>Apartado 2.6.</strong> Traza de un bucle anidado: una columna por variable y una fila por vuelta.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ✏️ <strong>Apartado 4.8.</strong> Pila de llamadas de <code>factorial(4)</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ✏️ <strong>Apartado 7.2.</strong> Patrón de la hora descompuesto trozo a trozo, con tres horas válidas y tres no válidas comprobadas a mano.</li>
+</ul>
 <p><strong>Boletín de prácticas</strong></p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>P03 · Letra del DNI.</strong> Cálculo a mano para tu propio DNI: resto de la división entre 23 y letra que sale.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>P05 · Triángulo.</strong> Traza de los dos bucles para una altura de 3: valores de <code>$i</code> y <code>$j</code> en cada vuelta y lo que se añade a la fila.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>P10 · Presupuestos.</strong> Qué ocurre al llamar a <code>calcularPresupuesto(500)</code> y a <code>calcularPresupuesto("500")</code> con <code>strict_types</code> activado.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>P11 · Calificaciones.</strong> Tu propuesta para el caso de dos alumnos con el mismo nombre.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P03 · Letra del DNI.</strong> Cálculo a mano para tu propio DNI: resto de la división entre 23 y letra que sale.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P05 · Triángulo.</strong> Traza de los dos bucles para una altura de 3: valores de <code>$i</code> y <code>$j</code> en cada vuelta y lo que se añade a la fila.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P09 · Alta con expresiones regulares.</strong> Expresión regular del código postal escrita a mano y explicada parte por parte.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P10 · Presupuestos.</strong> Qué ocurre al llamar a <code>calcularPresupuesto(500)</code> y a <code>calcularPresupuesto("500")</code> con <code>strict_types</code> activado.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>P11 · Calificaciones.</strong> Tu propuesta para el caso de dos alumnos con el mismo nombre.</li>
 </ul>
-<p><strong>Ejercicio de Clase 01 · Tabla Entrada – Proceso – Salida</strong> (en clase, sin ordenador)</p>
+<p><strong>C01 · Tabla Entrada – Proceso – Salida</strong> (en clase, sin ordenador)</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte A.</strong> Números del 1 al 12, cada uno con una E, una P o una S.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte B.</strong> Enunciados subrayados y una tabla E-P-S por ejercicio.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte C.</strong> Tabla del enunciado incompleto, con un <strong>?</strong> en cada hueco, y tres preguntas para el profesor.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte A.</strong> Números del 1 al 12, cada uno con una E, una P o una S.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte B.</strong> Enunciados subrayados y una tabla E-P-S por ejercicio.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte C.</strong> Tabla del enunciado incompleto, con un <strong>?</strong> en cada hueco, y tres preguntas para el profesor.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ <strong>Para casa.</strong> Tabla E-P-S de una práctica de P03 a P06 que no hayas empezado.</li>
 </ul>
-<p><strong>Ejercicio de Clase 03 · Subida de ficheros: galería de fotos</strong></p>
+<p><strong>C02 · Repartir la cuenta</strong> (los pasos 1 a 4 se hacen <strong>antes de abrir VS Code</strong>)</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 1.1.</strong> Diagrama del viaje del fichero, con el punto en el que desaparece el fichero temporal.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 1.2.</strong> Decisión razonada para las preguntas a), b), c) y d).</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 1.3.</strong> Las cuatro comprobaciones ordenadas, con el dato de <code>$_FILES</code> o la función que necesita cada una y el porqué del orden.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 2.</strong> Tabla con el resultado de los cinco experimentos.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 5.</strong> Tabla de pruebas con <em>Esperado</em> (antes de ejecutar) y <em>Obtenido</em>.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <strong>Parte 5.</strong> Si algún caso dio ✘: qué fallaba y cómo lo has corregido.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 1.</strong> Enunciado marcado con tres estilos (datos, lo que hay que mostrar y condiciones).</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 1.</strong> Resumen en tres líneas: Datos, Mostrar y Condiciones.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 1.</strong> Decisión razonada para los huecos a), b) y c), y un hueco más encontrado por ti.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 2.</strong> Tabla Entrada – Proceso – Salida.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 3.</strong> Lista de trozos en el orden en que los vas a programar, con la forma de comprobar cada uno.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 4.1.</strong> Cálculo a mano, paso a paso, de los casos que se piden.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 4.2.</strong> Esqueleto de pseudocódigo completado.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 4.3.</strong> Tabla de traza con las cinco situaciones.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 6.</strong> Tabla de pruebas: <em>Esperado</em> relleno <strong>antes de ejecutar</strong> y <em>Obtenido</em> con ✔ o ✘.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Paso 6.</strong> Si algún caso dio ✘: qué fallaba, por qué y cómo lo has corregido.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ <strong>Para pensar.</strong> Propuesta para mostrar el céntimo que falta.</li>
+</ul>
+<p><strong>C03 · Subida de ficheros: galería de fotos</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte 1.1.</strong> Diagrama del viaje del fichero, con el punto en el que desaparece el fichero temporal.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte 1.2.</strong> Decisión razonada para las preguntas a), b), c) y d).</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte 1.3.</strong> Las cuatro comprobaciones ordenadas, con el dato de <code>$_FILES</code> o la función que necesita cada una y el porqué del orden.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte 2.</strong> Tabla con el resultado de los cinco experimentos.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ 📝 <strong>Parte 5.</strong> Tabla de pruebas con <em>Esperado</em> (antes de ejecutar) y <em>Obtenido</em>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ 📝 <strong>Parte 5.</strong> Si algún caso dio ✘: qué fallaba y cómo lo has corregido.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> ⭐ <strong>Ampliación.</strong> Por qué aparece el error al superar <code>post_max_size</code>.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> ⭐ <strong>Para pensar.</strong> Por qué se repite la subida al pulsar <span class="keys"><kbd class="key-f5">F5</kbd></span>.</li>
 </ul>
-<p><strong>Ejercicio de Clase  04 · Tabla E-P-S de nivel medio: reserva de pistas</strong> (en clase, sin ordenador)</p>
+<p><strong>C04 · Tabla E-P-S de nivel medio: reserva de pistas</strong> (en clase, sin ordenador)</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> 📷 <strong>Parte A1.</strong> Enunciado subrayado con tres estilos: datos, condiciones y lo que hay que mostrar.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> 📷 <strong>Parte A2.</strong> Tabla E-P-S, con el Proceso ordenado: primero validar cada dato, después las condiciones combinadas y al final calcular.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> 📷 <strong>Parte A3.</strong> Salida exacta esperada para los tres envíos de prueba.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> 📷 <strong>Parte B.</strong> Tabla del compañero corregida, con los 7 errores numerados y explicados.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> 📷 <strong>Parte C.</strong> Enunciado (4 a 6 líneas) y formulario HTML escritos a partir de la tabla.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte A1.</strong> Enunciado subrayado con tres estilos: datos, condiciones y lo que hay que mostrar.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte A2.</strong> Tabla E-P-S, con el Proceso ordenado: primero validar cada dato, después las condiciones combinadas y al final calcular.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte A3.</strong> Salida exacta esperada para los tres envíos de prueba.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 📝 <strong>Parte B.</strong> Tabla del compañero corregida, con los 7 errores numerados y explicados.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> ⭐ 📝 <strong>Parte C.</strong> Enunciado (4 a 6 líneas) y formulario HTML escritos a partir de la tabla.</li>
 </ul>
 <h3 id="repositorio_2">Repositorio</h3>
 <p>Todos los ficheros van en <code>ut03/</code>. Cada práctica valida las entradas y escapa las salidas.</p>
@@ -447,6 +507,51 @@ git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> 
 </code></pre></div>
 La primera línea ignora todo lo que hay en <code>uploads/</code>; la segunda hace una excepción con <code>.gitkeep</code> para que la carpeta exista en el repositorio aunque esté vacía.</p>
 </details>
+<hr />
+<h2 id="5-resumen-de-entregas-en-moodle">5. Resumen de entregas en Moodle</h2>
+<p>El cuaderno nunca se sube a Moodle: lo revisa el profesor en clase.</p>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th>Qué subes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT1 · Práctica httpbin</td>
+<td>Se corrige en el aula al terminar la sesión (cuaderno)</td>
+</tr>
+<tr>
+<td>UT2 · Boletín</td>
+<td><code>ut02-apellido-nombre.zip</code> con los <code>ut02pXX.php</code> · enlace a GitHub</td>
+</tr>
+<tr>
+<td>UT2 · C01 · Traza del ticket</td>
+<td>Nada: se revisa el cuaderno en clase</td>
+</tr>
+<tr>
+<td>UT3 · Boletín</td>
+<td><code>ut03-apellido-nombre.zip</code> con una carpeta por práctica · enlace a GitHub</td>
+</tr>
+<tr>
+<td>UT3 · C01 · Tabla E-P-S</td>
+<td>Nada: se revisa el cuaderno en clase</td>
+</tr>
+<tr>
+<td>UT3 · C02 · Repartir la cuenta</td>
+<td><code>c02-apellido-nombre.zip</code> con <code>ut03c02.php</code> y <code>git-log.txt</code> · enlace a GitHub</td>
+</tr>
+<tr>
+<td>UT3 · C03 · Galería de fotos</td>
+<td><code>c03-apellido-nombre.zip</code> con <code>ut03c03.php</code>, <code>.gitignore</code> y <code>git-log.txt</code> (sin imágenes) · enlace a GitHub</td>
+</tr>
+<tr>
+<td>UT3 · C04 · Tabla E-P-S (nivel medio)</td>
+<td>Nada: se revisa el cuaderno en clase</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="6-antes-de-cerrar-la-1a-evaluacion">6. Antes de cerrar la 1.ª evaluación</h2>
 <ul class="task-list">
